@@ -131,27 +131,27 @@
                 <h1 id="_1">关系</h1>
 <h2 id="_2">关系的基本概念</h2>
 <h3 id="_3">集合的笛卡尔积</h3>
-<ol>
+<ul>
 <li>（定义6.1）定义<strong>有序对</strong><span class="arithmatex">\(\langle a,b\rangle\)</span>为集合<span class="arithmatex">\(\{a,\{a,b\}\}\)</span></li>
 <li>（定义6.2）定义<strong>笛卡尔积</strong><span class="arithmatex">\(A\times B=\{\langle a,b\rangle\mid a\in A\wedge b\in B\}\)</span></li>
 <li>笛卡尔积不满足交换律和结合律，对集合交和并运算满足分配律</li>
 <li>可以递归定义得到<strong>n元组</strong>：当n=2时就是有序对定义，当n&gt;2时定义为<span class="arithmatex">\(\langle\langle a_1,...a_{n-1}\rangle,a_n\rangle\)</span></li>
 <li>类似地，两个集合的笛卡尔积可推广到n个集合的笛卡尔积；特别地，n个相同集合的笛卡尔积简记为集合的n次幂</li>
-</ol>
+</ul>
 <h3 id="_4">关系的定义</h3>
-<ol>
+<ul>
 <li>（定义6.3）集合A到B的<strong>二元关系</strong>R定义为笛卡尔积<span class="arithmatex">\(A\times B\)</span>的子集。特别地，当A=B时称R为<strong>集合A上的二元关系</strong></li>
 <li>空集称为<strong>空关系</strong>，整个笛卡尔积称为<strong>全关系</strong>，<span class="arithmatex">\(\Delta_A=\{\langle a,a\rangle\mid a\in A\}\)</span>称为<strong>恒等关系</strong>或<strong>对角关系</strong></li>
-</ol>
+</ul>
 <h3 id="_5">关系的表示</h3>
-<ol>
-<li>关系图
-    有向图，指向出发顶点的彼岸称为环）</li>
-<li>关系矩阵
+<ul>
+<li>关系图<br />
+    有向图，指向出发顶点的彼岸称为环</li>
+<li>关系矩阵<br />
     若<span class="arithmatex">\(R\subseteq A\times B\)</span>，且A有n个元素，B有k个元素，则关系矩阵是一个n行k列的矩阵，其中第i行第j列元素<span class="arithmatex">\(m_{ij}\)</span>等于1当且仅当<span class="arithmatex">\(\langle a_i, b_j\rangle\in R\)</span></li>
-</ol>
+</ul>
 <h3 id="_6">关系的运算</h3>
-<ol>
+<ul>
 <li>（定义6.4）设R是集合A到B的关系，它的<strong>逆关系</strong>，记为<span class="arithmatex">\(R^{-1}\)</span>，是集合B到A的关系，定义为：<span class="arithmatex">\(R^{-1}=\{\langle b,a\rangle\mid\langle a,b\rangle\in R\}\)</span></li>
 <li>（定理6.5）设R是集合A到B的关系，S是集合B到C的关系，则R和S的<strong>复合</strong>，记为<span class="arithmatex">\(S\circ R\)</span>，是集合A到C的关系，定义为：
    <span class="arithmatex">\(S\circ R=\{\langle a,c\rangle\mid\exists b\in B(\langle a,b\rangle\in R\wedge\langle b,c\rangle\in S)\}\)</span><blockquote>
@@ -176,19 +176,19 @@
 </li>
 <li>（定理6.5）关系复合保持子集关系，即，若<span class="arithmatex">\(R\subseteq S\)</span>且<span class="arithmatex">\(U\subseteq W\)</span>，则<span class="arithmatex">\(U\circ R\subseteq W\circ S\)</span></li>
 <li>（定理6.6）<span class="arithmatex">\((S\circ R)^{-1}=R^{-1}\circ S^{-1}\)</span></li>
-<li>（定理6.7）<ol>
-<li>关系复合对集合并有分配律，即
-<span class="arithmatex">\(<span class="arithmatex">\(T\circ(R\cup S)=(T\circ R)\cup(T\circ S)\)</span>\)</span>
-<span class="arithmatex">\(<span class="arithmatex">\(\ (R\cup S)\circ T=(R\circ T)\cup(S\circ T)\)</span>\)</span></li>
-<li>关系复合对集合交<strong>没有</strong>分配律，但是有
-<span class="arithmatex">\(<span class="arithmatex">\(T\circ(R\cap S)\subseteq(T\circ R)\cap(T\circ S)\)</span>\)</span>
-<span class="arithmatex">\(<span class="arithmatex">\(\ (R\cap S)\circ T\subseteq(R\circ T)\cap(S\circ T)\)</span>\)</span></li>
-</ol>
+<li>
+<p>（定理6.7）<br />
+    （1） 关系复合对集合并有分配律，即</p>
+<div class="arithmatex">\[T\circ(R\cup S)=(T\circ R)\cup(T\circ S)\]</div>
+<div class="arithmatex">\[\ (R\cup S)\circ T=(R\circ T)\cup(S\circ T)\]</div>
+<p>（2） 关系复合对集合交<strong>没有</strong>分配律，但是有</p>
+<div class="arithmatex">\[T\circ(R\cap S)\subseteq(T\circ R)\cap(T\circ S)\]</div>
+<div class="arithmatex">\[\ (R\cap S)\circ T\subseteq(R\circ T)\cap(S\circ T)\]</div>
 </li>
-</ol>
+</ul>
 <h2 id="_7">关系的性质</h2>
 <h3 id="_8">关系的自反性和反自反性</h3>
-<ol>
+<ul>
 <li>（定义6.6）设R是集合A上的关系，即<span class="arithmatex">\(R\subseteq A\times A\)</span><ol>
 <li>称R是<strong>自反的</strong>，如果对任意<span class="arithmatex">\(a\in A\)</span>都有<span class="arithmatex">\(\langle a,a\rangle \in R\)</span></li>
 <li>称R是<strong>反自反的</strong>，如果对任意<span class="arithmatex">\(a\in A\)</span>都有<span class="arithmatex">\(\langle a,a\rangle\not\in R\)</span></li>
@@ -202,9 +202,9 @@
 <li>R是反自反的当且仅当<span class="arithmatex">\(\Delta_A\cap R=\varnothing\)</span></li>
 </ol>
 </li>
-</ol>
+</ul>
 <h3 id="_9">关系的对称性和反对称性</h3>
-<ol>
+<ul>
 <li>（定义6.7）设R是集合A上的关系，即<span class="arithmatex">\(R\subseteq A\times A\)</span><ol>
 <li>称R是<strong>对称的</strong>，若对任意<span class="arithmatex">\(a,b\in A,\langle a,b\rangle \in R\)</span>蕴含<span class="arithmatex">\(\langle b,a\rangle\in R\)</span></li>
 <li>称R是<strong>反对称的</strong>，若对任意<span class="arithmatex">\(a,b\in A,\langle a,b\rangle\in R\)</span>且<span class="arithmatex">\(\langle b,a\rangle\in R\)</span>蕴含<span class="arithmatex">\(a=b\)</span></li>
@@ -218,18 +218,18 @@
 <li>R是反对称的当且仅当<span class="arithmatex">\(R\cap R^{-1}\subseteq\Delta_A\)</span></li>
 </ol>
 </li>
-</ol>
+</ul>
 <h3 id="_10">关系的传递性</h3>
-<ol>
+<ul>
 <li>（定义6.8）设R是集合A上的关系，即<span class="arithmatex">\(R\subseteq A\times A\)</span>。说R是<strong>传递的</strong>，如果对任意<span class="arithmatex">\(a,b,c\in A,\langle a,b\rangle\in R\)</span>且<span class="arithmatex">\(\langle b,c\rangle\in R\)</span>蕴含<span class="arithmatex">\(\langle a,c\rangle\in R\)</span>，即R是传递的，当且仅当<span class="arithmatex">\(\forall a\in A\forall b\in A\forall c\in A(\langle a,b\rangle\in R\wedge \langle b,c\rangle\in R\to \langle a,c\rangle\in R)\)</span></li>
 <li>从关系图来看，传递关系的关系图的任意两个顶点之间如果有长度大于或等于2的有向通路，则他们之间就有直接的有向边</li>
 <li>（定理6.10）设R是集合A上的关系。R是传递的当且仅当<span class="arithmatex">\(R\circ R\subseteq R\)</span></li>
-</ol>
+</ul>
 <h3 id="_11">关系性质与关系运算</h3>
-<ol>
+<ul>
 <li>以上性质给出的定义属于元素考察法定义，对应的定理也可以定义这些性质，称为性质概括法定义</li>
 <li>下面表给出：若参与运算的关系都有列对应的性质，那么运算结果是否也有列对应的性质：</li>
-</ol>
+</ul>
 <table>
 <thead>
 <tr>
@@ -287,7 +287,7 @@
 <h2 id="_12">关系的闭包</h2>
 <p>简单来说，关系的闭包就是<em>包含一个关系</em>且<em>满足某个性质</em>的<em>最小</em>关系</p>
 <h3 id="_13">关系闭包的定义</h3>
-<ol>
+<ul>
 <li>
 <p>（定义6.9）设R是非空集合A上的关系，R的<strong>自反闭包</strong><span class="arithmatex">\(r(R)\)</span>是同时满足下面条件的A上的关系</p>
 <ul>
@@ -314,9 +314,9 @@
 <p>不要求掌握。另外对集合交和自反闭包、对称闭包的交换性，可以用下面的闭包计算过程结合关系矩阵很容易得出结论</p>
 </blockquote>
 </li>
-</ol>
+</ul>
 <h3 id="_14">关系闭包的计算</h3>
-<ol>
+<ul>
 <li>（定理6.13）<span class="arithmatex">\(r(R)=R\cup\Delta_A\)</span></li>
 <li>
 <p>（定理6.14）<span class="arithmatex">\(s(R)=R\cup R^{-1}\)</span><br />
@@ -334,10 +334,10 @@
 </blockquote>
 </li>
 <li>（Warshall算法）考虑<span class="arithmatex">\(R\)</span>的关系图，其中有<span class="arithmatex">\(n\)</span>个顶点，编号为<span class="arithmatex">\(\{v_1,\cdots,v_n\}\)</span>，定义<span class="arithmatex">\(W_k=\{w_{ij}^{[k]}\}\)</span>，其中<span class="arithmatex">\(w_{ij}^{[k]}\)</span>等于1当且仅当顶点<span class="arithmatex">\(v_i\)</span>和<span class="arithmatex">\(v_j\)</span>之间存在中间顶点全部在顶点集<span class="arithmatex">\(\{v_1,\cdots,v_k\}\)</span>中的有向通路，特别地，<span class="arithmatex">\(W_0=M_R\)</span>。可以证明<span class="arithmatex">\(w_{ij}^{[k]}=w_{ij}^{[k-1]}\vee(w_{ik}^{[k-1]}\wedge w_{kj}^{[k-1]})\)</span>，如此迭代运算n次得到的<span class="arithmatex">\(W_n\)</span>就是<span class="arithmatex">\(t(R)\)</span>的关系矩阵啦！</li>
-</ol>
+</ul>
 <h2 id="_15">特殊关系举例</h2>
 <h3 id="_16">等价关系</h3>
-<ol>
+<ul>
 <li>（定义6.11）设R是非空集合A上的关系，如果R是自反的、对称的和传递的关系，则称R为<strong>等价关系</strong></li>
 <li>（定义6.12）设R是非空集合A上的等价关系。<ol>
 <li>元素<span class="arithmatex">\(a\in A\)</span>所在的等价关系R的<strong>等价类</strong>，简称a的等价类，记为<span class="arithmatex">\([a]_R\)</span>，是所有与a有关系R的元素构成的集合，即
@@ -364,7 +364,7 @@
 <li><span class="arithmatex">\(F\)</span></li>
 </ol>
 </li>
-</ol>
+</ul>
 <h3 id="_17"></h3>
               
             </div>

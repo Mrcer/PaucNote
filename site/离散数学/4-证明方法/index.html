@@ -114,50 +114,50 @@
               
                 <h1 id="_1">证明方法</h1>
 <h2 id="_2">数学证明导引</h2>
-<ol>
+<ul>
 <li>公理：公认为真、不必证明的命题</li>
 <li>定理：以公理为前提可推理出的命题</li>
 <li>引理：为了证明另一个定理而先证明的定理</li>
 <li>推论：证明了一个定理后很容易推理出的定理</li>
 <li>猜想：认为是真的但还没证明的命题</li>
 <li>数学证明：说明某个命题为真的命题序列</li>
-</ol>
+</ul>
 <h2 id="_3">基本证明方法与策略</h2>
 <p>证明方法包括直接证明、间接证明、分情况证明、构造性存在证明和非构造性存在证明</p>
 <h3 id="_4">直接证明与间接证明</h3>
-<ol>
+<ul>
 <li><strong>直接证明</strong>就是直接从前提出发直接考虑如何得到要证明的命题</li>
 <li><strong>间接证明</strong>就是不是直接由前提或附加前提出发得到结论的证明方法，包括<strong>反证法</strong>和<strong>通过逆否命题证明</strong></li>
 <li>通过逆否命题证明即引入附加前提<span class="arithmatex">\(\neg q\)</span>证明出<span class="arithmatex">\(\neg p\)</span>，得到<span class="arithmatex">\(\neg q\to \neg p\)</span>，进而由逆否命题得到<span class="arithmatex">\(p\to q\)</span>，实际是一种特殊的反证法。</li>
 <li><strong>反例</strong>是使得存在否定命题成立的个体变量，它使得一个全称命题的否定为真，即对应全称命题不成立</li>
-</ol>
+</ul>
 <h3 id="_5">分情况证明</h3>
-<ol>
+<ul>
 <li><strong>分情况证明</strong>把前提成立的情况拆分，分别证明在每种情况下结论分别成立</li>
 <li>分情况的原则是<strong>不重不漏</strong></li>
 <li><strong>不失一般性</strong>是指合并类似的证明过程，通常出现在有平等地位变量的公式证明中</li>
 <li>分情况证明的极端是<strong>穷举证明</strong>，即对一个全称命题，分别证明每个元素代入都成立</li>
-</ol>
+</ul>
 <h3 id="_6">存在性证明</h3>
-<ol>
+<ul>
 <li><strong>存在性证明</strong>是用来证明存在命题成立的，包括两种：构造性和非构造性的。</li>
 <li><strong>构造性存在证明</strong>即找到一个具体元素或构造这种元素的方法，使得结论成立</li>
 <li><strong>非构造性存在证明</strong>不给出满足性质的具体元素，有两种方法：一是反证法，证明如果不存在这样的元素会导致矛盾；二是两难推理，选择一个合适的命题，证明无论这个命题是否成立，都会导出满足要求的元素</li>
-<li><strong>存在唯一性证明</strong>被记作<span class="arithmatex">\(\exists !xP(x)\)</span>，相当于证明<span class="arithmatex">\(<span class="arithmatex">\(\exists x(P(x)\wedge \forall y(P(y)\to x=y))\)</span>\)</span>具体证明思路是先找到一个元素<span class="arithmatex">\(c\)</span>满足<span class="arithmatex">\(P(c)\)</span>，再证明<span class="arithmatex">\(\forall y(P(y)\to y=c)\)</span></li>
-</ol>
+<li><strong>存在唯一性证明</strong>被记作<span class="arithmatex">\(\exists !xP(x)\)</span>，相当于证明<span class="arithmatex">\(\exists x(P(x)\wedge \forall y(P(y)\to x=y))\)</span>具体证明思路是先找到一个元素<span class="arithmatex">\(c\)</span>满足<span class="arithmatex">\(P(c)\)</span>，再证明<span class="arithmatex">\(\forall y(P(y)\to y=c)\)</span></li>
+</ul>
 <h3 id="_7">基本证明策略</h3>
 <h3 id="_8">数学有关的定义</h3>
-<ol>
+<ul>
 <li>记<span class="arithmatex">\(b\)</span>能被<span class="arithmatex">\(a\)</span>整除为<span class="arithmatex">\(a|b\)</span></li>
 <li><strong>有理数</strong>是可以被表达为“<span class="arithmatex">\(\frac{p}{q}\)</span>，p,q是互质整数”的数</li>
 <li><strong>质数</strong>是大于一且因数只有一和他本身的正整数</li>
 <li><strong>合数</strong>是因数有除了一和他本身之外数的正整数</li>
 <li>函数<span class="arithmatex">\(gcd(a,b)\)</span>用于表示a,b的最大公因数</li>
 <li>给定整数<span class="arithmatex">\(a,b\)</span>和正整数<span class="arithmatex">\(m\)</span>，如果<span class="arithmatex">\(a-b\)</span>是<span class="arithmatex">\(m\)</span>的倍数，也即存在整数<span class="arithmatex">\(k\)</span>使得<span class="arithmatex">\(a-b=km\)</span>，则称<strong>a和b模m同余</strong>，记为<span class="arithmatex">\(a\equiv b(mod\ m)\)</span>。直观上也就是说a和b除以m的余数相同</li>
-</ol>
+</ul>
 <h2 id="_9">归纳定义与归纳证明</h2>
 <h3 id="_10">数学归纳法与良序原理</h3>
-<ol>
+<ul>
 <li><strong>第一数学归纳法</strong>：<br />
 在证明形如<span class="arithmatex">\(\forall nP(n)\)</span>的命题时分两步：一是证明<strong>归纳基</strong>，即<span class="arithmatex">\(n=0\)</span>时，<span class="arithmatex">\(P(n)\)</span>成立；二是证明<strong>归纳步</strong>，即对于任意自然数<span class="arithmatex">\(k\)</span>，假定当<span class="arithmatex">\(n=k\)</span>时<span class="arithmatex">\(P(k)\)</span>成立，证明<span class="arithmatex">\(P(k+1)\)</span>也成立，其中<span class="arithmatex">\(P(k)\)</span>称为<strong>归纳假设</strong></li>
 <li><strong>第二数学归纳法（强归纳法）</strong>：<ol>
@@ -170,16 +170,16 @@
 </li>
 <li><strong>良序性质</strong><br />
 自然数的良序性质：自然数集的任意非空子集都存在最小的自然数(最小元)。</li>
-</ol>
+</ul>
 <h3 id="_11">归纳定义与结构归纳法</h3>
-<ol>
+<ul>
 <li><strong>归纳定义</strong>是一种定义集合的方法，它先定义称为<strong>归纳基</strong>的基本元素，再给出通过已定义元素构造其他元素的规则，成为<strong>归纳步</strong>。如果集合中的元素要么是基本元素，要么可以被基本元素构造出来，则称这是归纳定义的<strong>最小化声明</strong></li>
 <li>证明用归纳定义得到的集合内元素性质，可以使用<strong>结构归纳证明法</strong>，即先证明基本元素满足性质，再证明满足性质的元素经过归纳步构造出的新元素也满足性质</li>
 <li><strong>构造树</strong>是一种描述具体元素构造过程的树，根节点是该元素，内部节点是归纳步给出的构造规则，叶节点是归纳基给出的基本元素</li>
 <li>函数也可以归纳定义：当函数作用于归纳定义出的集合内元素时，若元素是基本元素，则直接给出函数值；若元素是构造出来的，则给出一个规则，利用构造元素的函数值得到待求元素的函数值。这种函数定义法叫<strong>递归定义</strong></li>
 <li>如果一个函数的定义域是自然数集，则该函数是个<strong>序列</strong>，即<span class="arithmatex">\(f(0),f(1),\cdots\)</span>。记序列的值域为A，则序列又可以表示为<span class="arithmatex">\(a_0,a_1,\cdots\)</span>，简记为<span class="arithmatex">\(\{a_n\}\)</span>。如果<span class="arithmatex">\(\{a_n\}\)</span>是数集，则称其为数列。</li>
 <li>递推定义数列的方式是先给出数列的k个初始值，再给出利用某元素的前k个元素计算该元素的方法，这个方法称为<strong>递推关系式</strong></li>
-</ol>
+</ul>
               
             </div>
           </div><footer>

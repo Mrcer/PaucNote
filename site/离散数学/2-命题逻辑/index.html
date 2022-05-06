@@ -116,17 +116,23 @@
               
                 <h1 id="_1">离散数学第二章——命题逻辑</h1>
 <h2 id="_2">基本概念</h2>
-<ol>
-<li><strong>命题</strong>是具有真假值的陈述句，其真假值称为<strong>真值</strong></li>
-<li><strong>原子命题</strong>是不可再分解的命题，<strong>复合命题</strong>是可被分解为子命题且真值由子命题唯一确定的命题，确定的方式是将子命题用<strong>逻辑联结词</strong>联系起来</li>
-<li>为了便于研究，使用符号标记原子命题，这些符号称为<strong>命题变量符号</strong>，联系逻辑也记作符号，称为<strong>逻辑运算符</strong>，由此可以将复合命题用符号表示，这串符号称为<strong>命题逻辑公式</strong>=</li>
-</ol>
+<ul>
+<li>
+<p><strong>命题</strong>是具有真假值的陈述句，其真假值称为<strong>真值</strong></p>
+</li>
+<li>
+<p><strong>原子命题</strong>是不可再分解的命题，<strong>复合命题</strong>是可被分解为子命题且真值由子命题唯一确定的命题，确定的方式是将子命题用<strong>逻辑联结词</strong>联系起来</p>
+</li>
+<li>
+<p>为了便于研究，使用符号标记原子命题，这些符号称为<strong>命题变量符号</strong>，联系逻辑也记作符号，称为<strong>逻辑运算符</strong>，由此可以将复合命题用符号表示，这串符号称为<strong>命题逻辑公式</strong></p>
+</li>
+</ul>
 <h2 id="_3">语法</h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>这一小节开始，书本定义了一套公理化系统。时刻记住，很多繁琐的定义和定理其实只是因为对严谨的追求，表达的意思其实很简单。</p>
 </div>
-<ol>
+<ul>
 <li>
 <p>研究问题时使用的命题变量符号集合记作<strong>Var</strong>，其中的每个元素称为<strong>命题变量</strong></p>
 </li>
@@ -150,31 +156,37 @@
 <li>
 <p>为了更清晰地展示命题逻辑公式的层次，引入<strong>抽象语法树（AST）</strong>表达法</p>
 </li>
-<li>（定义2.3）定义命题逻辑公式A的<strong>子公式</strong>为：<br />
+<li>
+<p>（定义2.3）定义命题逻辑公式A的<strong>子公式</strong>为：<br />
    （1） 若A为命题变量，则A的子公式只有A本身<br />
    （2） 若A形式为<span class="arithmatex">\(\neg B\)</span>，则A的子公式为A和B的所有子公式<br />
-   （3） 若A形式为<span class="arithmatex">\(B\oplus C\)</span>，其中<span class="arithmatex">\(\oplus\)</span>为<span class="arithmatex">\(\vee、\wedge、\to、\leftrightarrow\)</span>中的一种，则A的子公式为A和B、C的所有子公式  </li>
-<li>研究语法得到两个性质：<br />
+   （3） 若A形式为<span class="arithmatex">\(B\oplus C\)</span>，其中<span class="arithmatex">\(\oplus\)</span>为<span class="arithmatex">\(\vee、\wedge、\to、\leftrightarrow\)</span>中的一种，则A的子公式为A和B、C的所有子公式  </p>
+</li>
+<li>
+<p>研究语法得到两个性质：<br />
    （1） 引理2.1：命题逻辑共识的左括号数等于右括号数等于逻辑运算符数<br />
       证明过程运用到结构归纳法，基本思想是对于证明一个性质适用于任意命题逻辑公式，先证明性质对原子公式成立，再证明性质对任意公式的组合也成立，即可归纳得证<br />
    （2） 引理2.2：对于不是命题变量的命题逻辑公式，有且仅有一个运算符满足其左边公式以左括号开头且比左括号比右括号一个，而右边公式以右括号结束且右括号比左括号多一个<br />
-      在AST中这个逻辑运算符就是根节点</li>
-<li>为了简化命题逻辑公式，可以在不改变运算顺序的前提下省略括号，为此定义<strong>逻辑运算符的优先级从高到低为<span class="arithmatex">\(\neg、\wedge、\vee、\to、\leftrightarrow\)</span></strong>，且<span class="arithmatex">\(\wedge、\vee、\leftrightarrow\)</span>是从左往右结合的，而<span class="arithmatex">\(\to\)</span>是从右往左结合的</li>
-</ol>
+      在AST中这个逻辑运算符就是根节点</p>
+</li>
+<li>
+<p>为了简化命题逻辑公式，可以在不改变运算顺序的前提下省略括号，为此定义<strong>逻辑运算符的优先级从高到低为<span class="arithmatex">\(\neg、\wedge、\vee、\to、\leftrightarrow\)</span></strong>，且<span class="arithmatex">\(\wedge、\vee、\leftrightarrow\)</span>是从左往右结合的，而<span class="arithmatex">\(\to\)</span>是从右往左结合的</p>
+</li>
+</ul>
 <h2 id="_4">语义</h2>
 <p>这一小节主要介绍公式求值</p>
-<ol>
+<ul>
 <li>（定义2.4）为了定义公式的值，要先定义命题变量的值，为此引入真值赋值函数<span class="arithmatex">\(\sigma\)</span>，将命题变量映射到真值集{0，1}，也就是<span class="arithmatex">\(\sigma:Var\to \{0,1\}\)</span></li>
 <li>拓展<span class="arithmatex">\(\sigma\)</span>的作用，使其可以对逻辑运算符进行计算（具体运算大家都会，不写了，烦死了）</li>
 <li>为了计算公式的值，必须先计算子公式的值；从AST的视角看就是要先算子节点才能算父节点</li>
-</ol>
+</ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>然而其实可以“剪枝”，也就是实际程序的运算符有“短路”功能，比如或运算符有一个真另一个就不用算了。书中后面有提类似方法</p>
 </div>
-<ol>
+<ul>
 <li>为了全面描述公式的样貌，最好将命题变量可能出现的所有情况（<span class="arithmatex">\(2^n\)</span>种）都计算一遍，为了便于呈现，可以使用<strong>真值表</strong>表示。真值表的行按照二进制排序出所有情况，列呈现起始值（命题变量的真值）、中间量（可选，便于手算）、终值（公式的真值）</li>
-</ol>
+</ul>
 <p>逻辑运算符的真值表：</p>
 <table>
 <thead>
@@ -227,7 +239,7 @@
 </tr>
 </tbody>
 </table>
-<ol>
+<ul>
 <li>为了简化运算，根据输出值对不同输入的反应分类公式：
    （1） <strong>永真式/重言式</strong>：只输出真<br />
    （2） <strong>矛盾式/永假式</strong>：只输出假<br />
@@ -240,12 +252,12 @@
    （3） <span class="arithmatex">\(p\to p\)</span>
    （4） <span class="arithmatex">\(p\leftrightarrow p\)</span></li>
 <li>（定理2,4）永真式的任意命题变量可以用其他公式<strong>替换</strong></li>
-</ol>
+</ul>
 <h2 id="_5">等值演算</h2>
-<ol>
-<li>（定义2.7）若对于任意的真值赋值函数<span class="arithmatex">\(\sigma:Var\to2\)</span>，命题逻辑公式A和B在<span class="arithmatex">\(\sigma\)</span>下的真值都相同，即都有<span class="arithmatex">\(\sigma(A)=\sigma(B)\)</span>，则成A和B <strong>逻辑等值</strong>，简称<strong>等值</strong>，记为<span class="arithmatex">\(A\equiv B\)</span>。通常也称<span class="arithmatex">\(A\equiv B\)</span>为<strong>逻辑等值式</strong>。注意逻辑等值式不是命题逻辑公式，不过将恒等号替换为双蕴含可以得到一条永真式。</li>
-<li><strong>逻辑等值式模式</strong>（将ABC替换为公式得到它的<strong>实例</strong>）</li>
-</ol>
+<ul>
+<li>（定义2.7）若对于任意的真值赋值函数<span class="arithmatex">\(\sigma:Var\to2\)</span>，命题逻辑公式A和B在<span class="arithmatex">\(\sigma\)</span>下的真值都相同，即都有<span class="arithmatex">\(\sigma(A)=\sigma(B)\)</span>，则成A和B <strong>逻辑等值</strong>，简称<strong>等值</strong>，记为<span class="arithmatex">\(A\equiv B\)</span>。通常也称<span class="arithmatex">\(A\equiv B\)</span>为<strong>逻辑等值式</strong>。注意逻辑等值式不是命题逻辑公式，不过将恒等号替换为双蕴含可以得到一条永真式。
+ <strong>逻辑等值式模式</strong>（将ABC替换为公式得到它的<strong>实例</strong>）</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -308,23 +320,23 @@
 </tr>
 </tbody>
 </table>
-<ol>
+<ul>
 <li>（定理2.6）公式A的子公式B替换成等值的公式B'，替换后的A'等值于A。</li>
 <li>显然等值具有<strong>传递性</strong>，一个公式多次等值变换后仍与原公式等值，这个过程称为<strong>等值演算</strong>。</li>
-</ol>
+</ul>
 <h2 id="_6">范式</h2>
-<ol>
+<ul>
 <li>（定义2.8）<strong>析取范式</strong>是一个或多个合取式的析取（或），其中的合取式都是一个或多个文字的合取，称为<strong>简单合取式</strong>（<strong>文字</strong>指的是命题变量或命题变量的否定）；<strong>合取范式</strong>是一个或多个析取式的合取（与），其中的析取式都是一个或多个文字的析取，称为<strong>简单析取式</strong></li>
 <li>每个公式都有与其逻辑等值的合取范式和析取范式，但并不唯一，而接下来定义的主合取范式和主析取范式对每条公式来说是唯一的</li>
 <li>（定义2.9）若n个命题变量恰好是n个文字的合取，且每个文字对应不同的命题变量（它本身或其否定），则称该合取式为<strong>极小项</strong>。含有n个命题变量的<strong>主析取范式</strong>是零个或多个极小项的析取</li>
-</ol>
+</ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>研究极小项可以发现，n个命题变量有<span class="arithmatex">\(2^n\)</span>个极小项，且每个极小项对应着真值表的一条情况。这样，只要研究原公式的真值表，并选出其中真值为真的输入对应的极小项析取起来，就得到了主析取范式</p>
 </div>
-<ol>
+<ul>
 <li>（定义2.10）含n个命题变量的析取式恰好是n个文字的析取，且每个文字对应不同的命题变量，则这个析取式称为极大项。含有n个命题变量的<strong>主合取范式</strong>是零个或多个极大项的合取</li>
-</ol>
+</ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>极大项就是只有一种情况真值为假，与主析取范式类似，将真值表中假的情况对应的极大项合取即可</p>
@@ -333,19 +345,19 @@
 <p class="admonition-title">我的记忆方法</p>
 <p>极大项真值表很多一所以很大；很多一说明极大项挑零，挑零的运算符是与，所以极大项对应合取范式；为了有很多一，要用或来连接命题变量，所以是简单析取式。极小项同理</p>
 </div>
-<ol>
+<ul>
 <li>除了用真值表，也可以用等值演算来求。如果遇到缺少命题变量的情况，可以用矛盾律或排中律无中生有。另外，真值表、主合取范式和主析取范式可以互推，主合取范式和主析取范式互推时文字记得取反。</li>
-</ol>
+</ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>实践证明直接等值演算一般比真值表难做。但如果公式可以化成范式，可以用待定编码的形式快速得到极大项或极小项，参见P69的解法。</p>
 </div>
 <h2 id="_7">推理理论</h2>
-<ol>
+<ul>
 <li>（定义2.11）<strong>推理</strong><span class="arithmatex">\(A_1,A_2...,A_n\implies B\)</span><strong>有效</strong>是指<span class="arithmatex">\(A_1\wedge A_2\wedge...\wedge A_n\to B\)</span>是永真式</li>
 <li>推理为真不代表结论为真，因为条件不一定全为真</li>
 <li>自然推理系统：对于任意逻辑公式A,B，以下推理有效</li>
-</ol>
+</ul>
 <table>
 <thead>
 <tr>
@@ -382,43 +394,40 @@
 <td>等值置换</td>
 <td><span class="arithmatex">\(若A\equiv B，则A\implies B,B\implies A\)</span></td>
 </tr>
-<tr>
-<td>假言推理和假言易位可利用蕴含式前提；</td>
-<td></td>
-</tr>
 </tbody>
 </table>
-<ol>
+<p>假言推理和假言易位可利用蕴含式前提；</p>
+<ul>
 <li>（定义2.13）<strong>论证</strong>或<strong>证明</strong>是打竖写每行一个公式的公式序列，<em>每一行都是推理前提</em>或者<em>用前面行可以推理出的公式</em>（用上表的推理规则），最后以结论为结尾</li>
 <li>论证中每行开头标注序号；分析过程中待定的序号写问号，稍后在完整证明中补全；每行末尾注释公式来源（应用等值置换规则则要写出对应的逻辑等值模式，只能用双蕴含等值式、双重否定律、交换律，且不对公式的子公式应用等值置换）  </li>
 <li>（定理2.7）如果推理存在<strong>论证</strong>，它就是有效的  </li>
 <li>只能用具体的公式替换规则中的字母，不能替换规则中的子公式</li>
-</ol>
+</ul>
 <h3 id="_8">派生规则</h3>
-<ol>
+<ul>
 <li><strong>双蕴含推理</strong>规则：<span class="arithmatex">\(A\leftrightarrow B \implies A \to B\)</span>，<span class="arithmatex">\(A\leftrightarrow B \implies B \to A\)</span></li>
 <li>（定理2.8）<strong>附加前提法</strong> ：对于任意公式<span class="arithmatex">\(A_1,A_2,\cdots,An,B,C\)</span>，推理<span class="arithmatex">\(A_1,A_2,\cdots,A_n\implies B\to C\)</span>是有效的，当且仅当推理<span class="arithmatex">\(A_1,A_2,\cdots,A_n,B\implies C\)</span>是有效的。（需要注意的是从引入附加前提到消除附加前提的公式可能依赖于附加前提，所以在论证结束之前要消除附加前提）</li>
 <li><strong>假言三段论</strong>：<span class="arithmatex">\(A\to B,B\to C\implies A\to C\)</span></li>
 <li>（定理2.9）<strong>反证法</strong>：对任意公式<span class="arithmatex">\(A_1,A_2,\cdots,A_n,B\)</span>，推理<span class="arithmatex">\(A_1,A_2,\cdots,A_n\implies \neg B\)</span>是有效的当且仅当存在公式C使得推理<span class="arithmatex">\(A_1,A_2,\cdots,A_n,B\implies C\wedge \neg C\)</span>是有效的 </li>
-</ol>
+</ul>
 <h2 id="_9">应用</h2>
 <p>基本思路都是先抽象出原子命题、逻辑符号，将问题转化为命题逻辑公式或推理，再进行等值演算、论证等运算。</p>
 <h3 id="_10">自然语言命题的符号化</h3>
-<ol>
+<ul>
 <li><strong>联言判断</strong>：自然语言中的“与”逻辑</li>
 <li><strong>选言判断</strong>：类似于“或”逻辑，但现实中的或分相容和不相容（即是否可以同时成立），相容就是“或”逻辑，不相容就是“异或”逻辑（为避免歧义，模糊说法算相容）</li>
 <li><strong>假言判断</strong>：表达充分条件和必要条件，对应“蕴含”逻辑（有时可能包含“双蕴含”逻辑，为避免歧义，模糊说法算蕴含）</li>
-</ol>
+</ul>
 <h3 id="_11">普通逻辑问题的符号化</h3>
 <p>逻辑问题有三类：</p>
-<ol>
+<ul>
 <li>给定条件，寻找满足条件的情况
    这种问题的条件可以转换为命题公式。问题中的条件组合称为<strong>规范</strong>，如果命题公式可满足（即可以为真）则称规则是<strong>一致的</strong>。</li>
 <li>给定前提，推出结论
    这种问题可以转化为逻辑推理问题。</li>
 <li>给定前提，探求可以推理出的结论
    可以用逻辑推理，也可以转化为问题一</li>
-</ol>
+</ul>
 <h3 id="_12">算法性质的逻辑分析</h3>
               
             </div>

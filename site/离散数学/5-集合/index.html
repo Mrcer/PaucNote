@@ -113,13 +113,13 @@
                 <h1 id="_1">集合</h1>
 <h2 id="_2">集合的基本概念</h2>
 <h3 id="_3">集合的基本术语</h3>
-<ol>
+<ul>
 <li>凡是一堆东西都可称为集合（朴素集合论）</li>
 <li>所有研究事物的集合称为<strong>全集</strong></li>
-<li>（定义5.1）对于两个集合A和B，如果A的每个元素都属于B，则称A是B的<strong>子集</strong>，B是A的<strong>超集</strong>，或称A <strong>包含于</strong> B，B <strong>包含</strong> A，记为<span class="arithmatex">\(A\subseteq B\)</span>或<span class="arithmatex">\(B\supset A\)</span></li>
+<li>（定义5.1）对于两个集合A和B，如果A的每个元素都属于B，则称A是B的<strong>子集</strong>，B是A的<strong>超集</strong>，或称A <strong>包含于</strong> B，B <strong>包含</strong> A，记为<span class="arithmatex">\(A\subseteq B\)</span>或<span class="arithmatex">\(B\supseteq A\)</span></li>
 <li>（定义5.2）<strong>集合相等</strong>：<span class="arithmatex">\(A=B\iff \forall x(x\in A \leftrightarrow x\in B)\)</span></li>
 <li>如果一个集合中的所有元素都是集合 则称其为<strong>集合族</strong></li>
-<li>当A是B的子集但不等于B时，称A是B的<strong>真子集</strong>，记为<span class="arithmatex">\(A\subset B\)</span></li>
+<li>当A是B的子集但不等于B时，称A是B的<strong>真子集</strong>，记为<span class="arithmatex">\(A\subseteq B\)</span></li>
 <li>（定义5,3）不含任何元素的集合称为<strong>空集</strong>，记为<span class="arithmatex">\(\varnothing\)</span></li>
 <li>定理<ol>
 <li><span class="arithmatex">\(A\subseteq A\)</span></li>
@@ -129,31 +129,31 @@
 <li>空集唯一</li>
 </ol>
 </li>
-</ol>
+</ul>
 <h3 id="_4">定义集合的基本方法</h3>
-<ol>
+<ul>
 <li>定义集合的方法有<strong>元素枚举法</strong>、<strong>性质概括法</strong>和<strong>归纳定义法</strong><blockquote>
 <p>例：枚举法A={a,b,c,...}；概括法A={x|P(x)}，这时也称A是P(x)的<strong>真值集</strong></p>
 </blockquote>
 </li>
 <li>由于朴素集合论中存在罗素悖论，公理集合论引入了<strong>子集分离定理</strong>，即只允许用子集的方式定义集合。而全集U则约定包含了研究问题中的所有最基本元素的集合，这样的全集不包含集合。</li>
-</ol>
+</ul>
 <h3 id="_5">文氏图与成员关系表</h3>
-<ol>
+<ul>
 <li>文氏图就是韦恩图，用方框表示全集，圆圈表示集合，圆圈的画法表示集合间关系</li>
 <li>成员关系表用类似真值表的形式定义新集合。每一行表示一种元素从属情况，左边是集合是否属于给定集合，1属于0不属于，右边表示这样的元素是否属于定义集合</li>
-</ol>
+</ul>
 <h2 id="_6">集合运算</h2>
 <h2 id="_7">集合等式</h2>
 <h3 id="_8">基于定义证明集合等式</h3>
-<ol>
+<ul>
 <li>如果集合AB的元素可以双蕴含等价，那么证明集合AB相等的方法是，对于任意A的元素x，通过等价换算证明x属于B</li>
 <li>如果不具备双蕴含关系，则分别证明集合A的元素是集合B的元素，集合B的元素也是集合A的元素</li>
 <li>对于简单的集合运算变换证明，涉及大量分类讨论的，也可以使用集合成员关系表证明集合等价<blockquote>
 <p>对称差：<span class="arithmatex">\(A\oplus B=\{x|(x\in A\wedge x\not\in B)\vee(x\not\in A\wedge x\in B)\}\)</span></p>
 </blockquote>
 </li>
-</ol>
+</ul>
 <h3 id="_9">集合等式演算</h3>
 <ul>
 <li>基本与逻辑等值演算类似，不列出来了。特别地，有集合差等式</li>

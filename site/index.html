@@ -43,10 +43,6 @@
               <ul class="current">
                 <li class="toctree-l1 current"><a class="reference internal current" href=".">主页</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#commands">Commands</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#project-layout">Project layout</a>
-    </li>
     </ul>
                 </li>
               </ul>
@@ -90,21 +86,24 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="welcome-to-mkdocs">Welcome to MkDocs</h1>
-<p>For full documentation visit <a href="https://www.mkdocs.org">mkdocs.org</a>.</p>
-<h2 id="commands">Commands</h2>
-<ul>
-<li><code>mkdocs new [dir-name]</code> - Create a new project.</li>
-<li><code>mkdocs serve</code> - Start the live-reloading docs server.</li>
-<li><code>mkdocs build</code> - Build the documentation site.</li>
-<li><code>mkdocs -h</code> - Print help message and exit.</li>
-</ul>
-<h2 id="project-layout">Project layout</h2>
-<pre><code>mkdocs.yml    # The configuration file.
-docs/
-    index.md  # The documentation homepage.
-    ...       # Other markdown pages, images and other files.
-</code></pre>
+                <h1 id="_1">咩咩的笔记</h1>
+<p>这是咩咩存放笔记的地方，供朋友们参考学习使用。因为笔记是为自己写的，内容必定存在不少不严谨和纰漏，只是觉得这种这么适合分享的Markdown笔记不放出了太浪费罢了。如果存在知识性错误或排版问题欢迎在<a href="https://gitee.com/mrcer/pauc-note">仓库首页</a><code>issue</code>或<code>pull request</code>，也欢迎在issue区提出合理建议。另外也欢迎想来参观<a href="https://mrcer.gitee.io/blog">我的博客</a>哦qwq。</p>
+<h1 id="_2">项目构建</h1>
+<p>本项目使用<a href="https://www.mkdocs.org/">MkDocs</a>，依赖<code>MathJax</code>来渲染公式。完整构建过程如下：</p>
+<ol>
+<li>
+<p>安装Python</p>
+<p>Windows在<a href="https://www.python.org/">官网</a>下安装包安装，Linux用户的话。。不用教了吧。</p>
+</li>
+<li>
+<p>安装mkdocs及相关插件</p>
+<p><code>pip install mkdocs-material</code>大概能解决了吧，我也不知道依赖什么，不行就看着错误装上就是了。</p>
+</li>
+<li>
+<p>构建项目运行</p>
+<p>命令行环境下进入项目根目录，执行<code>mkdocs build</code>构建，或者直接<code>mkdocs serve</code>预览</p>
+</li>
+</ol>
               
             </div>
           </div><footer>
@@ -155,5 +154,5 @@ docs/
 
 <!--
 MkDocs version : 1.3.0
-Build Date UTC : 2022-05-06 07:40:58.708054+00:00
+Build Date UTC : 2022-05-06 12:15:12.687128+00:00
 -->
