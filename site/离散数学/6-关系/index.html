@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>关系 - 咩咩的笔记</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "\u5173\u7cfb";
+        var mkdocs_page_input_path = "\u79bb\u6563\u6570\u5b66\\6-\u5173\u7cfb.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> 咩咩的笔记
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">主页</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">笔记</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">离散数学</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../2-%E5%91%BD%E9%A2%98%E9%80%BB%E8%BE%91/">命题逻辑</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../3-%E4%B8%80%E9%98%B6%E9%80%BB%E8%BE%91/">一阶逻辑</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../4-%E8%AF%81%E6%98%8E%E6%96%B9%E6%B3%95/">证明方法</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../5-%E9%9B%86%E5%90%88/">集合</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">关系</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#_2">关系的基本概念</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#_3">集合的笛卡尔积</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_4">关系的定义</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_5">关系的表示</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_6">关系的运算</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_7">关系的性质</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#_8">关系的自反性和反自反性</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_9">关系的对称性和反对称性</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_10">关系的传递性</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_11">关系性质与关系运算</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_12">关系的闭包</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#_13">关系闭包的定义</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_14">关系闭包的计算</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_15">特殊关系举例</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#_16">等价关系</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_17"></a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">咩咩的笔记</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>笔记 &raquo;</li>
+          <li>离散数学 &raquo;</li><li>关系</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="_1">关系</h1>
+<h2 id="_2">关系的基本概念</h2>
+<h3 id="_3">集合的笛卡尔积</h3>
+<ol>
+<li>（定义6.1）定义<strong>有序对</strong><span class="arithmatex">\(\langle a,b\rangle\)</span>为集合<span class="arithmatex">\(\{a,\{a,b\}\}\)</span></li>
+<li>（定义6.2）定义<strong>笛卡尔积</strong><span class="arithmatex">\(A\times B=\{\langle a,b\rangle\mid a\in A\wedge b\in B\}\)</span></li>
+<li>笛卡尔积不满足交换律和结合律，对集合交和并运算满足分配律</li>
+<li>可以递归定义得到<strong>n元组</strong>：当n=2时就是有序对定义，当n&gt;2时定义为<span class="arithmatex">\(\langle\langle a_1,...a_{n-1}\rangle,a_n\rangle\)</span></li>
+<li>类似地，两个集合的笛卡尔积可推广到n个集合的笛卡尔积；特别地，n个相同集合的笛卡尔积简记为集合的n次幂</li>
+</ol>
+<h3 id="_4">关系的定义</h3>
+<ol>
+<li>（定义6.3）集合A到B的<strong>二元关系</strong>R定义为笛卡尔积<span class="arithmatex">\(A\times B\)</span>的子集。特别地，当A=B时称R为<strong>集合A上的二元关系</strong></li>
+<li>空集称为<strong>空关系</strong>，整个笛卡尔积称为<strong>全关系</strong>，<span class="arithmatex">\(\Delta_A=\{\langle a,a\rangle\mid a\in A\}\)</span>称为<strong>恒等关系</strong>或<strong>对角关系</strong></li>
+</ol>
+<h3 id="_5">关系的表示</h3>
+<ol>
+<li>关系图
+    有向图，指向出发顶点的彼岸称为环）</li>
+<li>关系矩阵
+    若<span class="arithmatex">\(R\subseteq A\times B\)</span>，且A有n个元素，B有k个元素，则关系矩阵是一个n行k列的矩阵，其中第i行第j列元素<span class="arithmatex">\(m_{ij}\)</span>等于1当且仅当<span class="arithmatex">\(\langle a_i, b_j\rangle\in R\)</span></li>
+</ol>
+<h3 id="_6">关系的运算</h3>
+<ol>
+<li>（定义6.4）设R是集合A到B的关系，它的<strong>逆关系</strong>，记为<span class="arithmatex">\(R^{-1}\)</span>，是集合B到A的关系，定义为：<span class="arithmatex">\(R^{-1}=\{\langle b,a\rangle\mid\langle a,b\rangle\in R\}\)</span></li>
+<li>（定理6.5）设R是集合A到B的关系，S是集合B到C的关系，则R和S的<strong>复合</strong>，记为<span class="arithmatex">\(S\circ R\)</span>，是集合A到C的关系，定义为：
+   <span class="arithmatex">\(S\circ R=\{\langle a,c\rangle\mid\exists b\in B(\langle a,b\rangle\in R\wedge\langle b,c\rangle\in S)\}\)</span><blockquote>
+<p>这种类似函数的记法称为<strong>逆序复合</strong>，还有另一种从左到右运算的<strong>顺序复合</strong>。</p>
+</blockquote>
+</li>
+<li>关系的并交差运算相当于对集合进行运算</li>
+<li>可以借助关系矩阵完成关系运算，并交差就相当于对关系矩阵对应元素进行或与和半减（只有1逻辑减0才能得到1，否则为零），求逆就是关系矩阵转置，复合<span class="arithmatex">\(S\circ R\)</span>就是关系矩阵的矩阵逻辑积<span class="arithmatex">\(M_R \odot M_S\)</span>（加用或代替，乘用与代替）</li>
+<li>（定理6.3）求逆运算的性质<ol>
+<li><span class="arithmatex">\((R^{-1})^{-1}=R\)</span></li>
+<li>若<span class="arithmatex">\(R\subseteq S\)</span>，则<span class="arithmatex">\(R^{-1}\subseteq S^{-1}\)</span></li>
+<li><span class="arithmatex">\((R\cup S)^{-1}=R^{-1}\cup S^{-1},\ (R\cap S)^{-1}=R^{-1}\cap S^{-1}\)</span><blockquote>
+<p>如果先进行<span class="arithmatex">\(op_1\)</span>再进行<span class="arithmatex">\(op_2\)</span>和先进行<span class="arithmatex">\(op_2\)</span>再进行<span class="arithmatex">\(op_1\)</span>结果相同，则称<span class="arithmatex">\(op_1\)</span>和<span class="arithmatex">\(op_2\)</span>是具有<strong>可交换性的</strong>。可以说并和求逆，交和求逆都是可交换的</p>
+</blockquote>
+</li>
+</ol>
+</li>
+<li>（定理6.4）复合运算的性质<ol>
+<li><span class="arithmatex">\(T\circ(S\circ R)=(T\circ S)\circ R\)</span></li>
+<li><span class="arithmatex">\(\Delta_B\circ R=R=R\circ \Delta_A\)</span></li>
+</ol>
+</li>
+<li>（定理6.5）关系复合保持子集关系，即，若<span class="arithmatex">\(R\subseteq S\)</span>且<span class="arithmatex">\(U\subseteq W\)</span>，则<span class="arithmatex">\(U\circ R\subseteq W\circ S\)</span></li>
+<li>（定理6.6）<span class="arithmatex">\((S\circ R)^{-1}=R^{-1}\circ S^{-1}\)</span></li>
+<li>（定理6.7）<ol>
+<li>关系复合对集合并有分配律，即
+<span class="arithmatex">\(<span class="arithmatex">\(T\circ(R\cup S)=(T\circ R)\cup(T\circ S)\)</span>\)</span>
+<span class="arithmatex">\(<span class="arithmatex">\(\ (R\cup S)\circ T=(R\circ T)\cup(S\circ T)\)</span>\)</span></li>
+<li>关系复合对集合交<strong>没有</strong>分配律，但是有
+<span class="arithmatex">\(<span class="arithmatex">\(T\circ(R\cap S)\subseteq(T\circ R)\cap(T\circ S)\)</span>\)</span>
+<span class="arithmatex">\(<span class="arithmatex">\(\ (R\cap S)\circ T\subseteq(R\circ T)\cap(S\circ T)\)</span>\)</span></li>
+</ol>
+</li>
+</ol>
+<h2 id="_7">关系的性质</h2>
+<h3 id="_8">关系的自反性和反自反性</h3>
+<ol>
+<li>（定义6.6）设R是集合A上的关系，即<span class="arithmatex">\(R\subseteq A\times A\)</span><ol>
+<li>称R是<strong>自反的</strong>，如果对任意<span class="arithmatex">\(a\in A\)</span>都有<span class="arithmatex">\(\langle a,a\rangle \in R\)</span></li>
+<li>称R是<strong>反自反的</strong>，如果对任意<span class="arithmatex">\(a\in A\)</span>都有<span class="arithmatex">\(\langle a,a\rangle\not\in R\)</span></li>
+</ol>
+</li>
+<li>存在既不是自反的也不是反自反的关系，但除了空集外自反和反自反性质是互斥的</li>
+<li>从关系图来看，自反关系的关系图每个顶点都有环，反自反关系的每个顶点都没有环</li>
+<li>从关系矩阵来看，自反关系的关系矩阵对角线都为1，反自反关系的关系矩阵的对角线都为0</li>
+<li>（定理6.8）设R是集合A上的关系，则：<ol>
+<li>R是自反的当且仅当<span class="arithmatex">\(\Delta_A\subseteq R\)</span></li>
+<li>R是反自反的当且仅当<span class="arithmatex">\(\Delta_A\cap R=\varnothing\)</span></li>
+</ol>
+</li>
+</ol>
+<h3 id="_9">关系的对称性和反对称性</h3>
+<ol>
+<li>（定义6.7）设R是集合A上的关系，即<span class="arithmatex">\(R\subseteq A\times A\)</span><ol>
+<li>称R是<strong>对称的</strong>，若对任意<span class="arithmatex">\(a,b\in A,\langle a,b\rangle \in R\)</span>蕴含<span class="arithmatex">\(\langle b,a\rangle\in R\)</span></li>
+<li>称R是<strong>反对称的</strong>，若对任意<span class="arithmatex">\(a,b\in A,\langle a,b\rangle\in R\)</span>且<span class="arithmatex">\(\langle b,a\rangle\in R\)</span>蕴含<span class="arithmatex">\(a=b\)</span></li>
+</ol>
+</li>
+<li>对称性和反对称性并不互斥，也存在既不是对称的也不是反对称的关系</li>
+<li>从关系图来看，对称关系的关系图等价于无向图，而反对称关系的关系图中任意两个顶点间最多只有一条直接相连的边</li>
+<li>从关系矩阵来看，对称关系的关系矩阵是对称矩阵，反对称关系的关系矩阵中不存在对角线外关于对角线对称的1</li>
+<li>（定理6.9）设R是集合A上的关系，则：<ol>
+<li>R是对称的当且仅当<span class="arithmatex">\(R=R^{-1}\)</span></li>
+<li>R是反对称的当且仅当<span class="arithmatex">\(R\cap R^{-1}\subseteq\Delta_A\)</span></li>
+</ol>
+</li>
+</ol>
+<h3 id="_10">关系的传递性</h3>
+<ol>
+<li>（定义6.8）设R是集合A上的关系，即<span class="arithmatex">\(R\subseteq A\times A\)</span>。说R是<strong>传递的</strong>，如果对任意<span class="arithmatex">\(a,b,c\in A,\langle a,b\rangle\in R\)</span>且<span class="arithmatex">\(\langle b,c\rangle\in R\)</span>蕴含<span class="arithmatex">\(\langle a,c\rangle\in R\)</span>，即R是传递的，当且仅当<span class="arithmatex">\(\forall a\in A\forall b\in A\forall c\in A(\langle a,b\rangle\in R\wedge \langle b,c\rangle\in R\to \langle a,c\rangle\in R)\)</span></li>
+<li>从关系图来看，传递关系的关系图的任意两个顶点之间如果有长度大于或等于2的有向通路，则他们之间就有直接的有向边</li>
+<li>（定理6.10）设R是集合A上的关系。R是传递的当且仅当<span class="arithmatex">\(R\circ R\subseteq R\)</span></li>
+</ol>
+<h3 id="_11">关系性质与关系运算</h3>
+<ol>
+<li>以上性质给出的定义属于元素考察法定义，对应的定理也可以定义这些性质，称为性质概括法定义</li>
+<li>下面表给出：若参与运算的关系都有列对应的性质，那么运算结果是否也有列对应的性质：</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>运算</th>
+<th>自反性</th>
+<th>反自反性</th>
+<th>对称性</th>
+<th>反对称性</th>
+<th>传递性</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>关系逆运算</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+</tr>
+<tr>
+<td>集合交运算</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+</tr>
+<tr>
+<td>集合并运算</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+<td>否</td>
+<td>否</td>
+</tr>
+<tr>
+<td>集合差运算</td>
+<td>否</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+<td>否</td>
+</tr>
+<tr>
+<td>关系复合运算</td>
+<td>是</td>
+<td>否</td>
+<td>否</td>
+<td>否</td>
+<td>否</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_12">关系的闭包</h2>
+<p>简单来说，关系的闭包就是<em>包含一个关系</em>且<em>满足某个性质</em>的<em>最小</em>关系</p>
+<h3 id="_13">关系闭包的定义</h3>
+<ol>
+<li>
+<p>（定义6.9）设R是非空集合A上的关系，R的<strong>自反闭包</strong><span class="arithmatex">\(r(R)\)</span>是同时满足下面条件的A上的关系</p>
+<ul>
+<li><span class="arithmatex">\(R\subseteq r(R)\)</span></li>
+<li><span class="arithmatex">\(r(R)\)</span>是自反关系</li>
+<li>对于任意自反关系S，若<span class="arithmatex">\(R\subseteq S\)</span>，则<span class="arithmatex">\(r(R)\subseteq S\)</span></li>
+</ul>
+<p><strong>对称闭包</strong><span class="arithmatex">\(s(R)\)</span>，<strong>传递闭包</strong><span class="arithmatex">\(t(R)\)</span>定义过程同理</p>
+<blockquote>
+<p>上面个条件与闭包的直观定义中的三个性质是一一对应的，并且第三条可用于证明关系闭包是另一个关系的子集。在闭包的讨论中，约定参与运算的关系都是包含于<span class="arithmatex">\(A\times A\)</span>，其中<span class="arithmatex">\(A\)</span>都是非空的（为了排除平凡情况），下面的阐述中我就省掉了哈</p>
+</blockquote>
+</li>
+<li>
+<p>（定理6.11）<span class="arithmatex">\(R\)</span>是自反的当且仅当<span class="arithmatex">\(r(R)=R\)</span>；<span class="arithmatex">\(R\)</span>是对称的当且仅当<span class="arithmatex">\(s(R)=R\)</span>；<span class="arithmatex">\(R\)</span>是传递的当且仅当<span class="arithmatex">\(t(R)=R\)</span>。</p>
+<blockquote>
+<p>也就是说已满足某种性质的关系的该性质闭包就是这个关系本身</p>
+</blockquote>
+</li>
+<li>（定理6.12）若<span class="arithmatex">\(R\subseteq S\)</span>，则：<span class="arithmatex">\(r(R)\subseteq r(S)\)</span>；<span class="arithmatex">\(s(R)\subseteq s(S)\)</span>；<span class="arithmatex">\(t(R)\subseteq t(S)\)</span><blockquote>
+<p>闭包保持子集关系</p>
+</blockquote>
+</li>
+<li>自反闭包和集合并、对称闭包和集合并都满足可交换性，但<span class="arithmatex">\(t(R)\cup t(S)\subseteq t(R\cup S)\)</span>，<span class="arithmatex">\(t(t(R)\cup t(S))=t(R\cup S)\)</span><blockquote>
+<p>不要求掌握。另外对集合交和自反闭包、对称闭包的交换性，可以用下面的闭包计算过程结合关系矩阵很容易得出结论</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="_14">关系闭包的计算</h3>
+<ol>
+<li>（定理6.13）<span class="arithmatex">\(r(R)=R\cup\Delta_A\)</span></li>
+<li>
+<p>（定理6.14）<span class="arithmatex">\(s(R)=R\cup R^{-1}\)</span><br />
+   接下来都是讨论传递闭包的计算的QAQ</p>
+</li>
+<li>
+<p>（定义6.10）关系<span class="arithmatex">\(R\)</span>的<span class="arithmatex">\(n(n\ge 1)\)</span>次幂<span class="arithmatex">\(R^n\)</span>定义为：
+    <span class="arithmatex">\(R^n=\left\{\begin{array}{l}R&amp;,n=1\\R^{n-1}\circ R&amp;,n\ge 2\end{array}\right.\)</span></p>
+</li>
+<li>
+<p>（引理6.15）<span class="arithmatex">\(R^m\circ R^n=R^{m+n}\)</span></p>
+</li>
+<li>（定理6.16）<span class="arithmatex">\(t(R)=R^*=\bigcup_{n=1}^\infty R^n\)</span><blockquote>
+<p>直观来看第k次复合能找到距离为k的有向通路，因此实际上只需求n次（集合A中的元素数量）就可以啦！这样就可以将求传递闭包转化为求复合运算，进而转化为矩阵运算。具体来说需要进行的逻辑运算是<span class="arithmatex">\(O(n^4)\)</span>的，下面的Warshall法可以优化到<span class="arithmatex">\(O(n^3)\)</span></p>
+</blockquote>
+</li>
+<li>（Warshall算法）考虑<span class="arithmatex">\(R\)</span>的关系图，其中有<span class="arithmatex">\(n\)</span>个顶点，编号为<span class="arithmatex">\(\{v_1,\cdots,v_n\}\)</span>，定义<span class="arithmatex">\(W_k=\{w_{ij}^{[k]}\}\)</span>，其中<span class="arithmatex">\(w_{ij}^{[k]}\)</span>等于1当且仅当顶点<span class="arithmatex">\(v_i\)</span>和<span class="arithmatex">\(v_j\)</span>之间存在中间顶点全部在顶点集<span class="arithmatex">\(\{v_1,\cdots,v_k\}\)</span>中的有向通路，特别地，<span class="arithmatex">\(W_0=M_R\)</span>。可以证明<span class="arithmatex">\(w_{ij}^{[k]}=w_{ij}^{[k-1]}\vee(w_{ik}^{[k-1]}\wedge w_{kj}^{[k-1]})\)</span>，如此迭代运算n次得到的<span class="arithmatex">\(W_n\)</span>就是<span class="arithmatex">\(t(R)\)</span>的关系矩阵啦！</li>
+</ol>
+<h2 id="_15">特殊关系举例</h2>
+<h3 id="_16">等价关系</h3>
+<ol>
+<li>（定义6.11）设R是非空集合A上的关系，如果R是自反的、对称的和传递的关系，则称R为<strong>等价关系</strong></li>
+<li>（定义6.12）设R是非空集合A上的等价关系。<ol>
+<li>元素<span class="arithmatex">\(a\in A\)</span>所在的等价关系R的<strong>等价类</strong>，简称a的等价类，记为<span class="arithmatex">\([a]_R\)</span>，是所有与a有关系R的元素构成的集合，即
+<span class="arithmatex">\(<span class="arithmatex">\([a]_R=\{x\in A\mid\langle a,x\rangle\in R\}\)</span>\)</span></li>
+<li>对元素<span class="arithmatex">\(b\in A\)</span>，若<span class="arithmatex">\(b\in [a]_R\)</span>，则称b为等价类<span class="arithmatex">\([a]_R\)</span>的一个<strong>代表</strong>，特别地，a是<span class="arithmatex">\([a]_R\)</span>的一个代表，即总有<span class="arithmatex">\(a\in [a]_R\)</span>（因为等价关系R是自反关系）</li>
+<li>集合A的所有元素的等价类构成的集合称为称为集合A关于等价关系R的<strong>商集</strong>，记为A/R，即
+<span class="arithmatex">\(<span class="arithmatex">\(A/R=\{[a]_R\mid a\in A\}\)</span>\)</span></li>
+</ol>
+</li>
+<li>（引理6.17）设R是非空集A上的等价关系，对任意<span class="arithmatex">\(a,b\in A\)</span>：<ol>
+<li><span class="arithmatex">\([a]_R=[b]_R\)</span>当且仅当<span class="arithmatex">\(\langle a,b\rangle\in R\)</span></li>
+<li><span class="arithmatex">\([a]_R\cap[b]_R=\varnothing\)</span>当且仅当<span class="arithmatex">\(\langle a,b\rangle\not\in R\)</span></li>
+</ol>
+</li>
+<li>（定理6.18）设<span class="arithmatex">\(R\)</span>是非空集<span class="arithmatex">\(A\)</span>上的等价关系<ol>
+<li><span class="arithmatex">\(\forall a\in A，[a]_R\neq\varnothing\)</span></li>
+<li>对任意<span class="arithmatex">\(a,b\in A\)</span>，要么<span class="arithmatex">\([a]_R=[b]_R\)</span>，要么<span class="arithmatex">\([a]_R\cap[b]_R=\varnothing\)</span></li>
+<li>所有等价类的广义并等于<span class="arithmatex">\(A\)</span>，即<span class="arithmatex">\(\bigcup_{a\in A}[a]_R=A\)</span>，也即<span class="arithmatex">\(\bigcup A/R=A\)</span></li>
+</ol>
+</li>
+<li>（定义6.13）设<span class="arithmatex">\(A\)</span>是一个非空集合，<span class="arithmatex">\(F\)</span>是一个集合族，其中的每个几何都是<span class="arithmatex">\(A\)</span>的子集。说集合族<span class="arithmatex">\(F\)</span>是<span class="arithmatex">\(A\)</span>的<strong>划分</strong>，如果它满足：<ol>
+<li><span class="arithmatex">\(F\)</span>中的集合均不为空集</li>
+<li><span class="arithmatex">\(F\)</span>中的任意两个集合交集为空</li>
+<li><span class="arithmatex">\(F\)</span></li>
+</ol>
+</li>
+</ol>
+<h3 id="_17"></h3>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../5-%E9%9B%86%E5%90%88/" class="btn btn-neutral float-left" title="集合"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../5-%E9%9B%86%E5%90%88/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../javascripts/mathjax.js" defer></script>
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=es6" defer></script>
+      <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

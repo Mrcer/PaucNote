@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>一阶逻辑 - 咩咩的笔记</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "\u4e00\u9636\u903b\u8f91";
+        var mkdocs_page_input_path = "\u79bb\u6563\u6570\u5b66\\3-\u4e00\u9636\u903b\u8f91.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> 咩咩的笔记
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">主页</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">笔记</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">离散数学</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../2-%E5%91%BD%E9%A2%98%E9%80%BB%E8%BE%91/">命题逻辑</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">一阶逻辑</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#_2">一阶逻辑的基本概念</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_3">一阶逻辑公式的语法</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#_4">一阶逻辑公式的符号</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_5">一阶逻辑公式的定义</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_6">自由变量和约束变量</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_7">一阶逻辑公式的语义</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#_8">一阶逻辑公式的解释</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_9">一阶逻辑公式的真值</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_10">一阶逻辑公式的分类</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_11">一阶逻辑的等值演算</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_12">一阶逻辑的推理理论</a>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../4-%E8%AF%81%E6%98%8E%E6%96%B9%E6%B3%95/">证明方法</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../5-%E9%9B%86%E5%90%88/">集合</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../6-%E5%85%B3%E7%B3%BB/">关系</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">咩咩的笔记</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>笔记 &raquo;</li>
+          <li>离散数学 &raquo;</li><li>一阶逻辑</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="_1">一阶逻辑</h1>
+<blockquote>
+<p>一阶逻辑是对原子命题结构的进一步拆分，以便表达一类事物与单个具体事物之间的联系</p>
+</blockquote>
+<h2 id="_2">一阶逻辑的基本概念</h2>
+<ol>
+<li><strong>个体</strong>指原子命题将要判断的事物</li>
+<li><strong>谓词</strong>指原子命题中给出的性质或关系<blockquote>
+<p>例：“张三是计算机专业学生”中，“张三”是个体，“……是计算机专业学生”是谓词</p>
+</blockquote>
+</li>
+<li>谓词需要作用于个体，而个体可以是确定的一个或是不确定的一类，确定的叫<strong>个体常量</strong>，不确定的叫<strong>个体变量</strong><blockquote>
+<p>例：“x是实数”中“x”个体变量，“1是实数”中“1”是个体常量</p>
+</blockquote>
+</li>
+<li>谓词可以作用于多个个体，作用个数称为<strong>元数</strong><blockquote>
+<p>例：“x和y是同学”中的谓词“……和……是同学”是二元谓词；为了简化表达，可以将这个谓词用函数符号表达，即Q(x,y)</p>
+</blockquote>
+</li>
+<li>当谓词作用于一类事物，即个体变量时，需要明确作用范围是“全部”还是“某些”。这种带范围的命题称为<strong>量化命题</strong>，确认范围的修饰词称为<strong>量词</strong>。其中包括表示“全部”的<strong>全称量词</strong>，写作“<span class="arithmatex">\(\forall\)</span>”；表示“某些”的<strong>存在量词</strong>，写作“<span class="arithmatex">\(\exists\)</span>”<blockquote>
+<p>例：“（所有）x都是实数”，记作<span class="arithmatex">\(\forall xP(x)\)</span>；“存在x是有理数”，记作<span class="arithmatex">\(\exists xQ(x)\)</span>。</p>
+</blockquote>
+</li>
+<li>个体变量所表示的不确定个体所属的事物类称为该个体变量的<strong>论域</strong>。</li>
+<li>有些谓词是用来进一步明确个体变量的属性的，那他们称为<strong>特征谓词</strong><blockquote>
+<p>例：“对于所有实数x，若x是有理数，则x不是无理数”，这里“……是有理数”便是特征谓词</p>
+</blockquote>
+</li>
+<li>一阶逻辑是<strong>一阶谓词逻辑</strong>的简称，这里的一阶指的是谓词、量词只作用于个体变量。相对的，高阶的谓词、量词可以作用于谓词</li>
+</ol>
+<h2 id="_3">一阶逻辑公式的语法</h2>
+<p>这一章解释公式咋写</p>
+<h3 id="_4">一阶逻辑公式的符号</h3>
+<p><img alt="一阶逻辑符号" src="../%E4%B8%80%E9%98%B6%E9%80%BB%E8%BE%91%E7%AC%A6%E5%8F%B7.png" /></p>
+<blockquote>
+<p>函数输入个体输出个体，如“1+1”中的“+”；谓词输入个体输出真值，如“1=1”中的“=”</p>
+</blockquote>
+<h3 id="_5">一阶逻辑公式的定义</h3>
+<ol>
+<li>（定义3.1）<strong>项</strong>可以是个体常量、个体变量或是被函数作用的项<blockquote>
+<p>例：“x+1”中，“x”是个体变量，“1”是个体常量，“x+1”是被函数作用的项，他们都是项</p>
+</blockquote>
+</li>
+<li>（定义3.2）<strong>一阶逻辑公式</strong>可以是被谓词作用的项，或是被逻辑符号或量词连接的一阶逻辑公式。一阶逻辑公式简称<strong>一阶公式</strong>（或公式），被谓词作用的项称为一阶逻辑的<strong>原子公式</strong><blockquote>
+<p>例：“x=1”是一阶公式，也是原子公式；“<span class="arithmatex">\(\forall x(x&gt;0 \to x^3&gt;0)\)</span>”便是组合的一阶公式</p>
+</blockquote>
+</li>
+<li>对于复杂的一阶公式，也可以像命题公式一样画抽象语法树，其中每个叶节点都是原子公式，每个子树都代表一个子公式</li>
+<li>（定义3.3）一阶公式的子公式可以是原子公式，或是逻辑符或量词连接的各部分公式</li>
+</ol>
+<h3 id="_6">自由变量和约束变量</h3>
+<ol>
+<li>（定义3.4）<strong>指示变量</strong>是被量词修饰的变量；量词作用的范围称为<strong>辖域</strong>或<strong>作用域</strong>；如果变量出现在以其为指示变量的辖域中，则这种出现叫<strong>约束出现</strong>，否则就是<strong>自由出现</strong>；如果在一条公式中，变量有一处是自由出现的，他就是<strong>自由变量</strong>，否则他就是<strong>约束变量</strong>（全都是约束出现）；没有自由变量的公式称为<strong>闭公式</strong>或<strong>句子</strong><blockquote>
+<p>例：“<span class="arithmatex">\(\forall x(xy&gt;0\to x&gt;0)\)</span>，“<span class="arithmatex">\(\forall\)</span>”后面的“x”是指示变量，后边括住的子公式是量词“<span class="arithmatex">\(\forall x\)</span>”的辖域，“x”是约束变量，“y”是自由变量，这条公式不是闭公式</p>
+</blockquote>
+</li>
+<li>不同辖域中被修饰的变量即使符号相同也是不同的变量，就像局部变量一样；而不被修饰的自由变量则像是全局变量，在整条公式中表示一个变量<blockquote>
+<p>例：“<span class="arithmatex">\(\exists x(xy&gt;0) \vee \forall x(xy&lt;0)\)</span>”中前后的“x”是不一样的，“y”是一样的</p>
+</blockquote>
+</li>
+<li>当同一个个体变量既有自由出现又有约束出现时，可能会存在辖域嵌套，这是允许的，以最小范围的辖域为准。为避免混淆，最好进行<strong>约束变量改名</strong>来避免辖域嵌套。<blockquote>
+<p>例：“<span class="arithmatex">\(\forall x(F(x)\wedge \exists x H(x, y))\)</span>”中，“x”就存在辖域嵌套，可以改成“<span class="arithmatex">\(\forall z(F(z)\wedge \exists x H(x, y))\)</span>”来避免混淆。注意不要改变语义（只能改受该量词作用的变量，也就是比如说<span class="arithmatex">\(\forall xA\)</span>，A中的<em>自由变量</em>x；且不能改成辖域内的自由变量）</p>
+</blockquote>
+</li>
+<li>也可用<strong>自由变量替换</strong>来避免同一个个体变量既有自由出现又有约束出现（~~书本没细讲也说不好用，不写了~~）</li>
+</ol>
+<h2 id="_7">一阶逻辑公式的语义</h2>
+<p>这一章讲公式的真值咋求。</p>
+<h3 id="_8">一阶逻辑公式的解释</h3>
+<ul>
+<li>（定义3.5）一阶逻辑公式的<strong>解释</strong>或者说<strong>模型</strong>M包括：<ol>
+<li>一个非空集合D，包含所有的研究对象，称为解释M的<strong>论域</strong></li>
+<li>每个个体常量c在D中对应的元素<span class="arithmatex">\([c]\)</span></li>
+<li>每个函数f在D中对应的函数<span class="arithmatex">\([f]:D^n\to D\)</span></li>
+<li>每个谓词F在D中对应的关系<span class="arithmatex">\([F]:\subseteq D^n\)</span></li>
+</ol>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note<p>解释的概念实际上就是将逻辑关系与实际关系完全分离。这样，所有的符号都成为了单纯的符号而失去了自身的含义，即使它们长得像我们所熟知的样子。比如说符号“1”不再表示一个什么东西，就是个体常量符号“1”，“+”也不是加上什么东西，就是函数符号“+”。为了给分离了意义的符号重新赋予意义，就引入了解释。这样做的好处是研究逻辑就不会遇到语义不清的问题，比如在数学上，“1”可以是自然数，也可以是实数、复数之类的。书中提到的对象语言就是只有符号规则的逻辑语言，元语言就是包含意义的自然语言。</p>
+<p>这里D好像包含了元素、函数和关系，其实后面只会写出元素，毕竟后面两个也不好写。。</p>
+<p>解释下笛卡尔积：笛卡尔积就是所有的排列组合，比如<span class="arithmatex">\(\{a,b\}\times\{1,2\}=\{(a,1),(a,2),(b,1),(b,2)\}\)</span>，书上意思就是，函数的定义域是D中元素的任意排列
+谓词对应着关系，可以看出这个关系实际上是个元组的集合（元组就是有序列表），从后面的题目可见，如果谓词中的元素对应的元组包含在这个集合里面，谓词就输出1，否则输出0。</p>
+</p>
+</div>
+<ul>
+<li>（定义3.6）<strong>个体变量指派函数</strong><span class="arithmatex">\(\sigma\)</span>是从个体变量集<span class="arithmatex">\(V\)</span>到解释<span class="arithmatex">\(M\)</span>的论域<span class="arithmatex">\(D\)</span>的函数</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note<p>但实际上你在后面会看到这个函数的输入并不只是“个体变量”。。。大概可以将这个函数理解为“逻辑符号”到“自然符号”的桥梁吧。</p>
+</p>
+</div>
+<ul>
+<li>（定义3.7）定义新的个体变量指派函数</li>
+</ul>
+<div class="arithmatex">\[\sigma[x\mapsto d](y)=\left \{ \begin{array}{l}d,&amp;&amp;if\ y=x\\\sigma(y),&amp;&amp;if\ y\neq x\end{array}\right.\]</div>
+<blockquote>
+<p>这个定义意思就是如果有中括号，先把中括号里的映射进行完，再执行原来<span class="arithmatex">\(\sigma\)</span>函数的映射。。后面对量词进行处理时要用</p>
+</blockquote>
+<h3 id="_9">一阶逻辑公式的真值</h3>
+<ul>
+<li>
+<p>（定义3.8）<strong>项t的语义解释<span class="arithmatex">\([t]_\sigma\)</span></strong>是：</p>
+<ol>
+<li>若t为个体常量c，则<span class="arithmatex">\([t]_\sigma=[c]\)</span></li>
+<li>若t是个体变量x，则<span class="arithmatex">\([t]_\sigma=\sigma(x)\)</span></li>
+<li>若t是<span class="arithmatex">\(f(t_1,\cdots,t_n)\)</span>，则<span class="arithmatex">\([t]_\sigma=[f]([t_1]_\sigma,\cdots,[t_n]_\sigma)\)</span></li>
+</ol>
+</li>
+<li>
+<p>（定义3.9）<strong>一阶逻辑公式A的语义解释</strong>是其真值，记为<span class="arithmatex">\(\sigma(A)\)</span>，其归纳结构为：</p>
+<ol>
+<li>若A为原子公式<span class="arithmatex">\(F(t_1,\cdots,t_n)\)</span>，则<span class="arithmatex">\(\sigma(A)=1\)</span>当且仅当<span class="arithmatex">\(([t_1],\cdots,[t_n])\in[F]\)</span></li>
+<li>逻辑符号相关的归纳略</li>
+<li>若A是<span class="arithmatex">\(\forall xB\)</span>，则<span class="arithmatex">\(\sigma(A)=1\)</span>当且仅当对论域D的任意元素d有<span class="arithmatex">\(\sigma[x\mapsto d](B)=1\)</span></li>
+<li>若A是<span class="arithmatex">\(\exists xB\)</span>，则<span class="arithmatex">\(\sigma(A)=1\)</span>当且仅当存在论域D的元素d使得<span class="arithmatex">\(\sigma[x\mapsto d](B)=1\)</span></li>
+</ol>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note<p>对于谓词，上面已经解释过了，这里再说说量词。实际上对量词的处理就是按照最笨的方法把每一种情况都验证一遍。。</p>
+<p>如果枚举不完所有情况，也就是说如果论域是自然数集这种无限集，则可能需要“显然”论证。。后面提到确认一阶逻辑公式的真值是没有通用算法的</p>
+<p>如果枚举得完所有情况，求一阶逻辑公式的真值，可以将所有变量换成相应的解释、把量词展开、把原子公式换成真值，当做命题公式来求值。例：令D={1,2,3}，有一阶公式<span class="arithmatex">\(\exist x(x+1=2)\)</span>，可以展开为<span class="arithmatex">\((1+1=2)\vee(2+1=2)\vee(3+1=2)\equiv 1\)</span>，注意这里有几种不一样的“1”——作为个体常量符号、作为D中的元素，还有真值1</p>
+</p>
+</div>
+<ul>
+<li>
+<p>（定理3.1）约束变量改名后真值不变。注意约束变量改名只能改受该量词作用的变量且不能改成辖域内的自由变量</p>
+</li>
+<li>
+<p><span class="arithmatex">\(\forall x\forall yA\)</span>和<span class="arithmatex">\(\exists x\exists yA\)</span>中，xy互换不改变真值；但<span class="arithmatex">\(\forall x\exists yA\)</span>和<span class="arithmatex">\(\exists x\forall yA\)</span>中，xy互换可能改变真值</p>
+</li>
+</ul>
+<h3 id="_10">一阶逻辑公式的分类</h3>
+<ul>
+<li>
+<p>（定义3.10）对于任意解释、任意个体变量指派函数，如果公式都为真则它是<strong>永真式</strong>或<strong>普遍有效式</strong>，如果公式为假则它是<strong>矛盾式</strong>，如果公式可以为真则它<strong>可满足</strong></p>
+</li>
+<li>
+<p>（定义3.11）用任意一阶逻辑公式替换命题逻辑公式的所有命题变量，得到的新一阶逻辑公式称为该命题逻辑公式的<strong>替换实例</strong></p>
+</li>
+</ul>
+<blockquote>
+<p>点题了：一阶逻辑是对原子命题结构的进一步拆分</p>
+</blockquote>
+<ul>
+<li>（定理3.2）若命题逻辑公式是永真式，则它的替换实例也是永真式。矛盾式也类似</li>
+</ul>
+<blockquote>
+<p>显然，如果可以看出一阶公式实际上是命题公式的替换实例，并且这个命题公式是永真式/矛盾式，那这个一阶公式是永真式/矛盾式就好判断了</p>
+</blockquote>
+<h2 id="_11">一阶逻辑的等值演算</h2>
+<ul>
+<li>（定义3.12）如果一阶逻辑公式A和B在非逻辑符号集的任意解释及任意个体变量指派函数下都有相同的真值，则称A和B <strong>逻辑等值</strong>，简称<strong>等值</strong>，记为<span class="arithmatex">\(A\equiv B\)</span>。通常也称<span class="arithmatex">\(A\equiv B\)</span>为<strong>逻辑等值式</strong></li>
+<li>（定理3.3）<span class="arithmatex">\(A\equiv B\)</span>当且仅当<span class="arithmatex">\(A\leftrightarrow B\equiv 1\)</span></li>
+<li>（定理3.4）设一阶逻辑公式B是公式A的子公式，且公式B与B'逻辑等值，则使用B'置换公式A中的一处或多处子公式B得到的公式A'与A也逻辑等值。<blockquote>
+<p>也就是说等值演算时可以将等值替换作用于子公式</p>
+</blockquote>
+</li>
+<li>一个公式在个体变量指派函数下的真值只与这个个体变量指派函数对该公式中自由变量的指派有关</li>
+<li>一阶逻辑的基本逻辑等值式可分为两类：一类是命题逻辑公式的基本逻辑等值式的替换实例，另一类是量词公式的等值式模式，见下表</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">名称</th>
+<th align="center">基本等值式模式</th>
+<th align="center">成立条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">消除量词等值式</td>
+<td align="center"><span class="arithmatex">\(\begin{array}\forall xA(x)\equiv A(a_1)\wedge A(a_2)\wedge\cdots\wedge A(a_n)\\\exists xA(x)\equiv A(a_1)\vee A(a_2)\vee\cdots\vee A(a_n)\end{array}\)</span></td>
+<td align="center">个体域是有限集</td>
+</tr>
+<tr>
+<td align="center">量词否定等值式</td>
+<td align="center"><span class="arithmatex">\(\begin{array}\neg\forall xA(x)\equiv\exists x\neg A(x)\\\neg\exists xA(x)\equiv\forall x\neg A(x)\end{array}\)</span></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">量词辖域扩张收缩</td>
+<td align="center"><span class="arithmatex">\(\begin{array}\forall x(A(x)\vee B)\equiv \forall xA(x)\vee B\\\forall x(A(x)\wedge B)\equiv \forall xA(x)\wedge B\\\forall x(A(x)\to B)\equiv \exists xA(x)\to B\\\forall x(B\to A(x))\equiv B\to \forall xA(x)\\\exists x(A(x)\vee B)\equiv \exists xA(x)\vee B\\\exists x(A(x)\wedge B)\equiv \exists xA(x)\wedge B\\\exists x(A(x)\to B)\equiv \forall xA(x)\to B\\\exists x(B\to A(x))\equiv B\to \exists xA(x)\end{array}\)</span></td>
+<td align="center">A(x)是含自由变量x的公式，而且x不在公式B中出现</td>
+</tr>
+<tr>
+<td align="center">两次分配等值式</td>
+<td align="center"><span class="arithmatex">\(\begin{array}\forall x(A(x)\wedge B(x))\equiv \forall xA(x)\wedge \forall xB(x)\\\exists x(A(x)\vee B(x))\equiv \exists xA(x)\vee \exists xB(x)\end{array}\)</span></td>
+<td align="center">A(x),B(x)是含自由变量x的公式</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>（定义3.13）如果一阶逻辑公式A具有以下形式：</li>
+</ul>
+<div class="arithmatex">\[Q_1x_1Q_2x_2\cdots Q_kx_kB\]</div>
+<p>则称A是前束范式，其中<span class="arithmatex">\(Q_i(1\le i\le k\)</span>是量词符号，B是不含量词的一阶逻辑公式</p>
+<ul>
+<li>
+<p>每个一阶逻辑公式都有与它逻辑等值的前束范式</p>
+</li>
+<li>
+<p>变换得到前束范式的方法：</p>
+<ol>
+<li>应用约束变量改名规则使得这个公式的每个个体变量符号要么约束出现，要么自由出现，并且每个量词的指示量词都互不相同</li>
+<li>应用量词否定等值式将否定联结词放到量词的后面</li>
+<li>应用量词辖域扩张等值式将量词放到所有逻辑运算符的前面</li>
+</ol>
+</li>
+</ul>
+<h2 id="_12">一阶逻辑的推理理论</h2>
+<ul>
+<li>（定义3.14）<strong>一阶逻辑的推理</strong>与命题逻辑的推理定义类似，也是由条件推出结论，有效的定义也是条件的与蕴含结论是永真式</li>
+<li><strong>论证</strong>的定义与命题逻辑的论证类似</li>
+<li>
+<p>命题逻辑自然推理系统的推理规则也都是一阶逻辑自然推理系统的推理规则（假言推理，假言易位，合取，化简，附加，析取三段论，等值置换），论证构造方法也能用（附加前提法和反证法）。额外加入的内容还有约束变量改名，以及下面的量词公式的推理规则：</p>
+<ul>
+<li>全称例化规则
+    就是说如果<span class="arithmatex">\(\forall A(x)\)</span>可以被替换为<span class="arithmatex">\(A(y)\)</span>，这个道理有点像三段论，比如说所有人都有脑子，我是人，所以我也有脑子（？）不过这里y是个变量，所以要注意替换的变量不能在A(x)里关于该变量的辖域里面，这个看几个例子就明白了<blockquote>
+<p><span class="arithmatex">\(\forall x\exists y (x&gt;y)\implies \exists y (y&gt;y)\)</span>显然是不成立的</p>
+</blockquote>
+</li>
+</ul>
+<p>当然，这里的变量换成常量也成立</p>
+<ul>
+<li>全称泛化规则
+就是说A(y)可以换成<span class="arithmatex">\(\forall xA(x)\)</span>，其中用来替换的x不在A(y)中约束出现且不是A(y)中除了y以外的自由变量</li>
+<li>存在例化规则
+与全称例化规则类似，不过有三点需要注意：一个是只能替换成常量（毕竟是“存在”嘛），一个是不能替换成前面出现过的常量（在其他公式成立的常量不一定能在这个公式成立），还有一个是A(x)只含有自由变量x（比如说：<span class="arithmatex">\(\forall x \exists y(x&gt;y) \implies \exists y (z &gt; y) \implies z &gt; 1\)</span>就错了，毕竟z还是隐含地可以取任意数的）</li>
+<li>存在泛化规则
+把<span class="arithmatex">\(A(c)\)</span>变成<span class="arithmatex">\(\exists xA(x)\)</span>，要求是x不在<span class="arithmatex">\(A(c)\)</span>中出现</li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">名称</th>
+<th align="center">推理规则</th>
+<th align="center">成立条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">全称例化</td>
+<td align="center"><span class="arithmatex">\(\begin{array}\forall x A(x) \over A(y)\\\forall xA(x)\over A(c)\end{array}\)</span></td>
+<td align="center"><span class="arithmatex">\(\begin{array}（1）前一规则的x不在A(x)中任意量词\forall y或\exists y的辖域中自由出现；\\（2）后一规则的c可以是任意个体变量\end{array}\)</span></td>
+</tr>
+<tr>
+<td align="center">全称泛化</td>
+<td align="center"><span class="arithmatex">\(A(y)\over\forall xA(x)\)</span></td>
+<td align="center"><span class="arithmatex">\(\begin{array}（1）x不在A(y)中约束出现且不是在A(y)中除y以外的其他自由变量；\\（2）y不是前提公式或在消除附加前提之前附加前提公式的自由变量\end{array}\)</span></td>
+</tr>
+<tr>
+<td align="center">存在例化</td>
+<td align="center"><span class="arithmatex">\(\exists xA(x)\over A(c)\)</span></td>
+<td align="center"><span class="arithmatex">\(\begin{array}（1）替换x的个体变量c在前提、A(x)及此前的论证公式序列中都不出现；\\（2）A(x)只含有自由变量x，没有其他自由变量\end{array}\)</span></td>
+</tr>
+<tr>
+<td align="center">存在泛化</td>
+<td align="center"><span class="arithmatex">\(A(c)\over \exists xA(x)\)</span></td>
+<td align="center"><span class="arithmatex">\(替换c的x不在A(c)中出现\)</span></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>量词例化规则只能针对辖域是整个公式的量词使用，所以如果想要对复杂公式例化，需要先化成前束范式，再从外到里例化</p>
+</blockquote>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../2-%E5%91%BD%E9%A2%98%E9%80%BB%E8%BE%91/" class="btn btn-neutral float-left" title="命题逻辑"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../4-%E8%AF%81%E6%98%8E%E6%96%B9%E6%B3%95/" class="btn btn-neutral float-right" title="证明方法">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../2-%E5%91%BD%E9%A2%98%E9%80%BB%E8%BE%91/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../4-%E8%AF%81%E6%98%8E%E6%96%B9%E6%B3%95/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../javascripts/mathjax.js" defer></script>
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=es6" defer></script>
+      <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
