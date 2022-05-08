@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>函数 - 咩咩的笔记</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "\u51fd\u6570";
+        var mkdocs_page_input_path = "\u79bb\u6563\u6570\u5b66\\7-\u51fd\u6570.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> 咩咩的笔记
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">主页</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">笔记</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">离散数学</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../2-%E5%91%BD%E9%A2%98%E9%80%BB%E8%BE%91/">命题逻辑</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../3-%E4%B8%80%E9%98%B6%E9%80%BB%E8%BE%91/">一阶逻辑</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../4-%E8%AF%81%E6%98%8E%E6%96%B9%E6%B3%95/">证明方法</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../5-%E9%9B%86%E5%90%88/">集合</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../6-%E5%85%B3%E7%B3%BB/">关系</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">函数</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#_2">基本知识</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#_3">基本概念</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_4">函数的性质</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_5">函数运算与函数的性质</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">咩咩的笔记</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>笔记 &raquo;</li>
+          <li>离散数学 &raquo;</li><li>函数</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="_1">函数</h1>
+<p>离散数学中的函数强调其建立了两个几何元素之间的某种对应</p>
+<h2 id="_2">基本知识</h2>
+<h3 id="_3">基本概念</h3>
+<ul>
+<li>
+<p>（定义7.1）集合A到B的<strong>函数</strong>，记为<span class="arithmatex">\(f:A\to B\)</span>，是笛卡尔积<span class="arithmatex">\(A\times B\)</span>的子集，且满足对任意<span class="arithmatex">\(a\in A\)</span>都有且仅有唯一的<span class="arithmatex">\(b\in B\)</span>使得<span class="arithmatex">\(\langle a,b\rangle\in f\)</span>。由于b存在且唯一，因此记为<span class="arithmatex">\(b=f(a)\)</span>，并称b是a在函数f下的<strong>像</strong>，而a是b在函数f下的的<strong>原像</strong>。上下文明确时可以将f省略而直接说b是a的像/a是b的原像。</p>
+</li>
+<li>
+<p>（定义7.2）对于函数<span class="arithmatex">\(f:A\to B\)</span>，称A是f的<strong>定义域</strong>或简称<strong>域</strong>，B是f的<strong>陪域</strong>；定义<span class="arithmatex">\(S\subseteq A\)</span>在<span class="arithmatex">\(f\)</span>下的<strong>像集</strong>为<span class="arithmatex">\(f(S)=\{y\in B\mid\exists x\in S,y=f(x)\}\subseteq B\)</span>，<span class="arithmatex">\(T\subseteq B\)</span>在<span class="arithmatex">\(f\)</span>下的<strong>逆像集</strong>为<span class="arithmatex">\(f^{-1}(T)\)</span>；特别的，称f(A)是f的<strong>值域</strong>，记为<strong>ran(f)</strong></p>
+</li>
+<li>
+<p>常见函数</p>
+<ol>
+<li>以空集为定义域的函数称为<strong>空函数</strong></li>
+<li>任意非空集A上的恒等关系<span class="arithmatex">\(\Delta_A\)</span>称为A的<strong>恒等函数</strong>，记作<strong>id</strong><span class="arithmatex">\(_A\)</span></li>
+<li>设U是全集，S是U的子集，定义S上的<strong>特征函数</strong><span class="arithmatex">\(X_s:U\to 2,2=\{0,1\}\)</span>，若x在S中则<span class="arithmatex">\(X_s(x)=1\)</span>，否则<span class="arithmatex">\(X_s(x)=0\)</span></li>
+<li>设R是非空集A上的等价关系，定义<strong>自然函数</strong><span class="arithmatex">\(\rho:A\to A/R,\rho(a)=[a]_R\)</span></li>
+<li>设<span class="arithmatex">\((A,\preceq)\)</span>和<span class="arithmatex">\((B,\preccurlyeq)\)</span>是两个偏序集，定义函数<span class="arithmatex">\(f:A\to B\)</span>的<strong>单调递增</strong>性质指对A中的任意两个元素a,b，如果<span class="arithmatex">\(a\preceq b\)</span>则<span class="arithmatex">\(f(a)\preccurlyeq f(b)\)</span></li>
+</ol>
+</li>
+<li>
+<p>函数又称<strong>映射</strong>，符合定义7.1的函数称为<strong>全函数</strong>，如果存在A中的某个元素无法对应到B中的元素，则这种函数称为<strong>偏函数</strong>。本书不讨论偏函数。</p>
+</li>
+</ul>
+<h3 id="_4">函数的性质</h3>
+<ul>
+<li>
+<p>设<span class="arithmatex">\(f:A\to B\)</span>是函数</p>
+<ol>
+<li>如果<span class="arithmatex">\(\forall x,y\in A,f(x)=f(y)\to x=y\)</span>，也就是说B中每个元素至多对应A中的一个元素，则f是<strong>单函数</strong>（单射）</li>
+<li>如果<span class="arithmatex">\(ran(f)=B\)</span>，也就是说B中的每个元素至少对应A中的一个元素，则f是<strong>满函数</strong>（满射）</li>
+<li>如果f既单射又满射，则f是<strong>双函数</strong>（双射）<blockquote>
+<p>只有A的元素数量大于等于B，函数才可能是满射，A的元素数量小于等于B函数才可能是单射，A的元素等于B，函数才可能是双射</p>
+</blockquote>
+</li>
+</ol>
+</li>
+<li>
+<p>多元函数可以看做A是有序对集合的函数，有序对的尖括号在无歧义时省略</p>
+</li>
+</ul>
+<h3 id="_5">函数运算与函数的性质</h3>
+<p>集合运算对函数不适用，所以函数运算主要有复合和求逆</p>
+<ul>
+<li>
+<p>（定义7.4）函数<span class="arithmatex">\(f:A\to B\)</span>和<span class="arithmatex">\(g:B\to C\)</span>的<strong>复合</strong>，记为<span class="arithmatex">\(g\circ f\)</span>，定义为<span class="arithmatex">\(\forall x\in A,(g\circ f)(x)=g(f(x))\)</span></p>
+<blockquote>
+<p>函数复合运算等价于关系复合运算</p>
+</blockquote>
+</li>
+<li>
+<p>（定理7.1）</p>
+<ol>
+<li>函数复合满足结合律：设函数<span class="arithmatex">\(f:A\to B,g:B\to C,h:C\to D\)</span>，有<span class="arithmatex">\(h\circ(g\circ h)=(h\circ g)\circ f\)</span></li>
+<li>恒等关系是函数复合的单位元：<span class="arithmatex">\(id_B\circ f=f\circ id_A\)</span></li>
+</ol>
+</li>
+<li>
+<p>（定理7.2）函数复合保持单射、满射和双射的性质</p>
+</li>
+<li>
+<p>（定义7.5）设<span class="arithmatex">\(f:A\to B\)</span>是双函数，则它的逆关系<span class="arithmatex">\(f^{-1}\)</span>也是函数，称为f的<strong>逆函数</strong>或<strong>反函数</strong></p>
+</li>
+<li>
+<p>（定理7.3）函数<span class="arithmatex">\(f:A\to B\)</span>是双函数当且仅当存在函数<span class="arithmatex">\(g:B\to A\)</span>是的<span class="arithmatex">\(g\circ f=id_A\)</span>且<span class="arithmatex">\(f\circ g = id_B\)</span>，也就是说当且仅当其存在逆函数</p>
+</li>
+<li>
+<p>（定义7.6）设函数<span class="arithmatex">\(f:A\to B\)</span>，若函数<span class="arithmatex">\(g:B\to A\)</span>满足<span class="arithmatex">\(g\circ f=id_A\)</span>则g是f的<strong>左逆</strong>，若函数<span class="arithmatex">\(g:B\to A\)</span>满足<span class="arithmatex">\(f\circ g=id_B\)</span>则g是f的<strong>右逆</strong></p>
+</li>
+<li>
+<p>（定理7.4）设函数<span class="arithmatex">\(f:A\to B\)</span>且A非空，f是单函数当且仅当f存在左逆，f是满函数当且仅当f存在右逆</p>
+</li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../6-%E5%85%B3%E7%B3%BB/" class="btn btn-neutral float-left" title="关系"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../6-%E5%85%B3%E7%B3%BB/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../javascripts/mathjax.js" defer></script>
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=es6" defer></script>
+      <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

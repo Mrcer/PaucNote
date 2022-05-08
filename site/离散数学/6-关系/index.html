@@ -94,11 +94,13 @@
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#_16">等价关系</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#_17"></a>
+    <li class="toctree-l4"><a class="reference internal" href="#_17">偏序关系</a>
     </li>
         </ul>
     </li>
     </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../7-%E5%87%BD%E6%95%B0/">函数</a>
                 </li>
     </ul>
                   </li>
@@ -361,16 +363,78 @@
 <li>（定义6.13）设<span class="arithmatex">\(A\)</span>是一个非空集合，<span class="arithmatex">\(F\)</span>是一个集合族，其中的每个几何都是<span class="arithmatex">\(A\)</span>的子集。说集合族<span class="arithmatex">\(F\)</span>是<span class="arithmatex">\(A\)</span>的<strong>划分</strong>，如果它满足：<ol>
 <li><span class="arithmatex">\(F\)</span>中的集合均不为空集</li>
 <li><span class="arithmatex">\(F\)</span>中的任意两个集合交集为空</li>
-<li><span class="arithmatex">\(F\)</span></li>
+<li><span class="arithmatex">\(F\)</span>的广义并是A
+并称<span class="arithmatex">\(F\)</span>中的每个集合是这个划分的一个<strong>划分块</strong></li>
 </ol>
 </li>
+<li>（定理6.19）非空集合A上的等价关系与它的划分有一一对应关系，即：A关于一个等价关系的商集是A的划分；A的一个划分所导出的“在同一划分块”关系是等价关系。</li>
 </ul>
-<h3 id="_17"></h3>
+<h3 id="_17">偏序关系</h3>
+<ul>
+<li>
+<p>（定义6.14）设R是非空集A上的关系，如果R是自反的、反对称的和传递的关系，则称R为<strong>偏序关系</strong>，通常简称偏序关系R为偏序，用符号<span class="arithmatex">\(\preceq\)</span>表示</p>
+<blockquote>
+<p>另外，也称反自反且传递的关系为<strong>严格序</strong>，严格序必然是反对称的</p>
+</blockquote>
+</li>
+<li>
+<p>（定义6.15）若<span class="arithmatex">\(\preceq\)</span>是非空集A上的偏序关系，则称<span class="arithmatex">\((A,\preceq)\)</span>是<strong>偏序集</strong>。在上下文明确的情况下（例如，我们总是将A的偏序记为<span class="arithmatex">\(\preceq\)</span>），直接称A是偏序集</p>
+<blockquote>
+<p>偏序集就像内积空间，本质上还是集合A，只不过在其上定义了偏序关系</p>
+</blockquote>
+<p>对A的任意两个元素a,b，若有<span class="arithmatex">\(a\preceq b\)</span>或<span class="arithmatex">\(b\preceq a\)</span>，则称a和b是<strong>可比的</strong>，否则就是<strong>不可比</strong>的。如果A中的任意两个元素都可比，则称A为<strong>全序</strong>或<strong>线序</strong>
+对A的任意两个元素a,b，若<span class="arithmatex">\(a\preceq b\)</span>，则称a <strong>小于或等于</strong> b，也称b <strong>大于或等于</strong> a。若<span class="arithmatex">\(a\preceq b\)</span>且<span class="arithmatex">\(a\neq b\)</span>，则称a <strong>小于</strong> b，也称b <strong>大于</strong> a。
+对A的任意两个元素a,b，若<span class="arithmatex">\(a\preceq b\)</span>，且不存在c使得<span class="arithmatex">\(a\preceq c\)</span>且<span class="arithmatex">\(c\preceq b\)</span>，则称b<strong>覆盖</strong>a</p>
+</li>
+<li>
+<p>偏序图可以用<strong>哈斯图</strong>来描述。哈斯图是一种简化的关系图，从关系图出发，简化过程如下：</p>
+<ol>
+<li>去掉环</li>
+<li>去掉非覆盖关系的边</li>
+<li>调整顶点位置，使得覆盖元素总在被覆盖元素上方，并将有向边绘制为无向边</li>
+</ol>
+</li>
+<li>
+<p>（定义6.16）设<span class="arithmatex">\((A,\preceq)\)</span>是偏序集。</p>
+<ol>
+<li>a是A的<strong>极大元</strong>当且仅当<span class="arithmatex">\(\forall b\in A(a\preceq b \to b=a)\)</span></li>
+<li>a是A的<strong>极小元</strong>当且仅当<span class="arithmatex">\(\forall b\in A(b\preceq a \to b=a)\)</span></li>
+<li>a是A的<strong>最大元</strong>当且仅当<span class="arithmatex">\(\forall b\in A(b\preceq a)\)</span></li>
+<li>a是A的<strong>最小元</strong>当且仅当<span class="arithmatex">\(\forall b\in A(a\preceq b)\)</span><blockquote>
+<p>“极”不要求和所有元素都可比，“最”则要求和所有元素都可比</p>
+</blockquote>
+</li>
+</ol>
+</li>
+<li>
+<p>（定理6.20）对于偏序集<span class="arithmatex">\((A,\preceq)\)</span>，设<span class="arithmatex">\(a\in A\)</span></p>
+<ol>
+<li>若a是A的最大元/最小元，则a也是A的极大元/极小元</li>
+<li>若A是全序的，且a是A的极小元/极大元，则a也是A的最大元/最小元</li>
+</ol>
+</li>
+<li>
+<p>（定理6.21）最大元和最小元存在则唯一</p>
+</li>
+<li>
+<p>（定义6.17）设<span class="arithmatex">\((A,\preceq)\)</span>是偏序集，<span class="arithmatex">\(a\in A, S\subseteq A\)</span>。</p>
+<ol>
+<li>a是S的<strong>上界</strong>当且仅当<span class="arithmatex">\(\forall b\in S(b\preceq a)\)</span>（a大于等于S中的任意元素）</li>
+<li>a是S的<strong>下界</strong>当且仅当<span class="arithmatex">\(\forall b\in S(a\preceq b)\)</span></li>
+<li>a是S的<strong>上确界</strong>当且仅当a是S的上界的最小元</li>
+<li>a是S的<strong>下确界</strong>当且仅当a是S的下界的最大元</li>
+</ol>
+</li>
+<li>
+<p>（定理6.22）上确界和下确界存在则唯一</p>
+</li>
+</ul>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
         <a href="../5-%E9%9B%86%E5%90%88/" class="btn btn-neutral float-left" title="集合"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../7-%E5%87%BD%E6%95%B0/" class="btn btn-neutral float-right" title="函数">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -395,6 +459,8 @@
     
       <span><a href="../5-%E9%9B%86%E5%90%88/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
+    
+      <span><a href="../7-%E5%87%BD%E6%95%B0/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
