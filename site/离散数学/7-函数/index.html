@@ -70,6 +70,16 @@
     </li>
         </ul>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_6">函数的增长与算法效率分析</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#_7">函数的增长</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_8">算法效率分析基础</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_9">算法复杂度基础知识</a>
+    </li>
+        </ul>
+    </li>
     </ul>
                 </li>
     </ul>
@@ -173,6 +183,100 @@
 <li>
 <p>（定理7.4）设函数<span class="arithmatex">\(f:A\to B\)</span>且A非空，f是单函数当且仅当f存在左逆，f是满函数当且仅当f存在右逆</p>
 </li>
+</ul>
+<h2 id="_6">函数的增长与算法效率分析</h2>
+<h3 id="_7">函数的增长</h3>
+<ul>
+<li>（定义7.12）设f,g是两个数集上的函数，称f<strong>是O(g)</strong>，记为<span class="arithmatex">\(f\in O(g)\)</span>，如果存在常数<span class="arithmatex">\(C&gt;0\)</span>和<span class="arithmatex">\(k&gt;0\)</span>，使得当<span class="arithmatex">\(x&gt;k\)</span>时总有<span class="arithmatex">\(|f(x)\leq C|g(x)|\)</span>，这时常数C和k称为“函数f是O(g)”的见证</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note<p><span class="arithmatex">\(O(g)\)</span>其实是函数的集合</p>
+</p>
+</div>
+<ul>
+<li>（定理7.14）若f是O(g)，g是O(h)，则f是O(h)</li>
+<li>（引理7.15）定义函数<span class="arithmatex">\(max(f,g)(x)=max(|f(x)|,|g(x)|)\)</span>，则当函数f和g都为O(h)时，max(f,g)也是O(h)</li>
+<li>（定理7.16）若<span class="arithmatex">\(f_1\)</span>是<span class="arithmatex">\(O(g_1)\)</span>，<span class="arithmatex">\(f_2\)</span>是<span class="arithmatex">\(O(g_2)\)</span>，则<span class="arithmatex">\(f_1+f_2\)</span>是<span class="arithmatex">\(O(max(g_1,g_2))\)</span></li>
+<li>（推论7.17）若<span class="arithmatex">\(f_1\)</span>是<span class="arithmatex">\(O(g)\)</span>，<span class="arithmatex">\(f_2\)</span>是<span class="arithmatex">\(O(g)\)</span>，则<span class="arithmatex">\(f_1+f_2\)</span>是<span class="arithmatex">\(O(g)\)</span></li>
+<li>（定理7.18）若<span class="arithmatex">\(f_1\)</span>是<span class="arithmatex">\(O(g_1)\)</span>，<span class="arithmatex">\(f_2\)</span>是<span class="arithmatex">\(O(g_2)\)</span>，则<span class="arithmatex">\(f_1\dot f_2\)</span>是<span class="arithmatex">\(O(g_1\dot g_2)\)</span></li>
+<li>（定义7.19）设f,g是两个数集上的函数，称f<strong>是</strong><span class="arithmatex">\(\Omega(g)\)</span>，记为<span class="arithmatex">\(f\in \Omega(g)\)</span>，如果存在常数<span class="arithmatex">\(C&gt;0\)</span>和<span class="arithmatex">\(k&gt;0\)</span>，使得当<span class="arithmatex">\(x&gt;k\)</span>时总有<span class="arithmatex">\(|f(x)\geq C|g(x)|\)</span>；称f是<span class="arithmatex">\(\Theta(g)\)</span>，记为<span class="arithmatex">\(f\in\Theta(g)\)</span>，如果<span class="arithmatex">\(f\in O(g)\)</span>并且<span class="arithmatex">\(f\in \Omega(g)\)</span>；如果f是<span class="arithmatex">\(\Theta(g)\)</span>，通常称f和g（在函数增长方面）有相同的<strong>阶</strong></li>
+<li>（定理7.19）n次多项式是<span class="arithmatex">\(\Theta(x^n)\)</span>的</li>
+<li>（定理7.20）若<span class="arithmatex">\(f_1\)</span>是<span class="arithmatex">\(O(g_1)\)</span>，<span class="arithmatex">\(f_2\)</span>是<span class="arithmatex">\(\Omega(g_2)\)</span>，且对于任意x，<span class="arithmatex">\(f_2(x)\neq 0\)</span>，则<span class="arithmatex">\(f_1/f_2\)</span>是<span class="arithmatex">\(O(g_1/g_2)\)</span></li>
+</ul>
+<h3 id="_8">算法效率分析基础</h3>
+<ul>
+<li>算法效率分为<strong>时间效率（时间复杂度）</strong>和<strong>空间效率（空间复杂度）</strong></li>
+<li>算法效率分析对不同的输入分<strong>最坏情况</strong>、<strong>最好情况</strong>和<strong>平均情况</strong></li>
+<li>时间效率分析框架<ol>
+<li>确定哪个或哪些算法输入作为效率分析的依据，并确定如何度量输入规模</li>
+<li>确定算法的基本操作</li>
+<li>分别研究算法关于不同输入对需要执行的基本操作次数的函数的上界/下界</li>
+</ol>
+</li>
+</ul>
+<h3 id="_9">算法复杂度基础知识</h3>
+<ul>
+<li>常见的算法复杂度分类及典型算法</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>复杂度</th>
+<th>名称</th>
+<th>可能的典型算法例子</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(\Theta(1)\)</span></td>
+<td>常数</td>
+<td>不包括循环和递归的算法</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\Theta(\log n)\)</span></td>
+<td>对数</td>
+<td>二分查找</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\Theta(n)\)</span></td>
+<td>线性</td>
+<td>线性查找</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\Theta(n\log n)\)</span></td>
+<td>线性对数</td>
+<td>许多分治算法</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\Theta(n^2)\)</span></td>
+<td>平方</td>
+<td>二重循环</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\Theta(n^3)\)</span></td>
+<td>立方</td>
+<td>三重循环</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\Theta(n^b)\)</span></td>
+<td>多项式</td>
+<td>基于逻辑积计算传递闭包</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\Theta(b^n)\)</span></td>
+<td>指数</td>
+<td>求幂集</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\Theta(n!)\)</span></td>
+<td>阶乘</td>
+<td>求所有排列组合</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>通常将最坏情况下存在复杂度为多项式的算法进行求解的问题称为<strong>易解问题</strong>，否则称为<strong>非易解问题</strong>；不可计算的问题称为<strong>不可解问题</strong></li>
+<li>易解问题又称为<strong>N问题</strong>，在多项式复杂度内能判断一个候选解是否为真解的问题称为<strong>NP问题</strong>，<strong>NP完全问题（NPC问题）</strong>是所有NP问题都可以被归结为该问题的问题。命题逻辑公式的可满足性问题是一个NPC问题</li>
 </ul>
               
             </div>
