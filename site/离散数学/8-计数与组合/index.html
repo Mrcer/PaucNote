@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>计数与组合 - 咩咩的笔记</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "\u8ba1\u6570\u4e0e\u7ec4\u5408";
+        var mkdocs_page_input_path = "\u79bb\u6563\u6570\u5b66\\8-\u8ba1\u6570\u4e0e\u7ec4\u5408.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> 咩咩的笔记
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">主页</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">笔记</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">离散数学</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../2-%E5%91%BD%E9%A2%98%E9%80%BB%E8%BE%91/">命题逻辑</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../3-%E4%B8%80%E9%98%B6%E9%80%BB%E8%BE%91/">一阶逻辑</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../4-%E8%AF%81%E6%98%8E%E6%96%B9%E6%B3%95/">证明方法</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../5-%E9%9B%86%E5%90%88/">集合</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../6-%E5%85%B3%E7%B3%BB/">关系</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../7-%E5%87%BD%E6%95%B0/">函数</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">计数与组合</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#_2">组合计数的基本原理</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#_3">加减乘除</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_4">容斥原理</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_5">鸽笼原理</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">咩咩的笔记</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>笔记 &raquo;</li>
+          <li>离散数学 &raquo;</li><li>计数与组合</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="_1">计数和组合</h1>
+<h2 id="_2">组合计数的基本原理</h2>
+<h3 id="_3">加减乘除</h3>
+<ul>
+<li>记集合S的元素数量为|S|</li>
+<li>（定义8.1）<strong>加法原理</strong>：若集合S有划分<span class="arithmatex">\(F=\{S_1,\cdots S_n\)</span>，则</li>
+</ul>
+<div class="arithmatex">\[|S|=|S_1|+\cdots+|S_n|\]</div>
+<blockquote>
+<p>不重不漏地分类，简化元素数量运算
+* （定义8.2）<strong>乘法原理</strong>：若集合S的每个元素都是个元素构成的序列（n元组）<span class="arithmatex">\(\langle s_1,\cdots,s_n\rangle\)</span>，每个元素<span class="arithmatex">\(s_i\)</span>的可，能取值有<span class="arithmatex">\(m_i\)</span>种，且对任意<span class="arithmatex">\(i&lt; n\)</span>无论<span class="arithmatex">\(s_i\)</span>取<span class="arithmatex">\(m_i\)</span>种值的哪个值，<span class="arithmatex">\(s_{i+1}\)</span>都有<span class="arithmatex">\(m_{i+1}\)</span>种可能的取值，则</p>
+</blockquote>
+<div class="arithmatex">\[\mid A_1\times\cdots\times A_n\mid =m_1\times\cdots\times m_n\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note<p>注意满足乘法原理的集合，序列前一个元素与后一个元素既有一定<strong>独立性</strong>又可能有一定<strong>相关性</strong>，也就是说前一个元素选择不同，后一个元素可选的值可能不同（相关性），但可选值的数量一定相同（独立性）</p>
+</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note<p>应用乘法原理划分任务应优先考虑约束条件多的子任务，并保证后续任务的完成方法数不依赖于这个任务的完成方法</p>
+</p>
+</div>
+<ul>
+<li>（定义8,3）<strong>减法原理</strong>：对于全集U
+和他的子集S，有</li>
+</ul>
+<div class="arithmatex">\[|S|=|U|-|\bar S|=|U|-|U-S|\]</div>
+<ul>
+<li>（定义8.4）<strong>除法原理</strong>：若集合S和集合T之间存在满函数<span class="arithmatex">\(f:S\to T\)</span>，且T的每个元素在f下都恰好有k个原像，则</li>
+</ul>
+<div class="arithmatex">\[|T|=|S|/k\]</div>
+<ul>
+<li>（定义8.5）<strong>一一对应原理</strong>：如果有限集合S和集合T之间存在双函数，这他们有相同的元素个数<blockquote>
+<p>我觉得这是个定理。。</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="_4">容斥原理</h3>
+<p>以下集合都默认为有穷集合</p>
+<ul>
+<li>（引理8.1）<span class="arithmatex">\(|A-B|=|A|-|A\cap B|\)</span></li>
+<li>（定理8.2）<strong>两集合容斥原理</strong>：</li>
+</ul>
+<div class="arithmatex">\[|A\cup B|=|A|+|B|-|A\cap B|\]</div>
+<ul>
+<li>（推论8.3）<strong>三集合容斥原理</strong>：</li>
+</ul>
+<div class="arithmatex">\[|A\cup B\cup C|=|A|+|B|+|C|-|A\cap B|-|A\cap C|-|B\cap C|+|A\cap B\cap C|\]</div>
+<blockquote>
+<p>三集合容斥原理推导的基本思路是将<span class="arithmatex">\(A\cup B\)</span>看作一个集合来运用两集合容斥原理展开，更多集合的容斥原理可以以此类推</p>
+</blockquote>
+<h3 id="_5">鸽笼原理</h3>
+<ul>
+<li>（定理8.4）<strong>鸽笼原理</strong>或<strong>抽屉原理</strong>：设k是正整数，将k＋1或更多只鸽子关到k个鸽笼里，至少有一个鸽笼里有两个或更多只鸽子</li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../7-%E5%87%BD%E6%95%B0/" class="btn btn-neutral float-left" title="函数"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../7-%E5%87%BD%E6%95%B0/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../javascripts/mathjax.js" defer></script>
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=es6" defer></script>
+      <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

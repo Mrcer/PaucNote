@@ -10,7 +10,7 @@ nav:
       - 集合: '离散数学/5-集合.md'
       - 关系: '离散数学/6-关系.md'
       - 函数: '离散数学/7-函数.md'
-
+      - 计数与组合: '离散数学/8-计数与组合.md'
 theme:
   name: readthedocs
   local: zh_CN
