@@ -90,6 +90,8 @@
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#_13">线性递推关系式求解</a>
     </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_14">分治算法与递推关系式</a>
+    </li>
         </ul>
     </li>
     </ul>
@@ -299,7 +301,7 @@
 <h2 id="_11">递推关系式</h2>
 <h3 id="_12">技术问题的递推关系式建模</h3>
 <ul>
-<li>（定义8.9）<strong>递推关系式</strong>是用序列中某些前面的项表示第n想的等式。如果<span class="arithmatex">\(\{a_n\}\)</span>满足一个递推关系式，则称这个序列为他的<strong>解</strong>；如果这个解序列的第n项能使用不含序列中任意项的通项公式表达，则称这个公式为递推关系式的<strong>封闭公式解</strong></li>
+<li>（定义8.9）<strong>递推关系式</strong>是用序列中某些前面的项表示第n项的等式。如果<span class="arithmatex">\(\{a_n\}\)</span>满足一个递推关系式，则称这个序列为他的<strong>解</strong>；如果这个解序列的第n项能使用不含序列中任意项的通项公式表达，则称这个公式为递推关系式的<strong>封闭公式解</strong></li>
 <li>为了得到一个问题的递推关系式，需要使用分治思想，将大问题拆成小问题，再逐个解决小问题；可以用集合语言简化叙述</li>
 </ul>
 <h3 id="_13">线性递推关系式求解</h3>
@@ -323,7 +325,7 @@ a_n=\beta_1r_1^n+\beta_2r_2^n+\cdots+\beta_kr_k^n
 <li>（定理8.20）如果特征方程有重根，设有t个不同的根<span class="arithmatex">\(r_1,r_2,\cdots,r_t\)</span>，每个根对应的重数为<span class="arithmatex">\(m_1,m_2,\cdots,m_t\)</span>，则序列<span class="arithmatex">\(\{a_n\}\)</span>是该递推关系式的解当且仅当：</li>
 </ul>
 <div class="arithmatex">\[
-a_n=\sum_{i=1}^n \sum_{j=1}^{m_i}\beta_{i,j}r_i^n
+a_n=\sum_{i=1}^n \left(\sum_{j=0}^{m_i}\beta_{i,j}x^j\right)r_i^n
 \]</div>
 <ul>
 <li>
@@ -332,7 +334,35 @@ a_n=\sum_{i=1}^n \sum_{j=1}^{m_i}\beta_{i,j}r_i^n
 <li>
 <p>（定理8.21）如果<span class="arithmatex">\(\{a_n^{(p)}\}\)</span>是一个常系数阶线性非齐次递推关系式的特解，那么它的每个解都具有形式<span class="arithmatex">\(\{a_n^{(p)}+a_n^{(h)}\}\)</span>，其中<span class="arithmatex">\(\{a_n^{(h)}\}\)</span>是它的伴随齐次递推关系式的一个解</p>
 </li>
+<li>
+<p>（定理8.22）对于<span class="arithmatex">\(F(n)=s^n\sum_{i=0}^tb_in^i\)</span>（<span class="arithmatex">\(b_i\)</span>和s是常数）的常系数k阶线性非齐次递推关系式，若s不是它的伴随线性齐次递推式的特征方程的根，则<span class="arithmatex">\(a_n^{(p)}=s^n\sum_{i=0}^tp_in^i\)</span>；若s是它的伴随线性齐次递推式的特征方程的m重根，<span class="arithmatex">\(a_n^{(p)}=n^ms^n\sum_{i=0}^tp_in^i\)</span></p>
+</li>
 </ul>
+<h3 id="_14">分治算法与递推关系式</h3>
+<ul>
+<li>
+<p><strong>分治</strong>是设计递归算法的一种重要思路：将规模为n的问题分解为a个与原问题相同但规模减小，例如大致为n/b的小问题，在求解每个小问题后，将小问题的解治理为原来问题的解。</p>
+</li>
+<li>
+<p>归并排序算法<code>F(l,r)</code>：将序列中区间<code>[l,r]</code>的元素进行升序排序</p>
+<ol>
+<li>若<span class="arithmatex">\(l=r\)</span>，则区间只有一个元素，直接返回</li>
+<li>若<span class="arithmatex">\(l\neq r\)</span>，则取中点<span class="arithmatex">\(m=\lfloor (l+r)/2\rfloor\)</span>，对划分出的两个区间排序，即执行<code>F(l,m)</code>和<code>F(m+1,r)</code></li>
+<li>将排好序的两个子区间治理为有序的一个大区间，具体做法是不断从两个子区间未取的数左端选择较小值，依次放入临时区间，数取完后复制回原数组即可完成治理
+对区间长度为n的序列运行上述归并排序，需要执行的复制操作次数<code>f(n)=2f(n/2)+2</code></li>
+</ol>
+</li>
+<li>
+<p>（定理8.23）<strong>主定理</strong>：设实数值函数<span class="arithmatex">\(f(n)\)</span>是递增函数，且满足递推关系式<span class="arithmatex">\(f(n)=af(n/b)+Cn^d\)</span>，其中<span class="arithmatex">\(a\geq1,b\gt1\)</span>是整数，且<span class="arithmatex">\(C\gt0,d\geq0\)</span>是实数，则：</p>
+</li>
+</ul>
+<div class="arithmatex">\[
+f(n)是\left\{ \begin{aligned}
+    &amp;O(n^d)         &amp;,a\lt b^d  \\
+    &amp;O(n^d\log n)   &amp;,a=   b^d  \\
+    &amp;O(n^{\log_b a})&amp;,a\gt b^d
+\end{aligned}\right.
+\]</div>
               
             </div>
           </div><footer>
