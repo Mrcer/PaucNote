@@ -11,6 +11,7 @@ nav:
       - 关系: '离散数学/6-关系.md'
       - 函数: '离散数学/7-函数.md'
       - 计数与组合: '离散数学/8-计数与组合.md'
+      - 图与树: '离散数学/9-图与树.md'
 theme:
   name: readthedocs
   local: zh_CN
@@ -22,6 +23,10 @@ markdown_extensions:
 #  - markdown_katex:
 #      no_inline_svg: True
 #      insert_fonts_css: True
+
+plugins:
+  - search: 
+      indexing: 'titles'
 
 extra_javascript:
   - javascripts/mathjax.js

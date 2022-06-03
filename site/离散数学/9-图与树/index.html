@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>图与树 - 咩咩的笔记</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "\u56fe\u4e0e\u6811";
+        var mkdocs_page_input_path = "\u79bb\u6563\u6570\u5b66\\9-\u56fe\u4e0e\u6811.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> 咩咩的笔记
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">主页</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">笔记</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">离散数学</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../2-%E5%91%BD%E9%A2%98%E9%80%BB%E8%BE%91/">命题逻辑</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../3-%E4%B8%80%E9%98%B6%E9%80%BB%E8%BE%91/">一阶逻辑</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../4-%E8%AF%81%E6%98%8E%E6%96%B9%E6%B3%95/">证明方法</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../5-%E9%9B%86%E5%90%88/">集合</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../6-%E5%85%B3%E7%B3%BB/">关系</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../7-%E5%87%BD%E6%95%B0/">函数</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../8-%E8%AE%A1%E6%95%B0%E4%B8%8E%E7%BB%84%E5%90%88/">计数与组合</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">图与树</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#_2">图的基本概念</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#_3">图的连通性</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">咩咩的笔记</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>笔记 &raquo;</li>
+          <li>离散数学 &raquo;</li><li>图与树</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="_1">图的基础知识</h1>
+<h2 id="_2">图的基本概念</h2>
+<ul>
+<li>
+<p>（定义9.1）<strong>无向图</strong> 是二元组<code>G＝(V,E)</code>，其中V是非空集，称为图的<strong>顶点集</strong>，它的元素称为G的<strong>顶点</strong>(vertex)或节点；E称为图的<strong>边集</strong>，它的元素称为G的<strong>边</strong>(edge)，且每条边<span class="arithmatex">\(e\in E\)</span>，都<strong>关联</strong>两个顶点u和v，这两个顶点称为边e的两个<strong>端点</strong>，也称边e连接这两个端点，通常将边e记为<code>e=(u,v)</code>或<code>e=(v,u)</code></p>
+</li>
+<li>
+<p>（定义9.1）<strong>有向图</strong> 是二元组<code>G＝(V,E)</code>，非空集V是图的顶点集，它的元素称为G的顶点或节点；E是图的边集，它的元素称为G的<strong>有向边</strong>，且每条边都有一个顶点u作为它的<strong>起点</strong>，还有一个顶点v作为它的<strong>终点</strong>，通常记为<code>e=&lt;u,v&gt;</code>。有向图的<strong>基图</strong>是不考虑边的方向而得到的无向图。</p>
+</li>
+<li>
+<p>如果一个图既有有向边又有无向边，则这个图称为<strong>混合图</strong>，本章不研究。</p>
+</li>
+<li>一些特殊的图：<ul>
+<li>含有n个顶点的图称为<strong>n阶图</strong></li>
+<li>不含边的图称为<strong>零图</strong></li>
+<li>只有一个顶点的图称为<strong>平凡图</strong></li>
+<li>顶点集为空集的图称为<strong>空图</strong></li>
+<li>使用符号标记了顶点和边的图称为<strong>标定图</strong></li>
+</ul>
+</li>
+<li>
+<p>（定义9.3）对于图：</p>
+<ul>
+<li>若e连接顶点u,v，则称e <strong>关联</strong> u和v</li>
+<li>若u,v间有边则称u与v <strong>邻接</strong>，若进一步区分u是起点v是终点，则可称u <strong>邻接到</strong> v而v <strong>邻接与</strong> u</li>
+<li>若两条边关联同一个顶点，则称这两边<strong>邻接</strong></li>
+</ul>
+</li>
+<li>
+<p>（定义9.4）对于图：</p>
+<ul>
+<li><strong>环</strong>是关联同一个顶点的边</li>
+<li><strong>重边</strong>是关联顶点相同的两条边（有向边的起点终点要相同）</li>
+<li><strong>简单图</strong>是不含环和重边的图</li>
+</ul>
+</li>
+<li>
+<p>（定义9.5）</p>
+<ul>
+<li>对于无向图 <span class="arithmatex">\(G=(V,E)\)</span> 中的一个顶点<span class="arithmatex">\(v\in V\)</span>，v的<strong>度数</strong>d(v)是关联v的边的条数，其中关联v的环要计算两遍</li>
+<li>对于有向图，进一步区分<strong>入度</strong><span class="arithmatex">\(d^-(v)\)</span>等于以v为终点的有向边条数，<strong>出度</strong><span class="arithmatex">\(d^+(v)\)</span>等于以v为起点的有向边条数，度数等于入度和出度之和</li>
+</ul>
+</li>
+<li>
+<p>无向图中度数为一的顶点称为<strong>悬挂顶点</strong>，与悬挂顶点关联的边称为<strong>悬挂边</strong>。度数为0的顶点称为<strong>孤立顶点</strong></p>
+</li>
+<li>
+<p>（定理9.1）<strong>握手定理</strong>：无向图中所有顶点的度数之和等于边数的两倍<span class="arithmatex">\(\sum_{d\in V}d(v)=2|E|\)</span>；有向图中所有顶点的出度和等于入度和等于边数<span class="arithmatex">\(\sum_{d\in V}d^-(v)=\sum_{d\in V}d^+(v)=|E|\)</span>。</p>
+</li>
+<li>
+<p><strong>奇度顶点</strong>是度数为奇数的顶点，<strong>偶度顶点</strong>是度数为偶数的顶点</p>
+</li>
+<li>（推论9.2）任何图的奇度顶点个数是偶数</li>
+<li>（定义9.6）<strong>最小度</strong> <span class="arithmatex">\(\delta(G)\)</span> 等于度数最小的顶点的度数；<strong>最大度</strong><span class="arithmatex">\(\Delta(G)\)</span>等于度数最大的顶点的度数</li>
+<li>（定义9.7）<strong>k正则图</strong>是任意顶点度数都等于k的图；<strong>完全图</strong>是任意两个顶点间都有边的<em>简单图</em>；特别地，有n个顶点的完全图被称为n阶完全图，记为<span class="arithmatex">\(K_n\)</span></li>
+<li>
+<p>更多特殊的图：</p>
+<ul>
+<li><strong>圈</strong>是按序号首尾相连的简单图</li>
+<li><strong>轮图</strong>是在圈的基础上增加一个邻接所有其他顶点的顶点</li>
+<li><strong>立方体图</strong><span class="arithmatex">\(Q_n\)</span>是具有<span class="arithmatex">\(2^n\)</span>个顶点的图，其中每个顶点可用二进制编号，使得两个顶点有边当且仅当他们的二进制编号只有一位不同</li>
+<li><strong>二部图</strong>是顶点集可被划分为两个部分<span class="arithmatex">\(V_1\)</span>和<span class="arithmatex">\(V_2\)</span>，使得每个部分内的点互不关联的图，二部图也称<strong>偶图</strong>或<strong>二分图</strong>，它对顶点集的划分称为<strong>二部划分</strong>（定义9.8）</li>
+<li><strong>完全二部图</strong>是<span class="arithmatex">\(V_1\)</span>的任意顶点和<span class="arithmatex">\(V_2\)</span>的任意顶点都恰有一边相连的二部图</li>
+</ul>
+</li>
+<li>
+<p>（定义9.9）如果G'=(V',E')的顶点集和边集都是G=(V,E)对应集的子集，则称G'是G的<strong>子图</strong>；特别地，如果V'=V，则称G'是G的<strong>生成子图</strong>；如果子图缺少的边都是因为缺少顶点造成的，也就是<span class="arithmatex">\(E'=\{e\in E | e=(u,v)且u\in V'且v\in V'\}\)</span>，则称G'是G的<strong>导出子图</strong></p>
+</li>
+<li>
+<p>一些对图的操作</p>
+<ul>
+<li><strong>删除顶点集</strong>G-V'：删除包含在V'中的顶点，并移除关联这些顶点的边</li>
+<li><strong>删除边集</strong>G-E'：删除包含在E'中的边</li>
+<li><strong>删除子图</strong>G-G'：删除G在其子图G'中的所有边</li>
+<li><strong>边的收缩</strong>G\e：删除e并合并e关联的两个顶点（合并指的是用新顶点代替原来两个顶点，新顶点关联原来两个顶点关联的所有边）</li>
+<li><strong>添加新边</strong>G+(u,v)：字面意思</li>
+</ul>
+</li>
+<li>n解简单图G的<strong>补图</strong><span class="arithmatex">\(\bar G=K_n-G\)</span></li>
+<li>（定义9.11）对于图<span class="arithmatex">\(G=(V,E)\)</span>和 <span class="arithmatex">\(G'=(V',E')\)</span> ，如果存在双函数 <span class="arithmatex">\(f:V\to V'\)</span> ，满足：对E的任意边<span class="arithmatex">\(e=(u,v)\)</span>，E'存在唯一的边 <span class="arithmatex">\(e'=(f(u),f(v))\)</span> ，而且对E'的任意边 <span class="arithmatex">\(e'=(u',v')\)</span>，E存在唯一的边<span class="arithmatex">\(e=(f^{-1}(u'),f^{-1}(v'))\)</span> ，则称G和G'同构，记为G~G'</li>
+</ul>
+<h3 id="_3">图的连通性</h3>
+<ul>
+<li>
+<p>（定义9.12）对无向图G：</p>
+<ul>
+<li><strong>通路</strong><span class="arithmatex">\(\Gamma=v_0e_1v_1e_2\cdots e_nv_n\)</span>是G的顶点和边的交替序列，且对任意<span class="arithmatex">\(1\leq i\leq n\)</span>有<span class="arithmatex">\(e_i=(v_{i-1},v_i)\)</span>。这时称<span class="arithmatex">\(v_0\)</span>和<span class="arithmatex">\(v_n\)</span>是<span class="arithmatex">\(\Gamma\)</span>的两个端点，n是<span class="arithmatex">\(\Gamma\)</span>的长度。如果还满足<span class="arithmatex">\(v_0=v_n\)</span>，则称<span class="arithmatex">\(\Gamma\)</span>是<strong>回路</strong></li>
+<li><strong>简单通路</strong>或<strong>简单回路</strong>中“简单”指不含重复边</li>
+<li><strong>初级通路</strong>或<strong>初级回路</strong>中“初级”指不含重复顶点</li>
+<li>初级通路又称<strong>路径</strong>，初级回路又称<strong>圈</strong></li>
+</ul>
+</li>
+<li>
+<p>（定义9.13）对于有向图，<strong>有向通路</strong>相当于在无向图的通路基础上加入方向性，其他有向定义类似</p>
+</li>
+<li>（引理9.3）对于有n个顶点的图，若u,v间存在通路，则u,v间一定存在以u,v为端点的长度小于等于n-1的初级通路</li>
+<li>（推论9.4）对于有n个顶点的图，若u存在到其自身的回路，则一定存在从u到其自身的长度小于等于n的初级回路</li>
+<li>（定义9.14）对于无向图G，若u,v间存在通路，则称他们是<strong>可达的</strong>，并约定顶点到其自身是可达的；在V上定义关系<span class="arithmatex">\(\leftrightarrow\subseteq V\times V\)</span>，<span class="arithmatex">\(u\leftrightarrow v\)</span>当且仅当u和v是可达的，则<span class="arithmatex">\(\leftrightarrow\)</span>是等价关系，称V关于<span class="arithmatex">\(\leftrightarrow\)</span>的等价类<span class="arithmatex">\([u]_\leftrightarrow\subseteq V\)</span>导出的子图为G的<strong>连通分支</strong>，一般记G的连通分支数为<span class="arithmatex">\(p(G)\)</span>。若p(G)=1，则称G是<strong>连通无向图</strong>，或连通图。</li>
+<li>（引理9.5）设无向图G(V,E)是简单图，|V|=n，|E|=m。若G是连通图，则<span class="arithmatex">\(m\geq n-1\)</span></li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../8-%E8%AE%A1%E6%95%B0%E4%B8%8E%E7%BB%84%E5%90%88/" class="btn btn-neutral float-left" title="计数与组合"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../8-%E8%AE%A1%E6%95%B0%E4%B8%8E%E7%BB%84%E5%90%88/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../javascripts/mathjax.js" defer></script>
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=es6" defer></script>
+      <script src="https://fastly.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

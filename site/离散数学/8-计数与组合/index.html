@@ -96,6 +96,8 @@
     </li>
     </ul>
                 </li>
+                <li class="toctree-l2"><a class="reference internal" href="../9-%E5%9B%BE%E4%B8%8E%E6%A0%91/">图与树</a>
+                </li>
     </ul>
                   </li>
               </ul>
@@ -310,7 +312,7 @@
 <li>（定理8.19）对于一个常系数k阶线性齐次递推关系式</li>
 </ul>
 <div class="arithmatex">\[
-a_n=c_1a_{n-1}+c_2a_{n-2}+\cdots+c_k+a_{n-k}
+a_n=c_1a_{n-1}+c_2a_{n-2}+\cdots+c_ka_{n-k}
 \]</div>
 <p>其中<span class="arithmatex">\(c_1,c_2,\cdots,c_k\)</span>w为实数，且<span class="arithmatex">\(c_k\neq 0\)</span>。方程</p>
 <div class="arithmatex">\[
@@ -329,15 +331,22 @@ a_n=\sum_{i=1}^n \left(\sum_{j=0}^{m_i}\beta_{i,j}x^j\right)r_i^n
 \]</div>
 <ul>
 <li>
-<p>对于一个常系数k阶线性非齐次递推关系式<span class="arithmatex">\(a_n=c_1a_{n-1}+c_2a_{n-2}+\cdots+c_k+a_{n-k}+F(n)\)</span>，记它的<strong>伴随齐次递推关系式</strong>为<span class="arithmatex">\(a_n=c_1a_{n-1}+c_2a_{n-2}+\cdots+c_k+a_{n-k}\)</span>。要求解非齐次方程，先解不考虑初值条件下伴随齐次递推关系式的解，称为<strong>特解</strong>。</p>
+<p>对于一个常系数k阶线性非齐次递推关系式<span class="arithmatex">\(a_n=c_1a_{n-1}+c_2a_{n-2}+\cdots+c_ka_{n-k}+F(n)\)</span>，记它的<strong>伴随齐次递推关系式</strong>为<span class="arithmatex">\(a_n=c_1a_{n-1}+c_2a_{n-2}+\cdots+c_ka_{n-k}\)</span>。</p>
 </li>
 <li>
-<p>（定理8.21）如果<span class="arithmatex">\(\{a_n^{(p)}\}\)</span>是一个常系数阶线性非齐次递推关系式的特解，那么它的每个解都具有形式<span class="arithmatex">\(\{a_n^{(p)}+a_n^{(h)}\}\)</span>，其中<span class="arithmatex">\(\{a_n^{(h)}\}\)</span>是它的伴随齐次递推关系式的一个解</p>
+<p>（定理8.21）如果<span class="arithmatex">\(\{a_n^{(p)}\}\)</span>是一个常系数线性非齐次递推关系式的特解，那么它的每个解都具有形式<span class="arithmatex">\(\{a_n^{(p)}+a_n^{(h)}\}\)</span>，其中<span class="arithmatex">\(\{a_n^{(h)}\}\)</span>是它的伴随齐次递推关系式的一个解</p>
 </li>
 <li>
 <p>（定理8.22）对于<span class="arithmatex">\(F(n)=s^n\sum_{i=0}^tb_in^i\)</span>（<span class="arithmatex">\(b_i\)</span>和s是常数）的常系数k阶线性非齐次递推关系式，若s不是它的伴随线性齐次递推式的特征方程的根，则<span class="arithmatex">\(a_n^{(p)}=s^n\sum_{i=0}^tp_in^i\)</span>；若s是它的伴随线性齐次递推式的特征方程的m重根，<span class="arithmatex">\(a_n^{(p)}=n^ms^n\sum_{i=0}^tp_in^i\)</span></p>
 </li>
 </ul>
+<div class="admonition note">
+<p class="admonition-title">Note<p>要求解常系数线性非齐次递推关系式：<br />
+1. 求得其伴随齐次递推关系式的解的形式（保留系数），记为通解<br />
+2. 根据定理8.22写出特解形式，将特解代入原递推式比对求出系数<br />
+3. 将特解和通解加起来，用初始条件消去系数</p>
+</p>
+</div>
 <h3 id="_14">分治算法与递推关系式</h3>
 <ul>
 <li>
@@ -368,6 +377,7 @@ f(n)是\left\{ \begin{aligned}
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
         <a href="../7-%E5%87%BD%E6%95%B0/" class="btn btn-neutral float-left" title="函数"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../9-%E5%9B%BE%E4%B8%8E%E6%A0%91/" class="btn btn-neutral float-right" title="图与树">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -392,6 +402,8 @@ f(n)是\left\{ \begin{aligned}
     
       <span><a href="../7-%E5%87%BD%E6%95%B0/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
+    
+      <span><a href="../9-%E5%9B%BE%E4%B8%8E%E6%A0%91/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
