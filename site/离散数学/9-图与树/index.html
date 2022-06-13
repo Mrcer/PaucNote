@@ -68,6 +68,28 @@
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#_3">图的连通性</a>
     </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_4">图的表示与储存</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_5">无向图的遍历</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_6">树的基础知识</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#_7">无向树的定义</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_8">根树的定义</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_9">树的遍历</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_10">带权图及其应用</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#_11">带权图的最短距离</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_12">带权图的最小生成树</a>
+    </li>
         </ul>
     </li>
     </ul>
@@ -229,6 +251,114 @@
 </li>
 <li>
 <p>有向图G是强连通的当且仅当G存在经过每个顶点至少一次的有向回路</p>
+</li>
+</ul>
+<h3 id="_4">图的表示与储存</h3>
+<ul>
+<li>（定义9.20）设G=(V,E)是有向图，其中<span class="arithmatex">\(V=\{v_1,v_2,\cdots,v_n\}\)</span>,<span class="arithmatex">\(E=\{e_1,e_2,\cdots,e_m\}\)</span>。则G的<strong>关联矩阵</strong><span class="arithmatex">\(M=[m_{ij}]\)</span>是<span class="arithmatex">\(n\times m\)</span>的矩阵，对任意的<span class="arithmatex">\(1\leq i\leq n,1\leq j\leq m\)</span>有：</li>
+</ul>
+<div class="arithmatex">\[
+m_{ij}=\left\{
+\begin{aligned}
+&amp;1  &amp;若v_i是e_j的起点\\
+&amp;-1 &amp;若v_i是e_j的终点\\
+&amp;0  &amp;否则
+\end{aligned}
+\right.
+\]</div>
+<p>类似地，无向图G的<strong>关联矩阵</strong><span class="arithmatex">\(M=[m_{ij}]\)</span>定义为：若<span class="arithmatex">\(v_i\)</span>是<span class="arithmatex">\(e_j\)</span>的端点则<span class="arithmatex">\(m_{ij}=1\)</span>，否则<span class="arithmatex">\(m_{ij}=0\)</span></p>
+<blockquote>
+<p>也就是说关联矩阵每一列都是一条边，对应行表示该边是否与某顶点关联等</p>
+</blockquote>
+<ul>
+<li>（定义9.21）设G=(V,E)是有向图，其中<span class="arithmatex">\(V=\{v_1,v_2,\cdots,v_n\}\)</span>。G的<strong>邻接矩阵</strong><span class="arithmatex">\(A=[a_{ij}]\)</span>是<span class="arithmatex">\(n\times n\)</span>的矩阵，对任意<span class="arithmatex">\(1\leq i \leq n\)</span>,<span class="arithmatex">\(1\leq j\leq n\)</span>，有：</li>
+</ul>
+<div class="arithmatex">\[
+a_{ij}=以v_i为起点、v_j为终点的有向边的条数
+\]</div>
+<p>类似地，无向边G的<strong>邻接矩阵</strong><span class="arithmatex">\(A=[a_{ij}]\)</span>定义为：<span class="arithmatex">\(a_{ij}\)</span>是以v_i和v_j为端点的无向边条数。</p>
+<ul>
+<li>
+<p>对G的邻接矩阵A，使用普通的矩阵乘法得到的<span class="arithmatex">\(A^k\)</span>表示G的任意两个顶点之间的长度为k的（有向）通路条数</p>
+</li>
+<li>
+<p>令矩阵<span class="arithmatex">\(B=\sum_{i=1}^{n-1}A^i\)</span>，则B的元素<span class="arithmatex">\(b_{ij}\)</span>给出顶点<span class="arithmatex">\(v_i\)</span>和<span class="arithmatex">\(v_j\)</span>之间长度不超过n的（有向）通路条数。定义<strong>可达矩阵</strong><span class="arithmatex">\(P=[p_{ij}]\)</span>，对角线均为1（顶点到自己总是可达的），其余位置若<span class="arithmatex">\(b_{ij}\geq 1\)</span>则<span class="arithmatex">\(p_{ij}=1\)</span>。</p>
+</li>
+<li>
+<p><strong>邻接表</strong>可以用来表示一个简单有向图或简单无向图。若一个简单有向图有n个顶点，则它的邻接表有n行，每一行给出一个顶点的邻接顶点列表，即以这个顶点为起点的有向边的终点的列表。类似地，如果一个简单无向图有n个顶点，它的邻接表也是n行，每一行给出一个顶点的邻接顶点列表，即以这个顶点为一个端点的无向边的另一个端点的列表。</p>
+</li>
+</ul>
+<h3 id="_5">无向图的遍历</h3>
+<ul>
+<li>图的<strong>遍历</strong>或称<strong>搜索</strong>是指从图的某个顶点出发，沿着一些边访问所有顶点；遍历有两种思路：<strong>深度优先搜索</strong>（先深搜索）和<strong>广度优先搜索</strong>（先广搜索）</li>
+<li>深搜需要用栈（后进先出）S记录已经访问过且需要回溯的顶点序列，用集合T记录所有访问过的顶点。算法从往T和S中加入一个起始点开始，不断地尝试沿着S的栈顶顶点的边找其邻接且不在T的顶点，如果找到了就入栈并将新顶点记录到T中，否则栈顶顶点出栈，这样一直持续到栈被清空；如果图中还有顶点未加入T（非连通图才会出现），则随便找个未加入T的顶点加入T和S重复算法。实际实现中可以用递归算法实现，算法复杂度为<span class="arithmatex">\(O(n^2)\)</span>。</li>
+<li>广搜需要用队列（先进先出）Q记录尚未访问过其所有相邻顶点的顶点，用集合T记录所有访问过的顶点。算法从往T和Q中加入一个起始点开始，不断地从队列中取出顶点并访问其所有邻接顶点，将访问到的未加入T的顶点加入T和Q，如此重复直到队列清空；如果图中还有顶点未加入T就随便选一个未加入T的放入T和Q。算法复杂度为<span class="arithmatex">\(O(n^2)\)</span></li>
+</ul>
+<h2 id="_6">树的基础知识</h2>
+<h3 id="_7">无向树的定义</h3>
+<ul>
+<li>（定义9.22）连通且没有回路的简单无向图称为<strong>无向树</strong>。无向树中度数为1的顶点成为<strong>树叶</strong>，度数大于或等于2的顶点称为<strong>分支点</strong>。只有一个顶点的简单图称为<strong>平凡树</strong>。含有多个无回路的连通分支的简单无向图称为<strong>森林</strong></li>
+<li>（定理9.7、9.8）设简单无向图G有n个顶点m条边，以下命题等价：<ol>
+<li>G是树</li>
+<li>G的任意两个顶点之间存在唯一的通路</li>
+<li>G连通且任意边都是桥</li>
+<li>G无回路，但在任意两个不相邻顶点之间加一条新边，则得到唯一一个且含新边的回路</li>
+<li>G无回路且m=n-1</li>
+<li>G连通且m＝n-1</li>
+</ol>
+</li>
+</ul>
+<h3 id="_8">根树的定义</h3>
+<ul>
+<li>（定义9.23）若一个有向图的基图是树，则称这个图是<strong>有向树</strong>。若有向树T有且仅有一个顶点r的入度为0，则称T是以r为<strong>根</strong>的<strong>根树</strong>。我们也将根树中的顶点称为<strong>节点</strong>。根树中出度为0的顶点称为<strong>叶子</strong>，出度不为0的顶点称为<strong>内部顶点</strong></li>
+<li>（引理9.9）设T=(V,E)是以顶点r为根的根树，且<span class="arithmatex">\(|V|&gt;1\)</span>，则除r以外的顶点入度都为1。进一步，r到任意其他顶点都有唯一的有向通路</li>
+<li>（定义9.24）设T＝(V,E)是根树，u,v是T的两个顶点。若存在有向边<span class="arithmatex">\(e=\langle u,v\rangle\in E\)</span>则称u是v的<strong>父亲</strong>，而v是u的<strong>儿子</strong>；如果顶点u和v有相同的父亲，则称u是v的<strong>兄弟</strong>。若存在u到v的一条有向通路，则称u是v的<strong>祖先</strong>，而v是u的<strong>后代</strong>。T的顶点u及其所有后代顶点导出的T的子图称为T的以u为根的<strong>子树</strong>。设T的根式r，则对T的任意顶点u，从r到u的唯一通路的长度称为u的<strong>层数</strong>。定义T的<strong>高度</strong>是从r到T的叶子的最长通路的长度</li>
+<li>（定义9.25）如果根树T的每个顶点的出度都不大于m，则称T是<strong>m元树</strong>；如果每个顶点的出度不是0就是m，则称T是<strong>满m元树</strong>或<strong>正则m元树</strong>。如果满m元树T的每片叶子的层数都等于树高，则称T是<strong>完全m元树</strong>。如果高度为h的m元树T的每片叶子要么是h，要么是h－1，则称T是<strong>平衡m元树</strong></li>
+<li>如果一棵树的每个顶点的儿子顶点都按照某个顺序排列，则称这棵根树为<strong>有序根树</strong>。有序二元树通常就称为<strong>二元树</strong>或<strong>二叉树</strong>，它的每个顶遍历点的第一个儿子通常称为<strong>左儿子</strong>，第二个儿子通常称为<strong>右儿子</strong>。以左儿子为根的子树称为<strong>左子树</strong>，以右儿子为根的子树称为<strong>右子树</strong>。</li>
+</ul>
+<h3 id="_9">树的遍历</h3>
+<p>树的遍历一般从根开始，可采用先深或先广。</p>
+<ul>
+<li>先广遍历在树中其实就是一层层往下遍历</li>
+<li>先深遍历分前序、中序和后序<ol>
+<li>前序顶点入栈后先执行操作再继续深入</li>
+<li>中序则是入栈后先遍历第一个儿子再执行操作最后遍历其他儿子</li>
+<li>后序是顶点入栈后先遍历完所有儿子（也就是出栈前）再执行操作。</li>
+</ol>
+</li>
+<li>对于抽象语法树，对其进行前序、中序和后序遍历输出可分别得到表达式的<strong>前缀</strong>、<strong>中缀</strong>和<strong>后缀</strong>形式。表达式的前缀形式也称为<strong>波兰记号</strong>，后缀形式也称为<strong>逆波兰记号</strong></li>
+</ul>
+<h2 id="_10">带权图及其应用</h2>
+<h3 id="_11">带权图的最短距离</h3>
+<ul>
+<li>（定义9.26）<strong>带权有向图</strong>就是每条有向边都被赋一个非负实数作为边的权的简单有向图</li>
+<li>（定义9.27）带权有向图的<strong>距离矩阵</strong>是一个n阶方阵，定义类似于可达矩阵，第i行第j列表示第i个顶点到第j个顶点的边的权（若没有边则为正无穷）</li>
+<li>有向路径的<strong>带权同路长度</strong>等于构成通路边的权之和，v到u的最小的带权通路长度最短的通路称为v到u的<strong>最短通路</strong>，该通路长度称为v到u的<strong>最短距离</strong><blockquote>
+<p>在定义9.26简单图和非负边权的条件下，最短通路又被称为<strong>最短路径</strong></p>
+</blockquote>
+</li>
+<li>（定理9.12）若<span class="arithmatex">\(v_1,\cdots,k_{k-1},v_k\)</span>是<span class="arithmatex">\(v_1\)</span>到<span class="arithmatex">\(v_k\)</span>的最短路径，则<span class="arithmatex">\(v_1,\cdots,v_{k-1}\)</span>是<span class="arithmatex">\(v_1\)</span>到<span class="arithmatex">\(v_{k-1}\)</span>的最短路径</li>
+<li>
+<p><strong>最短路径的Djikstra算法</strong><br />
+    定义三个集合或数组：<br />
+        1. S记录尚未求得最短路径的顶点的集合<br />
+        2. U是以顶点编号为下标的数组，<span class="arithmatex">\(u_i\)</span>表示<span class="arithmatex">\(v_1\)</span>到<span class="arithmatex">\(v_i\)</span>的最短距离<br />
+        3. Q是以顶点编号为下标的数组，<span class="arithmatex">\(q_i\)</span>表示<span class="arithmatex">\(v_1\)</span>到<span class="arithmatex">\(v_i\)</span>的最短通路的直接前驱结点编号（也就是到终点前的一个顶点）  </p>
+<p>算法过程：<br />
+    1. 初始化：最开始只有<span class="arithmatex">\(v_1\)</span>已求得最短路，也就是S包含<span class="arithmatex">\(v_1\)</span>以外的所有顶点（为了实现方便，v_1暂时也归入S），<span class="arithmatex">\(u_1=0\)</span>，U的其他项为无穷<br />
+    2. 更新最短路：从S中的顶点中选择其在U中记录的最短距离最小的顶点<span class="arithmatex">\(v_x\)</span>（特别地，第一次更新必然取得<span class="arithmatex">\(v_1\)</span>），将其从S中取出，并利用该顶点中转尝试更新其他顶点的最短路（术语<em>松弛</em>），也就是对于所有尚未确定最短路的顶点<span class="arithmatex">\(v_y\)</span>，如果<span class="arithmatex">\(u_x+d_{xy}&lt;u_y\)</span>，更新<span class="arithmatex">\(u_y\)</span>和<span class="arithmatex">\(q_y\)</span><br />
+    3. 重复过程2，直到S中没有元素</p>
+<p>算法分析：<br />
+1. 该算法可以根据给定的简单带权有向图和某一给定起点，求出该起点到其他任意点的最短路径和对应最短距离<br />
+2. 算法复杂度在不优化的情况下为<span class="arithmatex">\(O(n^2)\)</span><br />
+3. 算法有效性证明思路是对于任意时间点，先证明S中的顶点对应记录的最短路必然是在利用已确定最短路的顶点为中间顶点情况下的最短路（用归纳法），再证明第二步中选出的顶点必然已确定最短路（用反证法）即可</p>
+<h3 id="_12">带权图的最小生成树</h3>
+<ul>
+<li>（定义9.30）若无向树T=(V,E')是连通无向图G=(V,E)的生成子图（顶点集相同，边集是子集），则T是G的<strong>生成树</strong>或<strong>支撑树</strong></li>
+<li>（定义9.31）一个带权连通图G的所有生成树中树枝权值之和最小的生成树称为G的<strong>最小生成树</strong></li>
+<li><strong>Kruskal算法</strong>：不断从G中取出权最小的边加入到生成树中，并保证不构成回路（若构成回路则直接舍弃这条边）。添加n-1次后即可得到一棵最小生成树。</li>
+<li><strong>Prim算法</strong>：先从V中任取一点加入到V‘中，然后从一端点在V‘另一端点在V-V'的边中选择权最小的加入到生成树中，添加n-1次即可得到一棵最小生成树。</li>
+</ul>
 </li>
 </ul>
               
