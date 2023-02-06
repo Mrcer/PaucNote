@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>样本及抽样分布 - 咩咩的笔记</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "\u6837\u672c\u53ca\u62bd\u6837\u5206\u5e03";
+        var mkdocs_page_input_path = "\u6982\u7387\u8bba\\6. \u6837\u672c\u53ca\u62bd\u6837\u5206\u5e03.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> 咩咩的笔记
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">主页</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">笔记</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="#">数字电路</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF/1.%20%E4%BB%8B%E7%BB%8D/">介绍</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF/2.%20%E6%95%B0%E5%AD%97%E7%B3%BB%E7%BB%9F%E3%80%81%E8%BF%90%E7%AE%97%E5%92%8C%E7%BC%96%E7%A0%81/">数字系统、运算和编码</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF/3.%20%E9%80%BB%E8%BE%91%E9%97%A8/">逻辑门</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF/4.%20%E5%B8%83%E5%B0%94%E4%BB%A3%E6%95%B0/">布尔代数</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF/5.%20%E7%BB%84%E5%90%88%E9%80%BB%E8%BE%91%E5%88%86%E6%9E%90/">组合逻辑分析</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF/6.%20%E7%BB%84%E5%90%88%E9%80%BB%E8%BE%91%E5%8A%9F%E8%83%BD%E6%A8%A1%E5%9D%97/">组合逻辑功能模块</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF/7.%20%E9%94%81%E5%AD%98%E5%99%A8%E3%80%81%E8%A7%A6%E5%8F%91%E5%99%A8%E5%92%8C%E5%AE%9A%E6%97%B6%E5%99%A8/">锁存器、触发器和定时器</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF/8.%20%E7%A7%BB%E4%BD%8D%E5%AF%84%E5%AD%98%E5%99%A8/">移位寄存器</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF/9.%20%E8%AE%A1%E6%95%B0%E5%99%A8/">计数器</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF/10.%20%E5%82%A8%E5%AD%98%E5%99%A8/">储存器</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF/11.%20%E6%A8%A1%E6%95%B0%E8%BD%AC%E6%8D%A2/">模数转换</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">离散数学</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/2-%E5%91%BD%E9%A2%98%E9%80%BB%E8%BE%91/">命题逻辑</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/3-%E4%B8%80%E9%98%B6%E9%80%BB%E8%BE%91/">一阶逻辑</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/4-%E8%AF%81%E6%98%8E%E6%96%B9%E6%B3%95/">证明方法</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/5-%E9%9B%86%E5%90%88/">集合</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/6-%E5%85%B3%E7%B3%BB/">关系</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/7-%E5%87%BD%E6%95%B0/">函数</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/8-%E8%AE%A1%E6%95%B0%E4%B8%8E%E7%BB%84%E5%90%88/">计数与组合</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/9-%E5%9B%BE%E4%B8%8E%E6%A0%91/">图与树</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">计算机组成原理</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/1.%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%A6%82%E8%A7%88/">计算机概览</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/2.%20%E6%8C%87%E4%BB%A4/">指令</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/3.%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%AD%E7%9A%84%E8%BF%90%E7%AE%97/">计算机中的运算</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/4.%20MIPS%20CPU%E8%AE%BE%E8%AE%A1/">MIPS CPU设计</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/5.%20%E5%AD%98%E5%82%A8%E5%99%A8%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84/">存储器层次结构</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/6.%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E6%80%BB%E7%BA%BF/">计算机系统总线</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/7.%20%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E7%B3%BB%E7%BB%9F/">输入输出系统</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">计算机组成原理实验</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AE%9E%E9%AA%8C/1/1/">加法器</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AE%9E%E9%AA%8C/2/2/">有限状态机</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AE%9E%E9%AA%8C/3/3/">MIPS指令集1</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AE%9E%E9%AA%8C/4/4/">MIPS指令集2</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AE%9E%E9%AA%8C/5/5/">存储器实验</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AE%9E%E9%AA%8C/6/6/">寄存器堆与 ALU 设计实验</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AE%9E%E9%AA%8C/7/7/">存储器与控制器实验</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AE%9E%E9%AA%8C/8/8/">单周期处理器实验</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AE%9E%E9%AA%8C/9/9/">多周期处理器实验</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AE%9E%E9%AA%8C/10/10/">多周期处理器综合性开放实验</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">概率论</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../1.%20%E6%A6%82%E7%8E%87%E8%AE%BA%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/">概率论的基本概念</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../2.%20%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E5%8F%8A%E5%85%B6%E5%88%86%E5%B8%83/">随机变量及其分布</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../3.%20%E5%A4%9A%E7%BB%B4%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E5%8F%8A%E5%85%B6%E5%88%86%E5%B8%83/">多维随机变量及其分布</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../4.%20%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E6%95%B0%E5%AD%97%E7%89%B9%E5%BE%81/">随机变量的数字特征</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../5.%20%E5%A4%A7%E6%95%B0%E5%AE%9A%E5%BE%8B%E5%8F%8A%E4%B8%AD%E5%BF%83%E6%9E%81%E9%99%90%E5%AE%9A%E7%90%86/">大数定律及中心极限定理</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">样本及抽样分布</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#_2">随机样本</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_3">直方图和箱线图</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_4">抽样分布</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#_5">统计量</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_6">经验分布函数</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#chi2">\(\chi^2\)分布</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#t">t分布</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#f">F分布</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_7">正态总体的样本均值与样本方差的分布</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../7.%20%E5%8F%82%E6%95%B0%E4%BC%B0%E8%AE%A1/">参数估计</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../8.%20%E5%81%87%E8%AE%BE%E9%AA%8C%E8%AF%81/">假设验证</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">咩咩的笔记</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>笔记 &raquo;</li>
+          <li>概率论 &raquo;</li>
+      <li>样本及抽样分布</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="_1">样本及抽样分布</h1>
+<h2 id="_2">随机样本</h2>
+<p><strong>总体</strong>：试验的全部可能的观测值
+<strong>个体</strong>：一个可能的观察值
+<strong>容量</strong>：总体中包含的个体的个数<br />
+根据容量是否有限可划分<strong>有限总体</strong>和<strong>无限总体</strong>
+<strong>样本</strong>：从总体中抽取若干个体观察，这部分被抽取的个体称为样本，抽取数量称为样本容量
+更严谨的定义：设X是具有分布函数F的随机变量，若<span class="arithmatex">\(X_1,X_2,\cdots,X_n\)</span>是具有同一分布函数F的相互独立的随机变量，则称<span class="arithmatex">\(X_1,X_2,\cdots,X_n\)</span>为从分布函数F（或总体F、或总体X）得到的<strong>容量为n的简单样本</strong>，简称<strong>样本</strong>，他们的观测值<span class="arithmatex">\(x_1,x_2,\cdots,x_n\)</span>称为<strong>样本值</strong>，又被称为X的n个<strong>独立的观测值</strong></p>
+<h2 id="_3">直方图和箱线图</h2>
+<p>直方图和箱线图都是用于整理数据的工具</p>
+<p><strong>频率直方图</strong>：取一个包含所有数据的区间，将区间均分为n等份，每份长度称为<strong>组距</strong><span class="arithmatex">\(\Delta\)</span>，小区间的端点称为<strong>组限</strong>。然后统计落在各区间的数据个数，并在xoy平面上绘制成不同高度的等宽矩形，高度即y轴坐标等于<span class="arithmatex">\(\frac{f_i}{n}/\Delta\)</span>，其中<span class="arithmatex">\(f_i\)</span>为频数。当n很大时，由于频率接近于概率，因此一般来说频率直方图的外廓曲线接近于总体X的概率密度曲线</p>
+<p><strong>样本分位数</strong>：设有容量为n的样本观察值<span class="arithmatex">\(x_1,x_2,\cdots,x_n\)</span>，样本p分位数(0&lt;p&lt;1)记为<span class="arithmatex">\(x_p\)</span>，它具有以下性质：（1）至少有np个观察值小于或等于<span class="arithmatex">\(x_p\)</span>（2）至少有n(1-p)个观察值大于或等于<span class="arithmatex">\(x_p\)</span>。具体来说，若np不是整数，则样本p分位数为<span class="arithmatex">\(x_{([np]+1)}\)</span>；若np是整数，则样本p分位数为<span class="arithmatex">\(\frac{1}{2}[x_{(np)}+x_{(np+1)}]\)</span>。当p取0.25、0.5、0.75时，样本p分位数分别称为<strong>第一四分位数</strong><span class="arithmatex">\(Q_1\)</span>、<strong>样本中位数</strong><span class="arithmatex">\(Q_2或M\)</span>、<strong>第三四分位数</strong><span class="arithmatex">\(Q_3\)</span></p>
+<p><strong>箱线图</strong>：记最大值为Max最小值为Min，具体画法如下。箱线图可以反映数据的中心位置、散布程度（区间越短越密集，越长越分散）、对称性。
+<img alt="" src="../img/1.jpeg" /></p>
+<h2 id="_4">抽样分布</h2>
+<h3 id="_5">统计量</h3>
+<p>设<span class="arithmatex">\(X_1,X_2,\cdots,X_n\)</span>是来自总体X的一个样本，<span class="arithmatex">\(g(X_1,X_2,\cdots,X_n)\)</span>是<span class="arithmatex">\(X_1,X_2,\cdots,X_n\)</span>的函数，若g中<em>不含未知参数</em>，则称<span class="arithmatex">\(g(X_1,X_2,\cdots,X_n)\)</span>是一个<strong>统计量</strong>。统计量是一个随机变量</p>
+<p>常见统计量：</p>
+<ol>
+<li><strong>样本均值</strong>：<span class="arithmatex">\(\bar X=\frac{1}{n}\sum_{i=1}^nX_i\)</span></li>
+<li><strong>样本方差</strong>：<span class="arithmatex">\(S^2=\frac{1}{n-1}\sum_{i=1}^n(X_i-\bar X)^2=\frac{1}{n-1}(\sum_{i=1}^n X_i^2 - n\bar X^2)\)</span></li>
+<li><strong>样本标准差</strong>：<span class="arithmatex">\(S=\sqrt{S^2}\)</span></li>
+<li>
+<p><strong>样本k阶（原点）矩</strong>：<span class="arithmatex">\(A_k=\frac{1}{n}\sum_{i=1}^nX_i^k,k=1,2,\cdots\)</span>
+    &gt; 当<span class="arithmatex">\(n\to \infty\)</span>时，<span class="arithmatex">\(A_k\overset{P}{\rightarrow}\mu_k\)</span></p>
+</li>
+<li>
+<p><strong>样本k阶中心矩</strong>：<span class="arithmatex">\(B_k=\frac{1}{n}\sum_{i=1}^n(X_i-\bar X)^k,k=2,3,\cdots\)</span>
+这些统计值的观测值分别记为<span class="arithmatex">\(\bar x,s^2,s,a_k,b_k\)</span>，均可类似地由样本观察值算出</p>
+</li>
+</ol>
+<h3 id="_6">经验分布函数</h3>
+<p>设<span class="arithmatex">\(x_1,x_2\cdots,x_n\)</span>是来自分布函数为F(x)的总体X的样本观察值的经验分布函数，记为<span class="arithmatex">\(F_n(x)\)</span>，定义为样本观察值<span class="arithmatex">\(x_1,x_2\cdots,x_n\)</span>中小于或等于指定值x所占的比例，即</p>
+<div class="arithmatex">\[F_n(x)=\frac{\#(x_i&lt;x)}{n},-\infty&lt;x&lt;\infty\]</div>
+<p>其中<span class="arithmatex">\(\#(x_i&lt;x)\)</span>表示<span class="arithmatex">\(x_1,x_2\cdots,x_n\)</span>中小于或等于x的个数。</p>
+<p>不难发现<span class="arithmatex">\(F_n\)</span>是分布函数。</p>
+<p>设<span class="arithmatex">\(X_1,X_2\cdots,X_n\)</span>是来自以F(x)为分布函数的总体X的样本，<span class="arithmatex">\(F_n(x)\)</span>是经验分布函数，则有</p>
+<div class="arithmatex">\[P\{\lim_{n\to\infty}\sup_{-\infty&lt;x&lt;\infty}|F_n(x)-F(x)|=0\}=1\]</div>
+<p>其中sup是上确界的意思。
+也就是说当n充分大时，经验分布函数能很好地逼近分布函数</p>
+<h3 id="chi2"><span class="arithmatex">\(\chi^2\)</span>分布</h3>
+<p><strong>伽马函数</strong>：</p>
+<div class="arithmatex">\[\Gamma(\alpha)=\int_0^\infty x^{\alpha-1}e^{-x}dx\]</div>
+<p>其具有以下性质：</p>
+<ol>
+<li>对<span class="arithmatex">\(\alpha\geq1，\Gamma(\alpha+1)=\alpha\Gamma(\alpha)\)</span></li>
+<li>对正整数n，<span class="arithmatex">\(\Gamma(n)=(n-1)!\)</span></li>
+<li><span class="arithmatex">\(\Gamma(\frac{1}{2})=\pi^{\frac{1}{2}}\)</span></li>
+</ol>
+<p><strong>伽马分布</strong>：
+若随机变量X服从参数为<span class="arithmatex">\(\alpha&gt;0,\theta&gt;0\)</span>的伽马分布，则记为<span class="arithmatex">\(X\sim \Gamma(\alpha,\theta)\)</span>，其概率密度为</p>
+<div class="arithmatex">\[f(x)=\left\{\begin{aligned}&amp;\frac{1}{\theta^\alpha\Gamma(\alpha)}x^{\alpha-1}e^{-x/\theta},&amp;y&gt;0,\\&amp;0,&amp;其他.\end{aligned}\right.\]</div>
+<p>若<span class="arithmatex">\(X\sim \Gamma(\alpha,\theta),Y\sim \Gamma(\beta,\theta)\)</span>，则<span class="arithmatex">\(X+Y\sim\Gamma(\alpha+\beta,\theta)\)</span>。这可以推广到任意多伽马分布的加和</p>
+<p><span class="arithmatex">\(\chi^2\)</span><strong>分布</strong>
+设<span class="arithmatex">\(X_1,X_2,\cdots,X_n\)</span>是来自总体N(0,1)的样本，则称统计量<span class="arithmatex">\(\chi^2=X_1^2+X_2^2+\cdots+X_n^2\)</span>为服从自由度为n的<span class="arithmatex">\(\chi^2\)</span><strong>分布</strong>，记为<span class="arithmatex">\(\chi^2\sim\chi^2(n)\)</span>，其概率密度为</p>
+<div class="arithmatex">\[f(y)=\left\{\begin{aligned}&amp;\frac{1}{2^{n/2}\Gamma(n/2)}y^{n/2-1}e^{-y/2},&amp;y&gt;0,\\&amp;0,&amp;其他.\end{aligned}\right.\]</div>
+<p>可以发现，服从自由度为n的<span class="arithmatex">\(\chi^2\sim\Gamma(\frac{n}{2},2)\)</span></p>
+<p>卡方分布满足可加性：若<span class="arithmatex">\(\chi_1^2\sim\chi^2(n_1),\chi_2^2\sim\chi^2(n_2)\)</span>，则<span class="arithmatex">\(\chi_1^2+\chi_2^2\sim\chi^2(n_1+n_2)\)</span></p>
+<p>卡方分布的期望为n，方差为2n。</p>
+<p>设<span class="arithmatex">\(\chi_\alpha^2(n)\)</span>是<span class="arithmatex">\(\chi^2(n)\)</span>的上<span class="arithmatex">\(\alpha\)</span>分位数，当n充分大时，<span class="arithmatex">\(\chi_\alpha^2(n)\approx\frac{1}{2}(z_\alpha+\sqrt{2n-1})^2\)</span>，其中<span class="arithmatex">\(z_\alpha\)</span>是标准正态分布的上<span class="arithmatex">\(\alpha\)</span>分位数</p>
+<h3 id="t">t分布</h3>
+<p>设<span class="arithmatex">\(X\sim N(0,1),Y\sim \chi^2(n)\)</span>，且X,Y相互独立，则称随机变量</p>
+<div class="arithmatex">\[t=\frac{X}{\sqrt{Y/n}}\]</div>
+<p>服从自由度为n的<strong>t分布</strong>，或称为学生氏分布，记为<span class="arithmatex">\(t\sim t(n)\)</span>，其概率密度为</p>
+<div class="arithmatex">\[h(t)=\frac{\Gamma[(n+1)/2]}{\sqrt{\pi n}\Gamma(n/2)}\left(1+\frac{t^2}{n}\right)^{-(n+1)/2},-\infty&lt;t&lt;\infty\]</div>
+<p>t分布相对y轴对称。当n足够大时t分布近似于标准正态分布。</p>
+<h3 id="f">F分布</h3>
+<p>设<span class="arithmatex">\(U\sim \chi^2(n_1),V\sim \chi^2(n_2)\)</span>，且U,V相互独立，则称随机变量</p>
+<div class="arithmatex">\[F=\frac{U/n_1}{V/n_2}\]</div>
+<p>服从自由度为<span class="arithmatex">\((n_1,n_2)\)</span>的<strong>F分布</strong>，记为<span class="arithmatex">\(F\sim F(n_1,n_2)\)</span>，其概率密度为</p>
+<div class="arithmatex">\[\psi(y)=\left\{\begin{aligned}&amp;\frac{\Gamma[(n_1+n_2)/2](n_1/n_2)^{n_1/2}y^{(n_1/2)-1}}{\Gamma(n_1/2)\Gamma(n_2/2)[1+(n_1y/n_2)]^{(n_1+n_2)/2}},&amp;y&gt;0,\\&amp;0,&amp;其他.\end{aligned}\right.\]</div>
+<p>可以证明<span class="arithmatex">\(\frac{1}{F}\sim F(n_2,n_1),F_{1-\alpha}(n_1,n_2)=\frac{1}{F_\alpha(n_2,n_1)}\)</span></p>
+<h3 id="_7">正态总体的样本均值与样本方差的分布</h3>
+<p>设<span class="arithmatex">\(X_1,X_2,\cdots,X_n\)</span>是来自正态总体<span class="arithmatex">\(N(\mu,\sigma^2)\)</span>的样本，<span class="arithmatex">\(\bar X\)</span>是样本均值,<span class="arithmatex">\(S^2\)</span>是样本方差，则有</p>
+<ol>
+<li><span class="arithmatex">\(\bar X\sim N(\mu, \sigma^2/n)\)</span></li>
+<li><span class="arithmatex">\(\frac{(n-1)S^2}{\sigma^2}\sim \chi^2(n-1)\)</span></li>
+<li>样本均值和样本方差相互独立</li>
+<li><span class="arithmatex">\(\frac{\bar X-\mu}{S/\sqrt n}\sim t(n-1)\)</span></li>
+</ol>
+<p>设<span class="arithmatex">\(X_1,X_2,\cdots,X_{n_1}\)</span>是来自正态总体<span class="arithmatex">\(N(\mu_1,\sigma_1^2)\)</span>的样本，<span class="arithmatex">\(Y_1,Y_2,\cdots,Y_{n_2}\)</span>是来自正态总体<span class="arithmatex">\(N(\mu_2,\sigma_2^2)\)</span>的样本，<span class="arithmatex">\(\bar X,\bar Y\)</span>分别是X和Y的样本均值,<span class="arithmatex">\(S_1^2, S_2^2\)</span>分别是X和Y的样本方差，则有</p>
+<ol>
+<li><span class="arithmatex">\(\frac{S_1^2/S_2^2}{\sigma_1^2/\sigma_2^2}\sim F(n_1-1,n_2-1)\)</span></li>
+<li>当<span class="arithmatex">\(\sigma_1^2=\sigma_2^2=\sigma^2\)</span>时</li>
+</ol>
+<div class="arithmatex">\[\frac{(\bar X-\bar Y)-(\mu_1-\mu_2)}{S_w\sqrt{\frac{1}{n_1}+\frac{1}{n_2}}}\sim t(n_1+n_2-2)\]</div>
+<p>其中<span class="arithmatex">\(S_w^2=\frac{(n_1-1)S_1^2+(n_2-1)S_2^2}{n_1+n_2-2},S_w=\sqrt{S_w^2}\)</span></p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../5.%20%E5%A4%A7%E6%95%B0%E5%AE%9A%E5%BE%8B%E5%8F%8A%E4%B8%AD%E5%BF%83%E6%9E%81%E9%99%90%E5%AE%9A%E7%90%86/" class="btn btn-neutral float-left" title="大数定律及中心极限定理"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../7.%20%E5%8F%82%E6%95%B0%E4%BC%B0%E8%AE%A1/" class="btn btn-neutral float-right" title="参数估计">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../5.%20%E5%A4%A7%E6%95%B0%E5%AE%9A%E5%BE%8B%E5%8F%8A%E4%B8%AD%E5%BF%83%E6%9E%81%E9%99%90%E5%AE%9A%E7%90%86/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../7.%20%E5%8F%82%E6%95%B0%E4%BC%B0%E8%AE%A1/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../javascripts/mathjax.js" defer></script>
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=es6" defer></script>
+      <script src="https://fastly.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

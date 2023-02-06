@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>存储器层次结构 - 咩咩的笔记</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "\u5b58\u50a8\u5668\u5c42\u6b21\u7ed3\u6784";
+        var mkdocs_page_input_path = "\u8ba1\u7b97\u673a\u7ec4\u6210\u539f\u7406\\5. \u5b58\u50a8\u5668\u5c42\u6b21\u7ed3\u6784.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> 咩咩的笔记
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">主页</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">笔记</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="#">数字电路</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF/1.%20%E4%BB%8B%E7%BB%8D/">介绍</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF/2.%20%E6%95%B0%E5%AD%97%E7%B3%BB%E7%BB%9F%E3%80%81%E8%BF%90%E7%AE%97%E5%92%8C%E7%BC%96%E7%A0%81/">数字系统、运算和编码</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF/3.%20%E9%80%BB%E8%BE%91%E9%97%A8/">逻辑门</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF/4.%20%E5%B8%83%E5%B0%94%E4%BB%A3%E6%95%B0/">布尔代数</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF/5.%20%E7%BB%84%E5%90%88%E9%80%BB%E8%BE%91%E5%88%86%E6%9E%90/">组合逻辑分析</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF/6.%20%E7%BB%84%E5%90%88%E9%80%BB%E8%BE%91%E5%8A%9F%E8%83%BD%E6%A8%A1%E5%9D%97/">组合逻辑功能模块</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF/7.%20%E9%94%81%E5%AD%98%E5%99%A8%E3%80%81%E8%A7%A6%E5%8F%91%E5%99%A8%E5%92%8C%E5%AE%9A%E6%97%B6%E5%99%A8/">锁存器、触发器和定时器</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF/8.%20%E7%A7%BB%E4%BD%8D%E5%AF%84%E5%AD%98%E5%99%A8/">移位寄存器</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF/9.%20%E8%AE%A1%E6%95%B0%E5%99%A8/">计数器</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF/10.%20%E5%82%A8%E5%AD%98%E5%99%A8/">储存器</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF/11.%20%E6%A8%A1%E6%95%B0%E8%BD%AC%E6%8D%A2/">模数转换</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">离散数学</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/2-%E5%91%BD%E9%A2%98%E9%80%BB%E8%BE%91/">命题逻辑</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/3-%E4%B8%80%E9%98%B6%E9%80%BB%E8%BE%91/">一阶逻辑</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/4-%E8%AF%81%E6%98%8E%E6%96%B9%E6%B3%95/">证明方法</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/5-%E9%9B%86%E5%90%88/">集合</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/6-%E5%85%B3%E7%B3%BB/">关系</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/7-%E5%87%BD%E6%95%B0/">函数</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/8-%E8%AE%A1%E6%95%B0%E4%B8%8E%E7%BB%84%E5%90%88/">计数与组合</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/9-%E5%9B%BE%E4%B8%8E%E6%A0%91/">图与树</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">计算机组成原理</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../1.%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%A6%82%E8%A7%88/">计算机概览</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../2.%20%E6%8C%87%E4%BB%A4/">指令</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../3.%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%AD%E7%9A%84%E8%BF%90%E7%AE%97/">计算机中的运算</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../4.%20MIPS%20CPU%E8%AE%BE%E8%AE%A1/">MIPS CPU设计</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">存储器层次结构</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#_2">概述</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_3">主存储器</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#_4">字位扩展</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_5">负载计算</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_6">速度估算</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#cpu">连接到CPU</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#cache">Cache高速缓存</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#_7">命中与失效</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_8">映射方式</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_12">一致性问题</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_13">失效类型</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_14">替换规则</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#cache_1">多级Cache</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_15">虚拟存储器</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#_16">基本概念</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_17">分页虚拟存储器</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_18">段式虚拟存储器</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_19">存储层次结构框架</a>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../6.%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E6%80%BB%E7%BA%BF/">计算机系统总线</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../7.%20%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E7%B3%BB%E7%BB%9F/">输入输出系统</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">计算机组成原理实验</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AE%9E%E9%AA%8C/1/1/">加法器</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AE%9E%E9%AA%8C/2/2/">有限状态机</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AE%9E%E9%AA%8C/3/3/">MIPS指令集1</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AE%9E%E9%AA%8C/4/4/">MIPS指令集2</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AE%9E%E9%AA%8C/5/5/">存储器实验</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AE%9E%E9%AA%8C/6/6/">寄存器堆与 ALU 设计实验</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AE%9E%E9%AA%8C/7/7/">存储器与控制器实验</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AE%9E%E9%AA%8C/8/8/">单周期处理器实验</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AE%9E%E9%AA%8C/9/9/">多周期处理器实验</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AE%9E%E9%AA%8C/10/10/">多周期处理器综合性开放实验</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">概率论</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA/1.%20%E6%A6%82%E7%8E%87%E8%AE%BA%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/">概率论的基本概念</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA/2.%20%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E5%8F%8A%E5%85%B6%E5%88%86%E5%B8%83/">随机变量及其分布</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA/3.%20%E5%A4%9A%E7%BB%B4%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E5%8F%8A%E5%85%B6%E5%88%86%E5%B8%83/">多维随机变量及其分布</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA/4.%20%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E6%95%B0%E5%AD%97%E7%89%B9%E5%BE%81/">随机变量的数字特征</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA/5.%20%E5%A4%A7%E6%95%B0%E5%AE%9A%E5%BE%8B%E5%8F%8A%E4%B8%AD%E5%BF%83%E6%9E%81%E9%99%90%E5%AE%9A%E7%90%86/">大数定律及中心极限定理</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA/6.%20%E6%A0%B7%E6%9C%AC%E5%8F%8A%E6%8A%BD%E6%A0%B7%E5%88%86%E5%B8%83/">样本及抽样分布</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA/7.%20%E5%8F%82%E6%95%B0%E4%BC%B0%E8%AE%A1/">参数估计</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA/8.%20%E5%81%87%E8%AE%BE%E9%AA%8C%E8%AF%81/">假设验证</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">咩咩的笔记</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>笔记 &raquo;</li>
+          <li>计算机组成原理 &raquo;</li>
+      <li>存储器层次结构</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="_1">存储器层次结构</h1>
+<h2 id="_2">概述</h2>
+<p>存储器按介质分有半导体类、磁表面类、磁芯类、光盘类；按存取方式分有随机访问的RAM和ROM和串行访问的磁带和磁盘</p>
+<p>不同存储器单位存储成本不同，一般单位存储成本越高访问带宽越大延迟越低</p>
+<p>计算机存储层次分为外存（磁带/光盘HDD/SSD）、内存（DRAM）、寄存器。除此之外还有为了解决主存容量不够而在外存上开辟的虚拟存储空间（硬盘当内存用）、为了解决内存和CPU（寄存器）速度不匹配而引入的缓存（分多级的中间存储）。</p>
+<p>局部性原理是指程序在任何时候都倾向于只访问小部分地址空间。时间局部性是指最近访问的数据项很可能马上被再次访问，空间局部性是指最近被访数据项的临近数据项可能很快也将被访问。局部性原理是计算机存储层次设计的原因（将更可能使用的数据在更快的存储器中同步）。</p>
+<p>三级存储结构是指将缓存、内存和虚拟存储器综合起来，向用户（运行的程序）呈现统一的内存结构</p>
+<p>命中是指数据在高层存储结构中出现；失效是指需要从低层存储结构中找回数据</p>
+<p>位是一个0/1，存放一个位的电路称为存储元；存储字是存储器每次存入或取出的整个二进制数；存储单元是存放字或存放字节的主存空间，每个存储单元对应一个地址；大量存储单元构成存储体</p>
+<p>B（Byte）表示字节，b（bit）表示位。前面可接量词，其中根据ISO标准，Ki/Mi/Gi遵循1024进制，比如1KiB=1024B，而K/M/G遵循千进制。（Windows系统不遵循ISO标准）</p>
+<p>存储速度有三个指标：访问时间（从CPU发出命令到读出信息所需时间，也就是延迟）、访问周期（连续两次访问的最小间隔时间）、存储器带宽（连续访问时的数据传送速率）</p>
+<p>SRAM的存储元由晶体管组成，核心结构是双稳态触发器；DRAM的存储元由晶体管和电容组成，核心结构是电容。</p>
+<p>DRAM每次读出由于电容放电需要进行<strong>读出重写</strong>，而由于漏电又要<strong>定时刷新</strong>。</p>
+<p>芯片存储容量=<span class="arithmatex">\(2^M\times N\)</span>，其中M为地址线根数，N为数据线根数</p>
+<p>译码可分为单译码和双译码（二维译码，需提供行地址和列地址）。DRAM使用双译码，分两次从相同端口送入行地址和列地址</p>
+<p>存储芯片引脚一般包括：地址线、数据线、控制线（读写控制和片选控制）、电源线、接地线。对于双译码芯片DRAM一般会共用地址线需要加入行选通和列选通信号。</p>
+<p>ROM只读存储器分为MROM（不可擦写）、PROM（可写一次）、UVEPROM（UV擦写）、E2PROM（电擦写）、Flash（块擦写）</p>
+<h2 id="_3">主存储器</h2>
+<p>主存储器由存储芯片（DRAM或ROM）、地址寄存器、地址译码器、刷新控制电路等组成。</p>
+<h3 id="_4">字位扩展</h3>
+<p>主存中的存储芯片（mK × n位/片）一般包含多块，通过连接组成更大的存储器（MK × N位），这被称为扩展。扩展分为位扩展和字扩展（当然也能同时扩展），比如说要用4K×4位（字宽4位，字数4k）的芯片组成8K×8位的存储器</p>
+<p>先进行位扩展：需要扩展多一倍（N/n）的存储芯片。将加入芯片的数据线直接和之前的拉到一起组成8根，而地址线连接和之前的芯片一样。</p>
+<p>再进行字扩展：需要再扩展多一倍（M/m）的存储芯片。将加入芯片的数据线接到一起，而地址线要加一条，接到存储芯片的选通信号。如果有要加入多条地址线，则需要译码后再接到选通。</p>
+<p>由此，共需(M/m)*(N/n)块存储芯片</p>
+<h3 id="_5">负载计算</h3>
+<p>由于主存储器内包含多个存储芯片，而地址线等是同时向这些芯片供电的，因此一般来说都需要加入门电路来增强供电能力，有时甚至需要多级门电路供电</p>
+<h3 id="_6">速度估算</h3>
+<p>系统存储周期<span class="arithmatex">\(T_{RM}\)</span>包括：</p>
+<ol>
+<li>芯片存储周期<span class="arithmatex">\(T_{RC}\)</span>：芯片参数决定</li>
+<li>系统传输时延<span class="arithmatex">\(t_D\)</span>：外围电路逻辑级数决定</li>
+<li>系统恢复时间<span class="arithmatex">\(t_R\)</span>：需要系统测试</li>
+</ol>
+<h3 id="cpu">连接到CPU</h3>
+<p>存储器通过地址线、数据线、控制线连接到CPU</p>
+<p>地址线：低位连接、高位片选
+数据线：连接到多个位扩展的存储芯片
+控制线：读写命令线、MREQ内存/IO选择线</p>
+<p>CPU和主存可以采取异步通信和同步通信。异步是指CPU发送请求后等待存储器发回完成信号后取数；同步是指CPU和主存使用同一时钟信号，请求发出后等待确定的周期数就取数。</p>
+<p>主存空间可包括ROM和RAM</p>
+<h2 id="cache">Cache高速缓存</h2>
+<p>由于CPU和主存速度差距很大，而又因为局部性原理，引入速度介于CPU和主存的高速缓存可以提高存取数据的效率。</p>
+<blockquote>
+<p>缓存技术广泛用于协调数据交换设备的速度，除了CPU缓存，还有网络缓存、浏览器缓存等等</p>
+</blockquote>
+<p>Cache制作在CPU芯片中，由SRAM组成，只存放主存中最近访问的某些<strong>块</strong>（Cache中称为<strong>行</strong>，两者大小一致），并在适当时候与主存同步。</p>
+<p>块/行的大小可以任意选取。通常来说，块/行越大空间局部性越好，越小时间局部性越好。</p>
+<h3 id="_7">命中与失效</h3>
+<p>由于Cache只保存主存的部分数据，因此CPU访存时不一定能从Cache中获取所需数据。如果能就被称为命中，直接从Cache中读写，缩短延迟；否则称为失效，需要从主存中读写到Cache并送到CPU，没有缩短延迟。因此Cache重要的参数就是命中率、命中时间、失效率、失效时间，并可以基于这些参数计算平均访问时间、加速比。</p>
+<p>由于失效后需要将块读入Cache，因此有<strong>提前重启</strong>技术，一旦读到所需数据就返回给CPU，而不必等Cache修改完毕，从而缩短失效时间。</p>
+<h3 id="_8">映射方式</h3>
+<p>为了实现只保存主存的部分以及与保持与主存一致，Cache的行都要附带Tag标志域（用于区分不同块）和V有效位（用于解决开机时的未初始化问题）。</p>
+<p>在开机时将V全部初始化为0，表示失效；每次访存后将数据保存在特定部分并将V置为1，表示有效。</p>
+<p>Tag存放的内容取决于怎么将内存映射到Cache，映射方式包括直接映射、全相联映射、组相联映射。</p>
+<h4 id="_9">直接映射</h4>
+<p>直接映射是指将主存的每一块映射到Cache中的固定行中，映射方式是取模。</p>
+<p>具体来说，将主存的每一块用页来唯一标记，然后将页按顺序划分为多个组，Tag只保存组号。每次访问Cache时将页号（地址/块大小）除以组数，商就是组号，余数就是行号，取出该行组号（Tag）比对，一致则命中，否则失效。</p>
+<p>举个例子，如果主存有1MB（20位地址），设置每块/行512B（9位页内地址），则要划分出2048页，设置每16页（4位页号）一组，则总共有128组（7位组号）。这样Cache容量为8KB，每一行包括7位Tag，1位V和512B数据页。</p>
+<p>实现上，组号、组内页号（页号mod组大小，也就是行号）和页内地址是在主存地址上顺序排列的，因此不需要真的取模，只需加上比较器比较地址中4位译码选通行的Tag和地址的高7位，并与选通行的V相与，即可知道是否命中。如果命中就用地址的低9位接多路选择器来选择数据页即可读出该地址数据。</p>
+<p>直接映射的优点是容易实现、命中时间段；缺点是会有多个块固定地对应同一行，如果要经常访问这些块就会发生频繁的失效，即使其他行是空闲的，这被称为<em>Cache抖动</em></p>
+<h4 id="_10">全相联映射</h4>
+<p>全相联映射是指主存块可装到Cache中的任意一行，因此Tag需要保存完整页号</p>
+<p>实现原理很简单，每一行分配一个比较器比较查询的页号与Tag是否一致，将比较器结果相与即可得知是否命中，命中后打开对应数据的三态门即可；不命中就按一定规则替换掉某一行，比如让行按顺序排列，记录最新替换块，从而形成类似循环队列的结构，每次替换最老的行。然而比较器很大很慢，因此应用很少</p>
+<h4 id="_11">组相联映射</h4>
+<p>组相联映射采用组间模映射、组内全映射</p>
+<p>原理与直接映射类似，先将内存均分为多个组群（对应直接映射中的组），每个组群内划分多个块并编号为组号（对应直接映射中的组内页号）。Cache中则分出多路，每个路有多个行，Tag保存组群号。具体原理如图
+<img alt="" src="../5.%20%E5%AD%98%E5%82%A8%E5%99%A8%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84_md_files/138bab10-7613-11ed-af77-cf61b8a8a257_20221207173944.jpeg" /></p>
+<p>为了研究Cache命中概率，引入关联度来表示每个内存块能存放的Cache行数，可以发现直接映射的关联度为1，全相联为Cache行数，N-路组相联映射为N。一般来说，相同Cache行数下关联度越高缺失率越低。</p>
+<h3 id="_12">一致性问题</h3>
+<p>有三种情况会导致Cache与主存数据不一致：</p>
+<ol>
+<li>Cache内容被CPU更新但主存没有</li>
+<li>其它设备修改了主存而没修改Cache</li>
+<li>多核CPU且各自有私有Cache时，某个核心修改私有Cache导致其他核心Cache和主存与该私有Cache不一致</li>
+</ol>
+<p>这里只介绍第一种情况的解决，也只考虑第一种情况。</p>
+<p>假如写命中，有两种处理方式：写直达和写回。</p>
+<p>写直达是指修改数据时同时修改Cache和主存。为了减少主存访问慢对CPU的影响，可以采用写缓冲机制，也就是先存入缓冲，等待写入完成时，CPU可以执行其他指令。不过缓冲满了CPU依然要被阻塞。</p>
+<p>写回是指只修改Cache数据。这要求Cache增加脏位标志，表示数据是否被修改过。在替换被修改过的数据前要先将数据写回主存。</p>
+<p>假如写不命中，有两种处理方式：写分配和写不分配。前者会在Cache中分配空间，能提高空间局部性，但要从内存中读取完整的块；后者直接写内存，不需要增加读内存操作，但没有利用空间局部性。两种方式都要写内存，区别在于要不要读内存。</p>
+<h3 id="_13">失效类型</h3>
+<ul>
+<li>强制失效：首次访问</li>
+<li>容量失效：由于容量不足被替换导致的失效</li>
+<li>冲突失效：由于映射到满载的组而被竞争替换导致失效（在直接映射和组映射中发生，此时Cache不一定装满）</li>
+</ul>
+<h3 id="_14">替换规则</h3>
+<p>非直接映射的Cache在发生冲突失效时需要按一定规则选择被替换的行。常用的规则有：先进先出FIFO、最近最少用LRU、最不经常用LFU、随机替换</p>
+<p>先进先出对Cache中的每一组加入一个指针，记录下一个应被替换的行，初始为零。每次要写入新行，先按顺序填充空行，满了之后就填充指针指向的行，并递增指针（指针满了就清零）。</p>
+<p>最近最少使用LRU对每行设置一个计数器（LRU位），每次写入时将写入行计数器清零，其他同组里的行计数器递增（满了就不变）。发生冲突时选择计数值最大的行替换。</p>
+<p>随机替换会使用硬件随机数选择一行替换</p>
+<p>FIFO和LRU在极端情况下会发生频繁的冲突，被称为抖动。随机规则实现成本低，性能略差于LRU算法。</p>
+<h3 id="cache_1">多级Cache</h3>
+<p>现代处理器中一般进一步将Cache分为L1、L2和L3，容量依次增大，速度依次减慢、依次远离CPU（但通常CPU和Cache都在一个芯片上）</p>
+<p>L1缓存有两块，L1数据缓存和L1指令缓存，这被称为<strong>分立</strong>缓存，命中时间较短。L2、L3则不区分数据和指令，称为<strong>联合</strong>缓存，命中率较高</p>
+<h2 id="_15">虚拟存储器</h2>
+<p>Cache采用硬件实现CPU和主存的缓存，而虚拟缓存器则采用硬件配合操作系统实现主存和硬盘的缓存，同时实现应用隔离等功能。</p>
+<h3 id="_16">基本概念</h3>
+<ul>
+<li>分页：将程序划分为多个统一长度的页，在主存中用页框来保存</li>
+<li>逻辑地址：程序使用的地址，空间比实际主存大得多</li>
+<li>物理地址：Cache和主存使用的地址</li>
+<li>MMU：负责将逻辑地址转换为物理地址的硬件，通常和CPU放在一个芯片上</li>
+</ul>
+<h3 id="_17">分页虚拟存储器</h3>
+<p>分页管理将程序和主存都按页划分，逻辑地址和物理地址的低位是对应的，用来编码页内地址，而高位则分别用来编码虚页号和实页号，用页表来建立虚页号和实页号的映射关系。</p>
+<p>每次程序启动时，操作系统在主存中为其创建一个页表。页表记录每个虚页是否分配了主存空间，如果没有则称为缺页，由操作系统负责分配空间和加载数据。页表首地址由操作系统加载到页表基址寄存器中</p>
+<h3 id="_18">段式虚拟存储器</h3>
+<p>段式管理将程序按自然边界划分为多个段，比如代码段、数据段、跳转表等等，然后根据需要将程序的不同段加载到主存中。每个段可以命名并设置不同的权限，比如读/写/执行，方便编译器和操作系统管理，以及程序间的数据代码共享。每个程序运行前会在主存中分配到段表，记录段的加载情况、加载位置、段长。与分页不同，段的划分是可以由程序自己决定的。每个段在硬件层面用段号区分，他可以和程序号一起编码在逻辑地址中。</p>
+<h2 id="_19">存储层次结构框架</h2>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../4.%20MIPS%20CPU%E8%AE%BE%E8%AE%A1/" class="btn btn-neutral float-left" title="MIPS CPU设计"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../6.%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E6%80%BB%E7%BA%BF/" class="btn btn-neutral float-right" title="计算机系统总线">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../4.%20MIPS%20CPU%E8%AE%BE%E8%AE%A1/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../6.%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E6%80%BB%E7%BA%BF/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../javascripts/mathjax.js" defer></script>
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=es6" defer></script>
+      <script src="https://fastly.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

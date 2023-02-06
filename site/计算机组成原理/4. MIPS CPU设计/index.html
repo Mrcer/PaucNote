@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>MIPS CPU设计 - 咩咩的笔记</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "MIPS CPU\u8bbe\u8ba1";
+        var mkdocs_page_input_path = "\u8ba1\u7b97\u673a\u7ec4\u6210\u539f\u7406\\4. MIPS CPU\u8bbe\u8ba1.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> 咩咩的笔记
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">主页</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">笔记</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="#">数字电路</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF/1.%20%E4%BB%8B%E7%BB%8D/">介绍</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF/2.%20%E6%95%B0%E5%AD%97%E7%B3%BB%E7%BB%9F%E3%80%81%E8%BF%90%E7%AE%97%E5%92%8C%E7%BC%96%E7%A0%81/">数字系统、运算和编码</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF/3.%20%E9%80%BB%E8%BE%91%E9%97%A8/">逻辑门</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF/4.%20%E5%B8%83%E5%B0%94%E4%BB%A3%E6%95%B0/">布尔代数</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF/5.%20%E7%BB%84%E5%90%88%E9%80%BB%E8%BE%91%E5%88%86%E6%9E%90/">组合逻辑分析</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF/6.%20%E7%BB%84%E5%90%88%E9%80%BB%E8%BE%91%E5%8A%9F%E8%83%BD%E6%A8%A1%E5%9D%97/">组合逻辑功能模块</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF/7.%20%E9%94%81%E5%AD%98%E5%99%A8%E3%80%81%E8%A7%A6%E5%8F%91%E5%99%A8%E5%92%8C%E5%AE%9A%E6%97%B6%E5%99%A8/">锁存器、触发器和定时器</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF/8.%20%E7%A7%BB%E4%BD%8D%E5%AF%84%E5%AD%98%E5%99%A8/">移位寄存器</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF/9.%20%E8%AE%A1%E6%95%B0%E5%99%A8/">计数器</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF/10.%20%E5%82%A8%E5%AD%98%E5%99%A8/">储存器</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF/11.%20%E6%A8%A1%E6%95%B0%E8%BD%AC%E6%8D%A2/">模数转换</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">离散数学</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/2-%E5%91%BD%E9%A2%98%E9%80%BB%E8%BE%91/">命题逻辑</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/3-%E4%B8%80%E9%98%B6%E9%80%BB%E8%BE%91/">一阶逻辑</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/4-%E8%AF%81%E6%98%8E%E6%96%B9%E6%B3%95/">证明方法</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/5-%E9%9B%86%E5%90%88/">集合</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/6-%E5%85%B3%E7%B3%BB/">关系</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/7-%E5%87%BD%E6%95%B0/">函数</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/8-%E8%AE%A1%E6%95%B0%E4%B8%8E%E7%BB%84%E5%90%88/">计数与组合</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/9-%E5%9B%BE%E4%B8%8E%E6%A0%91/">图与树</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">计算机组成原理</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../1.%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%A6%82%E8%A7%88/">计算机概览</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../2.%20%E6%8C%87%E4%BB%A4/">指令</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../3.%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%AD%E7%9A%84%E8%BF%90%E7%AE%97/">计算机中的运算</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">MIPS CPU设计</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#_1">处理器概述</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#_2">计算机五大组成</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_3">控制器基本功能</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#cpu">CPU设计过程</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#datapath">设计Datapath</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#datapath_1">根据指令集分析datapath组成</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#datapath_2">设计datapath的模块</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#datapath_3">组装datapath</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_12">设计控制器</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#_13">所有指令需要的信号</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_14">汇总取值</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#alu_1">单独设计ALU控制模块</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#cpu_1">多周期CPU设计</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#cpu_2">单周期CPU的困境</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_15">多周期概述</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_16">各个阶段的改动</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_22">流水线设计</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#_23">各个阶段的改动</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_29">控制器的改动</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_30">冒险</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../5.%20%E5%AD%98%E5%82%A8%E5%99%A8%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84/">存储器层次结构</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../6.%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E6%80%BB%E7%BA%BF/">计算机系统总线</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../7.%20%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E7%B3%BB%E7%BB%9F/">输入输出系统</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">计算机组成原理实验</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AE%9E%E9%AA%8C/1/1/">加法器</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AE%9E%E9%AA%8C/2/2/">有限状态机</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AE%9E%E9%AA%8C/3/3/">MIPS指令集1</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AE%9E%E9%AA%8C/4/4/">MIPS指令集2</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AE%9E%E9%AA%8C/5/5/">存储器实验</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AE%9E%E9%AA%8C/6/6/">寄存器堆与 ALU 设计实验</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AE%9E%E9%AA%8C/7/7/">存储器与控制器实验</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AE%9E%E9%AA%8C/8/8/">单周期处理器实验</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AE%9E%E9%AA%8C/9/9/">多周期处理器实验</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AE%9E%E9%AA%8C/10/10/">多周期处理器综合性开放实验</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">概率论</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA/1.%20%E6%A6%82%E7%8E%87%E8%AE%BA%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/">概率论的基本概念</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA/2.%20%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E5%8F%8A%E5%85%B6%E5%88%86%E5%B8%83/">随机变量及其分布</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA/3.%20%E5%A4%9A%E7%BB%B4%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E5%8F%8A%E5%85%B6%E5%88%86%E5%B8%83/">多维随机变量及其分布</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA/4.%20%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E6%95%B0%E5%AD%97%E7%89%B9%E5%BE%81/">随机变量的数字特征</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA/5.%20%E5%A4%A7%E6%95%B0%E5%AE%9A%E5%BE%8B%E5%8F%8A%E4%B8%AD%E5%BF%83%E6%9E%81%E9%99%90%E5%AE%9A%E7%90%86/">大数定律及中心极限定理</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA/6.%20%E6%A0%B7%E6%9C%AC%E5%8F%8A%E6%8A%BD%E6%A0%B7%E5%88%86%E5%B8%83/">样本及抽样分布</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA/7.%20%E5%8F%82%E6%95%B0%E4%BC%B0%E8%AE%A1/">参数估计</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA/8.%20%E5%81%87%E8%AE%BE%E9%AA%8C%E8%AF%81/">假设验证</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">咩咩的笔记</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>笔记 &raquo;</li>
+          <li>计算机组成原理 &raquo;</li>
+      <li>MIPS CPU设计</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="mips-cpu">MIPS CPU设计</h1>
+<h2 id="_1">处理器概述</h2>
+<h3 id="_2">计算机五大组成</h3>
+<ol>
+<li>控制器（对指令译码并控制数据通路的元件）</li>
+<li>数据通路（指令执行时，数据所经过的路径）</li>
+<li>存储器</li>
+<li>输入</li>
+<li>输出<blockquote>
+<p>控制器和数据通路组成CPU</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="_3">控制器基本功能</h3>
+<ol>
+<li>取指令</li>
+<li>分析指令</li>
+<li>控制指令执行</li>
+<li>确定下一条指令的地址</li>
+<li>执行环境的建立和保护</li>
+</ol>
+<h3 id="cpu">CPU设计过程</h3>
+<ol>
+<li>分析指令集，得出datapath需求</li>
+<li>选择datapath包含的模块</li>
+<li>组装datapath</li>
+<li>根据指令集决定datapath中需要的控制信号</li>
+<li>设计控制信号逻辑<blockquote>
+<p>并不完全独立，很多步骤相互交织，比如datapath组装时就已经确定控制信号了，或者组装datapath时需要更多模块。在ppt中实际组装过程是不断增加对指令的支持完成的，过程中会得到需要的模块以及控制信号</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="datapath">设计Datapath</h2>
+<p>数据通路包括ALU、寄存器堆、多路选择器等。以下开始设计单周期MIPS CPU的datapath</p>
+<h3 id="datapath_1">根据指令集分析datapath组成</h3>
+<p><img alt="" src="../4.%20MIPS%20CPU%E8%AE%BE%E8%AE%A1_md_files/29cc5fa0-569c-11ed-861b-cbad2e16ec09_20221028164023.jpeg" />
+<img alt="" src="../4.%20MIPS%20CPU%E8%AE%BE%E8%AE%A1_md_files/ce6d93f0-569f-11ed-861b-cbad2e16ec09_20221028170627.jpeg" /></p>
+<ol>
+<li>存储器（指令存储器、数据存储器）</li>
+<li>寄存器（32x32bit）</li>
+<li>程序计数器PC</li>
+<li>ALU</li>
+<li>PC更新电路</li>
+</ol>
+<h3 id="datapath_2">设计datapath的模块</h3>
+<p>datapath的模块分组合逻辑电路和时序逻辑电路。组合逻辑电路要考虑延迟，时序逻辑电路要关注时钟触发。每次时钟触发时时序电路进行状态改变，然后输出的状态经过组合电路输出下一状态，下个时钟触发时循环这个过程。</p>
+<h4 id="_4">取指单元</h4>
+<p>每次时钟触发时先向指令存储器传送PC取出指令，若是顺序指令则PC+4，若是跳转指令或有异常则让控制器控制其他元件算出对应地址存入PC（取指单元依然是PC+4，但控制器让PC存入端的多路选择器选择其他信号）。</p>
+<h4 id="_5">译码单元</h4>
+<p>根据取到的指令从各域中得到数据，并对必要的指令数据进行解码——首先取出opcode，决定指令类型（rt、it、jt），然后根据指令类型取值发信号。</p>
+<blockquote>
+<p>控制器还要根据状态（标志位）来决定具体控制信号</p>
+</blockquote>
+<h4 id="_6">寄存器堆</h4>
+<p>单个寄存器：包含时钟、输入输出和写使能（可选）
+寄存器堆模块（<code>32x32</code>）：三个选通信号（<code>rw</code>、<code>ra</code>、<code>rb</code>，5bit宽度），三个<code>bus</code>口（<code>busW</code>、<code>busA</code>、<code>busB</code>，32bit宽度），时钟和写使能。每个寄存器不设写使能，而是通过时钟控制写入——时钟信号由rw选通信号（经过译码）、写使能信号和寄存器堆时钟相与得到；而输出则由多路选择器决定输出哪一个寄存器信号。
+由此可见，写入同步读取异步。</p>
+<h4 id="alu">ALU</h4>
+<p>相关指令：加减乘除、移位、逻辑、比较，以及偏移地址的计算
+需要实现的运算：加减乘除、移位、逻辑
+这些都在上一章介绍过，只要将运算组合起来，并引出两个数据输入、一个数据输出、功能控制输入、标志位输出即可</p>
+<h3 id="datapath_3">组装datapath</h3>
+<p><img alt="" src="../4.%20MIPS%20CPU%E8%AE%BE%E8%AE%A1_md_files/72cd7650-569f-11ed-861b-cbad2e16ec09_20221028170354.jpeg" /></p>
+<h4 id="_7">取值阶段</h4>
+<p>为了支持跳转指令，PC寄存器输入要加入数据选择器<code>PCSEL</code>，除了取值模块的PC+4外还有可能是：<code>j</code>指令的跳转地址、分支指令的跳转地址、<code>jr</code>指令要求的寄存器输出，以及重置/中断/异常发生时的跳转地址</p>
+<blockquote>
+<p>重置：计算机重启时初始化PC<br />
+中断：外部输入中断信号（比如需要处理I/O事件）<br />
+异常：非法指令引起的硬件错误  </p>
+<p>硬件实现的异常是要比高级语言的异常更底层的</p>
+</blockquote>
+<h4 id="_8">译码/读寄存器阶段</h4>
+<p>rt指令：将译码模块的寄存器选通信号连接到寄存器堆，op、shamt和func经过译码传送到ALU
+完整周期如图：
+<img alt="" src="../4.%20MIPS%20CPU%E8%AE%BE%E8%AE%A1_md_files/019886d0-56a1-11ed-861b-cbad2e16ec09_20221028171503.jpeg" />
+写地址Rw可能是寄存器选通信号（rt指令时为rd，it指令时为rt）或某些特殊寄存器（比如<code>jal</code>时使用的<code>$ra</code>），由控制器控制数据选择器选择。</p>
+<h4 id="_9">执行阶段</h4>
+<p>ALU经过数据选择器（<code>ASEL</code>和<code>BSEL</code>，由控制器控制），从寄存器、立即数（需要扩展模块扩展到32位）、<code>shamt</code>等地方获取输入</p>
+<p><code>ASEL</code>负责选择<code>rd1</code>、<code>shamt</code>（位移指令）和16（<code>lui</code>指令），<code>BSEL</code>负责选择立即数和<code>rd2</code></p>
+<p>结果输出接到寄存器堆的<code>busW</code>，用使能（<code>WERF</code>，由控制器控制）决定是否写回，也经过数据选择器接到内存<code>Addr</code>，便于执行可能的访存</p>
+<p>标志位输出接到控制器，在<code>slti</code>中用于决定写0/1</p>
+<p>对于分支指令，由于需要同时执行比较和地址运算操作，因此对于单周期CPU需要加入额外的ALU处理</p>
+<p>总结：主ALU负责计算R-type/I-type、beq的比较（减法）、l/s指令的地址计算</p>
+<h4 id="_10">访存阶段</h4>
+<p>从内存中读取或写入数据。只有load和store需要此步，其他指令跳过。可以用cache加速该阶段
+为了执行store，也就是<code>Mem[ R[rs] + SignExt[imm16] ] &lt;= R[rt]</code>，需要选通ALU对的运算结果到<code>addr</code>，将寄存器堆<code>rd2</code>连到内存输入，并开启写使能</p>
+<h4 id="_11">写回阶段</h4>
+<p>将计算结果写回寄存器。这部分为了决定写入数据，引入<code>WDSEL</code>，可选择ALU、内存输出（<code>lw</code>）、PC+4（<code>jal</code>）</p>
+<p><img alt="" src="../4.%20MIPS%20CPU%E8%AE%BE%E8%AE%A1_md_files/aa6e7940-56a6-11ed-861b-cbad2e16ec09_20221028175533.jpeg" /></p>
+<p><img alt="" src="../4.%20MIPS%20CPU%E8%AE%BE%E8%AE%A1_md_files/fbf9b7c0-56a6-11ed-861b-cbad2e16ec09_20221028175750.jpeg" /></p>
+<h2 id="_12">设计控制器</h2>
+<p>控制器其实是个大型组合电路，根据输入求出对应输出，因此实现上就是翻译真值表。设计过程大致是：列出所有指令需要的信号、汇总各指令的控制信号取值、对ALU单独设计局部控制单元（ALUctr）、设计主控制单元。</p>
+<blockquote>
+<p>ALU部分单独设计的原因是该模块比较复杂且相对独立，分开设计可以减小控制器规模</p>
+</blockquote>
+<ol>
+<li>输入包括opcode和func，以及ALU的标志位（Z、N、V）</li>
+<li>确定每条指令的控制信号（0/1/X）</li>
+</ol>
+<h3 id="_13">所有指令需要的信号</h3>
+<p>以add指令为例的所有信号：</p>
+<p><img alt="" src="../4.%20MIPS%20CPU%E8%AE%BE%E8%AE%A1_md_files/9cf6d710-5a8b-11ed-bfe3-bf1ea9f61487_20221102165158.jpeg" /></p>
+<p>控制器视角：</p>
+<p><img alt="" src="../4.%20MIPS%20CPU%E8%AE%BE%E8%AE%A1_md_files/71f84250-5a8c-11ed-bfe3-bf1ea9f61487_20221102165756.jpeg" /></p>
+<h3 id="_14">汇总取值</h3>
+<p>以ALU控制单元为例</p>
+<p><img alt="" src="../4.%20MIPS%20CPU%E8%AE%BE%E8%AE%A1_md_files/d8a2f770-5a91-11ed-bfe3-bf1ea9f61487_20221102173636.jpeg" /></p>
+<p>接下来可以用列出SOP化简，或者用类似FPGA思路来设计</p>
+<h3 id="alu_1">单独设计ALU控制模块</h3>
+<p>从主控制器中获取控制信号，从译码模块获取func（不再送去主控制器），处理后输出到ALU</p>
+<h2 id="cpu_1">多周期CPU设计</h2>
+<h3 id="cpu_2">单周期CPU的困境</h3>
+<p>涉及访存阶段的指令只有两条，但这个阶段却是最耗时的。由于单周期CPU的周期长度由最长延时指令决定，因此单周期CPU效率很低。</p>
+<h3 id="_15">多周期概述</h3>
+<p>在多周期CPU中，一条指令要经过多个周期才能执行完成。这种实现更加复杂，但频率可以更高，而每条指令可以根据需要调整占用周期数从而减少执行时间，并且很多部件可以得到复用。</p>
+<p>基本实现思想是将控制器改为有限状态机，不同指令经历各自的状态流程，而在每个状态中组件就可以得到复用（比如加法器）</p>
+<p>最终指令执行效率取决于阶段的划分和不同指令的比例。</p>
+<h3 id="_16">各个阶段的改动</h3>
+<p>由于一条指令会经历多个周期，控制器不再是组合逻辑电路，而是改成状态机。主要状态分支是R-type，I-type，lw，sw，j</p>
+<h4 id="_17">取值阶段</h4>
+<ol>
+<li>因为不是每个周期都要改变PC，PC增加写入使能；</li>
+<li>加入IR，在阶段末尾保存PC值</li>
+<li>ALU复用，在该阶段计算PC+4并在下一周期下降沿存入PC寄存器；PC改变时指令已经写入到IR中且后续没有写使能，不用担心PC改变对其他组件的影响；</li>
+</ol>
+<h4 id="_18">译码阶段</h4>
+<ol>
+<li>ALU复用进行投机计算，计算<code>PC+signext[imm]</code>（PC已经在取值阶段+4了）并存入target寄存器（带写使能，不需要ALU选通），在后面会用控制器决定是否需要改写PC</li>
+<li>寄存器堆末尾加入</li>
+</ol>
+<h4 id="_19">执行阶段</h4>
+<ol>
+<li>根据是否为分支指令且Z=0来决定是否把target写入PC</li>
+<li>为解决写回阶段的竞争问题（实际上寄存器是异步的，写使能前后一段时间信号要稳定），控制器要在这一阶段就选通好Rw和busW<blockquote>
+<p>竞争问题：当存储元件是异步时，输入信号不能和写使能同时发出，否则会不稳定。输入信号必须在整个写使能期间保持稳定。</p>
+</blockquote>
+</li>
+</ol>
+<h4 id="_20">访存阶段</h4>
+<p>此阶段只有l/s指令才会进行，其他指令跳过，下一阶段也是只有部分指令会进行。
+1. 此阶段要保持ALU输出稳定，确保内存模块地址稳定</p>
+<h4 id="_21">写回阶段</h4>
+<ol>
+<li>此阶段ALU输出要保持稳定，确保寄存器正确写入</li>
+</ol>
+<h2 id="_22">流水线设计</h2>
+<p>流水线设计在多周期CPU的基础上（但为了避免冲突，每条指令占用周期相同，被称为<em>规整化</em>）允许多条指令同时执行，这能降低CPI，提高吞吐率。但也会延长指令执行时间（引入了更多寄存器），而且引入三种冒险——控制冒险、数据冒险、结构冒险。</p>
+<p>基本实现思想是，将执行过程划分为多个阶段（上面已划分），每一阶段最后设置存储元件（被称为*流水线寄存器），每个周期将上一阶段的运行结果计算完后存在当前阶段末的流水线寄存器供下一阶段在下周期读取。</p>
+<p>最终指令执行效率取决于耗时最长阶段</p>
+<h3 id="_23">各个阶段的改动</h3>
+<p>控制器改回组合逻辑电路，在译码阶段产生所有控制信号，并流水线化（在各个阶段设置寄存器保存控制信号）。</p>
+<h4 id="_24">取值阶段</h4>
+<ol>
+<li>增加+4加法器（也就是改回单周期CPU的加法模式）</li>
+<li>将IR改为IF/ID寄存器，保存<em>PC+4</em>和指令。</li>
+</ol>
+<h4 id="_25">译码阶段</h4>
+<ol>
+<li>阶段末增加ID/EX寄存器，保存PC+4、Imm16、Reg[Rs]、Reg[Rt]、Rt、Rd</li>
+</ol>
+<h4 id="_26">执行阶段</h4>
+<ol>
+<li>阶段末增加Ex/Mem寄存器，保存PC+4、Rt/Rd（通过控制器选择）、计算结果、标志位、Target（分支指令的跳转地址）</li>
+<li>在ALU之外增加一个加法器计算Target（ALU</li>
+</ol>
+<h4 id="_27">访存阶段</h4>
+<ol>
+<li>阶段末增加Mem/Wr寄存器，保存访存结果、计算结果、目标寄存器</li>
+<li>增加分支指令是否跳转的判断，用于设置PC</li>
+</ol>
+<h4 id="_28">写回阶段</h4>
+<ol>
+<li>将写信号和时钟相与，也就是在下半周期完成写入，从而解决地址和写信号的竞争</li>
+<li>选择计算结果/访存结果来保存</li>
+</ol>
+<h3 id="_29">控制器的改动</h3>
+<ol>
+<li>PC不需要写控制信号</li>
+<li>流水线寄存器不需要写控制信号（非阻塞，但有清空信号来为下面的冒险服务）</li>
+<li>取值和译码不需要控制</li>
+</ol>
+<h3 id="_30">冒险</h3>
+<h4 id="_31">结构冒险（资源竞争）</h4>
+<p>指令<strong>使用相同硬件块</strong>：不同指令执行周期数不同，这就有可能导致不同指令处于同一阶段。</p>
+<p>有一种情况必然发生，那就是译码阶段和写会阶段同时使用寄存器堆，解决方法是前半周期（末尾的边缘）写回，后半周期（末尾）读取</p>
+<p>同理存储器也有这种问题，也就是取值和访存阶段都要用存储器。可以使用两个存储器，也可以像上面一样周期分开两部分使用</p>
+<h4 id="_32">数据冒险</h4>
+<p>指令数据依赖于流水线指令的其他结果，也就是<strong>与寄存器有关</strong>：load指令在写回阶段才改写寄存器堆，此时已经有3条指令使用了旧的寄存器值，这就是数据冒险。</p>
+<p>一种解决方法是进行冒泡，也就是插入空白周期（阻塞流水线），直到寄存器得到更新。分为软件和硬件阻塞。软件阻塞是让编译器分析依赖后在发生数据冒险处插入nop指令，nop是不改变计算机状态的指令。硬件阻塞是阻止PC、IF/ID寄存器（取值阶段末的寄存器）更新并清空ID/EX寄存器（译码阶段末的寄存器，主要要清空控制信号）</p>
+<p>另一种解决方法是转发，这对除lw指令外是有效的，因为数据在执行阶段就有效了，而即使是下一条指令就需要该数据，因为译码就在执行的上一阶段，这个数据可以直接转发过去从而让下一条指令取得新值。具体原理是引入转发控制器，控制ALU从中间寄存器中获取输入（转发是临时的，寄存器堆存的依然是旧值）。转发有三条回路，C1：执行尾到执行头（相邻指令冲突）；C2：访存尾到执行头（隔一条指令ALU结果冲突）；C3：访存尾到执行头（隔一条指令访存结果冲突）。对于lw指令，由于数据在访存阶段才能得到，转发只能提前一个周期（在写回之前转发），因此无法解决相邻指令的数据冒险。这被称为载入-使用冒险，只能冒泡。</p>
+<p>还有一种方法是让编译器调整指令顺序来消除依赖</p>
+<h4 id="_33">控制冒险</h4>
+<p>取指令依赖于流水线指令的其他结果，比如分支指令在访存阶段才能改写PC，此时已经有3条指令被取出，这就是控制冒险，也就是<strong>与PC有关</strong>。这会在所有改变PC的指令中发生。</p>
+<p>解决方法有冒泡、提前判断、预测、延迟分支</p>
+<p>对于j指令，需要阻塞一周期</p>
+<p>对于分支指令，直接冒泡可以硬件阻塞（清空流水线寄存器）也可以软件阻塞（插入nop指令），需要阻塞三周期（写回阶段初期才改写PC）。提前预测就是利用转发思想提前使用分支结果——
+转发执行阶段的比较结果则要阻塞两周期，引入专用比较器和转发电路将比较放在译码阶段则要阻塞一周期。如果想减小阻塞带来的性能损失，可以使用分支预测，也就是假设一种分支结果，直接执行对应的指令，这对于循环语句很有效。</p>
+<p>假设不发生跳转，则在分支发生时除了改写PC，还需要清除分支指令后的流水线内指令，并确保他们没有改变机器状态</p>
+<p>假设发生跳转的话每条分支都引入一周期阻塞（因为要在译码后才能知道是跳转指令）。</p>
+<p>还可以利用运行时信息动态预测，比如记录PC前后一段区域（通过仅保存有限位低地址实现）分支指令的上次跳转结果，然后总是假设该分支指令和上次跳转结果相同。实现方式是引入分支历史记录表BHT，在译码阶段检查PC是否在BHT中，命中（该分支指令执行过且记录在表内）时就按上次结果预测，未命中时就初始化缓存并使用默认预测；在判断出指令类型（因为缓存有范围，低地址相同的可能是其他指令）和跳转结果后更新缓存并按情况调整流水线。动态预测效率高，被广泛使用。</p>
+<p>另一种减小阻塞代价的方式是延迟分支。延迟分支是指分支指令后紧跟的指令必须执行，这需要编译器挑选无论分支与否都会执行的指令放在分支指令后，如果找不到就填nop。而紧跟的指令数（<em>分支延迟槽</em>）取决于取到分支到PC改变的周期数。这种设计简单但不如动态预测。mips采用了，分支指令后一条指令必定执行。</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../3.%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%AD%E7%9A%84%E8%BF%90%E7%AE%97/" class="btn btn-neutral float-left" title="计算机中的运算"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../5.%20%E5%AD%98%E5%82%A8%E5%99%A8%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84/" class="btn btn-neutral float-right" title="存储器层次结构">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../3.%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%AD%E7%9A%84%E8%BF%90%E7%AE%97/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../5.%20%E5%AD%98%E5%82%A8%E5%99%A8%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../javascripts/mathjax.js" defer></script>
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=es6" defer></script>
+      <script src="https://fastly.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

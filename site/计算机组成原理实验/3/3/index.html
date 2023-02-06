@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>MIPS指令集1 - 咩咩的笔记</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "MIPS\u6307\u4ee4\u96c61";
+        var mkdocs_page_input_path = "\u8ba1\u7b97\u673a\u7ec4\u6210\u539f\u7406\u5b9e\u9a8c\\3\\3.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../../../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> 咩咩的笔记
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../..">主页</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">笔记</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="#">数字电路</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF/1.%20%E4%BB%8B%E7%BB%8D/">介绍</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF/2.%20%E6%95%B0%E5%AD%97%E7%B3%BB%E7%BB%9F%E3%80%81%E8%BF%90%E7%AE%97%E5%92%8C%E7%BC%96%E7%A0%81/">数字系统、运算和编码</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF/3.%20%E9%80%BB%E8%BE%91%E9%97%A8/">逻辑门</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF/4.%20%E5%B8%83%E5%B0%94%E4%BB%A3%E6%95%B0/">布尔代数</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF/5.%20%E7%BB%84%E5%90%88%E9%80%BB%E8%BE%91%E5%88%86%E6%9E%90/">组合逻辑分析</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF/6.%20%E7%BB%84%E5%90%88%E9%80%BB%E8%BE%91%E5%8A%9F%E8%83%BD%E6%A8%A1%E5%9D%97/">组合逻辑功能模块</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF/7.%20%E9%94%81%E5%AD%98%E5%99%A8%E3%80%81%E8%A7%A6%E5%8F%91%E5%99%A8%E5%92%8C%E5%AE%9A%E6%97%B6%E5%99%A8/">锁存器、触发器和定时器</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF/8.%20%E7%A7%BB%E4%BD%8D%E5%AF%84%E5%AD%98%E5%99%A8/">移位寄存器</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF/9.%20%E8%AE%A1%E6%95%B0%E5%99%A8/">计数器</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF/10.%20%E5%82%A8%E5%AD%98%E5%99%A8/">储存器</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF/11.%20%E6%A8%A1%E6%95%B0%E8%BD%AC%E6%8D%A2/">模数转换</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">离散数学</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/2-%E5%91%BD%E9%A2%98%E9%80%BB%E8%BE%91/">命题逻辑</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/3-%E4%B8%80%E9%98%B6%E9%80%BB%E8%BE%91/">一阶逻辑</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/4-%E8%AF%81%E6%98%8E%E6%96%B9%E6%B3%95/">证明方法</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/5-%E9%9B%86%E5%90%88/">集合</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/6-%E5%85%B3%E7%B3%BB/">关系</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/7-%E5%87%BD%E6%95%B0/">函数</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/8-%E8%AE%A1%E6%95%B0%E4%B8%8E%E7%BB%84%E5%90%88/">计数与组合</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/9-%E5%9B%BE%E4%B8%8E%E6%A0%91/">图与树</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">计算机组成原理</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/1.%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%A6%82%E8%A7%88/">计算机概览</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/2.%20%E6%8C%87%E4%BB%A4/">指令</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/3.%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%AD%E7%9A%84%E8%BF%90%E7%AE%97/">计算机中的运算</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/4.%20MIPS%20CPU%E8%AE%BE%E8%AE%A1/">MIPS CPU设计</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/5.%20%E5%AD%98%E5%82%A8%E5%99%A8%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84/">存储器层次结构</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/6.%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E6%80%BB%E7%BA%BF/">计算机系统总线</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/7.%20%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E7%B3%BB%E7%BB%9F/">输入输出系统</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">计算机组成原理实验</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../../1/1/">加法器</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../2/2/">有限状态机</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">MIPS指令集1</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#_1">实验内容</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_2">实验过程</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_3">实验总结</a>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../4/4/">MIPS指令集2</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../5/5/">存储器实验</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../6/6/">寄存器堆与 ALU 设计实验</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../7/7/">存储器与控制器实验</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../8/8/">单周期处理器实验</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../9/9/">多周期处理器实验</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../10/10/">多周期处理器综合性开放实验</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">概率论</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E6%A6%82%E7%8E%87%E8%AE%BA/1.%20%E6%A6%82%E7%8E%87%E8%AE%BA%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/">概率论的基本概念</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E6%A6%82%E7%8E%87%E8%AE%BA/2.%20%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E5%8F%8A%E5%85%B6%E5%88%86%E5%B8%83/">随机变量及其分布</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E6%A6%82%E7%8E%87%E8%AE%BA/3.%20%E5%A4%9A%E7%BB%B4%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E5%8F%8A%E5%85%B6%E5%88%86%E5%B8%83/">多维随机变量及其分布</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E6%A6%82%E7%8E%87%E8%AE%BA/4.%20%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E6%95%B0%E5%AD%97%E7%89%B9%E5%BE%81/">随机变量的数字特征</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E6%A6%82%E7%8E%87%E8%AE%BA/5.%20%E5%A4%A7%E6%95%B0%E5%AE%9A%E5%BE%8B%E5%8F%8A%E4%B8%AD%E5%BF%83%E6%9E%81%E9%99%90%E5%AE%9A%E7%90%86/">大数定律及中心极限定理</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E6%A6%82%E7%8E%87%E8%AE%BA/6.%20%E6%A0%B7%E6%9C%AC%E5%8F%8A%E6%8A%BD%E6%A0%B7%E5%88%86%E5%B8%83/">样本及抽样分布</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E6%A6%82%E7%8E%87%E8%AE%BA/7.%20%E5%8F%82%E6%95%B0%E4%BC%B0%E8%AE%A1/">参数估计</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E6%A6%82%E7%8E%87%E8%AE%BA/8.%20%E5%81%87%E8%AE%BE%E9%AA%8C%E8%AF%81/">假设验证</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">咩咩的笔记</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>笔记 &raquo;</li>
+          <li>计算机组成原理实验 &raquo;</li>
+      <li>MIPS指令集1</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="mips1">MIPS指令集1</h1>
+<h2 id="_1">实验内容</h2>
+<ol>
+<li>阅读<code>alb_ex1.s</code>回答问题</li>
+<li>一个简短的MIPS程序</li>
+<li>调试（Debugging）MIPS程序</li>
+<li>编写程序实现将一个数组a[8]={7,8,9,10,8,1,1,1}的8个数平均数（只保留整数），并输出</li>
+<li>编写程序实现将一个数组a[5]={7,8,9,10,8}数组中的最小值放入到b中</li>
+</ol>
+<h2 id="_2">实验过程</h2>
+<ol>
+<li>
+<p>使用Help(问号图标)回答下列关于MARS的问题.</p>
+<ol>
+<li>
+<p>data, .word, .text 指示器（directives）的含义是什么(即, 在每段中放入什么内容)?</p>
+<p>.data是数据段，.word是字，.text是代码段</p>
+</li>
+<li>
+<p>在MARS中如何设置断点breakpoint? 请在第15行设置断点，并在所有问题解答完后，将此结果给老师检查。</p>
+<p>打钩</p>
+</li>
+<li>
+<p>在程序运行到断点处停止时，如何继续执行? 如何单步调试代码?</p>
+<p>run,step</p>
+</li>
+<li>
+<p>如何知道某个寄存器register的值是多少? 如何修改寄存器的值.</p>
+<p>右边</p>
+</li>
+<li>
+<p>n 存储在内存中的哪个地址? 通过修改此内存处的值来计算第13个fib数.</p>
+<p>0x10010000</p>
+</li>
+<li>
+<p>16 和 18 行使用了syscall指令. 其功能是什么，如何使用它? (提示: syscall 在Help中有说明!如何英文不是太好，可以一边运行，一边看效果，来体会其用途)</p>
+<p>调用系统函数，先往$v0存入中断值，然后按要求放入参数</p>
+</li>
+</ol>
+</li>
+<li>
+<p>编写MIPS代码完成：在给定$s0 和 $s1的值的前提下，将下列值放到 $t? 寄存器中（其中？表示任意0-7之间的数）</p>
+</li>
+</ol>
+<pre><code class="language-mipsasm">$t0 = $s0
+$t1 = $s1
+$t2 = $t0 + $t1
+$t3 = $t1 + $t2
+$t4 = $t2 + $t3
+$t5 = $t3 + $t4
+$t6 = $t4 + $t5
+$t7 = $t5 + $t6
+</code></pre>
+<ol>
+<li>
+<p>调试程序<code>lab4_ex3.s</code>中的循环. 该程序将从<code>$a0</code>所指示的内存地址中复制一个整数到<code>$a1</code>所指示的内存地址, 起到读入一个zero值时结束. 复制的整数的个数(<strong>不</strong>含zero值)应存储在中<code>$v0</code>.</p>
+<p>Bug: <code>没有编写函数puti,puts,putc，loop中对$a0和$a1的修改应为一个字（4byte）</code></p>
+<p>修改代码：</p>
+</li>
+</ol>
+<pre><code class="language-mipsasm">.data
+source: .word  3, 1, 4, 1, 5, 9, 0
+dest: .word  0, 0, 0, 0, 0, 0, 0
+countmsg: .asciiz  &quot; values copied. &quot;
+
+.text
+
+main:
+la  $a0, source
+la  $a1, dest
+
+loop:
+lw  $v1, 0($a0) # read next word from source
+addiu  $v0, $v0, 1  # increment count words copied
+sw  $v1, 0($a1) # write to destination
+addiu  $a0, $a0, 4  # advance pointer to next source
+addiu  $a1, $a1, 4  # advance pointer to next dest
+bne  $v1, $zero, loop # loop if word copied not zero
+
+loopend:
+move  $a0, $v0  # $a0 &lt;- count
+jal puti # print it
+
+la  $a0, countmsg # $a0 &lt;- countmsg
+jal puts # print it
+
+li  $a0, 0x0A  # $a0 &lt;- '\n'
+jal putc # print it
+
+finish:
+li  $v0, 10  # Exit the program
+syscall
+
+# ## The following functions do syscalls in order to print data (integer, string, character)
+# Note: argument $a0 to syscall has already been set by the CALLEE
+
+puti:
+sub  $sp, $sp, 4
+sw  $v0, 0($sp)
+li  $v0, 1
+syscall
+lw  $v0, 0($sp)
+add  $sp, $sp, 4
+jr  $ra
+puts:
+sub  $sp, $sp, 4
+sw  $v0, 0($sp)
+li  $v0, 4
+syscall
+lw  $v0, 0($sp)
+add  $sp, $sp, 4
+jr  $ra
+putc:
+sub  $sp, $sp, 4
+sw  $v0, 0($sp)
+li  $v0, 11
+syscall
+lw  $v0, 0($sp)
+add  $sp, $sp, 4
+jr  $ra
+</code></pre>
+<ol>
+<li>编写程序实现将一个数组a[8]={7,8,9,10,8,1,1,1}的8个数平均数（只保留整数），并输出</li>
+</ol>
+<pre><code class="language-mipsasm">    .data
+a:  .byte  7, 8, 9, 10, 8, 1, 1, 1
+    .text
+main:
+    la  $a0, a          # *p = a
+    li  $s0, 8          # i = 8
+    li  $s1, 0          # sum = 0
+Loop: 
+    lb  $t0, 0($a0)
+    add  $s1, $s1, $t0  # sum += *p
+    add  $a0, $a0, 1    # p++
+    sub  $s0, $s0, 1    # i--
+    bgt  $s0, 0, Loop   # while(i &gt; 0)
+    div  $s1, $s1, 8    # arv = sum / 8
+    li  $v0, 1
+    move  $a0, $s1
+    syscall             # print(arv)
+    li  $v0, 10
+    syscall             # exit()
+</code></pre>
+<p>结果：<code>5</code>
+5. 编写程序实现将一个数组a[5]={7,8,9,10,8}数组中的最小值放入到b中</p>
+<pre><code class="language-mipsasm">    .data
+a:  .byte  7, 8, 9, 10, 8
+    .text
+main:
+    la  $a0, a                  # *p = a
+    lb  $s0, 0($a0)             # min = a[0]
+    addi  $a0, $a0, 1           # p++
+    li  $t0, 4  # i = 4
+LOOP: 
+    lb  $t1, 0($a0)
+    bge  $t1, $s0, ENDIF        # if(a[i] &lt; min)
+    move  $s0, $t1              # min = a[i]
+ENDIF:
+    sub  $t0, $t0, 1            # i--
+    bgt  $t0, 0, LOOP           # while(i &gt; 0)
+    li  $v0, 1
+    move  $a0, $s0
+    syscall                     # print(arv)
+    li  $v0, 10
+    syscall                     # exit()
+</code></pre>
+<p>结果：<code>7</code></p>
+<h2 id="_3">实验总结</h2>
+<ol>
+<li>将中断码放在<code>$v0</code>，用<code>syscall</code>调用系统中断</li>
+<li>用<code>b</code>类语句实现条件跳转</li>
+</ol>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../../2/2/" class="btn btn-neutral float-left" title="有限状态机"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../4/4/" class="btn btn-neutral float-right" title="MIPS指令集2">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../../2/2/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../4/4/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme_extra.js" defer></script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="../../../javascripts/mathjax.js" defer></script>
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=es6" defer></script>
+      <script src="https://fastly.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

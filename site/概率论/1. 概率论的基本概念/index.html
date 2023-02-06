@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>概率论的基本概念 - 咩咩的笔记</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "\u6982\u7387\u8bba\u7684\u57fa\u672c\u6982\u5ff5";
+        var mkdocs_page_input_path = "\u6982\u7387\u8bba\\1. \u6982\u7387\u8bba\u7684\u57fa\u672c\u6982\u5ff5.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> 咩咩的笔记
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">主页</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">笔记</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="#">数字电路</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF/1.%20%E4%BB%8B%E7%BB%8D/">介绍</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF/2.%20%E6%95%B0%E5%AD%97%E7%B3%BB%E7%BB%9F%E3%80%81%E8%BF%90%E7%AE%97%E5%92%8C%E7%BC%96%E7%A0%81/">数字系统、运算和编码</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF/3.%20%E9%80%BB%E8%BE%91%E9%97%A8/">逻辑门</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF/4.%20%E5%B8%83%E5%B0%94%E4%BB%A3%E6%95%B0/">布尔代数</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF/5.%20%E7%BB%84%E5%90%88%E9%80%BB%E8%BE%91%E5%88%86%E6%9E%90/">组合逻辑分析</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF/6.%20%E7%BB%84%E5%90%88%E9%80%BB%E8%BE%91%E5%8A%9F%E8%83%BD%E6%A8%A1%E5%9D%97/">组合逻辑功能模块</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF/7.%20%E9%94%81%E5%AD%98%E5%99%A8%E3%80%81%E8%A7%A6%E5%8F%91%E5%99%A8%E5%92%8C%E5%AE%9A%E6%97%B6%E5%99%A8/">锁存器、触发器和定时器</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF/8.%20%E7%A7%BB%E4%BD%8D%E5%AF%84%E5%AD%98%E5%99%A8/">移位寄存器</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF/9.%20%E8%AE%A1%E6%95%B0%E5%99%A8/">计数器</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF/10.%20%E5%82%A8%E5%AD%98%E5%99%A8/">储存器</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF/11.%20%E6%A8%A1%E6%95%B0%E8%BD%AC%E6%8D%A2/">模数转换</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">离散数学</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/2-%E5%91%BD%E9%A2%98%E9%80%BB%E8%BE%91/">命题逻辑</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/3-%E4%B8%80%E9%98%B6%E9%80%BB%E8%BE%91/">一阶逻辑</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/4-%E8%AF%81%E6%98%8E%E6%96%B9%E6%B3%95/">证明方法</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/5-%E9%9B%86%E5%90%88/">集合</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/6-%E5%85%B3%E7%B3%BB/">关系</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/7-%E5%87%BD%E6%95%B0/">函数</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/8-%E8%AE%A1%E6%95%B0%E4%B8%8E%E7%BB%84%E5%90%88/">计数与组合</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/9-%E5%9B%BE%E4%B8%8E%E6%A0%91/">图与树</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">计算机组成原理</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/1.%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%A6%82%E8%A7%88/">计算机概览</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/2.%20%E6%8C%87%E4%BB%A4/">指令</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/3.%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%AD%E7%9A%84%E8%BF%90%E7%AE%97/">计算机中的运算</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/4.%20MIPS%20CPU%E8%AE%BE%E8%AE%A1/">MIPS CPU设计</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/5.%20%E5%AD%98%E5%82%A8%E5%99%A8%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84/">存储器层次结构</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/6.%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E6%80%BB%E7%BA%BF/">计算机系统总线</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/7.%20%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E7%B3%BB%E7%BB%9F/">输入输出系统</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">计算机组成原理实验</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AE%9E%E9%AA%8C/1/1/">加法器</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AE%9E%E9%AA%8C/2/2/">有限状态机</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AE%9E%E9%AA%8C/3/3/">MIPS指令集1</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AE%9E%E9%AA%8C/4/4/">MIPS指令集2</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AE%9E%E9%AA%8C/5/5/">存储器实验</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AE%9E%E9%AA%8C/6/6/">寄存器堆与 ALU 设计实验</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AE%9E%E9%AA%8C/7/7/">存储器与控制器实验</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AE%9E%E9%AA%8C/8/8/">单周期处理器实验</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AE%9E%E9%AA%8C/9/9/">多周期处理器实验</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AE%9E%E9%AA%8C/10/10/">多周期处理器综合性开放实验</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">概率论</a>
+    <ul class="current">
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">概率论的基本概念</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#_2">随机实验</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_3">样本空间、随机事件</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#_4">样本空间</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_5">随机事件</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_6">事件间的关系与事件的运算</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_7">频率与概率</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#_8">频率</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_9">概率</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_12">等可能概型（古典概型）</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#_13">例题模型</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_14">条件概率</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#_15">条件概率</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_16">乘法定理</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_17">全概率公式和贝叶斯公式</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_18">独立性</a>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../2.%20%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E5%8F%8A%E5%85%B6%E5%88%86%E5%B8%83/">随机变量及其分布</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../3.%20%E5%A4%9A%E7%BB%B4%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E5%8F%8A%E5%85%B6%E5%88%86%E5%B8%83/">多维随机变量及其分布</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../4.%20%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E6%95%B0%E5%AD%97%E7%89%B9%E5%BE%81/">随机变量的数字特征</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../5.%20%E5%A4%A7%E6%95%B0%E5%AE%9A%E5%BE%8B%E5%8F%8A%E4%B8%AD%E5%BF%83%E6%9E%81%E9%99%90%E5%AE%9A%E7%90%86/">大数定律及中心极限定理</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../6.%20%E6%A0%B7%E6%9C%AC%E5%8F%8A%E6%8A%BD%E6%A0%B7%E5%88%86%E5%B8%83/">样本及抽样分布</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../7.%20%E5%8F%82%E6%95%B0%E4%BC%B0%E8%AE%A1/">参数估计</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../8.%20%E5%81%87%E8%AE%BE%E9%AA%8C%E8%AF%81/">假设验证</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">咩咩的笔记</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>笔记 &raquo;</li>
+          <li>概率论 &raquo;</li>
+      <li>概率论的基本概念</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="_1">概率论的基本概念</h1>
+<h2 id="_2">随机实验</h2>
+<p>定义：</p>
+<ol>
+<li>可以在相同的条件下<strong>重复地</strong>进行</li>
+<li>每次实验的可能结果不止一个，并且能事先<strong>明确</strong>试验的<strong>所有</strong>可能结果</li>
+<li>进行一次试验之前<strong>不能确定</strong>哪一个结果会出现</li>
+</ol>
+<h2 id="_3">样本空间、随机事件</h2>
+<h3 id="_4">样本空间</h3>
+<p>随机试验E的所有可能结果组成的集合称为E的<strong>样本空间</strong>，其中的元素，即E的每个结果，称为<strong>样本点</strong></p>
+<h3 id="_5">随机事件</h3>
+<p>试验E的样本空间S的子集为E的随机事件简称<strong>事件</strong>，每次试验中，当且仅当这一子集中的一个样本点出现时称这一<strong>事件发生</strong>
+由一个样本点组成的单点集称为<strong>基本事件</strong>，S本身称为<strong>必然事件</strong>，空集称为<strong>不可能事件</strong></p>
+<h3 id="_6">事件间的关系与事件的运算</h3>
+<p>相等、和事件、积事件、差事件、运算律等同于集合的关系和运算
+（互斥与对立的定义和差别）</p>
+<h2 id="_7">频率与概率</h2>
+<h3 id="_8">频率</h3>
+<p>频数、频率是试验得出来的，频率<span class="arithmatex">\(f_n(\cdot)\)</span>有基本性质：</p>
+<ol>
+<li><span class="arithmatex">\(0\leq f_n(A)\leq 1\)</span></li>
+<li><span class="arithmatex">\(f_n(S)=1\)</span></li>
+<li>若<span class="arithmatex">\(A_1,A_2,\cdots,A_k\)</span>是两两互不相容的事件，则<span class="arithmatex">\(f_n(A_1\cup A_2\cup\cdots\cup A_k)=f_n(A_1)+f_n(A_2)+\cdots+f_n(A_k)\)</span></li>
+</ol>
+<h3 id="_9">概率</h3>
+<h4 id="_10">定义</h4>
+<p>概率<span class="arithmatex">\(P(\cdot)\)</span>是定义出来的，将样本空间的幂集映射到实数集，且满足以下条件：</p>
+<ol>
+<li>非负性：<span class="arithmatex">\(\forall A,P(A)\geq 0\)</span></li>
+<li>规范性：<span class="arithmatex">\(P(S)=1\)</span></li>
+<li>可列可加性：设<span class="arithmatex">\(A_1,A_2,\cdots\)</span>是两两互不相容的事件，即对于<span class="arithmatex">\(A_1A_2=\varnothing,i\neq j,i,j=1,2,\cdots,\)</span>有<span class="arithmatex">\(P(A_1\cup A_2\cup\cdots)=P(A_1)+P(A_2)+\cdots\)</span></li>
+</ol>
+<h4 id="_11">性质</h4>
+<p>可推导出概率具有以下性质：</p>
+<ol>
+<li><span class="arithmatex">\(P(\varnothing)=0\)</span></li>
+<li>有限可加性</li>
+<li>若<span class="arithmatex">\(A\subset B\)</span>，则<span class="arithmatex">\(P(B-A)=P(B)-P(A),P(B)\geq P(A)\)</span></li>
+<li><span class="arithmatex">\(\forall A,P(A)\leq 1\)</span></li>
+<li><span class="arithmatex">\(P(\bar A)=1-P(A)\)</span></li>
+<li><span class="arithmatex">\(P(A\cup B)=P(A)+P(B)-P(AB)\\P(A_1\cup A_2\cup\cdots\cup A_n)=\sum_{i=1}^n P(A_i)-\sum_{1\leq i&lt;j\leq n}P(A_iA_j)+\sum_{1\leq i&lt;j&lt;k\leq n}P(A_iA_jA_k)+\cdots+(-1)^{n-1}P(A_1A_2\cdots A_n)\)</span>  </li>
+</ol>
+<h2 id="_12">等可能概型（古典概型）</h2>
+<p>具有以下两个特点的试验称为<strong>等可能概型</strong>或<strong>古典概型</strong>：</p>
+<ol>
+<li>试验的样本空间只包含有限个元素</li>
+<li>试验中每个基本事件发生的可能性相同
+古典概型中基本事件的概率为1/n，任意事件A的概率为k/n，其中n为基本事件数，k为事件包含基本事件数</li>
+</ol>
+<h3 id="_13">例题模型</h3>
+<p>放回抽样：n个白球m个红球，抽k个球，每次放回
+不放回抽样：n个白球m个红球，抽k个球，每次不放回
+生日概率：n个人中至少有两个人生日相同的概率
+超几何分布：N个产品D个次品，抽n件产品有k件次品的概率
+实际推断原理：概率很小的事件在一次试验中实际上几乎是不发生的</p>
+<h2 id="_14">条件概率</h2>
+<h3 id="_15">条件概率</h3>
+<p>条件概率研究事件A发生的条件下事件B发生的概率
+定义：设A,B是两个事件，且<span class="arithmatex">\(P(A)&gt;0\)</span>，称<span class="arithmatex">\(P(B|A)=p(AB)/P(A)\)</span>
+为在事件A发生的条件下事件B发生的条件概率
+根据定义条件概率<span class="arithmatex">\(P(\cdot|A)\)</span>满足以下条件：</p>
+<p>1非负性：<span class="arithmatex">\(\forall B,P(B|A)\geq 0\)</span>
+2规范性：<span class="arithmatex">\(P(S|A)=1\)</span>
+3可列可加性：设<span class="arithmatex">\(B_1,B_2,\cdots\)</span>是两两互不相容的事件，则有<span class="arithmatex">\(P(\bigcup_{i=1}^\infty B_i|A)=\sum_{i=1}^\infty P(B_i|A)\)</span></p>
+<h3 id="_16">乘法定理</h3>
+<p>设<span class="arithmatex">\(P(A)&gt;0\)</span>，则<span class="arithmatex">\(P(AB)=P(B|A)P(A)\)</span>
+由归纳法不难证明<span class="arithmatex">\(P(A_1A_2\cdots A_n)=P(A_n|A_1A_2\cdots A_{n-1})P(A_{n-1}|A_1A_2\cdots A_{n-2})\cdots P(A_2|A_1)P(A_1)\)</span></p>
+<h3 id="_17">全概率公式和贝叶斯公式</h3>
+<p>定义：设S为试验E的样本空间，<span class="arithmatex">\(B_1,B_2,\cdots,B_n\)</span>为E的一组事件，若他们分别互斥且广义并为S，则称他们是样本S的一个<strong>划分</strong></p>
+<p><strong>全概率公式</strong>：设试验E的样本空间为S，A为E的事件，<span class="arithmatex">\(B_1.B_2,\cdots,B_n\)</span>为S的一个划分且它们概率大于零，则</p>
+<div class="arithmatex">\[P(A)=P(A|B_1)P(B_1)+P(A|B_2)P(B_2)+\cdots+P(A|B_n)P(B_n)\]</div>
+<p>这被称为全概率公式（分类讨论的原理）</p>
+<p><strong>贝叶斯公式</strong>：设试验E的样本空间为S，A为E的概率大于零的事件，<span class="arithmatex">\(B_1.B_2,\cdots,B_n\)</span>为S的一个划分且它们概率大于零，则</p>
+<div class="arithmatex">\[
+P(B_i|A)=\frac{P(A|B_i)P(B_i)}{\sum_{j=1}^nP(A|B_j)P(B_j)},i=1,2,\cdots,n
+\]</div>
+<p>根据先前信息而得到的概率叫<strong>先验概率</strong>，在得到新信息后修正的概率叫<strong>后验概率</strong></p>
+<h2 id="_18">独立性</h2>
+<p>一般，设<span class="arithmatex">\(A_1,A_2,\cdots,A_n\)</span>是<span class="arithmatex">\(n(n\geq 2)\)</span>个事件，如果对于其中任意<span class="arithmatex">\(i(2\leq i \leq n)\)</span>个事件的积事件的概率，都等于各事件概率之积，则称事件<span class="arithmatex">\(A_1,A_2,\cdots,A_n\)</span>相互独立。</p>
+<p>推论：</p>
+<ol>
+<li>n个事件相互独立，则其中的任意个事件也相互独立</li>
+<li>n个事件相互独立，则将其中任意个事件取反，它们也依然独立</li>
+</ol>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AE%9E%E9%AA%8C/10/10/" class="btn btn-neutral float-left" title="多周期处理器综合性开放实验"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../2.%20%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E5%8F%8A%E5%85%B6%E5%88%86%E5%B8%83/" class="btn btn-neutral float-right" title="随机变量及其分布">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AE%9E%E9%AA%8C/10/10/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../2.%20%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E5%8F%8A%E5%85%B6%E5%88%86%E5%B8%83/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../javascripts/mathjax.js" defer></script>
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=es6" defer></script>
+      <script src="https://fastly.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

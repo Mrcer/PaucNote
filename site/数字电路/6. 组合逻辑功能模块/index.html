@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>组合逻辑功能模块 - 咩咩的笔记</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "\u7ec4\u5408\u903b\u8f91\u529f\u80fd\u6a21\u5757";
+        var mkdocs_page_input_path = "\u6570\u5b57\u7535\u8def\\6. \u7ec4\u5408\u903b\u8f91\u529f\u80fd\u6a21\u5757.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> 咩咩的笔记
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">主页</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">笔记</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">数字电路</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../1.%20%E4%BB%8B%E7%BB%8D/">介绍</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../2.%20%E6%95%B0%E5%AD%97%E7%B3%BB%E7%BB%9F%E3%80%81%E8%BF%90%E7%AE%97%E5%92%8C%E7%BC%96%E7%A0%81/">数字系统、运算和编码</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../3.%20%E9%80%BB%E8%BE%91%E9%97%A8/">逻辑门</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../4.%20%E5%B8%83%E5%B0%94%E4%BB%A3%E6%95%B0/">布尔代数</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../5.%20%E7%BB%84%E5%90%88%E9%80%BB%E8%BE%91%E5%88%86%E6%9E%90/">组合逻辑分析</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">组合逻辑功能模块</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#_2">半加器与全加器</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#_3">半加器</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_4">全加器</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_5">多位并行加法器</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_6">比较器</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_7">译码器</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#_8">二进制转控制信号</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#bcd">BCD转十进制</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#bcd_1">BCD转七段</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_9">编码器</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_10">编码转换器</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#bcd_2">BCD到二进制</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_11">二进制与格雷码互转</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_12">多路复用器/数据选择器</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_13">多路分配器</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_14">奇偶发生器/校验器</a>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../7.%20%E9%94%81%E5%AD%98%E5%99%A8%E3%80%81%E8%A7%A6%E5%8F%91%E5%99%A8%E5%92%8C%E5%AE%9A%E6%97%B6%E5%99%A8/">锁存器、触发器和定时器</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../8.%20%E7%A7%BB%E4%BD%8D%E5%AF%84%E5%AD%98%E5%99%A8/">移位寄存器</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../9.%20%E8%AE%A1%E6%95%B0%E5%99%A8/">计数器</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../10.%20%E5%82%A8%E5%AD%98%E5%99%A8/">储存器</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../11.%20%E6%A8%A1%E6%95%B0%E8%BD%AC%E6%8D%A2/">模数转换</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">离散数学</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/2-%E5%91%BD%E9%A2%98%E9%80%BB%E8%BE%91/">命题逻辑</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/3-%E4%B8%80%E9%98%B6%E9%80%BB%E8%BE%91/">一阶逻辑</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/4-%E8%AF%81%E6%98%8E%E6%96%B9%E6%B3%95/">证明方法</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/5-%E9%9B%86%E5%90%88/">集合</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/6-%E5%85%B3%E7%B3%BB/">关系</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/7-%E5%87%BD%E6%95%B0/">函数</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/8-%E8%AE%A1%E6%95%B0%E4%B8%8E%E7%BB%84%E5%90%88/">计数与组合</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/9-%E5%9B%BE%E4%B8%8E%E6%A0%91/">图与树</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">计算机组成原理</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/1.%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%A6%82%E8%A7%88/">计算机概览</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/2.%20%E6%8C%87%E4%BB%A4/">指令</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/3.%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%AD%E7%9A%84%E8%BF%90%E7%AE%97/">计算机中的运算</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/4.%20MIPS%20CPU%E8%AE%BE%E8%AE%A1/">MIPS CPU设计</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/5.%20%E5%AD%98%E5%82%A8%E5%99%A8%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84/">存储器层次结构</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/6.%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E6%80%BB%E7%BA%BF/">计算机系统总线</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/7.%20%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E7%B3%BB%E7%BB%9F/">输入输出系统</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">计算机组成原理实验</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AE%9E%E9%AA%8C/1/1/">加法器</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AE%9E%E9%AA%8C/2/2/">有限状态机</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AE%9E%E9%AA%8C/3/3/">MIPS指令集1</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AE%9E%E9%AA%8C/4/4/">MIPS指令集2</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AE%9E%E9%AA%8C/5/5/">存储器实验</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AE%9E%E9%AA%8C/6/6/">寄存器堆与 ALU 设计实验</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AE%9E%E9%AA%8C/7/7/">存储器与控制器实验</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AE%9E%E9%AA%8C/8/8/">单周期处理器实验</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AE%9E%E9%AA%8C/9/9/">多周期处理器实验</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AE%9E%E9%AA%8C/10/10/">多周期处理器综合性开放实验</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">概率论</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA/1.%20%E6%A6%82%E7%8E%87%E8%AE%BA%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/">概率论的基本概念</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA/2.%20%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E5%8F%8A%E5%85%B6%E5%88%86%E5%B8%83/">随机变量及其分布</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA/3.%20%E5%A4%9A%E7%BB%B4%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E5%8F%8A%E5%85%B6%E5%88%86%E5%B8%83/">多维随机变量及其分布</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA/4.%20%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E6%95%B0%E5%AD%97%E7%89%B9%E5%BE%81/">随机变量的数字特征</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA/5.%20%E5%A4%A7%E6%95%B0%E5%AE%9A%E5%BE%8B%E5%8F%8A%E4%B8%AD%E5%BF%83%E6%9E%81%E9%99%90%E5%AE%9A%E7%90%86/">大数定律及中心极限定理</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA/6.%20%E6%A0%B7%E6%9C%AC%E5%8F%8A%E6%8A%BD%E6%A0%B7%E5%88%86%E5%B8%83/">样本及抽样分布</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA/7.%20%E5%8F%82%E6%95%B0%E4%BC%B0%E8%AE%A1/">参数估计</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA/8.%20%E5%81%87%E8%AE%BE%E9%AA%8C%E8%AF%81/">假设验证</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">咩咩的笔记</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>笔记 &raquo;</li>
+          <li>数字电路 &raquo;</li>
+      <li>组合逻辑功能模块</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="_1">组合逻辑功能模块</h1>
+<h2 id="_2">半加器与全加器</h2>
+<h3 id="_3">半加器</h3>
+<p>计算本位的和数和进位</p>
+<table>
+<thead>
+<tr>
+<th align="center">被加数A</th>
+<th align="center">被加数B</th>
+<th align="center">和数S</th>
+<th align="center">进位C</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">1</td>
+</tr>
+</tbody>
+</table>
+<p>可见
+<span class="arithmatex">\(<span class="arithmatex">\(S=A\oplus B，C=AB\)</span>\)</span></p>
+<h3 id="_4">全加器</h3>
+<p>计算本位和低位进位的和数和本位进位</p>
+<table>
+<thead>
+<tr>
+<th align="center"><span class="arithmatex">\(A_i\)</span></th>
+<th align="center"><span class="arithmatex">\(B_i\)</span></th>
+<th align="center"><span class="arithmatex">\(C_{i-1}\)</span></th>
+<th align="center"><span class="arithmatex">\(S_i\)</span></th>
+<th align="center"><span class="arithmatex">\(C_i\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">1</td>
+</tr>
+</tbody>
+</table>
+<p>可以算出
+<span class="arithmatex">\(<span class="arithmatex">\(S_i=A_i\oplus B_i\oplus C_{i-1}\)</span>\)</span>
+<span class="arithmatex">\(<span class="arithmatex">\(C_i=(A_i\oplus B_i)C_{i-1}+A_iB_i\)</span>\)</span></p>
+<h2 id="_5">多位并行加法器</h2>
+<p>顺次连接多个全加器可以得到多位并行加法器（波纹进位，也就是进位运算串行），但由于后面的全加器需要等待上一位全加器的进位运算，所以位数越高延迟越大</p>
+<p>为了降低延迟，引入超前进位技术，让每一位的进位可以在常数时间完成，从而实现加法并行计算。</p>
+<p>超前进位对每一位运算引入了两个函数：产生函数<span class="arithmatex">\(g_i=A_iB_i\)</span>和传递函数<span class="arithmatex">\(p_i=A_i+ B_i\)</span>。每一位的进位就是前面每一位的产生函数与中间各位的传递函数，再取或。</p>
+<p>实际单个多位加法器内部采用并行运算，多个多位加法器间采用串行运算</p>
+<h2 id="_6">比较器</h2>
+<p>多位等于：每一位同或后进与门
+一位大于/小于：真值表推
+多位大于/小于：先判断高位，高位相等再往下比较，具体逻辑电路实现用真值表推。可以用级联扩展位数</p>
+<h2 id="_7">译码器</h2>
+<p>译码器把二进制输入转译为对应数位输出的高电平/低电平，原理是与门的判断。包括2-4译码器，3-8译码器（74HC138），4-16译码器（74HC154）。</p>
+<h3 id="_8">二进制转控制信号</h3>
+<p>74HC154有两个片选信号，自带取反，即只有这两个端口都输入低电平时芯片才工作。利用片选信号可以将74HC154最高扩展为6-64译码器</p>
+<p>74HC138有三个片选信号，其中一个是低电平有效，两个是高电平有效。该芯片会将输出有效位置为低电平（154芯片是输出高电平信号）</p>
+<p>译码器可以应用于将地址转译为控制信号（如用154芯片控制多个设备的开关），也可以用于实现逻辑表达式（如用138芯片接与非门实现三变量SOP）</p>
+<h3 id="bcd">BCD转十进制</h3>
+<p>74HC42是BCD到十进制译码器，输入4位二进制，输出端口10个，低电平有效。</p>
+<h3 id="bcd_1">BCD转七段</h3>
+<p>还有一种是BCD到七段译码器，输出连接到七段数字显示器，直接控制显示数字。还有一些其他端口，如下：
+1. LT灯测试输入，会使输出全为一
+2. RBI异步灭灯输入，会使输出全为零
+3. BI/RBO灭零输出，当输入二进制非零时输出为一 当输入二进制为零时输出为零
+LT灯用于测试灯珠；灭灯信号用于在多位数字显示时控制数字前的显示灭灯（如果有小数点，也可以使数字后的显示灭灯）
+能实现这种功能的芯片分两种，一种是共阴性的，一种是共阳性的</p>
+<h2 id="_9">编码器</h2>
+<p>反过来，编码器把十进制输入转换为二进制。普通编码器只允许输入一个有效编码，只需要用或门即可实现；优先编码器会根据优先级确定唯一的输出，如74HC148芯片的优先级是从大到小的。</p>
+<p>74HC147是十进制到BCD编码器，十输入四输出，输入与输出都是低电平有效。若输入都为高电平，则输入无效，将会输出0000（即输出端均为高电平）。多个输入位有效时，按从大到小的优先级选择输出。</p>
+<p>74HC148是八输入三输出的编码器，输入和输出都是低电平有效。输入无效时输出0。有片选信号输入EI，当EI为高电平（无效）时芯片输出都为高电平。还有扩展输出端GS和EO选通输出端，输入0时GS有效EO无效，输入无效时GS无效EO有效，可以说GS有效表示“工作且有输入”，EO有效表示“工作但无输入”。该芯片可以拓展为十六输入四输出编码器，具体来说需要把高位芯片的EO接到低位芯片的EI和输出最高位，这样高位芯片工作时低位芯片不能工作，从而实现优先级，剩下的输出低三位取两个芯片输出的与非</p>
+<h2 id="_10">编码转换器</h2>
+<h3 id="bcd_2">BCD到二进制</h3>
+<p>实现多位BCD到二进制的转换，需要将BCD数按对应位权重相加，比如一个两位BCD数BA转换为二进制数就是<span class="arithmatex">\(80B_3+40B_2+20B_1+10B_0+8A_3+4A_2+2A_1+A_0\)</span>，权可以硬编码，剩下用加法器实现。</p>
+<h3 id="_11">二进制与格雷码互转</h3>
+<p>二进制转格雷码：按照转换规则，最高位不变，往下依次是二进制本位与高位的异或，然后转换为电路实现即可。
+格雷码转二进制：同样按照规则，最高位不变，往下依次是格雷码本位和二进制高位的异或。</p>
+<h2 id="_12">多路复用器/数据选择器</h2>
+<p>多路输入数据<span class="arithmatex">\(D_x\)</span>，根据选择输入<span class="arithmatex">\(S\)</span>，来输出某一路的数据<span class="arithmatex">\(Y\)</span>。</p>
+<p>电路可以很容易地用SOP表达：
+<span class="arithmatex">\(<span class="arithmatex">\(Y=D_0\bar S_1\bar S_0+D_1\bar S_1S_0+D_2S_1\bar S_0+D_3S_1S_0\)</span>\)</span></p>
+<p>芯片74HC157实现了四2输入多路复用器。有AB两路信号，每路信号有四位输入，使用G1控制，并带有EN使能信号输入（低电平有效）。当EN为高电平时芯片输出低电平；当EN为低电平时芯片工作，D1为低电平时输出A的信号，D1为高电平时输出B的信号。</p>
+<p>芯片74HC151实现了8选1数据选择器，有八路一位的信号输入，用三位的选通信号控制输出，另附使能信号（低电平有效）和输出的非。使能信号可以实现加一位拓展。</p>
+<p>数据选择器可以实现布尔代数运算。首先按照布尔公式的变量选择芯片，例如三个变量可以选择有三位选通信号的151芯片，将变量输入到对应选通信号；然后将公式转换为SOP并提取最小项，将最小项对应的信号输入置为1，其他置为0。观察此时芯片的布尔表达式，这样就实现了布尔运算。</p>
+<p>实现四变量函数，可以使用两个151合成四路复用选择器，也可以加上一个非门，取一个变量控制信号输入。</p>
+<h2 id="_13">多路分配器</h2>
+<p>按照地址码的要求将一路数据分配到指定输出通道上去的电路。154芯片实现了四输入十六输出分配器</p>
+<h2 id="_14">奇偶发生器/校验器</h2>
+<p>奇偶发生器/校验器原理都是对输入进行异或，所以本质上都是一种芯片。280芯片实现了九位奇偶发生/校验，输入奇结果和偶结果
+如果发生器使用奇发生，那么合并的结果将会是偶数个一，使用奇校验应输出1，偶校验输出0</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../5.%20%E7%BB%84%E5%90%88%E9%80%BB%E8%BE%91%E5%88%86%E6%9E%90/" class="btn btn-neutral float-left" title="组合逻辑分析"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../7.%20%E9%94%81%E5%AD%98%E5%99%A8%E3%80%81%E8%A7%A6%E5%8F%91%E5%99%A8%E5%92%8C%E5%AE%9A%E6%97%B6%E5%99%A8/" class="btn btn-neutral float-right" title="锁存器、触发器和定时器">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../5.%20%E7%BB%84%E5%90%88%E9%80%BB%E8%BE%91%E5%88%86%E6%9E%90/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../7.%20%E9%94%81%E5%AD%98%E5%99%A8%E3%80%81%E8%A7%A6%E5%8F%91%E5%99%A8%E5%92%8C%E5%AE%9A%E6%97%B6%E5%99%A8/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../javascripts/mathjax.js" defer></script>
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=es6" defer></script>
+      <script src="https://fastly.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

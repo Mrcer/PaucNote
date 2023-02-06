@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>多维随机变量及其分布 - 咩咩的笔记</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "\u591a\u7ef4\u968f\u673a\u53d8\u91cf\u53ca\u5176\u5206\u5e03";
+        var mkdocs_page_input_path = "\u6982\u7387\u8bba\\3. \u591a\u7ef4\u968f\u673a\u53d8\u91cf\u53ca\u5176\u5206\u5e03.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> 咩咩的笔记
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">主页</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">笔记</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="#">数字电路</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF/1.%20%E4%BB%8B%E7%BB%8D/">介绍</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF/2.%20%E6%95%B0%E5%AD%97%E7%B3%BB%E7%BB%9F%E3%80%81%E8%BF%90%E7%AE%97%E5%92%8C%E7%BC%96%E7%A0%81/">数字系统、运算和编码</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF/3.%20%E9%80%BB%E8%BE%91%E9%97%A8/">逻辑门</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF/4.%20%E5%B8%83%E5%B0%94%E4%BB%A3%E6%95%B0/">布尔代数</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF/5.%20%E7%BB%84%E5%90%88%E9%80%BB%E8%BE%91%E5%88%86%E6%9E%90/">组合逻辑分析</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF/6.%20%E7%BB%84%E5%90%88%E9%80%BB%E8%BE%91%E5%8A%9F%E8%83%BD%E6%A8%A1%E5%9D%97/">组合逻辑功能模块</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF/7.%20%E9%94%81%E5%AD%98%E5%99%A8%E3%80%81%E8%A7%A6%E5%8F%91%E5%99%A8%E5%92%8C%E5%AE%9A%E6%97%B6%E5%99%A8/">锁存器、触发器和定时器</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF/8.%20%E7%A7%BB%E4%BD%8D%E5%AF%84%E5%AD%98%E5%99%A8/">移位寄存器</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF/9.%20%E8%AE%A1%E6%95%B0%E5%99%A8/">计数器</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF/10.%20%E5%82%A8%E5%AD%98%E5%99%A8/">储存器</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF/11.%20%E6%A8%A1%E6%95%B0%E8%BD%AC%E6%8D%A2/">模数转换</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">离散数学</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/2-%E5%91%BD%E9%A2%98%E9%80%BB%E8%BE%91/">命题逻辑</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/3-%E4%B8%80%E9%98%B6%E9%80%BB%E8%BE%91/">一阶逻辑</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/4-%E8%AF%81%E6%98%8E%E6%96%B9%E6%B3%95/">证明方法</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/5-%E9%9B%86%E5%90%88/">集合</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/6-%E5%85%B3%E7%B3%BB/">关系</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/7-%E5%87%BD%E6%95%B0/">函数</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/8-%E8%AE%A1%E6%95%B0%E4%B8%8E%E7%BB%84%E5%90%88/">计数与组合</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/9-%E5%9B%BE%E4%B8%8E%E6%A0%91/">图与树</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">计算机组成原理</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/1.%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%A6%82%E8%A7%88/">计算机概览</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/2.%20%E6%8C%87%E4%BB%A4/">指令</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/3.%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%AD%E7%9A%84%E8%BF%90%E7%AE%97/">计算机中的运算</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/4.%20MIPS%20CPU%E8%AE%BE%E8%AE%A1/">MIPS CPU设计</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/5.%20%E5%AD%98%E5%82%A8%E5%99%A8%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84/">存储器层次结构</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/6.%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E6%80%BB%E7%BA%BF/">计算机系统总线</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/7.%20%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E7%B3%BB%E7%BB%9F/">输入输出系统</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">计算机组成原理实验</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AE%9E%E9%AA%8C/1/1/">加法器</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AE%9E%E9%AA%8C/2/2/">有限状态机</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AE%9E%E9%AA%8C/3/3/">MIPS指令集1</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AE%9E%E9%AA%8C/4/4/">MIPS指令集2</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AE%9E%E9%AA%8C/5/5/">存储器实验</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AE%9E%E9%AA%8C/6/6/">寄存器堆与 ALU 设计实验</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AE%9E%E9%AA%8C/7/7/">存储器与控制器实验</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AE%9E%E9%AA%8C/8/8/">单周期处理器实验</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AE%9E%E9%AA%8C/9/9/">多周期处理器实验</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AE%9E%E9%AA%8C/10/10/">多周期处理器综合性开放实验</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">概率论</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../1.%20%E6%A6%82%E7%8E%87%E8%AE%BA%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/">概率论的基本概念</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../2.%20%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E5%8F%8A%E5%85%B6%E5%88%86%E5%B8%83/">随机变量及其分布</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">多维随机变量及其分布</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#_2">二维随机变量</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#_3">分布函数</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_4">离散型</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_5">连续型</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_6">边缘分布</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#_7">离散型</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_8">连续型</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_9">二维正态分布</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_10">条件分布</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#_11">离散型</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_12">连续型</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_13">相互独立的随机变量</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#_14">连续型</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_15">离散型</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#n">推广到n维</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_16">两个随机变量的函数的分布</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#zxy">Z=X+Y的分布</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#zyxzxy">Z=Y/X的分布、Z=XY的分布</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#mmaxxynminxy">M＝max{X,Y}及N=min{X,Y}的分布</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../4.%20%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E6%95%B0%E5%AD%97%E7%89%B9%E5%BE%81/">随机变量的数字特征</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../5.%20%E5%A4%A7%E6%95%B0%E5%AE%9A%E5%BE%8B%E5%8F%8A%E4%B8%AD%E5%BF%83%E6%9E%81%E9%99%90%E5%AE%9A%E7%90%86/">大数定律及中心极限定理</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../6.%20%E6%A0%B7%E6%9C%AC%E5%8F%8A%E6%8A%BD%E6%A0%B7%E5%88%86%E5%B8%83/">样本及抽样分布</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../7.%20%E5%8F%82%E6%95%B0%E4%BC%B0%E8%AE%A1/">参数估计</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../8.%20%E5%81%87%E8%AE%BE%E9%AA%8C%E8%AF%81/">假设验证</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">咩咩的笔记</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>笔记 &raquo;</li>
+          <li>概率论 &raquo;</li>
+      <li>多维随机变量及其分布</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="_1">多维随机变量及其分布</h1>
+<h2 id="_2">二维随机变量</h2>
+<p>设X=X(e)和Y=Y(e)是定义在样本空间S={e}上的随机变量，由它们构成的一个向量(X.Y)，叫做<strong>二维随机向量</strong>或<strong>二维随机变量</strong></p>
+<h3 id="_3">分布函数</h3>
+<p>设<span class="arithmatex">\((X,Y)\)</span>是二维随机变量，对于任意实数x,y，将<span class="arithmatex">\(P\{(X\leq x)\cap (Y\leq y)\}\)</span>记作<span class="arithmatex">\(P\{X\leq x, Y\leq y\}\)</span>，则定义<span class="arithmatex">\(F(x,y)=P\{X\leq x, Y\leq y\}\)</span>为二维随机变量<span class="arithmatex">\((X,Y)\)</span>的<strong>分布函数</strong>，或称为随机变量X和Y的<strong>联合分布函数</strong>，它具有以下性质：</p>
+<ol>
+<li>关于x,y不减</li>
+<li><span class="arithmatex">\(0\leq F(x,y)\leq 1\)</span>且，对于固定的y有<span class="arithmatex">\(F(-\infty,y)=0\)</span>，对于固定的x有<span class="arithmatex">\(F(x,-\infty)=0\)</span>，<span class="arithmatex">\(F(-\infty,-\infty)=0\)</span>，<span class="arithmatex">\(F(\infty,\infty)=1\)</span></li>
+<li>关于x,y右连续</li>
+<li>落在某个矩形的概率大于零
+    <span class="arithmatex">\(\forall (x_1,y_1),(x_2,y_2),x_1&lt;x_2,y_1&lt;y_2,不等式F(x_2,x_y)-F(x_2,y_1)-F(x_1,y_2)+F(x_1,y_1)成立\)</span>）</li>
+</ol>
+<h3 id="_4">离散型</h3>
+<p>如果(X,Y)全部可能取到的值是有限对或可列无限对，则称(X,Y)是<strong>二维离散型随机变量</strong>；称<span class="arithmatex">\(P\{X=x_i,Y=y_i\},i,j=1,2,\cdots\)</span>为(X,Y)的<strong>分布律</strong>，或称是X和Y的联合分布律。</p>
+<h3 id="_5">连续型</h3>
+<p>如果F(x,y)存在非负可积函数f(x,y)使对于任意x,y有<span class="arithmatex">\(F(x,y)=\int_{-\infty}^y\int_{\infty}^x f(u,v)dudv\)</span>，则称(X,Y)是<strong>二维连续型随机变量</strong>，f(x,y)是(X,Y)的<strong>概率密度</strong>，或称为X和Y的<strong>联合概率密度</strong>。
+f(x,y)有以下性质：</p>
+<ol>
+<li>非负</li>
+<li><span class="arithmatex">\(\int_{\infty}^\infty\int_{\infty}^\infty f(x,y)dxdy=F(\infty,\infty)=1\)</span></li>
+<li>设G是xOy平面上的区域，点(X,Y)落在G内的概率<span class="arithmatex">\(P\{(X,Y)\in G\}=\iint_G f(x,y)dxdy\)</span></li>
+<li>若f(x,y)在(x,y)连续，则有F(x,y)的xy导数等于f(x,y)，并由此得出(x,y)附近的小矩形概率等于<span class="arithmatex">\(f(x,y)\Delta x\Delta y\)</span></li>
+</ol>
+<p>以上对二维随机变量的讨论可推广至n维</p>
+<h2 id="_6">边缘分布</h2>
+<p>将二维随机变量的X，Y分开看有他们各自的分布函数<span class="arithmatex">\(F_X(x)\)</span>,<span class="arithmatex">\(F_Y(y)\)</span>，称为<strong>边缘分布函数</strong>。</p>
+<p>对于X，有<span class="arithmatex">\(F_X(x)=P\{X\leq x\}=P\{X\leq x,Y&lt;\infty\}=F(x,\infty)\)</span>；同理<span class="arithmatex">\(F_Y(y)=F(\infty,y)\)</span>。</p>
+<h3 id="_7">离散型</h3>
+<p>对于离散型随机变量，以X为例，有<span class="arithmatex">\(F_X(x)=F(x,\infty)=\sum_{x_i\leq x}\sum_{j=1}^\infty p_{ij}\)</span>；<span class="arithmatex">\(P\{X=x_i\}=\sum_{j=1}^\infty p_{ij}\)</span>，记为<span class="arithmatex">\(p_{i\cdot}\)</span>，称为关于X的<strong>边缘分布律</strong>。</p>
+<h3 id="_8">连续型</h3>
+<p>对于连续型随机变量，以X为例，有<span class="arithmatex">\(f_X(x)=\int_{-\infty}^\infty f(x,y)dy\)</span>，称为关于X的<strong>边缘概率密度</strong>。</p>
+<h3 id="_9">二维正态分布</h3>
+<p>二维正态分布的概率密度: </p>
+<div class="arithmatex">\[f(x, y) = \frac{1}{2\pi\sigma_1\sigma_2\sqrt{1-\rho^2} }exp\left\{\frac{-1}{2(1-\rho^2)}\left[\frac{(x-\mu_1)^2}{\sigma_1^2}-2\rho\frac{(x-\mu_1)(y-\mu_2)}{\sigma_1\sigma_2}+\frac{(y-\mu_2)^2}{\sigma_2^2}\right]\right\}\]</div>
+<p>记为<span class="arithmatex">\((X,Y)\sim N(\mu_1,\mu_2,\sigma_1^2,\sigma_2^2,\rho)\)</span>。其边缘概率密度就是一维正态分布<span class="arithmatex">\(X\sim N(\mu_1,\sigma_1^2)\)</span>和<span class="arithmatex">\(Y\sim N(\mu_2,\sigma_2^2)\)</span></p>
+<h2 id="_10">条件分布</h2>
+<h3 id="_11">离散型</h3>
+<p>对于固定的j，若<span class="arithmatex">\(P\{Y=y_j\}&gt;0\)</span>，则称</p>
+<div class="arithmatex">\[P\{X=x_i|Y=y_i\}=\frac{P\{X=x_i,Y=y_i\}}{P\{Y=y_i\}}=\frac{p_{ij}}{p_{\cdot j}}\]</div>
+<p>为在<span class="arithmatex">\(Y=y_j\)</span>条件下随机变量X的<strong>条件分布律</strong>.
+Y的条件分布律同理。</p>
+<h3 id="_12">连续型</h3>
+<p>对于固定的y，若<span class="arithmatex">\(f_Y(y)&gt;0\)</span>，则称<span class="arithmatex">\(\frac{f(x,y)}{f_Y(y)}\)</span>为在<span class="arithmatex">\(Y=y\)</span>的条件下X的<strong>条件概率密度</strong>，记为<span class="arithmatex">\(f_{X|Y}(x|y)=\frac{f(x,y)}{f_Y(y)}\)</span>。</p>
+<p>称<span class="arithmatex">\(\int_{-\infty}^x f_{X|Y}(x|y)\)</span>为在<span class="arithmatex">\(Y=y\)</span>的条件下X的<strong>条件分布函数</strong>，记为<span class="arithmatex">\(P\{X\leq x|Y=y\}\)</span>或<span class="arithmatex">\(F_{X|Y}(x|y)\)</span>。</p>
+<h2 id="_13">相互独立的随机变量</h2>
+<p>若对于所有x,y，有<span class="arithmatex">\(F(x,y)=F_X(x)F_Y(y)\)</span>，则称X和Y是<strong>相互独立</strong>的。</p>
+<h3 id="_14">连续型</h3>
+<p>对于连续型随机变量，这等价于<span class="arithmatex">\(f(x,y)=f_X(x)f_Y(y)\)</span>在平面上除了“面积”（也就是二重积分）为零的集合外处处成立；</p>
+<h3 id="_15">离散型</h3>
+<p>对于离散型随机变量，这等价于对所有可能取值<span class="arithmatex">\((x_i,y_i)\)</span>，<span class="arithmatex">\(P\{X=x_i, Y=y_i\}=P\{X=x_i\}P\{Y=y_i\}\)</span>成立。</p>
+<p>二维正态分布中X和Y相互独立当且仅当<span class="arithmatex">\(\rho=0\)</span></p>
+<h3 id="n">推广到n维</h3>
+<p>n维随机变量<span class="arithmatex">\((X_1,X_2,\cdots, X_n)\)</span>的分布函数定义为：</p>
+<div class="arithmatex">\[F(x_1,x_2,\cdots,x_n)=P\{X_1\leq x_1,X_2\leq x_2,\cdots,X_n\leq x_n\}\]</div>
+<p>其中<span class="arithmatex">\(x_1,x_2,\cdots,x_n\)</span>为任意实数。</p>
+<p>若存在非负可积函数<span class="arithmatex">\(f(x_1,x_2,\cdots,x_n)\)</span>，使对于任意实数<span class="arithmatex">\(x_1,x_2,\cdots,x_n\)</span>，有</p>
+<div class="arithmatex">\[F(x_1,x_2,\cdots,x_n)=\int_{-\infty}^{x_n}\int_{-\infty}^{x_{n-1}}\cdots\int_{-\infty}^{x_1}f(x_1,x_2,\cdots,x_n)dx_1dx_2\cdots dx_n\]</div>
+<p>则称<span class="arithmatex">\(f(x_1,x_2,\cdots,x_n)\)</span>为<span class="arithmatex">\((X_1,X_2,\cdots, X_n)\)</span>的概率密度函数。</p>
+<p><span class="arithmatex">\((X_1,X_2,\cdots, X_n)\)</span>关于<span class="arithmatex">\(X_1\)</span>、<span class="arithmatex">\((X_1,X_2)\)</span>的边缘分布函数为</p>
+<div class="arithmatex">\[F_{X_1}(x_1)=F(x_1,\infty,\infty,\cdots,\infty),\\F_{X_1,X_2}(x_1)=F(x_1,x_2,\infty,\cdots,\infty)\]</div>
+<p>边缘概率密度为</p>
+<div class="arithmatex">\[F_{X_1}(x_1)=F(x_1,\infty,\infty,\cdots,\infty),\\F_{X_1,X_2}(x_1)=F(x_1,x_2,\infty,\cdots,\infty)\]</div>
+<p>若对于所有<span class="arithmatex">\(x_1,x_2,\cdots,x_n\)</span>由</p>
+<div class="arithmatex">\[F(x_1,x_2,\cdots,x_n)=F_{X_1}(x_1)F_{X_2}(x_2)\cdots F_{X_n}(x_n)\]</div>
+<p>则称<span class="arithmatex">\(X_1,X_2,\cdots, X_n\)</span>相互独立
+若对于所有<span class="arithmatex">\(x_1,x_2,\cdots,x_m;y_1,y_2,\cdots,y_n\)</span>有</p>
+<div class="arithmatex">\[F(x_1,x_2,\cdots,x_m,y_1,y_2,\cdots,y_n)=F_1(x_1,x_2,\cdots,x_m)F_2(y_1,y_2,\cdots,y_n)\]</div>
+<p>其中<span class="arithmatex">\(F_1,F_2,F\)</span>均为对应随机变量的分布函数，则称<span class="arithmatex">\((X_1,X_2,\cdots, X_m)\)</span>和<span class="arithmatex">\((Y_1,Y_2,\cdots, Y_n)\)</span>相互独立
+定理：若<span class="arithmatex">\((X_1,X_2,\cdots, X_m)\)</span>和<span class="arithmatex">\((Y_1,Y_2,\cdots, Y_n)\)</span>相互独立，则<span class="arithmatex">\(X_i(i=1,2,\cdots,m)\)</span>和<span class="arithmatex">\(Y_j(j=1,2,\cdots,n)\)</span>相互独立.又若h,g是连续函数，则<span class="arithmatex">\(h(X_1,X_2,\cdots, X_m)\)</span>和<span class="arithmatex">\(g(Y_1,Y_2,\cdots, Y_n)\)</span>相互独立</p>
+<h2 id="_16">两个随机变量的函数的分布</h2>
+<h3 id="zxy">Z=X+Y的分布</h3>
+<p>设(X,Y)是二维连续性随机变量，它具有概率密度<span class="arithmatex">\(f(x,y)\)</span>。则Z=X+Y仍为连续型随机变量，其概率密度为</p>
+<div class="arithmatex">\[f_{X+Y}(z)=\int^\infty_{-\infty}f(z-y,y)dy=\int^\infty_{-\infty}f(x,z-x)dx\]</div>
+<p>又若X和Y相互独立，则</p>
+<div class="arithmatex">\[f_{X+Y}(z)=\int^\infty_{-\infty}f_X(z-y)f_Y(y)dy=\int^\infty_{-\infty}f_X(x)f_Y(z-x)dx\]</div>
+<p>这两个公式（两个等号后面）称为<span class="arithmatex">\(f_X\)</span>和<span class="arithmatex">\(f_Y\)</span>的<strong>卷积公式</strong>，记为<span class="arithmatex">\(f_X\ast f_Y\)</span>。</p>
+<p>有限个相互独立的正态随机变量的线性组合仍然服从正态分布。</p>
+<h3 id="zyxzxy">Z=Y/X的分布、Z=XY的分布</h3>
+<p>设(X,Y)是二维连续性随机变量，则Z=Y/X和Z＝XY仍为连续型随机变量，其概率分布为</p>
+<div class="arithmatex">\[f_{Y/X}(z)=\int_{-\infty}^\infty |x|f(x,xz)dx\]</div>
+<div class="arithmatex">\[f_{XY}(z)=\int_{-\infty}^\infty \frac{1}{|x|}f(x,\frac{z}{x})dx\]</div>
+<p>又若X和Y相互独立，则</p>
+<div class="arithmatex">\[f_{Y/X}(z)=\int_{-\infty}^\infty |x|f_X(x)f_Y(xz)dx\]</div>
+<div class="arithmatex">\[f_{XY}(z)=\int_{-\infty}^\infty \frac{1}{|x|}f_X(x)f_Y(\frac{z}{x})dx\]</div>
+<h3 id="mmaxxynminxy">M＝max{X,Y}及N=min{X,Y}的分布</h3>
+<p>对于M=max{X,Y}</p>
+<div class="arithmatex">\[P\{M\leq z\}=P\{X\leq z, Y\leq z\}\]</div>
+<p>若X和Y相互独立，则</p>
+<div class="arithmatex">\[F_{max}(z)=F_X(z)F_Y(z)\]</div>
+<p>对于N＝min{X,Y}
+类似的可以得到对于相互独立的X,Y，有</p>
+<div class="arithmatex">\[F_{min}(z)=1-[1-F_X(z)][1-F_Y(z)]\]</div>
+<p>推广到n个独立的随机变量有：</p>
+<div class="arithmatex">\[F_{max}(z)=\prod_{i=1}^n F_{X_i}(z)\]</div>
+<div class="arithmatex">\[F_{min}(z)=1-\prod_{i=1}^n [1-F_{X_i}(z)]\]</div>
+<p>特别的，当这些随机变量有相同分布函数时</p>
+<div class="arithmatex">\[F_{max}(z)=[F(z)]^n\]</div>
+<div class="arithmatex">\[F_{min}(z)=1-[1-F(z)]^n\]</div>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../2.%20%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E5%8F%8A%E5%85%B6%E5%88%86%E5%B8%83/" class="btn btn-neutral float-left" title="随机变量及其分布"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../4.%20%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E6%95%B0%E5%AD%97%E7%89%B9%E5%BE%81/" class="btn btn-neutral float-right" title="随机变量的数字特征">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../2.%20%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E5%8F%8A%E5%85%B6%E5%88%86%E5%B8%83/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../4.%20%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E6%95%B0%E5%AD%97%E7%89%B9%E5%BE%81/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../javascripts/mathjax.js" defer></script>
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=es6" defer></script>
+      <script src="https://fastly.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
