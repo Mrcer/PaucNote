@@ -232,26 +232,25 @@
               
                 <h1 id="_1">多维随机变量及其分布</h1>
 <h2 id="_2">二维随机变量</h2>
-<p>设X=X(e)和Y=Y(e)是定义在样本空间S={e}上的随机变量，由它们构成的一个向量(X.Y)，叫做<strong>二维随机向量</strong>或<strong>二维随机变量</strong></p>
+<p>设X=X(e)和Y=Y(e)是定义在样本空间S={e}上的随机变量，由它们构成的一个向量(X,Y)，叫做<strong>二维随机向量</strong>或<strong>二维随机变量</strong></p>
 <h3 id="_3">分布函数</h3>
 <p>设<span class="arithmatex">\((X,Y)\)</span>是二维随机变量，对于任意实数x,y，将<span class="arithmatex">\(P\{(X\leq x)\cap (Y\leq y)\}\)</span>记作<span class="arithmatex">\(P\{X\leq x, Y\leq y\}\)</span>，则定义<span class="arithmatex">\(F(x,y)=P\{X\leq x, Y\leq y\}\)</span>为二维随机变量<span class="arithmatex">\((X,Y)\)</span>的<strong>分布函数</strong>，或称为随机变量X和Y的<strong>联合分布函数</strong>，它具有以下性质：</p>
 <ol>
 <li>关于x,y不减</li>
 <li><span class="arithmatex">\(0\leq F(x,y)\leq 1\)</span>且，对于固定的y有<span class="arithmatex">\(F(-\infty,y)=0\)</span>，对于固定的x有<span class="arithmatex">\(F(x,-\infty)=0\)</span>，<span class="arithmatex">\(F(-\infty,-\infty)=0\)</span>，<span class="arithmatex">\(F(\infty,\infty)=1\)</span></li>
 <li>关于x,y右连续</li>
-<li>落在某个矩形的概率大于零
-    <span class="arithmatex">\(\forall (x_1,y_1),(x_2,y_2),x_1&lt;x_2,y_1&lt;y_2,不等式F(x_2,x_y)-F(x_2,y_1)-F(x_1,y_2)+F(x_1,y_1)成立\)</span>）</li>
+<li>落在某个矩形的概率大于零，即<span class="arithmatex">\(\forall (x_1,y_1),(x_2,y_2),x_1&lt;x_2,y_1&lt;y_2,不等式F(x_2,x_y)-F(x_2,y_1)-F(x_1,y_2)+F(x_1,y_1)成立\)</span></li>
 </ol>
 <h3 id="_4">离散型</h3>
 <p>如果(X,Y)全部可能取到的值是有限对或可列无限对，则称(X,Y)是<strong>二维离散型随机变量</strong>；称<span class="arithmatex">\(P\{X=x_i,Y=y_i\},i,j=1,2,\cdots\)</span>为(X,Y)的<strong>分布律</strong>，或称是X和Y的联合分布律。</p>
 <h3 id="_5">连续型</h3>
-<p>如果F(x,y)存在非负可积函数f(x,y)使对于任意x,y有<span class="arithmatex">\(F(x,y)=\int_{-\infty}^y\int_{\infty}^x f(u,v)dudv\)</span>，则称(X,Y)是<strong>二维连续型随机变量</strong>，f(x,y)是(X,Y)的<strong>概率密度</strong>，或称为X和Y的<strong>联合概率密度</strong>。
+<p>如果F(x,y)存在非负可积函数f(x,y)使对于任意x,y有<span class="arithmatex">\(F(x,y)=\int_{-\infty}^y\int_{-\infty}^x f(u,v)dudv\)</span>，则称(X,Y)是<strong>二维连续型随机变量</strong>，f(x,y)是(X,Y)的<strong>概率密度</strong>，或称为X和Y的<strong>联合概率密度</strong>。
 f(x,y)有以下性质：</p>
 <ol>
 <li>非负</li>
-<li><span class="arithmatex">\(\int_{\infty}^\infty\int_{\infty}^\infty f(x,y)dxdy=F(\infty,\infty)=1\)</span></li>
+<li><span class="arithmatex">\(\int_{-\infty}^\infty\int_{-\infty}^\infty f(x,y)dxdy=F(\infty,\infty)=1\)</span></li>
 <li>设G是xOy平面上的区域，点(X,Y)落在G内的概率<span class="arithmatex">\(P\{(X,Y)\in G\}=\iint_G f(x,y)dxdy\)</span></li>
-<li>若f(x,y)在(x,y)连续，则有F(x,y)的xy导数等于f(x,y)，并由此得出(x,y)附近的小矩形概率等于<span class="arithmatex">\(f(x,y)\Delta x\Delta y\)</span></li>
+<li>若f(x,y)在(x,y)连续，则有F(x,y)的xy偏导等于f(x,y)，并由此得出(x,y)附近的小矩形概率等于<span class="arithmatex">\(f(x,y)\Delta x\Delta y\)</span></li>
 </ol>
 <p>以上对二维随机变量的讨论可推广至n维</p>
 <h2 id="_6">边缘分布</h2>
@@ -291,7 +290,8 @@ Y的条件分布律同理。</p>
 <p><span class="arithmatex">\((X_1,X_2,\cdots, X_n)\)</span>关于<span class="arithmatex">\(X_1\)</span>、<span class="arithmatex">\((X_1,X_2)\)</span>的边缘分布函数为</p>
 <div class="arithmatex">\[F_{X_1}(x_1)=F(x_1,\infty,\infty,\cdots,\infty),\\F_{X_1,X_2}(x_1)=F(x_1,x_2,\infty,\cdots,\infty)\]</div>
 <p>边缘概率密度为</p>
-<div class="arithmatex">\[F_{X_1}(x_1)=F(x_1,\infty,\infty,\cdots,\infty),\\F_{X_1,X_2}(x_1)=F(x_1,x_2,\infty,\cdots,\infty)\]</div>
+<div class="arithmatex">\[f_{X_1}(x_1)=\int_{-\infty}^\infty \int_{-\infty}^\infty \cdots \int_{-\infty}^\infty f(x_1,x_2,\cdots,x_n)dx_2dx_3\cdots dx_n\]</div>
+<div class="arithmatex">\[f_{X_1,X_2}(x_1)=\int_{-\infty}^\infty \int_{-\infty}^\infty \cdots \int_{-\infty}^\infty f(x_1,x_2,\cdots,x_n)dx_3dx_4\cdots dx_n\]</div>
 <p>若对于所有<span class="arithmatex">\(x_1,x_2,\cdots,x_n\)</span>由</p>
 <div class="arithmatex">\[F(x_1,x_2,\cdots,x_n)=F_{X_1}(x_1)F_{X_2}(x_2)\cdots F_{X_n}(x_n)\]</div>
 <p>则称<span class="arithmatex">\(X_1,X_2,\cdots, X_n\)</span>相互独立

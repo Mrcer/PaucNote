@@ -270,15 +270,15 @@
 若<span class="arithmatex">\(X_i\sim N(\mu_i,\sigma_i^2),i=1,2,\cdots\)</span>且他们相互独立，则他们的线性组合</p>
 <div class="arithmatex">\[C_1X_1+C_2X_2+\cdots+C_nX_n\sim N(\sum_{i=1}^n C_i\mu_i,\sum_{i=1}^n C_i^2\sigma_i^2)\]</div>
 <h3 id="_11">切比雪夫不等式</h3>
-<p>设随机变量X具有数学期望<span class="arithmatex">\(E(X)=\mu\)</span>，方差<span class="arithmatex">\(D(X)=\delta^2\)</span>，则对于任意正数<span class="arithmatex">\(\epsilon\)</span>，不等式</p>
-<div class="arithmatex">\[P\{|X-\mu|\geq \epsilon\}\leq\frac{\delta^2}{\epsilon^2}\]</div>
+<p>设随机变量X具有数学期望<span class="arithmatex">\(E(X)=\mu\)</span>，方差<span class="arithmatex">\(D(X)=\sigma^2\)</span>，则对于任意正数<span class="arithmatex">\(\epsilon\)</span>，不等式</p>
+<div class="arithmatex">\[P\{|X-\mu|\geq \epsilon\}\leq\frac{\sigma^2}{\epsilon^2}\]</div>
 <p>成立。这被称为切比雪夫不等式。
 也可以被写成：</p>
-<div class="arithmatex">\[P\{|X-\mu|&lt; \epsilon\}\geq1-\frac{\delta^2}{\epsilon^2}\]</div>
+<div class="arithmatex">\[P\{|X-\mu|&lt; \epsilon\}\geq1-\frac{\sigma^2}{\epsilon^2}\]</div>
 <h2 id="_12">协方差和相关系数</h2>
 <p>量<span class="arithmatex">\(E\{[X-E(X)][Y-E(Y)]\}\)</span>称为随机变量X与Y的<strong>协方差</strong>，记为Cov(X,Y)，即</p>
 <div class="arithmatex">\[Cov(X,Y)=E\{[X-E(X)][Y-E(Y)]\}\]</div>
-<p>而<span class="arithmatex">\(<span class="arithmatex">\(\rho_{XY}=\frac{Cov(X,Y)}{\sqrt{D(X)}\sqrt{(D(Y)}}\)</span>\)</span>称为随机变量X与Y的<strong>相关系数</strong>
+<p>而<span class="arithmatex">\(\rho_{XY}=\frac{Cov(X,Y)}{\sqrt{D(X)}\sqrt{(D(Y)}}\)</span>称为随机变量X与Y的<strong>相关系数</strong>
 有定义即可得到协方差性质：</p>
 <div class="arithmatex">\[Cov(X,Y)=Cov(Y,X),Cov(X,X)=D(X)\]</div>
 <p>展开协方差定义式得到</p>
@@ -309,11 +309,21 @@
 <div class="arithmatex">\[\textbf{X}=\left[\begin{aligned}x_1\\x_2\\\vdots\\ x_n\end{aligned}\right],\boldsymbol{\mu}=\left[\begin{aligned}E(x_1)\\E(x_2)\\\vdots\\ E(x_n)\end{aligned}\right]\]</div>
 <p>则定义n维正态随机变量<span class="arithmatex">\((X_1,X_2,\cdots,X_n)\)</span>的概率密度为</p>
 <div class="arithmatex">\[f(x_1,x_2,\cdots,x_n)=\frac{1}{(2\pi)^{n/2}(det\textbf{C})^{1/2}}exp\left\{-\frac{1}{2}(\textbf{X}-\boldsymbol{\mu})^T\textbf{C}^{-1}(\textbf{X}-\boldsymbol{\mu})\right\}\]</div>
-<p>其具有以下性质：
-1. n维正态随机变量<span class="arithmatex">\((X_1,X_2,\cdots,X_n)\)</span>中的每个分量<span class="arithmatex">\(X_i,i=1,2,\cdots,n\)</span>都是正态随机变量；反之，若<span class="arithmatex">\(X_1,X_2,\cdots,X_n\)</span>都是正态随机变量，且相互独立，则<span class="arithmatex">\((X_1,X_2,\cdots,X_n)\)</span>是n维正态随机变量
-2. n维随机变量<span class="arithmatex">\((X_1,X_2,\cdots,X_n)\)</span>服从n维正态分布的充要条件是<span class="arithmatex">\(X_1,X_2,\cdots,X_n\)</span>的任意线性组合<span class="arithmatex">\(l_1X_1+l_2X_2+\cdots+l_nX_n\)</span>服从一维正态分布（其中<span class="arithmatex">\(l_1,l_2,\cdots,l_n\)</span>不全为零）
-3. 若<span class="arithmatex">\((X_1,X_2,\cdots,X_n)\)</span>服从n维正态分布，设<span class="arithmatex">\((Y_1,Y_2,\cdots,Y_k)\)</span>是<span class="arithmatex">\(X_j(j=1,2,\cdots,n)\)</span>的线性函数，则<span class="arithmatex">\((Y_1,Y_2,\cdots,Y_k)\)</span>也服从多维正态分布。这被称为正态变量的<em>线性不变性</em>
-4. 设<span class="arithmatex">\((X_1,X_2,\cdots,X_n)\)</span>服从n维正态分布，则“<span class="arithmatex">\(X_1,X_2,\cdots,X_n\)</span>相互独立”与“<span class="arithmatex">\(X_1,X_2,\cdots,X_n\)</span>两两不相关”是等价的。</p>
+<p>其具有以下性质：</p>
+<ol>
+<li>
+<p>n维正态随机变量<span class="arithmatex">\((X_1,X_2,\cdots,X_n)\)</span>中的每个分量<span class="arithmatex">\(X_i,i=1,2,\cdots,n\)</span>都是正态随机变量；反之，若<span class="arithmatex">\(X_1,X_2,\cdots,X_n\)</span>都是正态随机变量，且相互独立，则<span class="arithmatex">\((X_1,X_2,\cdots,X_n)\)</span>是n维正态随机变量</p>
+</li>
+<li>
+<p>n维随机变量<span class="arithmatex">\((X_1,X_2,\cdots,X_n)\)</span>服从n维正态分布的充要条件是<span class="arithmatex">\(X_1,X_2,\cdots,X_n\)</span>的任意线性组合<span class="arithmatex">\(l_1X_1+l_2X_2+\cdots+l_nX_n\)</span>服从一维正态分布（其中<span class="arithmatex">\(l_1,l_2,\cdots,l_n\)</span>不全为零）</p>
+</li>
+<li>
+<p>若<span class="arithmatex">\((X_1,X_2,\cdots,X_n)\)</span>服从n维正态分布，设<span class="arithmatex">\((Y_1,Y_2,\cdots,Y_k)\)</span>是<span class="arithmatex">\(X_j(j=1,2,\cdots,n)\)</span>的线性函数，则<span class="arithmatex">\((Y_1,Y_2,\cdots,Y_k)\)</span>也服从多维正态分布。这被称为正态变量的<em>线性不变性</em></p>
+</li>
+<li>
+<p>设<span class="arithmatex">\((X_1,X_2,\cdots,X_n)\)</span>服从n维正态分布，则“<span class="arithmatex">\(X_1,X_2,\cdots,X_n\)</span>相互独立”与“<span class="arithmatex">\(X_1,X_2,\cdots,X_n\)</span>两两不相关”是等价的。</p>
+</li>
+</ol>
               
             </div>
           </div><footer>

@@ -271,20 +271,24 @@
 古典概型中基本事件的概率为1/n，任意事件A的概率为k/n，其中n为基本事件数，k为事件包含基本事件数</li>
 </ol>
 <h3 id="_13">例题模型</h3>
-<p>放回抽样：n个白球m个红球，抽k个球，每次放回
-不放回抽样：n个白球m个红球，抽k个球，每次不放回
-生日概率：n个人中至少有两个人生日相同的概率
-超几何分布：N个产品D个次品，抽n件产品有k件次品的概率
-实际推断原理：概率很小的事件在一次试验中实际上几乎是不发生的</p>
+<ul>
+<li>放回抽样：n个白球m个红球，抽k个球，每次放回</li>
+<li>不放回抽样：n个白球m个红球，抽k个球，每次不放回</li>
+<li>生日概率：n个人中至少有两个人生日相同的概率</li>
+<li>超几何分布：N个产品D个次品，抽n件产品有k件次品的概率</li>
+<li>实际推断原理：概率很小的事件在一次试验中实际上几乎是不发生的</li>
+</ul>
 <h2 id="_14">条件概率</h2>
 <h3 id="_15">条件概率</h3>
-<p>条件概率研究事件A发生的条件下事件B发生的概率
-定义：设A,B是两个事件，且<span class="arithmatex">\(P(A)&gt;0\)</span>，称<span class="arithmatex">\(P(B|A)=p(AB)/P(A)\)</span>
-为在事件A发生的条件下事件B发生的条件概率
-根据定义条件概率<span class="arithmatex">\(P(\cdot|A)\)</span>满足以下条件：</p>
-<p>1非负性：<span class="arithmatex">\(\forall B,P(B|A)\geq 0\)</span>
-2规范性：<span class="arithmatex">\(P(S|A)=1\)</span>
-3可列可加性：设<span class="arithmatex">\(B_1,B_2,\cdots\)</span>是两两互不相容的事件，则有<span class="arithmatex">\(P(\bigcup_{i=1}^\infty B_i|A)=\sum_{i=1}^\infty P(B_i|A)\)</span></p>
+<p>条件概率研究事件A发生的条件下事件B发生的概率</p>
+<p>定义：设A,B是两个事件，且<span class="arithmatex">\(P(A)&gt;0\)</span>，称<span class="arithmatex">\(P(B|A)=P(AB)/P(A)\)</span>
+为在事件A发生的条件下事件B发生的条件概率</p>
+<p>根据定义条件概率<span class="arithmatex">\(P(\cdot|A)\)</span>满足以下条件：</p>
+<ol>
+<li>非负性：<span class="arithmatex">\(\forall B,P(B|A)\geq 0\)</span></li>
+<li>规范性：<span class="arithmatex">\(P(S|A)=1\)</span></li>
+<li>可列可加性：设<span class="arithmatex">\(B_1,B_2,\cdots\)</span>是两两互不相容的事件，则有<span class="arithmatex">\(P(\bigcup_{i=1}^\infty B_i|A)=\sum_{i=1}^\infty P(B_i|A)\)</span></li>
+</ol>
 <h3 id="_16">乘法定理</h3>
 <p>设<span class="arithmatex">\(P(A)&gt;0\)</span>，则<span class="arithmatex">\(P(AB)=P(B|A)P(A)\)</span>
 由归纳法不难证明<span class="arithmatex">\(P(A_1A_2\cdots A_n)=P(A_n|A_1A_2\cdots A_{n-1})P(A_{n-1}|A_1A_2\cdots A_{n-2})\cdots P(A_2|A_1)P(A_1)\)</span></p>

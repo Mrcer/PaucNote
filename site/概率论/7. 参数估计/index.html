@@ -156,27 +156,29 @@
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#_4">最大似然估计法</a>
     </li>
-        </ul>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#_5">估计量的评选标准</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#_6">无偏性</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#_7">有效性</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#_8">相合性</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#_9">常用结论</a>
+    <li class="toctree-l4"><a class="reference internal" href="#_5">常见分布的估计</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#_10">区间估计</a>
+    <li class="toctree-l3"><a class="reference internal" href="#_6">估计量的评选标准</a>
         <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#_11">正态总体均值与方差的区间估计</a>
+    <li class="toctree-l4"><a class="reference internal" href="#_7">无偏性</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_8">有效性</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_9">相合性</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_10">常用结论</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_11">区间估计</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#_12">正态总体均值与方差的区间估计</a>
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#0-1">(0-1)分布参数的区间估计</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#_12">单侧置信区间</a>
+    <li class="toctree-l4"><a class="reference internal" href="#_13">单侧置信区间</a>
     </li>
         </ul>
     </li>
@@ -226,52 +228,68 @@
 <p>总体是连续型的似然函数是</p>
 <div class="arithmatex">\[L(\theta)=L(x_1,x_2,c\dots,x_n;\theta)=\prod_{i=1}^n f(x_i;\theta)dx_i,\theta\in \Theta\]</div>
 <p>对这个函数求最大值的方法通常是求导，而由于取对可以化积为和，因此一般会求解<span class="arithmatex">\(\frac{d}{d\theta}\ln L(\theta)=0\)</span>，这被称为<strong>对数似然方程</strong>。如果有多个参数就要联立偏导方程组求解，这个方程组被称为<strong>最大似然方程组</strong>。有时候方程无解，比如参数取值不连续或者似然函数单调，那就要回到定义求。</p>
-<h2 id="_5">估计量的评选标准</h2>
-<h3 id="_6">无偏性</h3>
+<h3 id="_5">常见分布的估计</h3>
+<ol>
+<li>两点分布：两种估计法<span class="arithmatex">\(\hat p = \bar X\)</span></li>
+<li>泊松分布：两种估计法<span class="arithmatex">\(\hat \lambda = \bar X\)</span></li>
+<li>均匀分布：矩估计<span class="arithmatex">\(\hat a=\bar X-\sqrt 3,\hat b=\bar X+\sqrt 3\)</span>，最大似然无解</li>
+<li>指数分布：两种估计法<span class="arithmatex">\(\hat \theta=\bar X\)</span></li>
+<li>正态分布：两种估计法<span class="arithmatex">\(\hat \mu=\bar X,\hat\sigma=\frac{n-1}{n}s^2\)</span></li>
+</ol>
+<h2 id="_6">估计量的评选标准</h2>
+<h3 id="_7">无偏性</h3>
 <p>设<span class="arithmatex">\(\hat\theta(X_1,X_2,\cdots,X_n)\)</span>是未知参数<span class="arithmatex">\(\theta\)</span>的估计量，若</p>
 <div class="arithmatex">\[E(\hat\theta)=\theta\]</div>
 <p>则称<span class="arithmatex">\(\hat\theta\)</span>为<span class="arithmatex">\(\theta\)</span>的<strong>无偏估计</strong>，其实际意义为无系统误差。</p>
-<h3 id="_7">有效性</h3>
+<h3 id="_8">有效性</h3>
 <p>设<span class="arithmatex">\(\hat\theta_1(X_1,X_2,\cdots,X_n)\)</span>和<span class="arithmatex">\(\hat\theta_2(X_1,X_2,\cdots,X_n)\)</span>都是<span class="arithmatex">\(\hat\theta\)</span>的无偏估计量，若对于任意<span class="arithmatex">\(\theta\in\Theta\)</span>，有</p>
 <div class="arithmatex">\[D(\hat\theta_1)\leq D(\hat\theta_2)\]</div>
 <p>且至少对于某一个<span class="arithmatex">\(\theta\in\Theta\)</span>上式中的不等号成立，则称<span class="arithmatex">\(\hat\theta_1\)</span>比<span class="arithmatex">\(\hat\theta_2\)</span><strong>有效</strong>。
 有效性可以用来判断样本容量相同的情况下估计量对参数的接近程度</p>
-<h3 id="_8">相合性</h3>
+<h3 id="_9">相合性</h3>
 <p>设<span class="arithmatex">\(\hat\theta(X_1,X_2,\cdots,X_n)\)</span>是未知参数<span class="arithmatex">\(\theta\)</span>的估计量，若对于任意<span class="arithmatex">\(\theta\in\Theta\)</span>，当<span class="arithmatex">\(n\to\infty\)</span>时<span class="arithmatex">\(\hat\theta(X_1,X_2,\cdots,X_n)\)</span>依概率收敛于<span class="arithmatex">\(\theta\)</span>，则称<span class="arithmatex">\(\hat\theta\)</span>为<span class="arithmatex">\(\theta\)</span>的<strong>相合估计量</strong>。</p>
 <p>相合性可以判断估计量是否收敛于参数</p>
-<h3 id="_9">常用结论</h3>
+<h3 id="_10">常用结论</h3>
 <ol>
 <li>样本k阶矩是总体k阶矩的相合估计量</li>
 <li>若估计量无偏且当n趋于无穷时方差为0，则它是相合估计量</li>
 <li>矩估计法得到的估计量一般为相合估计量</li>
 <li>在一定条件下，最似然法得到的估计量是相合估计量</li>
 </ol>
-<h2 id="_10">区间估计</h2>
+<h2 id="_11">区间估计</h2>
 <p>设总体X的分布函数<span class="arithmatex">\(F(x;\theta)\)</span>含有一个未知参数<span class="arithmatex">\(\theta,\theta\in\Theta\)</span>(<span class="arithmatex">\(\Theta\)</span>是<span class="arithmatex">\(\theta\)</span>的可能取值的范围)，对于给定值<span class="arithmatex">\(\alpha(0&lt;\alpha&lt;1)\)</span>，若由来自X的样本<span class="arithmatex">\(X_1,X_2,\cdots,X_n\)</span>确定的两个统计量<span class="arithmatex">\(\underline \theta=\underline \theta(X_1,X_2,\cdots,X_n)\)</span>和<span class="arithmatex">\(\bar \theta=\bar\theta(X_1,X_2,\cdots,X_n)(\underline \theta&lt;\bar\theta)\)</span>，对于任意<span class="arithmatex">\(\theta,\theta\in\Theta\)</span>满足</p>
 <div class="arithmatex">\[P\{\underline \theta&lt;\theta&lt;\bar\theta\}\geq 1-\alpha\]</div>
 <p>则称随机区间<span class="arithmatex">\((\underline \theta,\bar \theta)\)</span>是<span class="arithmatex">\(\theta\)</span>的置信水平为<span class="arithmatex">\(1-\alpha\)</span>的<strong>置信区间</strong>，<span class="arithmatex">\(\underline \theta\)</span>和<span class="arithmatex">\(\bar \theta\)</span>分别称为置信水平为<span class="arithmatex">\(1-\alpha\)</span>的双侧置信水平的<strong>置信下限</strong>和<strong>置信下限</strong>，<span class="arithmatex">\(1-\alpha\)</span>称为<strong>置信水平</strong>。</p>
 <blockquote>
 <p>给定置信水平，对于连续型置信下限和置信上限总是能求出的，而对于离散型则要保证至少满足条件且区间尽可能小</p>
 </blockquote>
-<p>求置信区间的步骤：
-1. 寻求一个样本和<span class="arithmatex">\(\theta\)</span>的函数W，使得W的分布不依赖<span class="arithmatex">\(\theta\)</span>，称W为<strong>枢轴量</strong>
-2. 对于给定的置信水平<span class="arithmatex">\(1-\alpha\)</span>，确定两个常数a,b，使得<span class="arithmatex">\(P\{a&lt;W&lt;b\}=1-\alpha\)</span>
-3. 将<span class="arithmatex">\(a&lt;W&lt;b\)</span>变换为<span class="arithmatex">\(\underline\theta&lt;\theta&lt;\bar \theta\)</span>，即可求得置信区间</p>
-<h3 id="_11">正态总体均值与方差的区间估计</h3>
+<p>求置信区间的步骤：</p>
+<ol>
+<li>
+<p>寻求一个样本和<span class="arithmatex">\(\theta\)</span>的函数W，使得W的分布不依赖<span class="arithmatex">\(\theta\)</span>，称W为<strong>枢轴量</strong></p>
+</li>
+<li>
+<p>对于给定的置信水平<span class="arithmatex">\(1-\alpha\)</span>，确定两个常数a,b，使得<span class="arithmatex">\(P\{a&lt;W&lt;b\}=1-\alpha\)</span></p>
+</li>
+<li>
+<p>将<span class="arithmatex">\(a&lt;W&lt;b\)</span>变换为<span class="arithmatex">\(\underline\theta&lt;\theta&lt;\bar \theta\)</span>，即可求得置信区间</p>
+</li>
+</ol>
+<h3 id="_12">正态总体均值与方差的区间估计</h3>
 <h4 id="nmusigma2">单个总体<span class="arithmatex">\(N(\mu,\sigma^2)\)</span>的情况</h4>
 <ol>
-<li>求均值的置信区间
-    （1）若方差已知，则采用枢轴量<span class="arithmatex">\(\frac{\bar X-\mu}{\sigma/\sqrt{n}}\sim N(0,1)\)</span>，求得<span class="arithmatex">\(\mu\)</span>的一个置信水平为<span class="arithmatex">\(1-\alpha\)</span>的置信区间为<span class="arithmatex">\(\left(\bar X\pm\frac{\sigma}{\sqrt n}z_{\alpha/2}\right)\)</span>
+<li>求均值的置信区间<br />
+    （1）若方差已知，则采用枢轴量<span class="arithmatex">\(\frac{\bar X-\mu}{\sigma/\sqrt{n}}\sim N(0,1)\)</span>，求得<span class="arithmatex">\(\mu\)</span>的一个置信水平为<span class="arithmatex">\(1-\alpha\)</span>的置信区间为<span class="arithmatex">\(\left(\bar X\pm\frac{\sigma}{\sqrt n}z_{\alpha/2}\right)\)</span><br />
     （2）若方差未知，则采用枢轴量<span class="arithmatex">\(\frac{\bar X-\mu}{S/\sqrt n}\sim t(n-1)\)</span>，求得<span class="arithmatex">\(\mu\)</span>的一个置信水平为<span class="arithmatex">\(1-\alpha\)</span>的置信区间为<span class="arithmatex">\(\left(\bar X\pm\frac{S}{\sqrt n}t_{\alpha/2}(n-1)\right)\)</span></li>
-<li>方差的置信区间
+<li>方差的置信区间<br />
     无论均值是否已知，取枢轴量<span class="arithmatex">\(\frac{(n-1)S^2}{\sigma^2}\sim\chi^2(n-1)\)</span>，求得<span class="arithmatex">\(\sigma^2\)</span>的一个置信水平为<span class="arithmatex">\(1-\alpha\)</span>的置信区间为<span class="arithmatex">\(\left(\frac{(n-1)S^2}{\chi^2_{\alpha/2}(n-1)},\frac{(n-1)S^2}{\chi^2_{1-\alpha/2}(n-1)}\right)\)</span></li>
 </ol>
 <h4 id="nmu_1sigma_12nmu_2sigma_22">两个总体<span class="arithmatex">\(N(\mu_1,\sigma_1^2),N(\mu_2,\sigma_2^2)\)</span>的情况</h4>
 <ol>
-<li>两个总体均值差<span class="arithmatex">\(\mu_1-\mu_2\)</span>的置信区间
-    （1）若方差均已知，则采用枢轴量<span class="arithmatex">\(\frac{(\bar X-\bar Y)-(\mu_1-\mu_2)}{\sqrt{\sigma_1^2/n_1 +\sigma_2^2/n_2}}\sim N(0,1)\)</span>，求得<span class="arithmatex">\(\mu_1-\mu_2\)</span>的一个置信水平为<span class="arithmatex">\(1-\alpha\)</span>的置信区间为<span class="arithmatex">\(\left(\bar X-\bar Y\pm z_{\alpha/2}\sqrt{\sigma_1^2/n_1+\sigma_2^2/n_2}\right)\)</span>
+<li>两个总体均值差<span class="arithmatex">\(\mu_1-\mu_2\)</span>的置信区间<br />
+    （1）若方差均已知，则采用枢轴量<span class="arithmatex">\(\frac{(\bar X-\bar Y)-(\mu_1-\mu_2)}{\sqrt{\sigma_1^2/n_1 +\sigma_2^2/n_2}}\sim N(0,1)\)</span>，求得<span class="arithmatex">\(\mu_1-\mu_2\)</span>的一个置信水平为<span class="arithmatex">\(1-\alpha\)</span>的置信区间为<span class="arithmatex">\(\left(\bar X-\bar Y\pm z_{\alpha/2}\sqrt{\sigma_1^2/n_1+\sigma_2^2/n_2}\right)\)</span><br />
     （2）若方差相等但未知，则采用枢轴量<span class="arithmatex">\(\frac{(\bar X-\bar Y)-(\mu_1-\mu_2)}{S_w\sqrt{1/n_1 +1/n_2}}\sim t(n_1+n_2-2),S_w^2=\frac{(n_1-1)S_1^2+(n_2-1)S_2^2}{n_1+n_2-2}\)</span>，求得<span class="arithmatex">\(\mu_1-\mu_2\)</span>的一个置信水平为<span class="arithmatex">\(1-\alpha\)</span>的置信区间为<span class="arithmatex">\(\left(\bar X-\bar Y\pm t_{\alpha/2}(n_1+n_2-2)S_w\sqrt{\frac{1}{n_1}+\frac{1}{n_2}}\right)\)</span></li>
-<li>两个总体方差比<span class="arithmatex">\(\sigma_1^2/\sigma_2^2\)</span>的置信区间
+<li>两个总体方差比<span class="arithmatex">\(\sigma_1^2/\sigma_2^2\)</span>的置信区间<br />
     无论均值是否已知，取枢轴量<span class="arithmatex">\(\frac{S_1^2/S_2^2}{\sigma_1^2/\sigma_2^2}\sim F(n_1-1,n_2-1)\)</span>，求得<span class="arithmatex">\(\sigma_1-\sigma_2\)</span>的一个置信水平为<span class="arithmatex">\(1-\alpha\)</span>的置信区间为<span class="arithmatex">\(\left(\frac{S_1^2}{S_2^2}\frac{1}{F_{\alpha/2}(n_1-1,n_2-1)},\frac{S_1^2}{S_2^2}\frac{1}{F_{1-\alpha/2}(n_1-1,n_2-1)}\right)\)</span></li>
 </ol>
 <h3 id="0-1">(0-1)分布参数的区间估计</h3>
@@ -280,7 +298,7 @@
 <p>变换后得到二次不等式</p>
 <div class="arithmatex">\[(n+z_{\alpha/2}^2)p^2-(2n\bar X+z_{\alpha/2}^2)p+n\bar X^2&lt;0\]</div>
 <p>运用求根公式即可解出端点，从而得到置信区间</p>
-<h3 id="_12">单侧置信区间</h3>
+<h3 id="_13">单侧置信区间</h3>
 <p>对于给定值<span class="arithmatex">\(\alpha(0&lt;\alpha&lt;1)\)</span>，若由来自X的样本<span class="arithmatex">\(X_1,X_2,\cdots,X_n\)</span>确定的统计量<span class="arithmatex">\(\underline \theta=\underline \theta(X_1,X_2,\cdots,X_n)\)</span>，对于任意<span class="arithmatex">\(\theta,\theta\in\Theta\)</span>满足</p>
 <div class="arithmatex">\[P\{\theta&gt;\underline \theta\}\geq 1-\alpha\]</div>
 <p>则称随机区间<span class="arithmatex">\((\underline \theta,\infty)\)</span>是<span class="arithmatex">\(\theta\)</span>的置信水平为<span class="arithmatex">\(1-\alpha\)</span>的<strong>单侧置信区间</strong>，<span class="arithmatex">\(\underline \theta\)</span>称为<span class="arithmatex">\(\theta\)</span>的置信水平为<span class="arithmatex">\(1-\alpha\)</span>的<strong>单侧置信下限</strong>。</p>

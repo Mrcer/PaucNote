@@ -223,21 +223,21 @@
 <li><span class="arithmatex">\(\sum_{k=1}^\infty p_k=1\)</span></li>
 </ol>
 <h3 id="0-1">（0-1）分布</h3>
-<p>设随机变量X只可能取0与1两个值，它的分布律是
-<span class="arithmatex">\(<span class="arithmatex">\(P\{X=k\}=p^k(1-p)^{1-k},k=0,1(0&lt;p&lt;1)\)</span>\)</span>
-则称X服从以p为参数的(0-1)分布或两点分布</p>
+<p>设随机变量X只可能取0与1两个值，它的分布律是</p>
+<div class="arithmatex">\[P\{X=k\}=p^k(1-p)^{1-k},k=0,1(0&lt;p&lt;1)\]</div>
+<p>则称X服从以p为参数的(0-1)分布或两点分布</p>
 <h3 id="_4">伯努利试验、二项分布</h3>
 <p>设试验E只有两个可能结果：<span class="arithmatex">\(A\)</span>及<span class="arithmatex">\(\bar A\)</span>，则称E为<strong>伯努利试验</strong>。设<span class="arithmatex">\(P(A)=p(0&lt;p&lt;1)\)</span>，此时<span class="arithmatex">\(P(\bar A)=1-p\)</span>。将E独立重复地进行n次，则称这一串重复的独立试验为<strong>n重伯努利试验</strong>。以随机变量X表示n重伯努利试验中事件A发生的次数，则</p>
 <div class="arithmatex">\[P\{X=k\}=\binom{n}{k}p^k(1-p)^{n-k}\]</div>
 <p>这被称为<strong>二项分布</strong>，记为<span class="arithmatex">\(X\sim b(n,p)\)</span>。</p>
 <blockquote>
-<p>二项分布是多次两点分布，两点分布是单次二项分布</p>
+<p>二项分布是多次两点分布，两点分布是单次二项分布，也就是<span class="arithmatex">\(X\sim b(1,p)\)</span></p>
 </blockquote>
 <h3 id="_5">泊松分布</h3>
 <p>设随机变量X所有可能取的值为<span class="arithmatex">\(0,1,2,\cdots\)</span>，而取各个值的概率为</p>
 <div class="arithmatex">\[P\{X=k\}=\frac{\lambda^ke^{-\lambda}}{k!},k=0,1,2,\cdots\]</div>
-<p>其中<span class="arithmatex">\(\lambda&gt;0\)</span>是常数，则称X服从参数为<span class="arithmatex">\(\lambda\)</span>的<strong>泊松分布</strong>，记为<span class="arithmatex">\(X\sim\pi(\lambda)\)</span>
-<strong>泊松定理</strong>：设<span class="arithmatex">\(\lambda&gt;0\)</span>是一个常数，n是任意正整数，设<span class="arithmatex">\(np_n=\lambda\)</span>，则对于任意固定的非负整数k，有</p>
+<p>其中<span class="arithmatex">\(\lambda&gt;0\)</span>是常数，则称X服从参数为<span class="arithmatex">\(\lambda\)</span>的<strong>泊松分布</strong>，记为<span class="arithmatex">\(X\sim\pi(\lambda)\)</span></p>
+<p><strong>泊松定理</strong>：设<span class="arithmatex">\(\lambda&gt;0\)</span>是一个常数，n是任意正整数，设<span class="arithmatex">\(np_n=\lambda\)</span>，则对于任意固定的非负整数k，有</p>
 <div class="arithmatex">\[\lim_{n\to\infty}\binom{n}{k}p_n^k(1-p_n)^{n-k}=\frac{\lambda^ke^{-\lambda}}{k!}\]</div>
 <blockquote>
 <p>泊松分布是对二项分布的近似</p>
@@ -249,13 +249,11 @@
 <p>分布函数F(x)具有以下的基本性质：</p>
 <ol>
 <li>F(x)是一个不减函数</li>
-<li><span class="arithmatex">\(0\leq F(x)\leq 1\)</span>，且</li>
+<li><span class="arithmatex">\(0\leq F(x)\leq 1\)</span>，且
+<span class="arithmatex">\(F(-\infty)=\lim_{x\to-\infty}F(x)=0,F(\infty)=\lim_{x\to\infty}F(x)=1\)</span></li>
+<li>F(x)是右连续的</li>
 </ol>
-<div class="arithmatex">\[F(-\infty)=\lim_{x\to-\infty}F(x)=0,F(\infty)=\lim_{x\to\infty}F(x)=1\]</div>
-<ol>
-<li>F(x)是右连续的
-反之，可证具备上述性质的函数F(x)必是某个随机变量的分布函数</li>
-</ol>
+<p>反之，可证具备上述性质的函数F(x)必是某个随机变量的分布函数</p>
 <h2 id="_7">连续性随机变量及其概率密度</h2>
 <blockquote>
 <p>不可能事件一定概率为零，概率为零不一定是不可能事件</p>
@@ -290,29 +288,25 @@
 </blockquote>
 <h3 id="_10">正态分布</h3>
 <p>若连续性随机变量X的概率密度为</p>
-<div class="arithmatex">\[f(x)=\frac{1}{\sqrt{2\pi}\delta}e^{-\frac{(x-\mu)^2}{2\delta^2}}\]</div>
-<p>其中<span class="arithmatex">\(\mu,\delta(\delta&gt;0)\)</span>为常数，则称X服从参数为<span class="arithmatex">\(\mu,\delta\)</span>的<strong>正态分布</strong>或<strong>高斯分布</strong>，记为<span class="arithmatex">\(X\sim N(\mu,\delta^2)\)</span>
+<div class="arithmatex">\[f(x)=\frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(x-\mu)^2}{2\sigma^2}}\]</div>
+<p>其中<span class="arithmatex">\(\mu,\sigma(\sigma&gt;0)\)</span>为常数，则称X服从参数为<span class="arithmatex">\(\mu,\sigma\)</span>的<strong>正态分布</strong>或<strong>高斯分布</strong>，记为<span class="arithmatex">\(X\sim N(\mu,\sigma^2)\)</span>
 f(x)的图形具有以下性质：</p>
 <ol>
 <li>关于<span class="arithmatex">\(x=\mu\)</span>对称</li>
-<li>当<span class="arithmatex">\(x=\mu\)</span>时取得最大值<span class="arithmatex">\(f(\mu)=\frac{1}{\sqrt{2\pi}\delta}\)</span></li>
-<li>在<span class="arithmatex">\(x=\mu\pm\delta\)</span>有拐点，渐近线为x轴（<span class="arithmatex">\(\delta\)</span>越小图形越尖）
+<li>当<span class="arithmatex">\(x=\mu\)</span>时取得最大值<span class="arithmatex">\(f(\mu)=\frac{1}{\sqrt{2\pi}\sigma}\)</span></li>
+<li>在<span class="arithmatex">\(x=\mu\pm\sigma\)</span>有拐点，渐近线为x轴（<span class="arithmatex">\(\sigma\)</span>越小图形越尖）
 其分布函数为</li>
 </ol>
-<div class="arithmatex">\[F(x)=\frac{1}{\sqrt{2\pi}\delta}\int_{-\infty}^x e^{-\frac{(t-\mu)^2}{2\delta^2}}dt\]</div>
-<p>特别地，当<span class="arithmatex">\(\mu=0,\delta=1\)</span>时称随机变量X符合<strong>标准正态分布</strong>，其概率密度和分布函数分别用<span class="arithmatex">\(\phi(x),\Phi(x)\)</span>表示；一般的正态分布可变换为标准正态分布——若随机变量<span class="arithmatex">\(X\sim N(\mu,\delta^2)\)</span>，则<span class="arithmatex">\(Z=\frac{X-\mu}{\delta}\sim N(0,1)\)</span>
-设<span class="arithmatex">\(X\sim N(0,1)\)</span>，若<span class="arithmatex">\(z_\alpha\)</span>满足条件<span class="arithmatex">\(P\{X&gt;z_\alpha\}=\alpha,0&lt;\alpha&lt;1\)</span>则称<span class="arithmatex">\(z_\alpha\)</span>为标准正态分布的<strong>上α分位数</strong></p>
+<div class="arithmatex">\[F(x)=\frac{1}{\sqrt{2\pi}\sigma}\int_{-\infty}^x e^{-\frac{(t-\mu)^2}{2\sigma^2}}dt\]</div>
+<p>特别地，当<span class="arithmatex">\(\mu=0,\sigma=1\)</span>时称随机变量X符合<strong>标准正态分布</strong>，其概率密度和分布函数分别用<span class="arithmatex">\(\varphi(x),\Phi(x)\)</span>表示；一般的正态分布可变换为标准正态分布——若随机变量<span class="arithmatex">\(X\sim N(\mu,\sigma^2)\)</span>，则<span class="arithmatex">\(Z=\frac{X-\mu}{\sigma}\sim N(0,1)\)</span></p>
+<p>设<span class="arithmatex">\(X\sim N(0,1)\)</span>，若<span class="arithmatex">\(z_\alpha\)</span>满足条件<span class="arithmatex">\(P\{X&gt;z_\alpha\}=\alpha,0&lt;\alpha&lt;1\)</span>则称<span class="arithmatex">\(z_\alpha\)</span>为标准正态分布的<strong>上α分位数</strong></p>
 <h2 id="_11">随机变量的函数的分布</h2>
-<p>这一章研究对于已知的随机变量X，求Y＝g(X)的概率分布
-对于离散型随机变量X，要求Y的分布律，只需依次求出g(X)，得到Y可能的取值，并把这些取值对应的X的概率加和即可
-对于连续型随机变量X，要求Y的概率密度，要先写出Y的分布函数，通过解<span class="arithmatex">\(g(X)\leq y\)</span>得到X的不等式，然后用X的分布函数表达出Y的分布函数，求导即可得到Y的概率密度与X的概率密度的关系</p>
+<p>这一章研究对于已知的随机变量X，求Y＝g(X)的概率分布</p>
+<p>对于离散型随机变量X，要求Y的分布律，只需依次求出g(X)，得到Y可能的取值，并把这些取值对应的X的概率加和即可</p>
+<p>对于连续型随机变量X，要求Y的概率密度，要先写出Y的分布函数，通过解<span class="arithmatex">\(g(X)\leq y\)</span>得到X的不等式，然后用X的分布函数表达出Y的分布函数，求导即可得到Y的概率密度与X的概率密度的关系</p>
+<p>例如：<span class="arithmatex">\(Y=X^2,F_Y(y)=P\{Y\leq y\}=P\{X^2\leq y\}=P\{-\sqrt y \leq X \leq \sqrt y\}=F_X(\sqrt y)-F_X(-\sqrt y)\)</span></p>
 <blockquote>
 <p>连续型随机变量的函数不一定是连续型随机变量</p>
-</blockquote>
-<p>对于标准正态分布<span class="arithmatex">\(X\sim N(0,1)\)</span>，<span class="arithmatex">\(Y=X^2\)</span>的分布称为服从自由度为1的<span class="arithmatex">\(\chi^2\)</span>分布，概率密度为</p>
-<div class="arithmatex">\[f_Y(y)=\left\{\begin{aligned}&amp;\frac{1}{\sqrt {2\pi}}y^{-1/2}e^{-y/2},&amp;&amp;y&gt;0\\&amp;0,&amp;&amp;y\leq 0&amp;\end{aligned}\right.\]</div>
-<blockquote>
-<p>自由度为一表示Y与一个随机变量有关</p>
 </blockquote>
               
             </div>

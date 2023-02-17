@@ -204,12 +204,13 @@
               
                 <h1 id="_1">样本及抽样分布</h1>
 <h2 id="_2">随机样本</h2>
-<p><strong>总体</strong>：试验的全部可能的观测值
-<strong>个体</strong>：一个可能的观察值
-<strong>容量</strong>：总体中包含的个体的个数<br />
-根据容量是否有限可划分<strong>有限总体</strong>和<strong>无限总体</strong>
-<strong>样本</strong>：从总体中抽取若干个体观察，这部分被抽取的个体称为样本，抽取数量称为样本容量
-更严谨的定义：设X是具有分布函数F的随机变量，若<span class="arithmatex">\(X_1,X_2,\cdots,X_n\)</span>是具有同一分布函数F的相互独立的随机变量，则称<span class="arithmatex">\(X_1,X_2,\cdots,X_n\)</span>为从分布函数F（或总体F、或总体X）得到的<strong>容量为n的简单样本</strong>，简称<strong>样本</strong>，他们的观测值<span class="arithmatex">\(x_1,x_2,\cdots,x_n\)</span>称为<strong>样本值</strong>，又被称为X的n个<strong>独立的观测值</strong></p>
+<p><strong>总体</strong>：试验的全部可能的观测值<br />
+<strong>个体</strong>：一个可能的观察值<br />
+<strong>容量</strong>：总体中包含的个体的个数  <br />
+根据容量是否有限可划分<strong>有限总体</strong>和<strong>无限总体</strong><br />
+<strong>样本</strong>：从总体中抽取若干个体观察，这部分被抽取的个体称为样本，抽取数量称为样本容量<br />
+更严谨的定义：设X是具有分布函数F的随机变量，若<span class="arithmatex">\(X_1,X_2,\cdots,X_n\)</span>是具有同一分布函数F的相互独立的随机变量，则称<span class="arithmatex">\(X_1,X_2,\cdots,X_n\)</span>为从分布
+函数F（或总体F、或总体X）得到的<strong>容量为n的简单样本</strong>，简称<strong>样本</strong>，他们的观测值<span class="arithmatex">\(x_1,x_2,\cdots,x_n\)</span>称为<strong>样本值</strong>，又被称为X的n个<strong>独立的观测值</strong></p>
 <h2 id="_3">直方图和箱线图</h2>
 <p>直方图和箱线图都是用于整理数据的工具</p>
 <p><strong>频率直方图</strong>：取一个包含所有数据的区间，将区间均分为n等份，每份长度称为<strong>组距</strong><span class="arithmatex">\(\Delta\)</span>，小区间的端点称为<strong>组限</strong>。然后统计落在各区间的数据个数，并在xoy平面上绘制成不同高度的等宽矩形，高度即y轴坐标等于<span class="arithmatex">\(\frac{f_i}{n}/\Delta\)</span>，其中<span class="arithmatex">\(f_i\)</span>为频数。当n很大时，由于频率接近于概率，因此一般来说频率直方图的外廓曲线接近于总体X的概率密度曲线</p>
@@ -225,8 +226,10 @@
 <li><strong>样本方差</strong>：<span class="arithmatex">\(S^2=\frac{1}{n-1}\sum_{i=1}^n(X_i-\bar X)^2=\frac{1}{n-1}(\sum_{i=1}^n X_i^2 - n\bar X^2)\)</span></li>
 <li><strong>样本标准差</strong>：<span class="arithmatex">\(S=\sqrt{S^2}\)</span></li>
 <li>
-<p><strong>样本k阶（原点）矩</strong>：<span class="arithmatex">\(A_k=\frac{1}{n}\sum_{i=1}^nX_i^k,k=1,2,\cdots\)</span>
-    &gt; 当<span class="arithmatex">\(n\to \infty\)</span>时，<span class="arithmatex">\(A_k\overset{P}{\rightarrow}\mu_k\)</span></p>
+<p><strong>样本k阶（原点）矩</strong>：<span class="arithmatex">\(A_k=\frac{1}{n}\sum_{i=1}^nX_i^k,k=1,2,\cdots\)</span></p>
+<blockquote>
+<p>当<span class="arithmatex">\(n\to \infty\)</span>时，<span class="arithmatex">\(A_k\overset{P}{\rightarrow}\mu_k\)</span></p>
+</blockquote>
 </li>
 <li>
 <p><strong>样本k阶中心矩</strong>：<span class="arithmatex">\(B_k=\frac{1}{n}\sum_{i=1}^n(X_i-\bar X)^k,k=2,3,\cdots\)</span>
@@ -235,8 +238,8 @@
 </ol>
 <h3 id="_6">经验分布函数</h3>
 <p>设<span class="arithmatex">\(x_1,x_2\cdots,x_n\)</span>是来自分布函数为F(x)的总体X的样本观察值的经验分布函数，记为<span class="arithmatex">\(F_n(x)\)</span>，定义为样本观察值<span class="arithmatex">\(x_1,x_2\cdots,x_n\)</span>中小于或等于指定值x所占的比例，即</p>
-<div class="arithmatex">\[F_n(x)=\frac{\#(x_i&lt;x)}{n},-\infty&lt;x&lt;\infty\]</div>
-<p>其中<span class="arithmatex">\(\#(x_i&lt;x)\)</span>表示<span class="arithmatex">\(x_1,x_2\cdots,x_n\)</span>中小于或等于x的个数。</p>
+<div class="arithmatex">\[F_n(x)=\frac{\#(x_i\leq x)}{n},-\infty&lt;x&lt;\infty\]</div>
+<p>其中<span class="arithmatex">\(\#(x_i\leq x)\)</span>表示<span class="arithmatex">\(x_1,x_2\cdots,x_n\)</span>中小于或等于x的个数。</p>
 <p>不难发现<span class="arithmatex">\(F_n\)</span>是分布函数。</p>
 <p>设<span class="arithmatex">\(X_1,X_2\cdots,X_n\)</span>是来自以F(x)为分布函数的总体X的样本，<span class="arithmatex">\(F_n(x)\)</span>是经验分布函数，则有</p>
 <div class="arithmatex">\[P\{\lim_{n\to\infty}\sup_{-\infty&lt;x&lt;\infty}|F_n(x)-F(x)|=0\}=1\]</div>
