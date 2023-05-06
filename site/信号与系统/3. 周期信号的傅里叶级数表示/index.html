@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>周期信号的傅里叶级数表示 - 咩咩的笔记</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "\u5468\u671f\u4fe1\u53f7\u7684\u5085\u91cc\u53f6\u7ea7\u6570\u8868\u793a";
+        var mkdocs_page_input_path = "\u4fe1\u53f7\u4e0e\u7cfb\u7edf\\3. \u5468\u671f\u4fe1\u53f7\u7684\u5085\u91cc\u53f6\u7ea7\u6570\u8868\u793a.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> 咩咩的笔记
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">主页</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">笔记</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="#">数字电路</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF/1.%20%E4%BB%8B%E7%BB%8D/">介绍</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF/2.%20%E6%95%B0%E5%AD%97%E7%B3%BB%E7%BB%9F%E3%80%81%E8%BF%90%E7%AE%97%E5%92%8C%E7%BC%96%E7%A0%81/">数字系统、运算和编码</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF/3.%20%E9%80%BB%E8%BE%91%E9%97%A8/">逻辑门</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF/4.%20%E5%B8%83%E5%B0%94%E4%BB%A3%E6%95%B0/">布尔代数</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF/5.%20%E7%BB%84%E5%90%88%E9%80%BB%E8%BE%91%E5%88%86%E6%9E%90/">组合逻辑分析</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF/6.%20%E7%BB%84%E5%90%88%E9%80%BB%E8%BE%91%E5%8A%9F%E8%83%BD%E6%A8%A1%E5%9D%97/">组合逻辑功能模块</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF/7.%20%E9%94%81%E5%AD%98%E5%99%A8%E3%80%81%E8%A7%A6%E5%8F%91%E5%99%A8%E5%92%8C%E5%AE%9A%E6%97%B6%E5%99%A8/">锁存器、触发器和定时器</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF/8.%20%E7%A7%BB%E4%BD%8D%E5%AF%84%E5%AD%98%E5%99%A8/">移位寄存器</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF/9.%20%E8%AE%A1%E6%95%B0%E5%99%A8/">计数器</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF/10.%20%E5%82%A8%E5%AD%98%E5%99%A8/">储存器</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF/11.%20%E6%A8%A1%E6%95%B0%E8%BD%AC%E6%8D%A2/">模数转换</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">离散数学</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/2-%E5%91%BD%E9%A2%98%E9%80%BB%E8%BE%91/">命题逻辑</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/3-%E4%B8%80%E9%98%B6%E9%80%BB%E8%BE%91/">一阶逻辑</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/4-%E8%AF%81%E6%98%8E%E6%96%B9%E6%B3%95/">证明方法</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/5-%E9%9B%86%E5%90%88/">集合</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/6-%E5%85%B3%E7%B3%BB/">关系</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/7-%E5%87%BD%E6%95%B0/">函数</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/8-%E8%AE%A1%E6%95%B0%E4%B8%8E%E7%BB%84%E5%90%88/">计数与组合</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/9-%E5%9B%BE%E4%B8%8E%E6%A0%91/">图与树</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">计算机组成原理</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/1.%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%A6%82%E8%A7%88/">计算机概览</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/2.%20%E6%8C%87%E4%BB%A4/">指令</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/3.%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%AD%E7%9A%84%E8%BF%90%E7%AE%97/">计算机中的运算</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/4.%20MIPS%20CPU%E8%AE%BE%E8%AE%A1/">MIPS CPU设计</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/5.%20%E5%AD%98%E5%82%A8%E5%99%A8%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84/">存储器层次结构</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/6.%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E6%80%BB%E7%BA%BF/">计算机系统总线</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/7.%20%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E7%B3%BB%E7%BB%9F/">输入输出系统</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">计算机组成原理实验</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AE%9E%E9%AA%8C/1/1/">加法器</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AE%9E%E9%AA%8C/2/2/">有限状态机</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AE%9E%E9%AA%8C/3/3/">MIPS指令集1</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AE%9E%E9%AA%8C/4/4/">MIPS指令集2</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AE%9E%E9%AA%8C/5/5/">存储器实验</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AE%9E%E9%AA%8C/6/6/">寄存器堆与 ALU 设计实验</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AE%9E%E9%AA%8C/7/7/">存储器与控制器实验</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AE%9E%E9%AA%8C/8/8/">单周期处理器实验</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AE%9E%E9%AA%8C/9/9/">多周期处理器实验</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AE%9E%E9%AA%8C/10/10/">多周期处理器综合性开放实验</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">概率论</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA/1.%20%E6%A6%82%E7%8E%87%E8%AE%BA%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/">概率论的基本概念</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA/2.%20%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E5%8F%8A%E5%85%B6%E5%88%86%E5%B8%83/">随机变量及其分布</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA/3.%20%E5%A4%9A%E7%BB%B4%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E5%8F%8A%E5%85%B6%E5%88%86%E5%B8%83/">多维随机变量及其分布</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA/4.%20%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E6%95%B0%E5%AD%97%E7%89%B9%E5%BE%81/">随机变量的数字特征</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA/5.%20%E5%A4%A7%E6%95%B0%E5%AE%9A%E5%BE%8B%E5%8F%8A%E4%B8%AD%E5%BF%83%E6%9E%81%E9%99%90%E5%AE%9A%E7%90%86/">大数定律及中心极限定理</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA/6.%20%E6%A0%B7%E6%9C%AC%E5%8F%8A%E6%8A%BD%E6%A0%B7%E5%88%86%E5%B8%83/">样本及抽样分布</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA/7.%20%E5%8F%82%E6%95%B0%E4%BC%B0%E8%AE%A1/">参数估计</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA/8.%20%E5%81%87%E8%AE%BE%E9%AA%8C%E8%AF%81/">假设验证</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">信号与系统</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../1.%20%E4%BF%A1%E5%8F%B7%E4%B8%8E%E7%B3%BB%E7%BB%9F/">信号与系统</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../2.%20%E7%BA%BF%E6%80%A7%E6%97%B6%E4%B8%8D%E5%8F%98%E7%B3%BB%E7%BB%9F/">线性时不变系统</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">周期信号的傅里叶级数表示</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#_2">线性时不变系统对复指数信号的响应</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_3">连续时间周期信号的傅里叶级数表示</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#_4">成谐波关系的复指数信号的线性组合</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_5">连续时间周期信号傅里叶级数表示的确定</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_6">傅里叶级数的收敛</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_7">连续时间傅里叶级数性质</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_8">离散时间周期信号的傅里叶级数表示</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#_9">成谐波关系的复指数信号的线性组合</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_10">周期信号傅里叶级数表示的确定</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_11">离散时间傅里叶级数性质</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_12">傅里叶级数与线性时不变系统</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_13">滤波</a>
+    </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">咩咩的笔记</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
+          <li>笔记 &raquo;</li>
+          <li>信号与系统 &raquo;</li>
+      <li>周期信号的傅里叶级数表示</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="_1">周期信号的傅里叶级数表示</h1>
+<blockquote>
+<p>重要的前置知识：复数运算<code>@A@</code></p>
+</blockquote>
+<p>和第二章一样，本章要将信号表示成一组基本信号的线性组合，不过这是所用的基本信号是复指数，所得到的表示就是连续时间和离散时间傅里叶级数和傅里叶变换</p>
+<h2 id="_2">线性时不变系统对复指数信号的响应</h2>
+<p>一个线性时不变系统对复指数信号的响应也是同样一个复指数信号，不同的只是在幅度上的变化；也就是说：</p>
+<div class="arithmatex">\[
+连续时间：e^{st}\rightarrow H(s)e^{st}
+$$
+$$
+离散时间：z^{n}\rightarrow H(z)e^n
+\]</div>
+<p>其中<code>H(s)</code>或<code>H(z)</code>是一个复振幅因子，一般来说是复变量s或z的函数。一个信号，若系统对该信号的输入响应仅是一个常数（可能是复数）乘以输入，则称该信号为系统的<strong>特征函数</strong>，而幅度因子称为系统的<strong>特征值</strong>。也就是说复指数信号是线性时不变系统的特征函数</p>
+<p>根据卷积可以证明：</p>
+<div class="arithmatex">\[
+H(s)=\int_{-\infty}^{+\infty}h(\tau)e^{s\tau}d\tau
+$$
+$$
+H(z)=\sum_{k=-\infty}^{+\infty}h[k]z^{-k}
+\]</div>
+<p>再根据线性性质，可以得到：</p>
+<div class="arithmatex">\[
+对连续时间：若输入x(t)=\sum_k a_ke^{s_kt}，则输出y(t)=\sum_k a_kH(s_k)e^{s_k t}
+$$
+$$
+对离散时间：若输入x[n]=\sum_k a_k z_k^n，则输出\sum_k a_k H(z_k)z_k^n
+\]</div>
+<h2 id="_3">连续时间周期信号的傅里叶级数表示</h2>
+<h3 id="_4">成谐波关系的复指数信号的线性组合</h3>
+<p>与<span class="arithmatex">\(x(t)=e^{j\omega_0t}\)</span>有关的<strong>成谐波关系</strong>的复指数信号集就是</p>
+<div class="arithmatex">\[
+\phi_k(t)=e^{jk\omega_0t}=e^{jk(2\pi/T)t},k=0,\pm 1, \pm 2,\cdots
+\]</div>
+<p>对于一个成谐波关系的复指数线性组合形成的信号</p>
+<div class="arithmatex">\[
+x(t)=\sum_{k=-\infty}^{+\infty}a_ke^{jk\omega_0t}=\sum_{k=-\infty}^{+\infty}a_ke^{jk(2\pi/T)t}
+\]</div>
+<p>k=0项是常数。一般来说k=+N和k=-N的分量称为<strong>第N次谐波分量</strong>。</p>
+<p>对于能表示为上式的实周期信号，可以推出满足<span class="arithmatex">\(a_k^*=a_{-k}\)</span>，代入可以得出上式在实周期信号下的另一形式：</p>
+<div class="arithmatex">\[
+x(t)=a_0+2\sum_{k=1}^\infty A_k\cos(k\omega_0t+\theta_k),a_k=A_ke^{j\theta_k}
+$$
+$$
+x(t)=a_0+2\sum_{k=1}^\infty [B_k\cos k\omega_0t+C_k\sin k\omega_0t],a_k=B_k+jC_k
+\]</div>
+<h3 id="_5">连续时间周期信号傅里叶级数表示的确定</h3>
+<p>可以证明，如果<span class="arithmatex">\(x(t)\)</span>有一个傅里叶级数表示式，即<span class="arithmatex">\(x(t)\)</span>能表示成一组成谐波关系的复指数信号的线性组合，那么就有如下关系式：</p>
+<div class="arithmatex">\[
+x(t)=\sum_{k=-\infty}^{+\infty}a_ke^{jk\omega_0t}=\sum_{k=-\infty}^{+\infty}a_ke^{jk(2\pi/T)t}
+$$
+$$
+a_k=\frac{1}{T}\int_T x(t)e^{-jk\omega_0t}dt=\frac{1}{T}\int_T x(t)e^{-jk(2\pi/T)t}dt
+\]</div>
+<p>第一条式子被称为<strong>综合公式</strong>，第二条被称为<strong>分析公式</strong>，系数<span class="arithmatex">\(\{a_k\}\)</span>往往被称为<span class="arithmatex">\(x(t)\)</span>的<strong>傅里叶系数</strong>，或称为<span class="arithmatex">\(x(t)\)</span>的<strong>频谱系数</strong>。这些复数系数是对信号<span class="arithmatex">\(x(t)\)</span>中的每一个谐波分量大小的度量，系数<span class="arithmatex">\(a_0\)</span>就是信号中的直流或常数分量。</p>
+<p>对于一个周期方波</p>
+<div class="arithmatex">\[
+x(t)=\left\{\begin{matrix}1,&amp;|t|&lt;T_1\\0,&amp;T_1&lt;|t|&lt;T/2\end{matrix}\right.
+\]</div>
+<p>可以求得</p>
+<div class="arithmatex">\[
+a_0=\frac{2T_1}{T}
+$$
+$$
+a_k=\frac{\sin(k\omega_0T_1)}{k\pi}
+\]</div>
+<h2 id="_6">傅里叶级数的收敛</h2>
+<p>在一个周期内能量有限的信号可以用傅里叶级数表示，也就是可以保证<span class="arithmatex">\(a_k\)</span>是有限的，且近似误差的能量随增加的项数收敛到零。后者意味着原信号与傅里叶表达只是在能量上没有区别，而非在每个t值上都相等。</p>
+<p>满足狄利克雷条件的信号也可以用傅里叶级数表示：
+1. 在任何周期内绝对可积，即<span class="arithmatex">\(\int_T|x(t)|dt&lt;\infty\)</span>
+2. 在任意有限区间内，x(t)具有有限个起伏变化，也就是在任意单周期内其最大最小值数目有限
+3. 在任意有限区间内只有有限个不连续点，而且在这些不连续点上，函数是有限值</p>
+<p>对于满足上述两组条件之一的信号，在连续区间内傅里叶级数收敛，在不连续点处收敛于均值。从能量或者说积分而言，两者是一致的，因此卷积的特性一致，于是对线性时不变系统分析也是一致的。</p>
+<p>然而在不连续信号的不连续点附近，傅里叶级数表示会出现起伏，且起伏的峰值大小在有限项近似下保持不变，这被称为<strong>吉布斯现象</strong>。在实际应用中应选取足够多项傅里叶级数以确保这些起伏带来的能量误差可以忽略。</p>
+<h2 id="_7">连续时间傅里叶级数性质</h2>
+<p>若<span class="arithmatex">\(x(t)\)</span>的傅里叶级数记为<span class="arithmatex">\(a_k\)</span>，则用</p>
+<div class="arithmatex">\[
+x(t)\overset{FS}{\leftrightarrow}a_k
+\]</div>
+<p>来表示一个周期信号及其傅里叶级数系数的一对关系。</p>
+<p>现有<span class="arithmatex">\(x(t)\overset{FS}{\leftrightarrow}a_k,y(t)\overset{FS}{\leftrightarrow}b_k\)</span>，且他们周期都为<span class="arithmatex">\(T\)</span>，基波频率为<span class="arithmatex">\(\omega_0=2\pi/T\)</span>，则：</p>
+<ol>
+<li>线性：<span class="arithmatex">\(Ax(t)+By(t)\overset{FS}{\leftrightarrow}Aa_k+Bb_k\)</span></li>
+<li>时移：<span class="arithmatex">\(x(t-t_0)\overset{FS}{\leftrightarrow}a_ke^{-jk\omega_0t_0}\)</span></li>
+<li>频移：<span class="arithmatex">\(e^{-jM\omega_0t}x(t)\overset{FS}{\leftrightarrow}a_{k-M}\)</span></li>
+<li>共轭：<span class="arithmatex">\(x^*(t)\overset{FS}{\leftrightarrow}a^*_{-k}\)</span></li>
+<li>时间反转：<span class="arithmatex">\(x(-t)\overset{FS}{\leftrightarrow}a_{-k}\)</span></li>
+<li>时域尺度变换：基波周期改变，傅里叶级数系数不变</li>
+<li>周期卷积：<span class="arithmatex">\(\int_T x(\tau)y(t-\tau)d\tau\overset{FS}{\leftrightarrow}Ta_kb_k\)</span></li>
+<li>相乘：<span class="arithmatex">\(x(t)y(t)\overset{FS}{\leftrightarrow}\sum_{l=-\infty}^{\infty}a_lb_{k-l}\)</span>，也就是时域相乘等于频域卷积</li>
+<li>微分：<span class="arithmatex">\(\frac{dx(t)}{dt}\overset{FS}{\leftrightarrow}jk\omega_0a_k\)</span></li>
+<li>积分：<span class="arithmatex">\(\int_{-\infty}^t x(t)dt\overset{FS}{\leftrightarrow}(\frac{1}{jk\omega_0})a_k\)</span>；积分仅当<span class="arithmatex">\(a_0=0\)</span>才为有限值且为周期的</li>
+<li>实信号的共轭对称：当x(t)为实信号时，<span class="arithmatex">\(a_k=a^*_{-k}\)</span></li>
+<li>实偶信号：当x(t)是实偶信号时，<span class="arithmatex">\(a_k\)</span>为实偶函数</li>
+<li>实奇信号：当x(t)是实奇信号时，<span class="arithmatex">\(a_k\)</span>为纯虚奇函数</li>
+<li>实信号的奇偶分解：<span class="arithmatex">\(Ev\{x(t)\}\overset{FS}{\leftrightarrow}Re\{a_k\},Od\{x(t)\}\overset{FS}{\leftrightarrow}jIm\{a_k\}\)</span></li>
+<li>周期信号的帕塞瓦尔定理：一个周期信号的总平均功率等于它的全部谐波分量的平均功率之和，即<span class="arithmatex">\(\frac{1}{T}\int_T|x(t)|^2dt=\sum_{k=-\infty}^{+\infty}|a_k|^2\)</span></li>
+</ol>
+<h2 id="_8">离散时间周期信号的傅里叶级数表示</h2>
+<p>离散时间周期信号的傅里叶级数表示与连续时间的类似，主要差别是其傅里叶级数是有限项级数，且不存在收敛问题。</p>
+<h3 id="_9">成谐波关系的复指数信号的线性组合</h3>
+<p>与<span class="arithmatex">\(x[n]=e^{j\omega_0n}\)</span>有关的成谐波关系的复指数信号集是</p>
+<div class="arithmatex">\[
+\phi_k[n]=e^{jk\omega_0n}=e^{jk(2\pi/N)n},k=0,\pm 1, \pm 2,\cdots
+\]</div>
+<p>但由于<span class="arithmatex">\(\phi_k[n]=\phi_{k+rN}[n],r\in Z\)</span>，也就是当k变化一个N的整数倍时，就得到了完全一样的序列，因此只需选择连续的N个k即可。将求和限表示成<span class="arithmatex">\(k=&lt;N&gt;\)</span>，则离散傅里叶级数表示为：</p>
+<div class="arithmatex">\[
+x[n]=\sum_{k=&lt;N&gt;}a_ke^{jk\omega_0n}=\sum_{k=&lt;N&gt;}a_ke^{jk(2\pi/N)n}
+\]</div>
+<p>其中系数<span class="arithmatex">\(a_k\)</span>则被称为<strong>傅里叶级数系数</strong></p>
+<h3 id="_10">周期信号傅里叶级数表示的确定</h3>
+<p>同理，<strong>离散时间傅里叶级数对</strong>为</p>
+<div class="arithmatex">\[
+x[n]=\sum_{k=&lt;N&gt;}a_ke^{jk\omega_0n}=\sum_{k=&lt;N&gt;}a_ke^{jk(2\pi/N)n}\\
+a_k=\frac{1}{N}\sum_{k=&lt;N&gt;} x[n]e^{-jk\omega_0n}=\frac{1}{N}\sum_{k=&lt;N&gt;} x[n]e^{-jk(2\pi/N)n}
+\]</div>
+<p>一般来说离散时间傅里叶级数不存在任何收敛问题</p>
+<h3 id="_11">离散时间傅里叶级数性质</h3>
+<p>现有<span class="arithmatex">\(x[n]\overset{FS}{\leftrightarrow}a_k,y[n]\overset{FS}{\leftrightarrow}b_k\)</span>，且他们周期都为<span class="arithmatex">\(N\)</span>，基波频率为<span class="arithmatex">\(\omega_0=2\pi/N\)</span>，则：</p>
+<ol>
+<li>线性：<span class="arithmatex">\(Ax[n]+By[n]\overset{FS}{\leftrightarrow}Aa_k+Bb_k\)</span></li>
+<li>时移：<span class="arithmatex">\(x[n-n_0]\overset{FS}{\leftrightarrow}a_ke^{-jk\omega_0n_0}\)</span></li>
+<li>频移：<span class="arithmatex">\(e^{-jM\omega_0n}x[n]\overset{FS}{\leftrightarrow}a_{k-M}\)</span></li>
+<li>共轭：<span class="arithmatex">\(x^*[n]\overset{FS}{\leftrightarrow}a^*_{-k}\)</span></li>
+<li>时间反转：<span class="arithmatex">\(x[-n]\overset{FS}{\leftrightarrow}a_{-k}\)</span></li>
+<li>时域尺度变换：
+   <span class="arithmatex">\(<span class="arithmatex">\(x_{(m)}[n]=\left\{\begin{aligned}
+        &amp;x[n/m], &amp;若n是m的倍数\\
+        &amp;0,&amp;若n不是m的倍数
+   \end{aligned}\right.\)</span>\)</span>
+   <span class="arithmatex">\(<span class="arithmatex">\(x_{(m)}[n]\overset{FS}{\leftrightarrow}\frac{1}{m}a_k\)</span>\)</span></li>
+<li>周期卷积：<span class="arithmatex">\(\sum_{k=&lt;N&gt;} x[r]y[n-r]\overset{FS}{\leftrightarrow}Na_kb_k\)</span></li>
+<li>相乘：<span class="arithmatex">\(x[n]y[n]\overset{FS}{\leftrightarrow}\sum_{l=&lt;N&gt;}a_lb_{k-l}\)</span>，频域这种运算被称为周期卷积</li>
+<li>一阶差分：<span class="arithmatex">\(x[n]-x[n-1]\overset{FS}{\leftrightarrow}(1-e^{jk\omega_0})a_k\)</span></li>
+<li>求和：<span class="arithmatex">\(\sum_{k=-\infty}^nx[k]\overset{FS}{\leftrightarrow}(\frac{1}{1-e^{jk\omega_0}})a_k\)</span>；积分仅当<span class="arithmatex">\(a_0=0\)</span>才为有限值且为周期的</li>
+<li>实信号的共轭对称：当x[n]为实信号时，<span class="arithmatex">\(a_k=a^*_{-k}\)</span></li>
+<li>实偶信号：当x[n]是实偶信号时，<span class="arithmatex">\(a_k\)</span>为实偶函数</li>
+<li>实奇信号：当x[n]是实奇信号时，<span class="arithmatex">\(a_k\)</span>为纯虚奇函数</li>
+<li>实信号的奇偶分解：<span class="arithmatex">\(Ev\{x[n]\}\overset{FS}{\leftrightarrow}Re\{a_k\},Od\{x[n]\}\overset{FS}{\leftrightarrow}jIm\{a_k\}\)</span></li>
+<li>周期信号的帕塞瓦尔定理：一个周期信号的总平均功率等于它的全部谐波分量的平均功率之和，即<span class="arithmatex">\(\frac{1}{N}\sum_{k=&lt;N&gt;}|x[n]|^2=\sum_{k=&lt;N&gt;}|a_k|^2\)</span></li>
+</ol>
+<h2 id="_12">傅里叶级数与线性时不变系统</h2>
+<p>由上面的讨论可以得到
+1. 对线性时不变系统有：<span class="arithmatex">\(e^{st}\rightarrow H(s)e^{st}\)</span>或<span class="arithmatex">\(z^{n}\rightarrow H(z)e^n\)</span>
+2. 可以通过傅里叶级数将信号在时域和频域间转换</p>
+<p>当s或z是一般复数时，H(s)或H(z)就称为该系统的<strong>系统函数</strong>。</p>
+<p>考虑傅里叶级数表达的信号</p>
+<div class="arithmatex">\[
+x(t)=\sum_{k=-\infty}^{+\infty}a_ke^{jk\omega_0t}
+\]</div>
+<p>将其输入到线性时不变系统中得到的响应就是</p>
+<div class="arithmatex">\[
+y(t)=\sum_{k=-\infty}^{+\infty}a_kH(jk\omega_0)e^{jk\omega_0t}
+\]</div>
+<p>也就是说线性时不变系统的作用就是通过乘以相应频率点上的频率响应值来逐个改变输入信号的每个傅里叶系数</p>
+<h2 id="_13">滤波</h2>
+<p>改变一个信号中各频率分量的相对大小，或者全部消除某些频率分量的过程被称为<strong>滤波</strong>。用于改变频谱形状的线性时不变系统往往被称为<strong>频率成形滤波器</strong>，用于通过某些频率而显著衰减或消除掉另一些频率的系统被称为<strong>频率选择性滤波器</strong>。根据通过与削弱频率的不同，滤波器可以分为高通、低通、带通等不同滤波器</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../2.%20%E7%BA%BF%E6%80%A7%E6%97%B6%E4%B8%8D%E5%8F%98%E7%B3%BB%E7%BB%9F/" class="btn btn-neutral float-left" title="线性时不变系统"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../2.%20%E7%BA%BF%E6%80%A7%E6%97%B6%E4%B8%8D%E5%8F%98%E7%B3%BB%E7%BB%9F/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../javascripts/mathjax.js" defer></script>
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=es6" defer></script>
+      <script src="https://fastly.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
