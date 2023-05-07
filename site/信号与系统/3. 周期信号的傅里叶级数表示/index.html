@@ -229,23 +229,23 @@
 <p>一个线性时不变系统对复指数信号的响应也是同样一个复指数信号，不同的只是在幅度上的变化；也就是说：</p>
 <div class="arithmatex">\[
 连续时间：e^{st}\rightarrow H(s)e^{st}
-$$
-$$
+\]</div>
+<div class="arithmatex">\[
 离散时间：z^{n}\rightarrow H(z)e^n
 \]</div>
 <p>其中<code>H(s)</code>或<code>H(z)</code>是一个复振幅因子，一般来说是复变量s或z的函数。一个信号，若系统对该信号的输入响应仅是一个常数（可能是复数）乘以输入，则称该信号为系统的<strong>特征函数</strong>，而幅度因子称为系统的<strong>特征值</strong>。也就是说复指数信号是线性时不变系统的特征函数</p>
 <p>根据卷积可以证明：</p>
 <div class="arithmatex">\[
-H(s)=\int_{-\infty}^{+\infty}h(\tau)e^{s\tau}d\tau
-$$
-$$
+H(s)=\int_{-\infty}^{+\infty}h(\tau)e^{-s\tau}d\tau
+\]</div>
+<div class="arithmatex">\[
 H(z)=\sum_{k=-\infty}^{+\infty}h[k]z^{-k}
 \]</div>
 <p>再根据线性性质，可以得到：</p>
 <div class="arithmatex">\[
 对连续时间：若输入x(t)=\sum_k a_ke^{s_kt}，则输出y(t)=\sum_k a_kH(s_k)e^{s_k t}
-$$
-$$
+\]</div>
+<div class="arithmatex">\[
 对离散时间：若输入x[n]=\sum_k a_k z_k^n，则输出\sum_k a_k H(z_k)z_k^n
 \]</div>
 <h2 id="_3">连续时间周期信号的傅里叶级数表示</h2>
@@ -262,16 +262,16 @@ x(t)=\sum_{k=-\infty}^{+\infty}a_ke^{jk\omega_0t}=\sum_{k=-\infty}^{+\infty}a_ke
 <p>对于能表示为上式的实周期信号，可以推出满足<span class="arithmatex">\(a_k^*=a_{-k}\)</span>，代入可以得出上式在实周期信号下的另一形式：</p>
 <div class="arithmatex">\[
 x(t)=a_0+2\sum_{k=1}^\infty A_k\cos(k\omega_0t+\theta_k),a_k=A_ke^{j\theta_k}
-$$
-$$
+\]</div>
+<div class="arithmatex">\[
 x(t)=a_0+2\sum_{k=1}^\infty [B_k\cos k\omega_0t+C_k\sin k\omega_0t],a_k=B_k+jC_k
 \]</div>
 <h3 id="_5">连续时间周期信号傅里叶级数表示的确定</h3>
 <p>可以证明，如果<span class="arithmatex">\(x(t)\)</span>有一个傅里叶级数表示式，即<span class="arithmatex">\(x(t)\)</span>能表示成一组成谐波关系的复指数信号的线性组合，那么就有如下关系式：</p>
 <div class="arithmatex">\[
 x(t)=\sum_{k=-\infty}^{+\infty}a_ke^{jk\omega_0t}=\sum_{k=-\infty}^{+\infty}a_ke^{jk(2\pi/T)t}
-$$
-$$
+\]</div>
+<div class="arithmatex">\[
 a_k=\frac{1}{T}\int_T x(t)e^{-jk\omega_0t}dt=\frac{1}{T}\int_T x(t)e^{-jk(2\pi/T)t}dt
 \]</div>
 <p>第一条式子被称为<strong>综合公式</strong>，第二条被称为<strong>分析公式</strong>，系数<span class="arithmatex">\(\{a_k\}\)</span>往往被称为<span class="arithmatex">\(x(t)\)</span>的<strong>傅里叶系数</strong>，或称为<span class="arithmatex">\(x(t)\)</span>的<strong>频谱系数</strong>。这些复数系数是对信号<span class="arithmatex">\(x(t)\)</span>中的每一个谐波分量大小的度量，系数<span class="arithmatex">\(a_0\)</span>就是信号中的直流或常数分量。</p>
@@ -282,8 +282,8 @@ x(t)=\left\{\begin{matrix}1,&amp;|t|&lt;T_1\\0,&amp;T_1&lt;|t|&lt;T/2\end{matrix
 <p>可以求得</p>
 <div class="arithmatex">\[
 a_0=\frac{2T_1}{T}
-$$
-$$
+\]</div>
+<div class="arithmatex">\[
 a_k=\frac{\sin(k\omega_0T_1)}{k\pi}
 \]</div>
 <h2 id="_6">傅里叶级数的收敛</h2>
@@ -334,7 +334,7 @@ x[n]=\sum_{k=&lt;N&gt;}a_ke^{jk\omega_0n}=\sum_{k=&lt;N&gt;}a_ke^{jk(2\pi/N)n}
 <p>同理，<strong>离散时间傅里叶级数对</strong>为</p>
 <div class="arithmatex">\[
 x[n]=\sum_{k=&lt;N&gt;}a_ke^{jk\omega_0n}=\sum_{k=&lt;N&gt;}a_ke^{jk(2\pi/N)n}\\
-a_k=\frac{1}{N}\sum_{k=&lt;N&gt;} x[n]e^{-jk\omega_0n}=\frac{1}{N}\sum_{k=&lt;N&gt;} x[n]e^{-jk(2\pi/N)n}
+a_k=\frac{1}{N}\sum_{n=&lt;N&gt;} x[n]e^{-jk\omega_0n}=\frac{1}{N}\sum_{n=&lt;N&gt;} x[n]e^{-jk(2\pi/N)n}
 \]</div>
 <p>一般来说离散时间傅里叶级数不存在任何收敛问题</p>
 <h3 id="_11">离散时间傅里叶级数性质</h3>
