@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../../img/favicon.ico" />
-    <title>信号与系统 - 咩咩的笔记</title>
+    <title>连续时间傅里叶变换 - 咩咩的笔记</title>
     <link rel="stylesheet" href="../../css/theme.css" />
     <link rel="stylesheet" href="../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "\u4fe1\u53f7\u4e0e\u7cfb\u7edf";
-        var mkdocs_page_input_path = "\u4fe1\u53f7\u4e0e\u7cfb\u7edf\\1. \u4fe1\u53f7\u4e0e\u7cfb\u7edf.md";
+        var mkdocs_page_name = "\u8fde\u7eed\u65f6\u95f4\u5085\u91cc\u53f6\u53d8\u6362";
+        var mkdocs_page_input_path = "\u4fe1\u53f7\u4e0e\u7cfb\u7edf\\4. \u8fde\u7eed\u65f6\u95f4\u5085\u91cc\u53f6\u53d8\u6362.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -156,47 +156,31 @@
                   </li>
                   <li class="toctree-l1 current"><a class="reference internal current" href="#">信号与系统</a>
     <ul class="current">
-                <li class="toctree-l2 current"><a class="reference internal current" href="./">信号与系统</a>
-    <ul class="current">
-    <li class="toctree-l3"><a class="reference internal" href="#_2">信号定义</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#_3">自变量的变换</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#_4">指数信号与正弦信号</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#_5">连续时间指数信号与正弦信号</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#_9">离散时间指数信号与正弦信号</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#_14">单位冲激函数和单位阶跃函数</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#_15">连续时间系统和离散时间系统</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#_16">系统的基本性质</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#_17">有记忆系统与无记忆系统</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#_18">可逆性与逆系统</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#_19">因果性</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#_20">稳定性</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#_21">时不变性</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#_22">线性</a>
-    </li>
-        </ul>
-    </li>
-    </ul>
+                <li class="toctree-l2"><a class="reference internal" href="../1.%20%E4%BF%A1%E5%8F%B7%E4%B8%8E%E7%B3%BB%E7%BB%9F/">信号与系统</a>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../2.%20%E7%BA%BF%E6%80%A7%E6%97%B6%E4%B8%8D%E5%8F%98%E7%B3%BB%E7%BB%9F/">线性时不变系统</a>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../3.%20%E5%91%A8%E6%9C%9F%E4%BF%A1%E5%8F%B7%E7%9A%84%E5%82%85%E9%87%8C%E5%8F%B6%E7%BA%A7%E6%95%B0%E8%A1%A8%E7%A4%BA/">周期信号的傅里叶级数表示</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../4.%20%E8%BF%9E%E7%BB%AD%E6%97%B6%E9%97%B4%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2/">连续时间傅里叶变换</a>
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">连续时间傅里叶变换</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#_2">非周期信号的表示：连续时间傅里叶变换</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#_3">非周期信号傅里叶变换表示的导出</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_4">傅里叶变换的收敛</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_5">周期信号的傅里叶变换</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_6">连续时间傅里叶变换性质</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_7">基本傅里叶变换对</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_8">由线性常系数微分方程表征的系统</a>
+    </li>
+    </ul>
                 </li>
     </ul>
                   </li>
@@ -217,7 +201,7 @@
     <li><a href="../.." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
           <li>笔记 &raquo;</li>
           <li>信号与系统 &raquo;</li>
-      <li>信号与系统</li>
+      <li>连续时间傅里叶变换</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -226,118 +210,161 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="_1">信号与系统</h1>
-<h2 id="_2">信号定义</h2>
-<p>信号可以表示为一个或多个变量的函数，本书讨论的是以时间为自变量的信号。</p>
-<p><strong>连续信号</strong>的自变量定义域连续，而<strong>离散信号</strong>定义在离散点上。
-为区分两者，连续信号用 <code>x(t)</code>表示，离散信号用 <code>x[n]</code>表示，
-其中n取值为整数</p>
-<p>信号的能量定义为：</p>
+                <h1 id="_1">连续时间傅里叶变换</h1>
+<h2 id="_2">非周期信号的表示：连续时间傅里叶变换</h2>
+<h3 id="_3">非周期信号傅里叶变换表示的导出</h3>
+<p>非周期信号可以被看做周期趋于无限的周期信号，于是可以从傅里叶级数推导出<strong>傅里叶变换对</strong>：</p>
 <div class="arithmatex">\[
-连续：\int_{t_1}^{t_2}|x(t)|^2\mathrm{d} t，离散：\sum_{n=n_1}^{n_2}|x[n]|^2
-\]</div>
-<p>其中 <code>||</code>表示（实数或负数的）模长。将连续信号的能量除以 <span class="arithmatex">\(t_2-t_1\)</span> ，或将离散信号的能量除以 <span class="arithmatex">\(n_2-n_1+1\)</span> ，可以得到<strong>平均功率</strong></p>
-<p>能量功率均有限的信号是<strong>能量信号</strong>，能量无限功率有限的信号是<strong>功率信号</strong></p>
-<h2 id="_3">自变量的变换</h2>
-<p>本质就是函数的线性变换，口诀如下</p>
-<ol>
-<li>时移：超前加延后减（左加右减）</li>
-<li>时间反转：取负</li>
-<li>时间尺度变换：乘以倍数，大于一则速度加快，小于一则速度减慢</li>
-</ol>
-<blockquote>
-<p>不换元，始终围绕自变量变换，可简化思考</p>
-</blockquote>
-<p>若连续信号满足 <span class="arithmatex">\(x(t)=x(x+T)，T&gt;0\)</span> 或离散信号满足 <span class="arithmatex">\(x[n]=x[n+N],N\in Z^*\)</span> ，则称他为<strong>周期信号</strong>，其中最小的T/N是<strong>基波周期</strong>。常信号也是周期信号，但基波周期未定义</p>
-<p>连续信号 <span class="arithmatex">\(x(t)\)</span> ，若满足 <span class="arithmatex">\(x(-t)=x(t)\)</span> ，则称其为<strong>偶信号</strong>；若满足 <span class="arithmatex">\(x(-t)=-x(t)\)</span> ，则称其为<strong>奇信号</strong>。任何信号<span class="arithmatex">\(x(t)\)</span>都可分解为奇信号和偶信号之和，其中奇部为 <span class="arithmatex">\(Od\{x(t)\}=\frac{1}{2}[x(t)-x(-t)]\)</span>，偶部为<span class="arithmatex">\(Ev\{x(t)\}=\frac{1}{2}[x(t)+x(-t)]\)</span></p>
-<h2 id="_4">指数信号与正弦信号</h2>
-<blockquote>
-<p>复数域回顾： <span class="arithmatex">\(y=e^{jx}\)</span> 表示逆时针旋转x弧度</p>
-</blockquote>
-<h3 id="_5">连续时间指数信号与正弦信号</h3>
-<p>连续信号复指数信号具有形式： <span class="arithmatex">\(x(t)=Ce^{\alpha t}\)</span> ，其中C和α一般均为复数</p>
-<h4 id="_6">实指数信号</h4>
-<p>C和α均为实数，略</p>
-<h4 id="_7">周期复指数和正弦信号</h4>
-<p>α为纯虚数，记为 <span class="arithmatex">\(x(t)=e^{j\omega_0t},\omega_0\in \R\)</span></p>
-<p>此时信号呈现周期性，<strong>基波周期</strong>为</p>
-<div class="arithmatex">\[
-T_0=\frac{2\pi}{|\omega_0|}
-\]</div>
-<p>其中的<span class="arithmatex">\(\omega_0\)</span>被称为<strong>基波频率</strong></p>
-<p>正弦信号形式为 <span class="arithmatex">\(x(t)=Acos(\omega_0t+\phi)\)</span> ，周期复指数信号和正弦信号可相互表示：</p>
-<div class="arithmatex">\[
-e^{j\omega_0t}=\cos(\omega_0t)+j\sin(\omega_ot)
+x(t)=\frac{1}{2\pi}\int_{-\infty}^{+\infty}X(j\omega)e^{j\omega t}d\omega
 \]</div>
 <div class="arithmatex">\[
-A\cos(\omega_0t+\phi)=\frac{A}{2}e^{j\phi}e^{j\omega_0t}+\frac{A}{2}e^{-j\phi}e^{-j\omega_0t}
+X(j\omega)=\int_{-\infty}^{+\infty}x(t)e^{-j\omega t}dt
 \]</div>
-<p>在一个周期内周期信号<span class="arithmatex">\(e^{j\omega_0t}\)</span>的平均功率为1</p>
-<p>如果有一组周期信号，他们有共同周期<span class="arithmatex">\(T_0\)</span>，那么称他们是成<strong>谐波关系</strong>的。这要求所有信号的基波频率是<span class="arithmatex">\(\omega_0\)</span>的整数倍；反过来也可以说对于成谐波关系的一组信号，可以找到一个 <span class="arithmatex">\(\omega_0\)</span> ，使得所有信号的基波频率是它的整数倍。</p>
-<h4 id="_8">一般复指数信号</h4>
-<p>C和α均为复数，令 <span class="arithmatex">\(C=|C|e^{j\theta},\alpha=r+j\omega_0\)</span> ，则信号可以表示为 <span class="arithmatex">\(x(t)=|C|e^{rt}e^{j(\omega_0t+\theta)}\)</span> ，可看成是振幅按实指数信号规律变化的周期性复指数信号。</p>
-<h3 id="_9">离散时间指数信号与正弦信号</h3>
-<p>离散信号复指数信号具有形式： <span class="arithmatex">\(x[n]=C\alpha^n\)</span> 其中C和α一般均为复数， 也可以表示为 <span class="arithmatex">\(x[n]=Ce^{\beta n}\)</span></p>
-<h4 id="_10">实指数信号</h4>
-<p>C和α均为实数时，<span class="arithmatex">\(\alpha&gt;0\)</span>的情况与连续型类似，但允许 <span class="arithmatex">\(\alpha&lt;0\)</span> ，会出现摆动</p>
-<h4 id="_11">正弦信号</h4>
-<p>与连续型类似，有 <span class="arithmatex">\(x[n]=e^{j\omega_0n}=\cos \omega_0n+\sin\omega_0n\)</span> ，但需要注意的是离散时间正弦信号<strong>不一定是周期的</strong></p>
-<h4 id="_12">一般复指数信号</h4>
-<p>C和α均为复数，令 <span class="arithmatex">\(C=|C|e^{j\theta},\alpha=|\alpha|e^{j\omega_0}\)</span> ，则信号可以表示为 <span class="arithmatex">\(x(t)=|C||\alpha|^n e^{j(\omega_0n+\theta)}=|C||\alpha|^n[\cos(\omega+0n+\theta)+j\sin(\omega_0n+\theta)]\)</span></p>
-<h4 id="_13">离散时间复指数序列的的周期性质</h4>
-<p>只有在 <span class="arithmatex">\(\omega_0\)</span> 与 <span class="arithmatex">\(2\pi\)</span> 的比值是一个有理数是， <span class="arithmatex">\(e^{j\omega_0n}\)</span> 才具有周期性，也即<span class="arithmatex">\(\frac{\omega_0}{2\pi}=\frac{m}{N}，m,n为互质正整数\)</span>，此时<span class="arithmatex">\(N=\frac{2\pi}{\omega_0}m\)</span>即为该信号的周期，也称为<strong>基波周期</strong>，称<span class="arithmatex">\(\omega=\frac{2\pi}{N}=\frac{\omega_0}{m}\)</span>为<strong>基波频率</strong>。</p>
-<p>对于 <span class="arithmatex">\(e^{j\omega n}\)</span>  <span class="arithmatex">\(\omega=\omega_0+2\pi k,k\in R\)</span> 的信号都与 <span class="arithmatex">\(\omega=\omega_0\)</span> 的信号等价，也就是说离散时间信号的有效频率范围只有 <span class="arithmatex">\([0, 2\pi)\)</span></p>
-<h2 id="_14">单位冲激函数和单位阶跃函数</h2>
-<p><strong>单位脉冲</strong>或<strong>单位样本</strong>定义为：</p>
+<p>其中<span class="arithmatex">\(X(j\omega)\)</span>称为<span class="arithmatex">\(x(t)\)</span>的<strong>傅里叶变换</strong>或<strong>傅里叶积分</strong>，而第一条公式称为<strong>傅里叶逆变换</strong>。一个非周期信号<span class="arithmatex">\(x(t)\)</span>的变换<span class="arithmatex">\(X(j\omega)\)</span>通常称为<span class="arithmatex">\(x(t)\)</span>的<strong>频谱</strong></p>
+<p>周期信号<span class="arithmatex">\(\tilde{x}(t)\)</span>的傅里叶级数可以利用<span class="arithmatex">\(\tilde{x}(t)\)</span>的一个周期内信号的傅里叶变换的等间隔样本来表示：</p>
 <div class="arithmatex">\[
-\sigma[n]=\left\{\begin{matrix}0,&amp;n\ne 0\\1,&amp;n=0\end{matrix}\right.
+a_k = \frac{1}{T} X(j\omega)\bigg |_{\omega=k\omega_0}
 \]</div>
-<p>离散时间<strong>单位阶跃函数</strong>定义为：</p>
+<h3 id="_4">傅里叶变换的收敛</h3>
+<p>与周期信号的傅里叶级数类似，有两组充分条件：</p>
+<p>第一组条件是能量有限，也就是平方可积：</p>
 <div class="arithmatex">\[
-u[n]=\left\{\begin{matrix}0,&amp;n&lt;0\\1,&amp;n\ge0\end{matrix}\right.
+\int_{-\infty}^{\infty}|x(t)|^2dt&lt;\infty
 \]</div>
-<p>连续时间<strong>单位阶跃函数</strong>定义为：</p>
+<p>同样是可以确保能量上没有任何差别</p>
+<p>第二组条件是狄里赫利条件，可以保证除不连续点外任何时刻函数值相等：<br />
+1. x(t)绝对可积：<span class="arithmatex">\(\int_{-\infty}^{\infty}|x(t)|dt&lt;\infty\)</span><br />
+2. 在任何有限区间内，x(t)只有有限个最大值和最小值<br />
+3. 在任何有限区间内，x(t)有有限个不连续点，并且在每个不连续点都必须是有限值  </p>
+<p>不过需要补充的是：倘若在变换过程中可以使用冲激函数，那么，在一个无限区间内，既不绝对可积，又不具备平方可积的周期信号也可以认为具有傅里叶变换。</p>
+<h2 id="_5">周期信号的傅里叶变换</h2>
+<p>可以推导出，周期信号的傅里叶变换可以直接由其傅里叶级数构造，得到的变换在频域由一串冲激组成，各冲激的面积正比于傅里叶级数系数：</p>
 <div class="arithmatex">\[
-u(t)=\left\{\begin{matrix}0,&amp;n&lt;0\\1,&amp;n&gt;0\end{matrix}\right.
+X(j\omega)=\sum_{k=-\infty}^{+\infty}2\pi a_k\delta(\omega-k\omega_0)
 \]</div>
-<p><strong>冲激函数</strong> <span class="arithmatex">\(\delta(t)\)</span> 是连续时间单位阶跃函数的导数。更严谨来说，将<span class="arithmatex">\(u(t)\)</span>用零附近<span class="arithmatex">\(\Delta\)</span>长度连续的<span class="arithmatex">\(u_\Delta(t)\)</span>近似，求导后就可以得到<span class="arithmatex">\(\delta_\Delta(t)\)</span>，令<span class="arithmatex">\(\Delta\)</span>趋于零即可得到冲激函数，其图像用长度为一的箭头表示，箭头长度表示积分面积。</p>
-<h2 id="_15">连续时间系统和离散时间系统</h2>
-<p>输入输出都是连续时间信号的系统是<strong>连续时间系统</strong>；输入输出都是离散时间信号的系统是<strong>离散时间系统</strong></p>
-<p>系统的互联方式包括<strong>级联</strong>、<strong>并联</strong>和<strong>反馈联结</strong></p>
-<h2 id="_16">系统的基本性质</h2>
-<h3 id="_17">有记忆系统与无记忆系统</h3>
-<p>在任何时刻，系统的输入都只与当前时刻的输入有关，而与该时刻以外的输入无关，则称该系统是<strong>无记忆系统</strong>。否则就是<strong>记忆系统</strong>。</p>
-<p><strong>恒等系统</strong>是任何时刻的输出响应与输入信号都相同的系统。</p>
-<h3 id="_18">可逆性与逆系统</h3>
-<p>如果一个系统对任何不同的输入都能产生不同的输出，即输入与输出是一一对应的，则称该系统是<strong>可逆系统</strong>。否则就是<strong>不可逆系统</strong>。</p>
-<p>如果一个可逆系统与另一个系统级联后构成一个恒等系统，则称后者是前者的<strong>逆系统</strong>。</p>
-<h3 id="_19">因果性</h3>
-<p>如果一个系统在任何时刻的输出都只与当时这个时刻的输入以及该时刻以前的输入有关，而和该时刻以后的输入无关就称该系统是<strong>因果的</strong>。否则就是<strong>非因果的</strong>。</p>
-<h3 id="_20">稳定性</h3>
-<p>如果一个系统当输入有界时，产生的输出也是有界的，则该系统是<strong>稳定系统</strong>。否则，就是<strong>不稳定系统</strong>。</p>
-<h3 id="_21">时不变性</h3>
-<p>如果一个系统当输入信号有一个时移时，输出响应也产生同样的时移。除此之外，输出响应无任何其它变化，则称该系统是<strong>时不变的</strong>。否则就是<strong>时变的</strong>。</p>
-<p>检验一个系统时不变性的步骤:
-1. 令输入为<span class="arithmatex">\(x_1(t)\)</span>，根据系统的描述，确定此时的输出<span class="arithmatex">\(y_1(t)\)</span>。
-2. 将输入信号变为<span class="arithmatex">\(x_2(t)\)</span>，再根据系统的描述确定输出<span class="arithmatex">\(y_2(t)\)</span>。
-3. 令<span class="arithmatex">\(x_2(t)=x_1(t-t_0)\)</span>根据自变量变换，检验<span class="arithmatex">\(y_1(t-t_0)\)</span>是否等于<span class="arithmatex">\(y_2(t)\)</span>。</p>
-<h3 id="_22">线性</h3>
-<p>满足以下关系的系统是<strong>线性的</strong></p>
+<h2 id="_6">连续时间傅里叶变换性质</h2>
+<p>以下用<span class="arithmatex">\(x(t)\overset{F}{\leftrightarrow}X(j\omega)\)</span>表示傅里叶变换对</p>
+<ul>
+<li>线性：<span class="arithmatex">\(ax(t)+by(t)\overset{F}{\leftrightarrow}aX(j\omega)+bY(j\omega)\)</span></li>
+<li>时移：<span class="arithmatex">\(x(t-t_0)\overset{F}{\leftrightarrow}e^{-j\omega t_0}X(j\omega)\)</span></li>
+<li>频移：<span class="arithmatex">\(e^{j\omega_0 t}x(t)\overset{F}{\leftrightarrow}X(j(\omega-\omega_0))\)</span></li>
+<li>共轭：<span class="arithmatex">\(x^*(t)\overset{F}{\leftrightarrow}X^*(-j\omega)\)</span></li>
+<li>时间反转：<span class="arithmatex">\(x(-t)\overset{F}{\leftrightarrow}X(-j\omega)\)</span></li>
+<li>时域尺度变换：<span class="arithmatex">\(x(at)\overset{F}{\leftrightarrow} \frac{1}{|a|}X(\frac{j\omega}{a})\)</span></li>
+<li>卷积：<span class="arithmatex">\(x(t)*y(t)\overset{F}{\leftrightarrow}X(j\omega)Y(j\omega)\)</span></li>
+<li>相乘：<span class="arithmatex">\(x(t)y(t)\overset{F}{\leftrightarrow}\frac{1}{2\pi}\int_{-\infty}^{+\infty}X(j\theta)Y(j(\omega-\theta))d\theta\)</span>，也就是“时域相乘，频域卷积”。一个信号被另一个信号相乘，可以被理解为用一个信号去<strong>调制</strong>另一个信号的振幅，因此两个信号相乘往往也称为<strong>幅度调制</strong>，相乘性质被称为<strong>调制性质</strong></li>
+<li>微分：<span class="arithmatex">\(\frac{dx(t)}{dt}\overset{F}{\leftrightarrow}j\omega X(j\omega)\)</span></li>
+<li>积分：<span class="arithmatex">\(\int_{-\infty}^t x(t)dt\overset{F}{\leftrightarrow}\frac{1}{j\omega}X(j\omega)+\pi X(0)\delta(\omega)\)</span>；频域的冲激项反映了由积分产生的直流或平均值</li>
+<li>频域微分：<span class="arithmatex">\(tx(t)\overset{F}{\leftrightarrow}j\frac{d}{d\omega}X(j\omega)\)</span></li>
+<li>实信号的共轭对称：当x(t)为实信号时，<span class="arithmatex">\(X(j\omega)=X^*(-j\omega)\)</span></li>
+<li>实偶信号：当x(t)是实偶信号时，<span class="arithmatex">\(X(j\omega)\)</span>为实偶函数</li>
+<li>实奇信号：当x(t)是实奇信号时，<span class="arithmatex">\(X(j\omega)\)</span>为纯虚奇函数</li>
+<li>实信号的奇偶分解：<span class="arithmatex">\(Ev\{x(t)\}\overset{F}{\leftrightarrow}Re\{X(j\omega)\},Od\{x(t)\}\overset{F}{\leftrightarrow}jIm\{X(j\omega)\}\)</span></li>
+<li>非周期信号的帕塞瓦尔定理：<span class="arithmatex">\(\int_{-\infty}^{+\infty} |x(t)|^2dt\overset{F}{\leftrightarrow}\frac{1}{2\pi}\int_{-\infty}^{+\infty} |X(j\omega)|^2d\omega\)</span></li>
+<li><strong>对偶性质</strong>：由于傅里叶变换和逆变换公式的相似性，已知时域信号到频域函数的变换，就可以简单地通过换元和增加常量的方式，得到与该时域信号形式相同的频域函数对应的时域信号表达式，反之亦然。比如周期信号的频域是冲激串，那么傅里叶变换是周期函数的信号就可以通过对偶性得到其时域是冲激串</li>
+</ul>
+<h2 id="_7">基本傅里叶变换对</h2>
+<table>
+<thead>
+<tr>
+<th>信号</th>
+<th>傅里叶变换</th>
+<th>傅里叶系数（若为周期的）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(\sum_{k=-\infty}^{+\infty}a_k e^{jk\omega_0t}\)</span></td>
+<td><span class="arithmatex">\(2\pi\sum_{k=-\infty}^{+\infty}a_k\delta(\omega-k\omega_0)\)</span></td>
+<td><span class="arithmatex">\(a_k\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(e^{jk\omega_0t}\)</span></td>
+<td><span class="arithmatex">\(2\pi\delta(\omega-k\omega_0)\)</span></td>
+<td><span class="arithmatex">\(a_1=1,a_k=0,k\neq 1\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\cos(\omega_0t)\)</span></td>
+<td><span class="arithmatex">\(\pi[\delta(\omega-\omega_0)+\delta(\omega+\omega_0)]\)</span></td>
+<td><span class="arithmatex">\(a_1=a_{-1}=\frac{1}{2},a_k=0,k\neq\pm1\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\sin(\omega_0t)\)</span></td>
+<td><span class="arithmatex">\(\frac{\pi}{j}[\delta(\omega-\omega_0)-\delta(\omega+\omega_0)]\)</span></td>
+<td><span class="arithmatex">\(a_1=-a_{-1}=\frac{1}{2j},a_k=0,k\neq\pm1\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(x(t)=1\)</span></td>
+<td><span class="arithmatex">\(2\pi\delta(\omega)\)</span></td>
+<td><span class="arithmatex">\(a_0=1,a_k=0,k\neq 0(\forall T)\)</span></td>
+</tr>
+<tr>
+<td>工作周期为<span class="arithmatex">\(2T_1\)</span>周期为<span class="arithmatex">\(T\)</span>的中心对称方波</td>
+<td><span class="arithmatex">\(\sum_{k=-\infty}^{+\infty}\frac{2\sin(k\omega_0T_1)}{k}\delta(\omega-k\omega_0)\)</span></td>
+<td><span class="arithmatex">\(\frac{\omega_0T_1}{\pi}sinc(\frac{k\omega_0T_1}{\pi})=\frac{\sin(k\omega_0T_1)}{k\pi}\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\sum_{k=-\infty}^{+\infty}\delta(t-nT)\)</span></td>
+<td><span class="arithmatex">\(\frac{2\pi}{T}\sum_{k=-\infty}^{+\infty}\delta(\omega-\frac{2\pi k}{T})\)</span></td>
+<td><span class="arithmatex">\(a_k=\frac 1 T\)</span></td>
+</tr>
+<tr>
+<td>长度为<span class="arithmatex">\(2T_1\)</span>的中心对称单周期方波</td>
+<td><span class="arithmatex">\(\frac{2\sin(\omega T_1)}{\omega}\)</span></td>
+<td>-</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\frac{\sin(Wt)}{\pi t}\)</span></td>
+<td>长度为2W的中心对称单周期方波</td>
+<td>-</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\delta(t)\)</span></td>
+<td><span class="arithmatex">\(1\)</span></td>
+<td>-</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(u(t)\)</span></td>
+<td><span class="arithmatex">\(\frac{1}{j\omega}+\pi \delta(\omega)\)</span></td>
+<td>-</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\delta(t-t_0)\)</span></td>
+<td><span class="arithmatex">\(e^{-j\omega t_0}\)</span></td>
+<td>-</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(e^{-\alpha t}u(t),Re\{\alpha\}&gt;0\)</span></td>
+<td><span class="arithmatex">\(\frac{1}{\alpha+j\omega}\)</span></td>
+<td>-</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(te^{-\alpha t}u(t),Re\{\alpha\}&gt;0\)</span></td>
+<td><span class="arithmatex">\(\frac{1}{(\alpha+j\omega)^2}\)</span></td>
+<td>-</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\frac{t^{n-1}}{(n-1)!}e^{-\alpha t}u(t),Re\{\alpha\}&gt;0\)</span></td>
+<td><span class="arithmatex">\(\frac{1}{(\alpha+j\omega)^n}\)</span></td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_8">由线性常系数微分方程表征的系统</h2>
+<p>对于满足如下形式的线性常系数微分方程的系统：</p>
 <div class="arithmatex">\[
-x_1(t)\rightarrow y_1(t)\\
-x_2(t)\rightarrow y_2(t)\\
-ax_1(t)+bx_2(t)\rightarrow ay_1(t)+by_2(t)
+\sum_{k=0}^{N}a_k\frac{d^ky(t)}{dt^k}=\sum_{k=0}^{M}b_k\frac{d^kx(t)}{dt^k}
 \]</div>
-<p>输入增量与输入增量之间满足线性关系的系统是<strong>增量线性系统</strong>，其可以等效为一个线性系统再加上一部分与输入无关的响应<span class="arithmatex">\(y_0(t)\)</span>，当这个响应为0时，系统处于零初始状态，称这个系统的输出为<strong>零状态响应</strong></p>
-<p>线性系统当输入为零（即根本没有输入）时，系统的输出响应为零（即没有输出响应）。这就是所谓线性系统的零输入—零输出特性。</p>
-<p>增量线性系统当<span class="arithmatex">\(x(t)=0\)</span>时，有<span class="arithmatex">\(y_1(t)=0,y(t)=y_0(t)\)</span>因此将<span class="arithmatex">\(y_0(t)\)</span>称为系统的<strong>零输入响应</strong>。</p>
-<p>可见，增量线性系统的响应包括零输入响应和零状态响应两部分。</p>
+<p>可以通过如下的两个多项式之比求出其频率响应：</p>
+<div class="arithmatex">\[
+H(j\omega)=\frac{\sum_{k=0}^{M}b_k(j\omega)^k}{\sum_{k=0}^{N}a_k(j\omega)^k}
+\]</div>
+<p>通过待定系数将频率响应拆成<span class="arithmatex">\(\frac{C}{(\alpha+j\omega)^n}\)</span>的和，即可得到若干个<span class="arithmatex">\(C\frac{t^{n-1}}{(n-1)!}e^{-\alpha t}u(t)\)</span>的和的时域信号</p>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../../%E6%A6%82%E7%8E%87%E8%AE%BA/8.%20%E5%81%87%E8%AE%BE%E9%AA%8C%E8%AF%81/" class="btn btn-neutral float-left" title="假设验证"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../2.%20%E7%BA%BF%E6%80%A7%E6%97%B6%E4%B8%8D%E5%8F%98%E7%B3%BB%E7%BB%9F/" class="btn btn-neutral float-right" title="线性时不变系统">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../3.%20%E5%91%A8%E6%9C%9F%E4%BF%A1%E5%8F%B7%E7%9A%84%E5%82%85%E9%87%8C%E5%8F%B6%E7%BA%A7%E6%95%B0%E8%A1%A8%E7%A4%BA/" class="btn btn-neutral float-left" title="周期信号的傅里叶级数表示"><span class="icon icon-circle-arrow-left"></span> Previous</a>
     </div>
 
   <hr/>
@@ -360,10 +387,8 @@ ax_1(t)+bx_2(t)\rightarrow ay_1(t)+by_2(t)
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../../%E6%A6%82%E7%8E%87%E8%AE%BA/8.%20%E5%81%87%E8%AE%BE%E9%AA%8C%E8%AF%81/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../3.%20%E5%91%A8%E6%9C%9F%E4%BF%A1%E5%8F%B7%E7%9A%84%E5%82%85%E9%87%8C%E5%8F%B6%E7%BA%A7%E6%95%B0%E8%A1%A8%E7%A4%BA/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
-    
-      <span><a href="../2.%20%E7%BA%BF%E6%80%A7%E6%97%B6%E4%B8%8D%E5%8F%98%E7%B3%BB%E7%BB%9F/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
