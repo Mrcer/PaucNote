@@ -200,11 +200,9 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="_1">咩咩的笔记</h1>
-<p>这是咩咩存放笔记的地方，供朋友们参考学习使用。因为笔记是为自己写的，内容必定存在不少不严谨和纰漏，只是觉得这种这么适合分享的Markdown笔记不放出了太浪费罢了。如果存在知识性错误或排版问题欢迎在<a href="https://gitee.com/mrcer/pauc-note">仓库首页</a><code>issue</code>或<code>pull request</code>，也欢迎在issue区提出合理建议。另外也欢迎想来参观<a href="https://mrcer.gitee.io/blog">我的博客</a>哦qwq。</p>
-<h1 id="_2">笔记的意义</h1>
-<p>咩咩的笔记力求系统性覆盖知识点的同时做到足够精简，适合在学习过原书后用来串联或回顾知识，对含有大量例题解释的教材，以及全英教材应该有一定帮助。</p>
-<h1 id="_3">项目构建</h1>
+                <h1 id="_1">咩咩的共享笔记仓库</h1>
+<p>这是咩咩和朋友们存放笔记的地方，供大家参考学习使用。因为笔记是个人写的，内容必定存在一定不严谨和纰漏，请参考笔记的同学保持质疑精神，最好参考着教材看。如果存在知识性错误或排版问题欢迎在<a href="https://gitee.com/mrcer/pauc-note">仓库首页</a><code>issue</code>或<code>pull request</code>，也欢迎在issue区提出合理建议。另外也欢迎想来参观<a href="https://mrcer.gitee.io/blog">我的博客</a>哦qwq。</p>
+<h1 id="_2">项目构建</h1>
 <p>本项目使用<a href="https://www.mkdocs.org/">MkDocs</a>，依赖<code>MathJax</code>来渲染公式。完整构建过程如下：</p>
 <ol>
 <li>
@@ -213,14 +211,50 @@
 </li>
 <li>
 <p>安装mkdocs及相关插件</p>
-<p>命令行运行<code>pip install mkdocs-material</code>即可。</p>
+<p><code>pip install mkdocs-material</code>大概能解决了吧，我也不知道依赖什么，不行就看着错误装上就是了。</p>
 </li>
 <li>
 <p>构建项目运行</p>
-<p>先到仓库首页，gitee会教你怎么把项目下载下来的。
-然后命令行环境下进入项目根目录，执行<code>mkdocs build</code>构建，或者直接<code>mkdocs serve</code>预览</p>
+<p>命令行环境下进入项目根目录，执行<code>mkdocs build</code>构建，或者直接<code>mkdocs serve</code>预览。预览有自动同步功能，不需要频繁重启</p>
 </li>
 </ol>
+<h1 id="_3">参与共享</h1>
+<p>欢迎参与笔记共享！</p>
+<h2 id="_4">远程开发准备</h2>
+<p>你可以以访客身份通过<code>fork</code>开发，然后提<code>pull request</code>（我没试过，应该是吧）。如果是认识我的朋友，可以微信私我获得开发者权限。</p>
+<p>在拥有远程仓库开发权后，将仓库克隆下来，然后参考上面准备好<code>mkdocs</code>环境，即可完成准备工作。更多细节请自学git，或者私信问我</p>
+<h2 id="_5">整理笔记</h2>
+<p>笔记以markdown形式保存在<code>docs</code>文件夹，并分类存放。在添加完笔记后请在<code>mkdocs.yml</code>中注册，里面已经说明了注册方式。注册完后记得预览，查看无误后再提交。</p>
+<p>一些markdown上的提醒：</p>
+<ol>
+<li>引用的渲染方式相对其他软件有比较大不同，请确定这是你想要的效果<blockquote>
+<p>这是引用</p>
+</blockquote>
+</li>
+<li>mkdocs对格式要求更严格，比如这里的序号前后需要换行，不然会挤在一起。序号的判定也挺迷的，搞不懂就像我一样用黑点吧(x-x)</li>
+<li>display style的latex（也就是双美元公式）要单独拎出来，前后换行，美元符号单独一行</li>
+</ol>
+<div class="arithmatex">\[
+like\ this
+\]</div>
+<p>不要问我为什么这么多限制，这是mkdocs的事，我也不懂。懂的同学欢迎issue</p>
+<p>如果喜欢的话它也有好用的东西：</p>
+<div class="admonition anytitle">
+<p class="admonition-title">Anytitle</p>
+<p>引人注目的玩意儿</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>黄色的警告</p>
+</div>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>危险的警告</p>
+</div>
+<p>你可以在<code>docs</code>下的<code>index.md</code>看到这些格式</p>
+<p>对于图片，你可以放在图床上，也可以像我一样放在每个课程笔记目录下的<code>image</code>文件夹里，然后用相对路径引用。注意文件不要太大，gitee page可能带不动。</p>
+<h2 id="_6">上传笔记</h2>
+<p>一切准备就绪后，<strong>请记得构建项目</strong>，然后再<code>add</code>、<code>commit</code>、<code>push</code>。完成后要手动在“服务”-&gt;“Gitee Pages”里更新页面。如果没有权限，私我。</p>
               
             </div>
           </div><footer>
@@ -271,5 +305,5 @@
 
 <!--
 MkDocs version : 1.4.3
-Build Date UTC : 2023-06-06 07:39:27.387790+00:00
+Build Date UTC : 2023-06-07 12:58:17.572907+00:00
 -->
