@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../../img/favicon.ico" />
-    <title>连续时间傅里叶变换 - 咩咩的笔记</title>
+    <title>z变换 - 咩咩的笔记</title>
     <link rel="stylesheet" href="../../css/theme.css" />
     <link rel="stylesheet" href="../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "\u8fde\u7eed\u65f6\u95f4\u5085\u91cc\u53f6\u53d8\u6362";
-        var mkdocs_page_input_path = "\u4fe1\u53f7\u4e0e\u7cfb\u7edf\\4. \u8fde\u7eed\u65f6\u95f4\u5085\u91cc\u53f6\u53d8\u6362.md";
+        var mkdocs_page_name = "z\u53d8\u6362";
+        var mkdocs_page_input_path = "\u4fe1\u53f7\u4e0e\u7cfb\u7edf\\10. z\u53d8\u6362.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -162,25 +162,7 @@
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../3.%20%E5%91%A8%E6%9C%9F%E4%BF%A1%E5%8F%B7%E7%9A%84%E5%82%85%E9%87%8C%E5%8F%B6%E7%BA%A7%E6%95%B0%E8%A1%A8%E7%A4%BA/">周期信号的傅里叶级数表示</a>
                 </li>
-                <li class="toctree-l2 current"><a class="reference internal current" href="./">连续时间傅里叶变换</a>
-    <ul class="current">
-    <li class="toctree-l3"><a class="reference internal" href="#_2">非周期信号的表示：连续时间傅里叶变换</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#_3">非周期信号傅里叶变换表示的导出</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#_4">傅里叶变换的收敛</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#_5">周期信号的傅里叶变换</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#_6">连续时间傅里叶变换性质</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#_7">基本傅里叶变换对</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#_8">由线性常系数微分方程表征的系统</a>
-    </li>
-    </ul>
+                <li class="toctree-l2"><a class="reference internal" href="../4.%20%E8%BF%9E%E7%BB%AD%E6%97%B6%E9%97%B4%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2/">连续时间傅里叶变换</a>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../5.%20%E7%A6%BB%E6%95%A3%E6%97%B6%E9%97%B4%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2/">离散时间傅里叶变换</a>
                 </li>
@@ -190,7 +172,57 @@
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../9.%20%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF%E5%8F%98%E6%8D%A2/">拉普拉斯变换</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../10.%20z%E5%8F%98%E6%8D%A2/">z变换</a>
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">z变换</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#z_1">z变换</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#z_2">z变换收敛域</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#z_3">z逆变换</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#-">由零-极点图对傅里叶变换进行几何求值</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#z_4">z变换的性质</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#_1">线性性质：</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_2">时移性质：</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#z_5">z域尺度变换</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_3">时间反转</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_4">时域扩展</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_5">共轭</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_6">卷积</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_7">一次差分</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_8">累加</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#z_6">z域微分</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_9">初值定理</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#z_7">常用z变换对</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#z_8">用z变换分析与表征线性时不变系统</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#_10">因果性</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_11">稳定性</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_12">系统函数的代数属性与方框图表示</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#z_9">单边z变换</a>
+    </li>
+    </ul>
                 </li>
     </ul>
                   </li>
@@ -211,7 +243,7 @@
     <li><a href="../.." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
           <li>笔记 &raquo;</li>
           <li>信号与系统 &raquo;</li>
-      <li>连续时间傅里叶变换</li>
+      <li>z变换</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -220,162 +252,203 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="_1">连续时间傅里叶变换</h1>
-<h2 id="_2">非周期信号的表示：连续时间傅里叶变换</h2>
-<h3 id="_3">非周期信号傅里叶变换表示的导出</h3>
-<p>非周期信号可以被看做周期趋于无限的周期信号，于是可以从傅里叶级数推导出<strong>傅里叶变换对</strong>：</p>
+                <h1 id="z">z变换</h1>
+<h2 id="z_1">z变换</h2>
+<p>z变换就是离散型的z变换</p>
 <div class="arithmatex">\[
-x(t)=\frac{1}{2\pi}\int_{-\infty}^{+\infty}X(j\omega)e^{j\omega t}d\omega
+y[n]=H(z)z^n
 \]</div>
 <div class="arithmatex">\[
-X(j\omega)=\int_{-\infty}^{+\infty}x(t)e^{-j\omega t}dt
+H(z)=\sum_{n=-\infty}^{\infty}h[n]z^n
 \]</div>
-<p>其中<span class="arithmatex">\(X(j\omega)\)</span>称为<span class="arithmatex">\(x(t)\)</span>的<strong>傅里叶变换</strong>或<strong>傅里叶积分</strong>，而第一条公式称为<strong>傅里叶逆变换</strong>。一个非周期信号<span class="arithmatex">\(x(t)\)</span>的变换<span class="arithmatex">\(X(j\omega)\)</span>通常称为<span class="arithmatex">\(x(t)\)</span>的<strong>频谱</strong></p>
-<p>周期信号<span class="arithmatex">\(\tilde{x}(t)\)</span>的傅里叶级数可以利用<span class="arithmatex">\(\tilde{x}(t)\)</span>的一个周期内信号的傅里叶变换的等间隔样本来表示：</p>
-<div class="arithmatex">\[
-a_k = \frac{1}{T} X(j\omega)\bigg |_{\omega=k\omega_0}
-\]</div>
-<h3 id="_4">傅里叶变换的收敛</h3>
-<p>与周期信号的傅里叶级数类似，有两组充分条件：</p>
-<p>第一组条件是能量有限，也就是平方可积：</p>
-<div class="arithmatex">\[
-\int_{-\infty}^{\infty}|x(t)|^2dt&lt;\infty
-\]</div>
-<p>同样是可以确保能量上没有任何差别</p>
-<p>第二组条件是狄里赫利条件，可以保证除不连续点外任何时刻函数值相等：<br />
-1. x(t)绝对可积：<span class="arithmatex">\(\int_{-\infty}^{\infty}|x(t)|dt&lt;\infty\)</span><br />
-2. 在任何有限区间内，x(t)只有有限个最大值和最小值<br />
-3. 在任何有限区间内，x(t)有有限个不连续点，并且在每个不连续点都必须是有限值  </p>
-<p>不过需要补充的是：倘若在变换过程中可以使用冲激函数，那么，在一个无限区间内，既不绝对可积，又不具备平方可积的周期信号也可以认为具有傅里叶变换。</p>
-<h2 id="_5">周期信号的傅里叶变换</h2>
-<p>可以推导出，周期信号的傅里叶变换可以直接由其傅里叶级数构造，得到的变换在频域由一串冲激组成，各冲激的面积正比于傅里叶级数系数：</p>
-<div class="arithmatex">\[
-X(j\omega)=\sum_{k=-\infty}^{+\infty}2\pi a_k\delta(\omega-k\omega_0)
-\]</div>
-<h2 id="_6">连续时间傅里叶变换性质</h2>
-<p>以下用<span class="arithmatex">\(x(t)\overset{F}{\leftrightarrow}X(j\omega)\)</span>表示傅里叶变换对</p>
+<p>若z为虚数（即<span class="arithmatex">\(z=j\omega\)</span>），<span class="arithmatex">\(H(s)\)</span>就对应<span class="arithmatex">\(h[n]\)</span>的傅里叶变换。对一般的复变量z来说，<span class="arithmatex">\(H(s)\)</span>就被称为<span class="arithmatex">\(h[n]\)</span>的<strong>z变换</strong>，其中复变量z一般可写为<span class="arithmatex">\(z=re^{j\omega}\)</span>，z变换可表示为算子形式<span class="arithmatex">\(\mathcal{Z}(x[n])\)</span>，变换关系可表示为<span class="arithmatex">\(x[n]\overset{\mathcal{Z}}{\rightarrow}X(s)\)</span>.</p>
+<p>z变换可以看做是输入信号乘上一个衰减/增强信号<span class="arithmatex">\(r^{-n}\)</span>后再做傅里叶变换的结果</p>
+<p>同样，z变换有类似定义的收敛域ROC、零点、极点。对比离散型和连续型的频率响应，最大的区别在于离散型的输入本质上是连续型的输入经过指数复变换的结果，因此z平面可以理解为s平面的指数复变换。变换的相关过程可以去B站搜，总的来说，z平面的单位圆对应傅里叶变换（s平面的<span class="arithmatex">\(j\omega\)</span>轴），单位圆外对应s平面的右半部分，单位圆内对应左半部分，零点对应实部负无穷，沿着s平面上下对应在z平面的某个圆内周期旋转（这也对应了离散型傅里叶变换的周期性）</p>
+<h2 id="z_2">z变换收敛域</h2>
+<p>以下给出一些可以由表达式推收敛域的性质：</p>
 <ul>
-<li>线性：<span class="arithmatex">\(ax(t)+by(t)\overset{F}{\leftrightarrow}aX(j\omega)+bY(j\omega)\)</span></li>
-<li>时移：<span class="arithmatex">\(x(t-t_0)\overset{F}{\leftrightarrow}e^{-j\omega t_0}X(j\omega)\)</span></li>
-<li>频移：<span class="arithmatex">\(e^{j\omega_0 t}x(t)\overset{F}{\leftrightarrow}X(j(\omega-\omega_0))\)</span></li>
-<li>共轭：<span class="arithmatex">\(x^*(t)\overset{F}{\leftrightarrow}X^*(-j\omega)\)</span></li>
-<li>时间反转：<span class="arithmatex">\(x(-t)\overset{F}{\leftrightarrow}X(-j\omega)\)</span></li>
-<li>时域尺度变换：<span class="arithmatex">\(x(at)\overset{F}{\leftrightarrow} \frac{1}{|a|}X(\frac{j\omega}{a})\)</span></li>
-<li>卷积：<span class="arithmatex">\(x(t)*y(t)\overset{F}{\leftrightarrow}X(j\omega)Y(j\omega)\)</span></li>
-<li>相乘：<span class="arithmatex">\(x(t)y(t)\overset{F}{\leftrightarrow}\frac{1}{2\pi}\int_{-\infty}^{+\infty}X(j\theta)Y(j(\omega-\theta))d\theta\)</span>，也就是“时域相乘，频域卷积”。一个信号被另一个信号相乘，可以被理解为用一个信号去<strong>调制</strong>另一个信号的振幅，因此两个信号相乘往往也称为<strong>幅度调制</strong>，相乘性质被称为<strong>调制性质</strong></li>
-<li>微分：<span class="arithmatex">\(\frac{dx(t)}{dt}\overset{F}{\leftrightarrow}j\omega X(j\omega)\)</span></li>
-<li>积分：<span class="arithmatex">\(\int_{-\infty}^t x(t)dt\overset{F}{\leftrightarrow}\frac{1}{j\omega}X(j\omega)+\pi X(0)\delta(\omega)\)</span>；频域的冲激项反映了由积分产生的直流或平均值</li>
-<li>频域微分：<span class="arithmatex">\(tx(t)\overset{F}{\leftrightarrow}j\frac{d}{d\omega}X(j\omega)\)</span></li>
-<li>实信号的共轭对称：当x(t)为实信号时，<span class="arithmatex">\(X(j\omega)=X^*(-j\omega)\)</span></li>
-<li>实偶信号：当x(t)是实偶信号时，<span class="arithmatex">\(X(j\omega)\)</span>为实偶函数</li>
-<li>实奇信号：当x(t)是实奇信号时，<span class="arithmatex">\(X(j\omega)\)</span>为纯虚奇函数</li>
-<li>实信号的奇偶分解：<span class="arithmatex">\(Ev\{x(t)\}\overset{F}{\leftrightarrow}Re\{X(j\omega)\},Od\{x(t)\}\overset{F}{\leftrightarrow}jIm\{X(j\omega)\}\)</span></li>
-<li>非周期信号的帕塞瓦尔定理：<span class="arithmatex">\(\int_{-\infty}^{+\infty} |x(t)|^2dt\overset{F}{\leftrightarrow}\frac{1}{2\pi}\int_{-\infty}^{+\infty} |X(j\omega)|^2d\omega\)</span></li>
-<li><strong>对偶性质</strong>：由于傅里叶变换和逆变换公式的相似性，已知时域信号到频域函数的变换，就可以简单地通过换元和增加常量的方式，得到与该时域信号形式相同的频域函数对应的时域信号表达式，反之亦然。比如周期信号的频域是冲激串，那么傅里叶变换是周期函数的信号就可以通过对偶性得到其时域是冲激串</li>
+<li>X(s)的收敛域是z平面内以原点为中心的圆环</li>
+<li>收敛域内不包含任何极点</li>
+<li>如果x[n]是有限长序列，那么收敛域就是整个z平面，可能除去z=0和/或<span class="arithmatex">\(z=\infty\)</span></li>
+<li>如果x[n]是右边序列，并且<span class="arithmatex">\(|z|=r_0\)</span>的圆位于收敛域内，那么<span class="arithmatex">\(|z|&gt;r_0\)</span>的全部有限z值都一定在收敛域内</li>
+<li>如果x[n]是左边序列，并且<span class="arithmatex">\(|z|=r_0\)</span>的圆位于收敛域内，那么<span class="arithmatex">\(|z|&lt;r_0\)</span>的全部有限z值都一定在收敛域内</li>
+<li>如果x[n]是双边信号，并且<span class="arithmatex">\(|z|=r_0\)</span>的圆位于收敛域内，那么该收敛域在z平面中一定是包含<span class="arithmatex">\(|z|=r_0\)</span>这一圆环的环形区域。</li>
+<li>如果x[n]的z变换X(z)是有理的，那么它的收敛域是被极点所界定的或延伸到无限远。</li>
+<li>如果x[n]的z变换X(s)是有理的，那么若x[n]是右边序列，则其收敛域在z平面上位于最外层极点圆的外边，而且若x[n]为因果序列，即n&lt;0时全零的右边序列，则收敛域包含<span class="arithmatex">\(z=\infty\)</span>；若x[n]是左边信号，则其收敛域在z平面上位于最内层极点圆的里边，而且若x[n]为反因果序列，即n&gt;0时全零的左边序列，则收敛域包含<span class="arithmatex">\(z=0\)</span>；</li>
 </ul>
-<h2 id="_7">基本傅里叶变换对</h2>
+<h2 id="z_3">z逆变换</h2>
+<div class="arithmatex">\[
+x[n]=\frac{1}{2\pi j}\oint X(s)z^{n-1}dz
+\]</div>
+<p>上式不好求，对于有理变换一般用类似前面的部分分式法求。书本还介绍了长除法和级数法，他们分别用长除式和泰勒展开，将分式展开为<span class="arithmatex">\(a_0+a_1z^{-1}+a_2^2z^{-2}+\cdots\)</span>（这是右边信号的展开，左边信号要写成升幂形式），然后根据z变换的定义式直接得到h[n]</p>
+<h2 id="-">由零-极点图对傅里叶变换进行几何求值</h2>
+<p>与连续型类似，画从零/极点到积分区间的向量，然后分析模长和幅度，只不过这次积分区间是单位圆</p>
+<h2 id="z_4">z变换的性质</h2>
+<p>设<span class="arithmatex">\(x[n]\overset{\mathcal{Z}}{\rightarrow}X(z),ROC=R\)</span>,<span class="arithmatex">\(x_1[n]\overset{\mathcal{Z}}{\rightarrow}X_1(z),ROC=R_1\)</span>,<span class="arithmatex">\(x_2[n]\overset{\mathcal{Z}}{\rightarrow}X_2(z),ROC=R_2\)</span></p>
+<h3 id="_1">线性性质：</h3>
+<div class="arithmatex">\[
+ax_1[n]+bx_2[n]\overset{\mathcal{Z}}{\rightarrow}aX_1(z)+bX_2(z)
+\]</div>
+<p>收敛域包括<span class="arithmatex">\(R_1\cap R_2\)</span></p>
+<h3 id="_2">时移性质：</h3>
+<div class="arithmatex">\[
+x[n-n_0]\overset{\mathcal{Z}}{\rightarrow}z^{-n_0}X(z)
+\]</div>
+<p>收敛域为R（除了可能增加或除去原点或无穷远）</p>
+<h3 id="z_5">z域尺度变换</h3>
+<div class="arithmatex">\[
+e^{j\omega_0n}x[n]\overset{\mathcal{Z}}{\rightarrow}X(e^{j\omega_0}z)
+\]</div>
+<p>收敛域为R</p>
+<div class="arithmatex">\[
+z_0^{n}x[n]\overset{\mathcal{Z}}{\rightarrow}X(\frac z {z_0})
+\]</div>
+<p>收敛域为<span class="arithmatex">\(z_0R\)</span></p>
+<div class="arithmatex">\[
+a^nx[n]\overset{\mathcal{Z}}{\rightarrow}X(a^{-1}z)
+\]</div>
+<p>收敛域是R的尺度变换，相当于放大|a|倍（|a|&lt;0同理）</p>
+<h3 id="_3">时间反转</h3>
+<div class="arithmatex">\[
+x[-n]\overset{\mathcal{Z}}{\rightarrow}X(z^{-1})
+\]</div>
+<p>收敛域为<span class="arithmatex">\(R^{-1}\)</span>，这个复变换以单位圆为不动区域，圆内外翻转，然后绕原点旋转180度。</p>
+<h3 id="_4">时域扩展</h3>
+<div class="arithmatex">\[
+x_{(k)}[n]=\left\{\begin{aligned}&amp;x[n/k],&amp;n为k的倍数\\&amp;0,&amp;n不为k的倍数\end{aligned}\right.
+\]</div>
+<p>与之前定义一致，k为正整数，相当于内插(k-1)个零</p>
+<div class="arithmatex">\[
+x_{(k)}[n]\overset{\mathcal{Z}}{\rightarrow}X(z^k)
+\]</div>
+<p>收敛域为<span class="arithmatex">\(R^{1/k}\)</span>，也就是模长上点向单位圆靠拢，辐角上收缩。</p>
+<h3 id="_5">共轭</h3>
+<div class="arithmatex">\[
+x^*[n]\overset{\mathcal{Z}}{\rightarrow}X^*(z^*)
+\]</div>
+<p>收敛域为R</p>
+<h3 id="_6">卷积</h3>
+<div class="arithmatex">\[
+x_1[n]*x_2[n]\overset{\mathcal{Z}}{\rightarrow}X_1(z)X_2(z)
+\]</div>
+<p>收敛域包括<span class="arithmatex">\(R_1\cap R_2\)</span></p>
+<h3 id="_7">一次差分</h3>
+<div class="arithmatex">\[
+x[n]-x[n-1]\overset{\mathcal{Z}}{\rightarrow}(1-z^{-1})X(z)
+\]</div>
+<p>收敛域包括R（可能不包括零点）</p>
+<h3 id="_8">累加</h3>
+<div class="arithmatex">\[
+\sum_{k=-\infty}^n x[k]\overset{\mathcal{Z}}{\rightarrow}\frac 1 {1-z^-1} X(z)
+\]</div>
+<p>收敛域至少为<span class="arithmatex">\(R\cap\{|z|&gt;1\}\)</span></p>
+<h3 id="z_6">z域微分</h3>
+<div class="arithmatex">\[
+nx[n]\overset{\mathcal{Z}}{\rightarrow}-z\frac {dX(z)} {dz}
+\]</div>
+<p>收敛域为R</p>
+<h3 id="_9">初值定理</h3>
+<p>若n&lt;0时,x[n]=0，则<span class="arithmatex">\(x[0]=\lim_{z\to \infty}X(z)\)</span></p>
+<h2 id="z_7">常用z变换对</h2>
 <table>
 <thead>
 <tr>
 <th>信号</th>
-<th>傅里叶变换</th>
-<th>傅里叶系数（若为周期的）</th>
+<th>变换</th>
+<th>收敛域</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><span class="arithmatex">\(\sum_{k=-\infty}^{+\infty}a_k e^{jk\omega_0t}\)</span></td>
-<td><span class="arithmatex">\(2\pi\sum_{k=-\infty}^{+\infty}a_k\delta(\omega-k\omega_0)\)</span></td>
-<td><span class="arithmatex">\(a_k\)</span></td>
+<td><span class="arithmatex">\(\delta[n]\)</span></td>
+<td>1</td>
+<td>全部z</td>
 </tr>
 <tr>
-<td><span class="arithmatex">\(e^{jk\omega_0t}\)</span></td>
-<td><span class="arithmatex">\(2\pi\delta(\omega-k\omega_0)\)</span></td>
-<td><span class="arithmatex">\(a_1=1,a_k=0,k\neq 1\)</span></td>
+<td><span class="arithmatex">\(u[n]\)</span></td>
+<td><span class="arithmatex">\(\frac{1}{1-z^{-1}}\)</span></td>
+<td><span class="arithmatex">\(\mid z\mid&gt;1\)</span></td>
 </tr>
 <tr>
-<td><span class="arithmatex">\(\cos(\omega_0t)\)</span></td>
-<td><span class="arithmatex">\(\pi[\delta(\omega-\omega_0)+\delta(\omega+\omega_0)]\)</span></td>
-<td><span class="arithmatex">\(a_1=a_{-1}=\frac{1}{2},a_k=0,k\neq\pm1\)</span></td>
+<td><span class="arithmatex">\(-u[-n-1]\)</span></td>
+<td><span class="arithmatex">\(\frac{1}{1-z^{-1}}\)</span></td>
+<td><span class="arithmatex">\(\mid z\mid&lt;1\)</span></td>
 </tr>
 <tr>
-<td><span class="arithmatex">\(\sin(\omega_0t)\)</span></td>
-<td><span class="arithmatex">\(\frac{\pi}{j}[\delta(\omega-\omega_0)-\delta(\omega+\omega_0)]\)</span></td>
-<td><span class="arithmatex">\(a_1=-a_{-1}=\frac{1}{2j},a_k=0,k\neq\pm1\)</span></td>
+<td><span class="arithmatex">\(\delta[n-m]\)</span></td>
+<td><span class="arithmatex">\(z^{-m}\)</span></td>
+<td>全部z，除去零（若m&gt;0）或无穷（若m&lt;0）</td>
 </tr>
 <tr>
-<td><span class="arithmatex">\(x(t)=1\)</span></td>
-<td><span class="arithmatex">\(2\pi\delta(\omega)\)</span></td>
-<td><span class="arithmatex">\(a_0=1,a_k=0,k\neq 0(\forall T)\)</span></td>
+<td><span class="arithmatex">\(a^nu[n]\)</span></td>
+<td><span class="arithmatex">\(\frac{1}{1-az^{-1}}\)</span></td>
+<td><span class="arithmatex">\(\mid z\mid&gt;\mid a\mid\)</span></td>
 </tr>
 <tr>
-<td>工作周期为<span class="arithmatex">\(2T_1\)</span>周期为<span class="arithmatex">\(T\)</span>的中心对称方波</td>
-<td><span class="arithmatex">\(\sum_{k=-\infty}^{+\infty}\frac{2\sin(k\omega_0T_1)}{k}\delta(\omega-k\omega_0)\)</span></td>
-<td><span class="arithmatex">\(\frac{\omega_0T_1}{\pi}sinc(\frac{k\omega_0T_1}{\pi})=\frac{\sin(k\omega_0T_1)}{k\pi}\)</span></td>
+<td><span class="arithmatex">\(-a^nu[-n-1]\)</span></td>
+<td><span class="arithmatex">\(\frac{1}{1-az^{-1}}\)</span></td>
+<td><span class="arithmatex">\(\mid z\mid&lt;\mid a\mid\)</span></td>
 </tr>
 <tr>
-<td><span class="arithmatex">\(\sum_{k=-\infty}^{+\infty}\delta(t-nT)\)</span></td>
-<td><span class="arithmatex">\(\frac{2\pi}{T}\sum_{k=-\infty}^{+\infty}\delta(\omega-\frac{2\pi k}{T})\)</span></td>
-<td><span class="arithmatex">\(a_k=\frac 1 T\)</span></td>
+<td><span class="arithmatex">\(na^nu[n]\)</span></td>
+<td><span class="arithmatex">\(\frac{az^{-1}}{(1-az^{-1})^2}\)</span></td>
+<td><span class="arithmatex">\(\mid z\mid&gt;\mid a\mid\)</span></td>
 </tr>
 <tr>
-<td>长度为<span class="arithmatex">\(2T_1\)</span>的中心对称单周期方波</td>
-<td><span class="arithmatex">\(\frac{2\sin(\omega T_1)}{\omega}\)</span></td>
-<td>-</td>
+<td><span class="arithmatex">\(-na^nu[-n-1]\)</span></td>
+<td><span class="arithmatex">\(\frac{az^{-1}}{(1-az^{-1})^2}\)</span></td>
+<td><span class="arithmatex">\(\mid z\mid&lt;\mid a\mid\)</span></td>
 </tr>
 <tr>
-<td><span class="arithmatex">\(\frac{\sin(Wt)}{\pi t}\)</span></td>
-<td>长度为2W的中心对称单周期方波</td>
-<td>-</td>
+<td><span class="arithmatex">\(\cos(\omega_0n)u[n]\)</span></td>
+<td><span class="arithmatex">\(\frac{1-(\cos\omega_0)z^{-1}}{1-2(\cos\omega_0)z^{-1}+z^{-2}}\)</span></td>
+<td><span class="arithmatex">\(\mid z\mid&gt;1\)</span></td>
 </tr>
 <tr>
-<td><span class="arithmatex">\(\delta(t)\)</span></td>
-<td><span class="arithmatex">\(1\)</span></td>
-<td>-</td>
+<td><span class="arithmatex">\(\sin(\omega_0n)u[n]\)</span></td>
+<td><span class="arithmatex">\(\frac{(\sin\omega_0)z^{-1}}{1-2(\cos\omega_0)z^{-1}+z^{-2}}\)</span></td>
+<td><span class="arithmatex">\(\mid z\mid&gt;1\)</span></td>
 </tr>
 <tr>
-<td><span class="arithmatex">\(u(t)\)</span></td>
-<td><span class="arithmatex">\(\frac{1}{j\omega}+\pi \delta(\omega)\)</span></td>
-<td>-</td>
+<td><span class="arithmatex">\(r^n\cos(\omega_0n)u[n]\)</span></td>
+<td><span class="arithmatex">\(\frac{1-r(\cos\omega_0)z^{-1}}{1-2r(\cos\omega_0)z^{-1}+r^2z^{-2}}\)</span></td>
+<td><span class="arithmatex">\(\mid z\mid&gt;r\)</span></td>
 </tr>
 <tr>
-<td><span class="arithmatex">\(\delta(t-t_0)\)</span></td>
-<td><span class="arithmatex">\(e^{-j\omega t_0}\)</span></td>
-<td>-</td>
-</tr>
-<tr>
-<td><span class="arithmatex">\(e^{-\alpha t}u(t),Re\{\alpha\}&gt;0\)</span></td>
-<td><span class="arithmatex">\(\frac{1}{\alpha+j\omega}\)</span></td>
-<td>-</td>
-</tr>
-<tr>
-<td><span class="arithmatex">\(te^{-\alpha t}u(t),Re\{\alpha\}&gt;0\)</span></td>
-<td><span class="arithmatex">\(\frac{1}{(\alpha+j\omega)^2}\)</span></td>
-<td>-</td>
-</tr>
-<tr>
-<td><span class="arithmatex">\(\frac{t^{n-1}}{(n-1)!}e^{-\alpha t}u(t),Re\{\alpha\}&gt;0\)</span></td>
-<td><span class="arithmatex">\(\frac{1}{(\alpha+j\omega)^n}\)</span></td>
-<td>-</td>
+<td><span class="arithmatex">\(r^n\sin(\omega_0n)u[n]\)</span></td>
+<td><span class="arithmatex">\(\frac{r(\sin\omega_0)z^{-1}}{1-2r(\cos\omega_0)z^{-1}+r^2z^{-2}}\)</span></td>
+<td><span class="arithmatex">\(\mid z\mid&gt;r\)</span></td>
 </tr>
 </tbody>
 </table>
-<h2 id="_8">由线性常系数微分方程表征的系统</h2>
-<p>对于满足如下形式的线性常系数微分方程的系统：</p>
+<h2 id="z_8">用z变换分析与表征线性时不变系统</h2>
+<p>一般将<span class="arithmatex">\(H(s)\)</span>称为系统函数或传递函数</p>
+<h3 id="_10">因果性</h3>
+<p>一个离散线性时不变系统是因果的当且仅当它的系统函数的收敛域是某个圆的外边且包括无穷远。对于一个具有有理系统函数的系统来说，系统的因果性就等效于收敛域位于最外层极点外边某个圆的外边，且若H(z)表示成z的多项式之比，其分子的阶次不能高于分母的阶次。</p>
+<h3 id="_11">稳定性</h3>
+<p>当且仅当系统函数<span class="arithmatex">\(H(s)\)</span>的收敛域包括单位圆时，线性时不变系统是稳定的</p>
+<p>当且仅当系统函数的全部极点都位于单位圆内，即极点的模均小于1时，一个具有有理系统函数的因果系统才是稳定的</p>
+<h2 id="_12">系统函数的代数属性与方框图表示</h2>
+<p>与连续型道理一样，不再赘述</p>
+<h2 id="z_9">单边z变换</h2>
+<p>单边z变换定义为</p>
 <div class="arithmatex">\[
-\sum_{k=0}^{N}a_k\frac{d^ky(t)}{dt^k}=\sum_{k=0}^{M}b_k\frac{d^kx(t)}{dt^k}
+X(s)=\sum_{n=0}^{+\infty} x[n]z^{-n}
 \]</div>
-<p>可以通过如下的两个多项式之比求出其频率响应：</p>
+<p>之所以引入单边z变换，是因为它可以用来解带初始条件的差分方程：</p>
+<p>单边z变换的时延性质为</p>
 <div class="arithmatex">\[
-H(j\omega)=\frac{\sum_{k=0}^{M}b_k(j\omega)^k}{\sum_{k=0}^{N}a_k(j\omega)^k}
+x[n-1]\overset{\mathcal{UZ}}{\rightarrow}z^{-1}\chi(z)+x[-1]
 \]</div>
-<p>通过待定系数将频率响应拆成<span class="arithmatex">\(\frac{C}{(\alpha+j\omega)^n}\)</span>的和，即可得到若干个<span class="arithmatex">\(C\frac{t^{n-1}}{(n-1)!}e^{-\alpha t}u(t)\)</span>的和的时域信号</p>
+<p>可以发现引入了常量x[-1]，如此，对具有y[n-1]的差分方程两边求单边z变换，就会有常量y[-1]出现，从而可以求解带有初始条件的差分方程。</p>
+<blockquote>
+<p>双边变换求解差分方程利用了线性时不变系统的假设，包括了初始松弛的假设。单边变换求解的差分方程相当于求解了增量线性系统，其解包括零状态响应加上一个零输入响应。</p>
+</blockquote>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../3.%20%E5%91%A8%E6%9C%9F%E4%BF%A1%E5%8F%B7%E7%9A%84%E5%82%85%E9%87%8C%E5%8F%B6%E7%BA%A7%E6%95%B0%E8%A1%A8%E7%A4%BA/" class="btn btn-neutral float-left" title="周期信号的傅里叶级数表示"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../5.%20%E7%A6%BB%E6%95%A3%E6%97%B6%E9%97%B4%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2/" class="btn btn-neutral float-right" title="离散时间傅里叶变换">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../9.%20%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF%E5%8F%98%E6%8D%A2/" class="btn btn-neutral float-left" title="拉普拉斯变换"><span class="icon icon-circle-arrow-left"></span> Previous</a>
     </div>
 
   <hr/>
@@ -398,10 +471,8 @@ H(j\omega)=\frac{\sum_{k=0}^{M}b_k(j\omega)^k}{\sum_{k=0}^{N}a_k(j\omega)^k}
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../3.%20%E5%91%A8%E6%9C%9F%E4%BF%A1%E5%8F%B7%E7%9A%84%E5%82%85%E9%87%8C%E5%8F%B6%E7%BA%A7%E6%95%B0%E8%A1%A8%E7%A4%BA/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../9.%20%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF%E5%8F%98%E6%8D%A2/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
-    
-      <span><a href="../5.%20%E7%A6%BB%E6%95%A3%E6%97%B6%E9%97%B4%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
