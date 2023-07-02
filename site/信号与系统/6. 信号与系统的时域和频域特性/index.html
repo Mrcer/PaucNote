@@ -230,7 +230,7 @@
 离散：X(e^{j\omega})=|X(e^{j\omega})|e^{j\sphericalangle X(e^{j\omega})}
 \]</div>
 <blockquote>
-<p>回顾复数知识：对于复数<span class="arithmatex">\(z=a+jb\)</span>，<span class="arithmatex">\(|z|==\sqrt{a^2+b^2}\)</span>，<span class="arithmatex">\(\sphericalangle z=\arctan \frac b a\)</span>。分数式的复数表达式可以通过分子分母乘共轭来分离实部虚部。</p>
+<p>回顾复数知识：对于复数<span class="arithmatex">\(z=a+jb\)</span>，<span class="arithmatex">\(|z|=\sqrt{a^2+b^2}\)</span>，<span class="arithmatex">\(\sphericalangle z=\arctan \frac b a\)</span>。分数式的复数表达式可以通过分子分母乘共轭来分离实部虚部。</p>
 </blockquote>
 <p>下面只讨论连续，离散同理</p>
 <h2 id="_3">线性时不变系统频率响应的模和相位表示</h2>
@@ -259,7 +259,7 @@ Y(j\omega) = H(j\omega)X(j\omega)
 <div class="arithmatex">\[
 Y(j\omega)\simeq X(j\omega)|H(j\omega)|e^{-j\phi}e^{-j\omega \alpha}
 \]</div>
-<p>也就是说，这个系统对于窄带的变换效果近似包括：对应于<span class="arithmatex">\(|H(j\omega)|\)</span>的幅度成形部分，乘以一个总的恒定复数银子<span class="arithmatex">\(e^{-j\phi}\)</span>以及对应于时间延迟<span class="arithmatex">\(\alpha\)</span>秒的线性相移项<span class="arithmatex">\(e^{-j\omega \alpha}\)</span>，这个时间延迟称为在<span class="arithmatex">\(\omega=\omega_0\)</span>的<strong>群延迟</strong>。将其变换为函数则有群延迟函数：</p>
+<p>也就是说，这个系统对于窄带的变换效果近似包括：对应于<span class="arithmatex">\(|H(j\omega)|\)</span>的幅度成形部分，乘以一个总的恒定复数因子<span class="arithmatex">\(e^{-j\phi}\)</span>以及对应于时间延迟<span class="arithmatex">\(\alpha\)</span>秒的线性相移项<span class="arithmatex">\(e^{-j\omega \alpha}\)</span>，这个时间延迟称为在<span class="arithmatex">\(\omega=\omega_0\)</span>的<strong>群延迟</strong>。将其变换为函数则有群延迟函数：</p>
 <div class="arithmatex">\[
 \tau(\omega)=-\frac{d}{d\omega}\{\sphericalangle H(j\omega)\}
 \]</div>
@@ -268,7 +268,7 @@ Y(j\omega)\simeq X(j\omega)|H(j\omega)|e^{-j\phi}e^{-j\omega \alpha}
 <p><span class="arithmatex">\(20log_{10}|H(j\omega)|\)</span>和<span class="arithmatex">\(\sphericalangle H(j\omega)\)</span>对于<span class="arithmatex">\(log_{10}(\omega)\)</span>的图称为<strong>伯德图</strong>。横坐标采用对数频率是因为可以表达更大的范围，且在连续情况下容易画出渐近线，但在离散情况下这样的优势不大，因此常常不用对数。</p>
 <p>在实际绘图中，一般先画渐近线，再在交界处适当修正。画模时选择对数内“较为重要”的项来获得渐近线；画相位时参考以下近似：</p>
 <div class="arithmatex">\[
-\arctan x\simeq\left\{\begin{aligned}&amp;0,&amp;\omega\leq 0.1\\&amp;(\pi/4)[\log_{10}(\omega)+1],&amp;0.1&lt;\omega\leq 10\\&amp;\pi/2,&amp;\omega&gt;10\end{aligned}\right.
+\arctan \omega\simeq\left\{\begin{aligned}&amp;0,&amp;\omega\leq 0.1\\&amp;(\pi/4)[\log_{10}(\omega)+1],&amp;0.1&lt;\omega\leq 10\\&amp;\pi/2,&amp;\omega&gt;10\end{aligned}\right.
 \]</div>
 <h2 id="_7">理想频率选择器的时域特性</h2>
 <p>理想的频率选择器频谱呈现方波状态：</p>
