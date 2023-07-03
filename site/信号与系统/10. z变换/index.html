@@ -259,7 +259,7 @@
 y[n]=H(z)z^n
 \]</div>
 <div class="arithmatex">\[
-H(z)=\sum_{n=-\infty}^{\infty}h[n]z^n
+H(z)=\sum_{n=-\infty}^{\infty}h[n]z^{-n}
 \]</div>
 <p>若z为虚数（即<span class="arithmatex">\(z=j\omega\)</span>），<span class="arithmatex">\(H(s)\)</span>就对应<span class="arithmatex">\(h[n]\)</span>的傅里叶变换。对一般的复变量z来说，<span class="arithmatex">\(H(s)\)</span>就被称为<span class="arithmatex">\(h[n]\)</span>的<strong>z变换</strong>，其中复变量z一般可写为<span class="arithmatex">\(z=re^{j\omega}\)</span>，z变换可表示为算子形式<span class="arithmatex">\(\mathcal{Z}(x[n])\)</span>，变换关系可表示为<span class="arithmatex">\(x[n]\overset{\mathcal{Z}}{\rightarrow}X(s)\)</span>.</p>
 <p>z变换可以看做是输入信号乘上一个衰减/增强信号<span class="arithmatex">\(r^{-n}\)</span>后再做傅里叶变换的结果</p>
